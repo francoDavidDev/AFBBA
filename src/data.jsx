@@ -3,8 +3,7 @@ import React from "react";
 export const NAV = [
   { name: "INICIO", href: "/" },
   { name: "NOSOTROS", href: "/about" },
-  { name: "IFBB ACADEMY", href: "/service" },
-  { name: "ELITE PRO", href: "/elite-pro" },
+  { name: "REGLAMENTOS", href: "/reglaments" },
   { name: "CALENDARIO", href: "/calendar" },
 
   {

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 //import video
-import video from "../../videos/video.mp4";
+import video from "../../videos/hero.mp4";
 //import logo
 import logo from "../../imgs/logo.png";
 //import banner
@@ -27,7 +27,7 @@ function Hero() {
       className="text-white pt-auto h-[100vh] bg-cover bg-no-repeat bg-center"
       style={{ backgroundImage: `url('${banner}')` }}
     >
-
+    
 
       {/* title and subtitle */}
       <div className="absolute w-[80%] m-auto text-white flex flex-col justify-center items-center left-0 right-0 top-[23%] sm:top-[30%] gap-y-1 ">

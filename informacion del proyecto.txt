@@ -1,0 +1,15 @@
+pagina de referencia : https://ifbb.com/message-from-the-president/
+
+hacer un navbar para filtrar los eventos, nacionales(4) e internacionales
+colocar información se hoteles o lugares en los torneos
+
+
+internacionales- , van a ver dos torneos internacionales los cuales van a tener (mercosur internacional y noche de campeones). Pre-inscripción, resultados y fotos.
+
+un link para el fotografo.
+
+van a ver 41 torneos por año mas 4 nacionales y 2 internacionales
+
+TODAS LAS CONSULTAS VAN A IR AL CONTACTO DE OSCAR.
+
+rubenoscarvillareal1963@gmail
