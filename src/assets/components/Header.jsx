@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-primary-100  py-[16px]" : "bg-none  py-[20px]"
+        isActive ? "bg-primary-300/70  " : "bg-none  py-[20px]"
       }  fixed  max-w-[1440px] z-30 left-0 right-0 mx-auto flex justify-between items-center px-[20px] lg:px-[80px] transition-all duration-300`}
     >
       <img src= {image} alt="logo" width={'100px'} />

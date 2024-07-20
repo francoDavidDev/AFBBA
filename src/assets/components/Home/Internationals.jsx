@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import image1 from "../../imgs/internationals/image1.jpg";
 import image2 from "../../imgs/internationals/image2.jpg";
-import image3 from "../../imgs/internationals/image3.png";
+import image3 from "../../imgs/internationals/image5.jpg";
 
 //small images
 import imageSmall1 from "../../imgs/internationals/smalls/image11.jpg";
 import imageSmall2 from "../../imgs/internationals/smalls/image2.jpg";
-import imageSmall3 from "../../imgs/internationals/smalls/image3.jpg";
+import imageSmall3 from "../../imgs/internationals/smalls/image7.jpg";
 
 const Internationals = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,24 +59,22 @@ const Internationals = () => {
   };
 
   return (
-    <section className="w-full h-[100vh]">
+    <section className="w-full h-[90vh]">
       <div
-        className={`w-full h-full bg-no-repeat bg-center px-10 bg-cover flex flex-col sm:flex-row items-center justify-center ${
+        className={`w-full h-full bg-no-repeat  px-10 bg-contain flex flex-col sm:flex-row items-center justify-center ${
           INTERNATIONALS[currentIndex].backgroundColor
         } ${isMobile ? "mt-[-50px]" : ""}`}
         style={{
           backgroundImage: `url('${
             isMobile
-              ? INTERNATIONALS[currentIndex].image
-              : INTERNATIONALS[currentIndex].image
+              ? INTERNATIONALS[currentIndex].image2
+              : INTERNATIONALS[currentIndex].image2
           }')`,
-          backgroundColor: "rgba(0, 0, 0, 0.7)", // Ajusta el nivel de oscuridad cambiando el último valor
+          backgroundColor: "rgba(0, 0, 0, 0.3)", // Ajusta el nivel de oscuridad cambiando el último valor
           backgroundBlendMode: "darken",
         }}
       >
-        <div
-          className={`w-full sm:w-1/2 h-[80%] bg-no-repeat bg-center bg-cover flex items-center justify-center`}
-        >
+        <div className="w-full sm:w-1/2 h-[80%] bg-no-repeat bg-center bg-cover flex items-center justify-center">
           <motion.div
             className="text-white h-full text-center flex flex-col items-center justify-start gap-10 "
             initial={{ opacity: 0, y: 50 }}
@@ -99,40 +97,38 @@ const Internationals = () => {
             </button>
           </motion.div>
         </div>
-        <div
-          className={`w-1/2 flex items-center justify-center ${
-            isMobile ? "mt-8" : ""
-          }`}
-        >
-          <div className="max-w-sm w-full mx-auto relative bottom-44 sm:bottom-60 ">
-            <AnimatePresence>
-              {INTERNATIONALS.map((item, index) =>
-                index === currentIndex ? (
-                  <motion.div
-                    key={index}
-                    className="absolute inset-0"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <img
-                      src={isMobile ? item.image2 : item.image}
-                      alt=""
-                      className="rounded-xl"
-                    />
-                  </motion.div>
-                ) : null
-              )}
-            </AnimatePresence>
+        <div className={`w-full sm:w-1/2 flex items-center justify-center ${isMobile ? "mt-8" : ""}`}>
+          <div className="max-w-sm w-full mx-auto relative flex items-center justify-between">
             <button
-              className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-red-500 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300"
+              className="absolute left-0 bg-white text-red-500 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300 z-10"
               onClick={prevSlide}
             >
               Anterior
             </button>
+            <div className="relative w-[300px] h-[300px]">
+              <AnimatePresence>
+                {INTERNATIONALS.map((item, index) =>
+                  index === currentIndex ? (
+                    <motion.div
+                      key={index}
+                      className="absolute inset-0 flex items-center justify-center"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <img
+                        src={isMobile ? item.image : item.image}
+                        alt=""
+                        className="rounded-xl h-full w-full "
+                      />
+                    </motion.div>
+                  ) : null
+                )}
+              </AnimatePresence>
+            </div>
             <button
-              className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-red-500 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300"
+              className="absolute right-0 bg-white text-red-500 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300 z-10"
               onClick={nextSlide}
             >
               Siguiente
