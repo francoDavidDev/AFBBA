@@ -1,24 +1,25 @@
-import acefis from '../assets/imgs/associations/acefis.jpg';
-import acmufise from '../assets/imgs/associations/acmufise.jpg';
-import acomei from '../assets/imgs/associations/acomei.jpg';
-import acorffi from '../assets/imgs/associations/acorffi.jpg';
-import acufim from '../assets/imgs/associations/acufim.jpg';
-import affsl from '../assets/imgs/associations/affsl.jpg';
-import afiba from '../assets/imgs/associations/afiba.jpg';
-import afic from '../assets/imgs/associations/afic.jpg';
-import aform from '../assets/imgs/associations/aform.jpg';
-import amfim from '../assets/imgs/associations/amfim.jpg';
-import amuch from '../assets/imgs/associations/amuch.jpg';
-import arffi from '../assets/imgs/associations/arffi.jpg';
-import asff from '../assets/imgs/associations/asff.jpg';
-import asfyc from '../assets/imgs/associations/asfyc.jpg';
-import assfl from '../assets/imgs/associations/assfl.jpg';
+import acefis from '../assets/imgs/associations/acefis.png';
+import acmufise from '../assets/imgs/associations/acmufise.png';
+import acomei from '../assets/imgs/associations/acomei.png';
+import acorffi from '../assets/imgs/associations/acorffi.png';
+import acufim from '../assets/imgs/associations/acufim.png';
+import affsl from '../assets/imgs/associations/affsl.png';
+import afiba from '../assets/imgs/associations/afiba.png';
+import afic from '../assets/imgs/associations/afic.png';
+import aform from '../assets/imgs/associations/aform.png';
+import amfim from '../assets/imgs/associations/amfim.png';
+import amuch from '../assets/imgs/associations/amuch.png';
+import arffi from '../assets/imgs/associations/arffi.png';
+import asff from '../assets/imgs/associations/asff.png';
+import asfyc from '../assets/imgs/associations/asfyc.png';
+import assfl from '../assets/imgs/associations/assfl.png';
 
-const experiences = [
+
+const ASSOCIATIONS = [
   {
     title: "Asociación Salteña de Fisicoculturismo Fitness, Levantamientos y Polemica",
     company_name: "Presidente",
-    icon: asfyc,
+    icon: asff,
     iconBg: "#383E56",
     date: "Salta",
     instagram: [
@@ -31,7 +32,7 @@ const experiences = [
   {
     title: "Asociación Formoseña de Musculación",
     company_name: "Presidente",
-    icon: arffi,
+    icon: aform,
     iconBg: "#383E56",
     date: "Formosa",
     instagram: [
@@ -44,7 +45,7 @@ const experiences = [
   {
     title: "Asociación Civil, Musculacion y Fitness Santiago del Estero",
     company_name: "Presidente",
-    icon: asff,
+    icon: acmufise,
     iconBg: "#383E56",
     date: "Santiago del Estero",
     instagram: [
@@ -57,7 +58,7 @@ const experiences = [
   {
     title: "Asociación de Musculación Chaqueña",
     company_name: "Presidente",
-    icon: afic,
+    icon: amuch,
     iconBg: "#383E56",
     date: "Chaco",
     instagram: [
@@ -109,7 +110,7 @@ const experiences = [
   {
     title: "Asociación de Fisicoculturismo y Fitness de la Prov. De San Luis",
     company_name: "Presidente",
-    icon: afiba,
+    icon: affsl,
     iconBg: "#383E56",
     date: "San Luis",
     instagram: [
@@ -122,7 +123,7 @@ const experiences = [
   {
     title: "Asociación Santafecina de fisiculturismo y Fitness",
     company_name: "Presidente",
-    icon: amuch,
+    icon: asff,
     iconBg: "#383E56",
     date: "Santa Fe",
     instagram: [
@@ -135,7 +136,7 @@ const experiences = [
   {
     title: "Asociación Cordobesa de Fisicoculturismo Y Fitness",
     company_name: "Presidente",
-    icon: affsl,
+    icon: acorffi,
     iconBg: "#383E56",
     date: "Cordoba",
     instagram: [
@@ -148,7 +149,7 @@ const experiences = [
   {
     title: "Asociación Mendocina De Fitness y Musculación",
     company_name: "Presidente",
-    icon: acorffi,
+    icon: amfim,
     iconBg: "#383E56",
     date: "Mendoza",
     instagram: [
@@ -161,7 +162,7 @@ const experiences = [
   {
     title: "Asociación de Fisicoculturismo y Fitness de CABA",
     company_name: "Presidente",
-    icon: aform,
+    icon: afic,
     iconBg: "#383E56",
     date: "CABA",
     instagram: [
@@ -174,7 +175,7 @@ const experiences = [
   {
     title: "Asociación Ruojana de Fisicoculturismo y Fitness",
     company_name: "Presidente",
-    icon: amfim,
+    icon: arffi,
     iconBg: "#383E56",
     date: "La Rioja",
     instagram: [
@@ -187,7 +188,7 @@ const experiences = [
   {
     title: "Asociación Civil De Fisicoculturismo De La Provincia de Buenos Aires",
     company_name: "Maria Mernes",
-    icon: acmufise,
+    icon: afiba,
     iconBg: "#383E56",
     date: "Buenos Aires",
     instagram: [
@@ -200,7 +201,7 @@ const experiences = [
   {
     title: "Asociación Santacruceña de Fitness y Culturismo",
     company_name: "Presidente",
-    icon: assfl,
+    icon: asfyc,
     iconBg: "#383E56",
     date: "Santa Cruz",
     instagram: [
@@ -212,4 +213,4 @@ const experiences = [
   },
 ];
 
-export { experiences };
+export { ASSOCIATIONS };

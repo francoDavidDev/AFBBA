@@ -1,56 +1,70 @@
 import React from "react";
 //import image
-import imageInfo from "../../imgs/about/info/image1.jpg";
-import imageInfo2 from "../../imgs/about/info/image2.png";
-import { Link } from "react-router-dom";
+//images:
+
+import image1 from "../../imgs/about/info/image_1.jpg";
+import image2 from "../../imgs/about/info/image_8.jpg";
+import image3 from "../../imgs/about/info/image_9.jpg";
+
+
+
 
 const Info = () => {
   return (
-    <div className="gap-y-5 flex flex-col py-5">
-      {" "}
-      {/* INFO informacion */}
-      <div className="w-full p-10 h-[auto] m-auto  flex flex-col md:flex-row justify-center gap-y-5 md:gap-5 items-center md:items-start ">
-        <div className="w-[70%]  m-auto">
-          <img src={imageInfo} alt="image-info" className="w-full h-full" />
+    <div className="flex flex-col w-full h-auto py-20 text-white  ">
+    <div className="flex w-full">
+      <div className="w-1/2 p-10 flex flex-col justify-center items-center">
+        <h2 className="text-4xl font-bold mb-4">SOBRE NOSOTROS</h2>
+      
+      </div>
+
+      <div className="w-1/2 text-white p-10 flex flex-col justify-center">
+        <h2 className="text-2xl font-bold mb-4">Lorem Ipsum</h2>
+        <p className="mb-6 text-white/60">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus imperdiet, nulla et dictum interdum, nisi lorem
+          egestas odio, vitae scelerisque enim ligula venenatis dolor.
+          Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+          Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula,
+          facilisis sed ornare eu, lobortis in odio. Praesent convallis
+          urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+          dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero
+          sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui
+          eget tellus gravida venenatis. Integer fringilla congue eros non
+          fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo
+          purus. Mauris quis diam velit.
+        </p>
+      </div>
+    </div>
+
+    {/* Nuevo div para las imágenes */}
+    <div className="w-full mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {/* Reemplaza estas URLs con las nuevas imágenes */}
+        <div key="1" className="relative cursor-pointer">
+          <img
+            src={image1}
+            alt="Imagen 1"
+            className="w-full h-auto object-cover rounded-xl shadow-lg transition-transform transform hover:scale-105"
+          />
         </div>
-        <div className=" w-[100%] md:w-[50%]   justify-end  m-auto  text-left px-5 gap-5 flex flex-col">
-          <h2 className=" h3 text-primary-400 ">COMITE DIRECTIVO</h2>
-          <p className=" w-[90%] text-lg xl:text-xl tracking-wider font-light tracking-widest  ">
-            El Comité Directivo de la Asociación de Fisicoculturismo en
-            Argentina es el cuerpo de liderazgo encargado de establecer la
-            dirección estratégica y las políticas que guían el desarrollo y la
-            promoción del fisicoculturismo en el país.
-          </p>
-          <Link to={'/moreComite'}  >
-          <button className="btn-lg  bg-neutral-400 border-none tracking-[3px] font-light hover:bg-primary-300 hover:text-primary-400  hover:rounded-md hover:scale-110 transition-all duration-100 hover:font-bold hover:text-md  ">
-            {" "}
-              VER MAS
-          
-          </button>
-          </Link>
+        <div key="2" className="relative cursor-pointer">
+          <img
+            src={image2}
+            alt="Imagen 2"
+            className="w-full h-auto object-cover rounded-xl shadow-lg transition-transform transform hover:scale-105"
+          />
         </div>
-      </div>{" "}
-      {/* INFO informacion */}
-      <div className="w-full p-10 h-[auto] m-auto  flex flex-col md:flex-row justify-center gap-y-5 md:gap-5 items-center md:items-start ">
-        <div className=" w-[100%] md:w-[50%]   justify-end  m-auto  text-left px-5 gap-5 flex flex-col">
-          <h2 className=" h3 text-primary-400 ">EVENTOS</h2>
-          <p className=" w-[90%] text-lg xl:text-xl font-light  tracking-widest ">
-            Desde la planificación inicial hasta la ejecución y el seguimiento
-            posterior, este equipo trabajará incansablemente para garantizar que
-            cada evento sea un éxito.
-          </p>
-          <Link to={'/moreEvents'} > 
-          <button className="btn-lg  bg-neutral-400 border-none tracking-[3px] font-light hover:bg-primary-300 hover:text-primary-400  hover:rounded-md hover:scale-110 transition-all duration-100 hover:font-bold hover:text-md  ">
-            {" "}
-             VER MAS
-          </button>
-          </Link>
-        </div>
-        <div className="w-[70%]  m-auto">
-          <img src={imageInfo2} alt="image-info" className="w-full h-full" />
+        <div key="3" className="relative cursor-pointer">
+          <img
+            src={image3}
+            alt="Imagen 3"
+            className="w-full h-auto object-cover rounded-xl shadow-lg transition-transform transform hover:scale-105"
+          />
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

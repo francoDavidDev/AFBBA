@@ -8,6 +8,7 @@ import Newsletter from '../components/Home/Newsletter';
 import CarrouselEvents from '../components/Home/CarrouselEvents';
 import Associations from '../components/Home/Associations';
 import Internationals from '../components/Home/Internationals';
+import VerticalWrapper from '../components/Home/VerticalWrapper';
 
 const Home = () => {
   return (
@@ -41,7 +42,7 @@ const Home = () => {
         initial={{ opacity: 0, y: 50 }} 
         transition={{ duration: 0.5 }}
       >
-        <Associations />
+             <VerticalWrapper />
       </motion.div>
 
       <motion.div 

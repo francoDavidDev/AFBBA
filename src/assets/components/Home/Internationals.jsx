@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import image1 from "../../imgs/internationals/image1.jpg";
-import image2 from "../../imgs/internationals/image2.jpg";
-import image3 from "../../imgs/internationals/image5.jpg";
 
-//small images
-import imageSmall1 from "../../imgs/internationals/smalls/image11.jpg";
-import imageSmall2 from "../../imgs/internationals/smalls/image2.jpg";
-import imageSmall3 from "../../imgs/internationals/smalls/image7.jpg";
+import flyer_1 from "../../imgs/internationals/flyers/image5.jpg";
+import bannerVideo from "../../videos/internationals/bannerroro2.mp4";
+import flyer_2 from "../../imgs/internationals/flyers/image2.jpg";
+import banner from "../../imgs/internationals/banners/large/image3.jpg";
+
+import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle } from "react-icons/io";
+import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 const Internationals = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 742);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,114 +26,103 @@ const Internationals = () => {
 
   const INTERNATIONALS = [
     {
-      titulo: "TITULO 1",
+      titulo: "TITULO 3",
       description: "asdsadsadadsadjsakdjlsakjklsajldjskadjlkadjslakdjs",
-      image: image1,
-      image2: imageSmall1,
-      backgroundColor: "bg-red-500",
-    },
-    {
-      titulo: "TITULO 2",
-      description: "asdsadsadadsadjsakdjlsakjklsajldjskadjlkadjslakdjs",
-      image: image2,
-      image2: imageSmall2,
-      backgroundColor: "bg-blue-500",
+      image: flyer_1,
+      video: bannerVideo,
+      banner: null,
+      backgroundColor: "bg-green-500",
     },
     {
       titulo: "TITULO 3",
       description: "asdsadsadadsadjsakdjlsakjklsajldjskadjlkadjslakdjs",
-      image: image3,
-      image2: imageSmall3,
+      image: flyer_2,
+      video: null,
+      banner: banner,
       backgroundColor: "bg-green-500",
     },
   ];
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === INTERNATIONALS.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === INTERNATIONALS.length - 1 ? 0 : prevIndex + 1));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? INTERNATIONALS.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? INTERNATIONALS.length - 1 : prevIndex - 1));
+  };
+
+  const toggleMute = () => {
+    setIsMuted((prevMuted) => !prevMuted);
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+    }
   };
 
   return (
-    <section className="w-full h-[90vh]">
+    <section className="w-full h-[80vh] relative overflow-hidden">
+      {INTERNATIONALS[currentIndex].video ? (
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={INTERNATIONALS[currentIndex].video}
+          autoPlay
+          loop
+          muted={isMuted}
+          ref={videoRef}
+        />
+      ) : (
+        <img
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={INTERNATIONALS[currentIndex].banner}
+          alt="Banner"
+        />
+      )}
       <div
-        className={`w-full h-full bg-no-repeat  px-10 bg-contain flex flex-col sm:flex-row items-center justify-center ${
-          INTERNATIONALS[currentIndex].backgroundColor
-        } ${isMobile ? "mt-[-50px]" : ""}`}
+        className={`relative w-full h-full flex flex-col sm:flex-row items-center justify-center ${INTERNATIONALS[currentIndex].backgroundColor} ${isMobile ? "mt-[-50px]" : ""}`}
         style={{
-          backgroundImage: `url('${
-            isMobile
-              ? INTERNATIONALS[currentIndex].image2
-              : INTERNATIONALS[currentIndex].image2
-          }')`,
-          backgroundColor: "rgba(0, 0, 0, 0.3)", // Ajusta el nivel de oscuridad cambiando el último valor
+          backgroundColor: "rgba(0, 0, 0, 0.3)",
           backgroundBlendMode: "darken",
         }}
       >
-        <div className="w-full sm:w-1/2 h-[80%] bg-no-repeat bg-center bg-cover flex items-center justify-center">
-          <motion.div
-            className="text-white h-full text-center flex flex-col items-center justify-start gap-10 "
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.5 }}
+        <div className="absolute top-4 right-4 z-10">
+          <button
+            onClick={toggleMute}
+            className="text-3xl text-white px-4 py-2 rounded-lg transition-colors duration-300"
           >
-            <h2 className="text-4xl font-bold">TITULO DEL TORNEO</h2>
-            <p className="mt-4">
-              | tetx | text | teaxt en en html para mi codigo
-            </p>{" "}
-            <p className="mt-4">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Obcaecati voluptatum quaerat sint similique temporibus amet, vitae
-              quae, labore dolor optio voluptates, accusantium doloremque
-              laboriosam sit est! Impedit soluta minus animi!
-            </p>
-            <button className="mt-4 bg-white text-red-500 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300">
-              Ver mas
-            </button>
-          </motion.div>
+            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+          </button>
         </div>
-        <div className={`w-full sm:w-1/2 flex items-center justify-center ${isMobile ? "mt-8" : ""}`}>
-          <div className="max-w-sm w-full mx-auto relative flex items-center justify-between">
+        <div className="w-full sm:w-1/2 h-[80%] flex items-center justify-center"></div>
+        <div className={`backdrop-blur-md w-[400px] border-[1px] border-white/10 shadow-2xl rounded-lg sm:w-1/2 ml-56 mr-10 m-56 flex items-center justify-center ${isMobile ? "mt-8" : ""}`}>
+          <div className="max-w-sm w-[70%] mx-auto flex items-center justify-center">
             <button
-              className="absolute left-0 bg-white text-red-500 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300 z-10"
+              className="left-0 text-4xl text-white px-4 py-2 rounded-lg transition-colors duration-300 z-10"
               onClick={prevSlide}
             >
-              Anterior
+              <IoIosArrowDropleftCircle />
             </button>
-            <div className="relative w-[300px] h-[300px]">
-              <AnimatePresence>
+            <div className="w-[300px] h-[350px] flex justify-center items-center">
+              <AnimatePresence initial={false} custom={currentIndex}>
                 {INTERNATIONALS.map((item, index) =>
                   index === currentIndex ? (
                     <motion.div
                       key={index}
-                      className="absolute inset-0 flex items-center justify-center"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.5 }}
+                      className="flex items-center justify-center"
+                      initial={{ x: 100, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: -100, opacity: 0 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     >
-                      <img
-                        src={isMobile ? item.image : item.image}
-                        alt=""
-                        className="rounded-xl h-full w-full "
-                      />
+                      <img src={item.image} alt="" className="rounded-xl h-full w-full" />
                     </motion.div>
                   ) : null
                 )}
               </AnimatePresence>
             </div>
             <button
-              className="absolute right-0 bg-white text-red-500 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300 z-10"
+              className="left-0 text-4xl text-white px-4 py-2 rounded-lg transition-colors duration-300 z-10"
               onClick={nextSlide}
             >
-              Siguiente
+              <IoIosArrowDroprightCircle />
             </button>
           </div>
         </div>

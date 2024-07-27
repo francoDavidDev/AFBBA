@@ -4,6 +4,7 @@ export const NAV = [
   { name: "INICIO", href: "/" },
   { name: "NOSOTROS", href: "/about" },
   { name: "REGLAMENTOS", href: "/reglaments" },
+  { name: "CURSOS", href: "/courses" },
   { name: "CALENDARIO", href: "/calendar" },
 
   {
@@ -87,27 +88,7 @@ export const SPONSORS = [
   },
 ];
 
-import image1 from "./assets/imgs/about/staff/image1.png";
-import image2 from "./assets/imgs/about/staff/image2.png";
-import image3 from "./assets/imgs/about/staff/image3.png";
-import image4 from "./assets/imgs/about/staff/image4.png";
-import image5 from "./assets/imgs/about/staff/image5.png";
-import image6 from "./assets/imgs/about/staff/image6.png";
-import image7 from "./assets/imgs/about/staff/image7.png";
 
-
-
-
-
-export const STAFF = [
-  { image: image1 },
-  { image: image2 },
-  { image: image3 },
-  { image: image4 },
-  { image: image5 },
-  { image: image6 },
-  { image: image7 },
-];
 
 export const CALENDAR = [
   {
