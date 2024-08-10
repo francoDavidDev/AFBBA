@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-//import video
-import video from "../../videos/hero.mp4";
+
 //import logo
 import logo from "../../imgs/logo.png";
 //import banner
 import banner from "../../imgs/hero/4.jpg";
-import CarrouselHero from "./CarrouselHero";
+
 
 function Hero() {
   const videoRef = useRef();
@@ -41,10 +40,8 @@ function Hero() {
           </h2>
         </div>
       </div>
-      {/* carrousel */}
-      <div className=" absolute bottom-1 w-full h-[200px] flex flex-col justify-center items-center" >
-      <CarrouselHero/>
-      </div>
+
+   
      
     </div>
   );

@@ -32,7 +32,7 @@ const About = () => {
         <CarrouselAbout/>
         {/* Nuevas secciones */}
         <Info/>
-        <AssociationsAbout/>
+      
         <Photographer/>
         <GalleryAbout/>
       </div>

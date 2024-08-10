@@ -10,7 +10,7 @@ const CourseCard = ({ course }) => {
 
   return (
     <motion.div
-      className="relative bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-300"
+      className="relative h-auto bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-300"
       onMouseEnter={() => setShowPopup(true)}
       onMouseLeave={() => setShowPopup(false)}
       style={{ width: "calc(100% - 1rem)" }}

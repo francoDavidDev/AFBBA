@@ -1,26 +1,31 @@
 import React from "react";
-//import react icon
-import { FaDumbbell } from "react-icons/fa6";
-import { SPONSORS } from "../../../data";
+import sportcenter from '../../imgs/sponsors/sportcenter.jpg'
+import bsn from '../../imgs/sponsors/bsn.jpg'
+import sansongym from '../../imgs/sponsors/sansongym.jpg'
+import vees from '../../imgs/sponsors/vees.jpg'
+//import styles
+import '../../../styles/VerticalWrapper/index.css';
 
 const Sponsors = () => {
   return (
-    <section className="w-full h-[auto] py-10 flex flex-col bg-gradient-to-t from-primary-300 to-black">
-      <div className="w-[95%]  mx-auto  flex flex-col gap-5 ">
-        <div className="flex justify-start items-center gap-2  py-5 ">
-          <FaDumbbell className="text-5xl text-primary-400" />
-          <h5 className="h5"> SPONSORS</h5>
-          <div className="w-full h-[2px] bg-primary-200 "></div>
-        </div>
-
-        <div className=" h-auto flex gap-x-10  justify-evenly items-center py-5 flex-wrap">
-          {SPONSORS.map((item, i) => (
-            <div className="flex my-5  w-[270px] h-[270x] bg-neutral-400 rounded-lg  justify-center hover:-translate-y-2 transition-all duration-300   hover:shadow-2xl hover:bg-primary-300  cursor-pointer">
-              <img src={item.image} className="p-7" />
-            </div>
-          ))}
-        </div>
+    <section className="banner   mb-20">
+      <div className="slider">
+        <a href='https://www.veesfitness.net/en' target="_blank" className="item" style={{ '--position': 1 }}><img src={vees} alt="" /></a>
+        <a href="https://www.instagram.com/bsnpharmacordoba?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="item" style={{ '--position': 2 }}><img src={bsn} alt="" /></a>
+        <a href="https://www.instagram.com/sansongym_oficial/" target="_blank" className="item" style={{ '--position': 3 }}><img src={sansongym} alt="" /></a>
+        <a href="https://www.instagram.com/fitness_sportcenter23?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="  target="_blank" className="item" style={{ '--position': 4 }}><img src={sportcenter} alt="" /></a>
+        <a href='https://www.veesfitness.net/en' target="_blank" className="item" style={{ '--position': 5 }}><img src={vees} alt="" /></a>
+        <a href="https://www.instagram.com/bsnpharmacordoba?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="item" style={{ '--position': 6 }}><img src={bsn} alt="" /></a>
+        <a href="https://www.instagram.com/sansongym_oficial/" target="_blank" className="item" style={{ '--position': 7 }}><img src={sansongym} alt="" /></a>
+        <a href="https://www.instagram.com/fitness_sportcenter23?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="  target="_blank" className="item" style={{ '--position': 8 }}><img src={sportcenter} alt="" /></a>
+   
       </div>
+      <div className="content">
+            <h1 data-content = 'SPONSORS' >
+              SPONSORS
+            </h1>
+      </div>
+     
     </section>
   );
 };

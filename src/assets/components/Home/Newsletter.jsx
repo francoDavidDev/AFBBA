@@ -4,7 +4,7 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const Newsletter = () => {
   return (
-    <section className="bg-primary-300 w-full h-[300px] flex flex-col justify-center items-center gap-y-1 text-center  ">
+    <section className=" w-full h-[300px] flex flex-col justify-center items-center gap-y-1 text-center  ">
       <AiOutlineMail className="text-5xl text-primary-400 " />
 
       <h3 className="h4 text-primary-200 ">NEWSLETTER SIGN UP</h3>

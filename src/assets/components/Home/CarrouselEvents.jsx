@@ -45,7 +45,7 @@ const CarrouselEvents = () => {
     ],
   };
   return (
-    <section className=" bg-gradient-to-t from-primary-300 to-black h-auto py-10 ">
+    <section className=" h-auto py-10 ">
       <div className="p-5 ">
         <h4 className="h4 text-primary-400">IFBB EVENTOS</h4>
       </div>

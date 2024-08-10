@@ -11,7 +11,7 @@ const Info = () => {
   const videoRef = useRef();
 
   return (
-    <div className="bg-gradient-to-b from-primary-300 to-primary-100 h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
+    <div className=" h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
       <h2 className="h3 uppercase text-primary-400 w-[90%]">ACTUALIDAD</h2>
 
       <div className="w-[90%] h-[auto] flex flex-col lg:flex-row items-start justify-between gap-5">
@@ -27,7 +27,7 @@ const Info = () => {
             <div
               onMouseEnter={() => setDropdown(true)}
               onMouseLeave={() => setDropdown(false)}
-              className="w-full h-[300px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+              className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
             >
               <div
                 className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"

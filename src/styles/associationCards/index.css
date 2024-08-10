@@ -1,0 +1,118 @@
+.maincontainer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+.thecard{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+
+}
+
+.thecard:hover{
+    transform: rotateY(180deg);
+}
+
+.thefront{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    
+    color: #333;
+    text-align: center;
+
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.theback{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+
+    color: #333;
+    text-align: center;
+
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transform: rotateY(180deg);
+
+
+    overflow: hidden;
+    box-shadow: 5px 5px 15px #FFB11B ;
+}
+
+.thefront img{
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+ 
+    display: block;
+    transition: transform 0.3s;
+}
+
+.theback img{
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.overlay{
+    height: 0;
+    width: 100%;
+    background: linear-gradient(transparent,#82580ba7 58% );
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 4px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.3s;
+}
+
+.overlay h3{
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 80%;
+
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.overlay a{
+    margin-top: 10px;
+    color: #262626;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+
+    transition: background-color 0.3s; /* Cambiado a transición más corta */
+
+}
+.theback:hover img{
+    transform: scale(1.2);
+}
+.theback:hover .overlay {
+    height: 100%;
+}
+

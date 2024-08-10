@@ -8,7 +8,7 @@ import Newsletter from '../components/Home/Newsletter';
 import CarrouselEvents from '../components/Home/CarrouselEvents';
 import Associations from '../components/Home/Associations';
 import Internationals from '../components/Home/Internationals';
-import VerticalWrapper from '../components/Home/VerticalWrapper';
+import NationalTournaments from '../components/Home/NationalTournaments';
 
 const Home = () => {
   return (
@@ -36,13 +36,32 @@ const Home = () => {
       >
         <Internationals />
       </motion.div>
+      <div className='flex justify-center items-center pt-20  '>
+      <h2 className='text-3xl font-bold mb-6 m-auto '>Torneos Internacionales</h2>
+      </div>
+  
+      <motion.div 
+        whileInView={{ opacity: 1, y: 0 }} 
+        initial={{ opacity: 0, y: 50 }} 
+        transition={{ duration: 0.5 }}
+      >
+        <NationalTournaments />
+      </motion.div>
 
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }} 
         initial={{ opacity: 0, y: 50 }} 
         transition={{ duration: 0.5 }}
       >
-             <VerticalWrapper />
+        <Associations />
+      </motion.div>
+
+      <motion.div 
+        whileInView={{ opacity: 1, y: 0 }} 
+        initial={{ opacity: 0, y: 50 }} 
+        transition={{ duration: 0.5 }}
+      >
+             <Sponsors />
       </motion.div>
 
       <motion.div 

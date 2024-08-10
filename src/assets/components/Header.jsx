@@ -28,10 +28,12 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-primary-300/70  " : "bg-none  py-[20px]"
-      }  fixed  max-w-[1440px] z-30 left-0 right-0 mx-auto flex justify-between items-center px-[20px] lg:px-[80px] transition-all duration-300`}
+        isActive ? "bg-primary-300/70 py-[10px]  " : "bg-none  py-[20px] text-lg "
+      }  flex items-center justify-center fixed w-full  z-50 `}
     >
-      <img src= {image} alt="logo" width={'100px'} />
+      <img src= {image} alt="logo"      className={`${
+        isActive ? "w-[90px] " : "w-[100px] "
+      }  `}  />
       {/*nav initially hidden - show on desktop*/}
       <Nav />
       {/**btns - initially hidden -show on desktop */}

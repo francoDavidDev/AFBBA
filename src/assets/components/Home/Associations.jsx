@@ -1,92 +1,98 @@
-import React from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
-
+import React, { useState } from "react";
 import "react-vertical-timeline-component/style.min.css";
-
-import { styles } from "../../../styles";
+import "../../../styles/associationCards/index.css";
 import { ASSOCIATIONS } from "../../../constants";
-import { SectionWrapper } from "../../../hoc/index";
-import { textVariant } from "../../../utils/motion";
-
-const AssociationsCard = ({ experience }) => {
-  return (
-    <VerticalTimelineElement
-      contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div
-          className="flex justify-center rounded-full items-center w-[150px] h-[150px] bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: `url(${experience.icon})` }}
-        ></div>
-      }
-    >
-      <div>
-        <h3 className="text-white text-[20px] font-bold">{experience.title}</h3>
-        <p
-          className="text-secondary text-[24px] font-semibold"
-          style={{ margin: 0 }}
-        >
-          {experience.company_name}
-        </p>
-      </div>
-
-      <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.instagram.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            <a href={point} target="_blank">
-              Intagram
-            </a>
-          </li>
-        ))}
-      </ul>
-      <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.web.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            <a href={point} target="_blank">
-              Pagina Web
-            </a>
-          </li>
-        ))}
-      </ul>
-    </VerticalTimelineElement>
-  );
-};
 
 const Associations = () => {
-  return (
-    <>
-      <motion.div className="text-center  ">
-        <p className="text-white">TODAS LAS ASOCIACIONES DE</p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>ARGENTINA</h2>
-      </motion.div>
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedProvince, setSelectedProvince] = useState("");
+  const [showAll, setShowAll] = useState(false);
 
-      <div className="mt-20 flex flex-col ">
-        <VerticalTimeline>
-          {ASSOCIATIONS.map((experience, index) => (
-            <AssociationsCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
+  // Obtener provincias únicas para el selector
+  const provinces = Array.from(
+    new Set(ASSOCIATIONS.map((association) => association.date))
+  );
+
+  // Filtrar asociaciones según la provincia seleccionada y el término de búsqueda
+  const filteredAssociations = ASSOCIATIONS.filter((association) =>
+    (association.date.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === "") &&
+    (association.date === selectedProvince || selectedProvince === "")
+  );
+
+  // Mostrar solo las primeras 4 asociaciones si showAll es false
+  const visibleAssociations = showAll ? filteredAssociations : filteredAssociations.slice(0, 4);
+
+  return (
+    <section className="w-full h-[auto] my-20">
+      <div className="maincontainer w-full m-auto flex flex-col items-center">
+        {/* Campo de búsqueda */}
+        <div className="w-[80%] flex gap-10 flex-wrap justify-center items-center">
+          <input
+            type="text"
+            placeholder="Buscar por provincia"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="mb-4 p-2 border border-gray-300 rounded"
+          />
+
+          {/* Selector de provincias */}
+          <select
+            value={selectedProvince}
+            onChange={(e) => setSelectedProvince(e.target.value)}
+            className="mb-4 p-2 border border-gray-300 rounded"
+          >
+            <option value="">Todas las provincias</option>
+            {provinces.map((province, index) => (
+              <option key={index} value={province}>
+                {province}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="w-full flex gap-10 flex-wrap justify-center items-center">
+          {visibleAssociations.length > 0 ? (
+            visibleAssociations.map((association, index) => (
+              <div className="thecard" key={index}>
+                <div className="thefront bg-gray-800 border-[1px] border-gray-500">
+                  <img src={association.icon} alt={association.title} />
+                  <h3 className="px-4">{association.title}</h3>
+                </div>
+
+                <div className="theback bg-primary-400/70 border-[2px] border-primary-400/70">
+                  <img src={association.icon} alt={association.title} />
+                  <div className="overlay">
+                    <h3 className="text-sm">{association.title}</h3>
+                    <div className="flex justify-center gap-10">
+                      <a href={association.web[0]} target="_blank" rel="noopener noreferrer">
+                        VISITAR WEB
+                      </a>
+                      <a href={association.instagram[0]} target="_blank" rel="noopener noreferrer">
+                        INSTAGRAM
+                      </a>
+                    </div>
+                    <p className="pt-4 text-primary-300 text-lg">{association.date}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p>No se encontraron asociaciones para la provincia seleccionada.</p>
+          )}
+        </div>
+
+        {/* Botón de ver todas / ocultar */}
+        {filteredAssociations.length > 4 && (
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="mt-6 px-4 py-2 text-white bg-blue-500 rounded shadow-lg hover:bg-blue-600"
+          >
+            {showAll ? "Ocultar" : "Ver todas"}
+          </button>
+        )}
       </div>
-    </>
+    </section>
   );
 };
 
-export default SectionWrapper(Associations, "work");
+export default Associations;

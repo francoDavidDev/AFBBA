@@ -4,6 +4,7 @@ export const NAV = [
   { name: "INICIO", href: "/" },
   { name: "NOSOTROS", href: "/about" },
   { name: "REGLAMENTOS", href: "/reglaments" },
+  { name: "RESULTADOS", href: "/results" },
   { name: "CURSOS", href: "/courses" },
   { name: "CALENDARIO", href: "/calendar" },
 
@@ -60,33 +61,6 @@ export const PRESENT_HOME = [
   },
 ];
 
-import logo1 from "./assets/imgs/sponsors/hochSport.png";
-import logo2 from "./assets/imgs/sponsors/nucleoFit-Photoroom.png-Photoroom.png";
-import logo3 from "./assets/imgs/sponsors/americanforce-Photoroom.png-Photoroom-Photoroom.png-Photoroom.png";
-
-export const CARROUSEL_HERO = [
-  {
-    image: logo1,
-  },
-  {
-    image: logo2,
-  },
-  {
-    image: logo3,
-  },
-];
-
-export const SPONSORS = [
-  {
-    image: logo1,
-  },
-  {
-    image: logo2,
-  },
-  {
-    image: logo3,
-  },
-];
 
 
 

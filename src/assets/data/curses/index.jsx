@@ -1,3 +1,12 @@
+
+import image1 from '../../imgs/courses/image1.jpg'
+import image2 from '../../imgs/courses/image2.jpg'
+import image3 from '../../imgs/courses/image3.jpg'
+import image4 from '../../imgs/courses/image4.jpg'
+import image5 from '../../imgs/courses/image5.jpg'
+import image6 from '../../imgs/courses/image6.jpg'
+import image7 from '../../imgs/courses/image7.jpg'
+
 export const COURSES_DATA = [
   {
     id: 1,
@@ -10,7 +19,7 @@ export const COURSES_DATA = [
     schedule: "Lunes y Miércoles, 6:00 PM - 8:00 PM",
     location: "Gimnasio Central, Sala 3",
     requirements: "Ropa deportiva, zapatillas de atletismo. Se recomienda tener una buena condición física previa y estar dispuesto a seguir un entrenamiento riguroso.",
-    image: "https://via.placeholder.com/300",
+    image: image1,
     whatsappMessage: "Hola, estoy interesado en el curso de Atletismo. ¿Podrías darme más información?"
   },
   {
@@ -24,7 +33,7 @@ export const COURSES_DATA = [
     schedule: "Martes y Jueves, 7:00 AM - 9:00 AM",
     location: "Piscina Olímpica, Andén 5",
     requirements: "Traje de baño, gafas de natación, gorro. Se recomienda tener al menos una habilidad básica para nadar. El curso está adaptado para nadadores de todos los niveles.",
-    image: "https://via.placeholder.com/300",
+    image: image2,
     whatsappMessage: "Hola, estoy interesado en el curso de Natación. ¿Podrías darme más información?"
   },
   {
@@ -38,7 +47,7 @@ export const COURSES_DATA = [
     schedule: "Lunes, Miércoles y Viernes, 5:00 PM - 7:00 PM",
     location: "Centro de Ciclismo, Carril 2",
     requirements: "Bicicleta en buen estado, casco, guantes. Se recomienda tener experiencia previa en ciclismo, aunque el curso está diseñado para adaptarse a ciclistas de diferentes niveles.",
-    image: "https://via.placeholder.com/300",
+    image: image3,
     whatsappMessage: "Hola, estoy interesado en el curso de Ciclismo. ¿Podrías darme más información?"
   },
   {
@@ -52,7 +61,7 @@ export const COURSES_DATA = [
     schedule: "Lunes y Miércoles, 8:00 AM - 9:30 AM",
     location: "Estudio de Yoga, Sala 1",
     requirements: "Ropa cómoda, esterilla de yoga. Ideal para principiantes y personas que buscan una forma de mejorar su bienestar físico y mental.",
-    image: "https://via.placeholder.com/300",
+    image: image4,
     whatsappMessage: "Hola, estoy interesado en el curso de Yoga. ¿Podrías darme más información?"
   },
   {
@@ -66,7 +75,7 @@ export const COURSES_DATA = [
     schedule: "Martes y Jueves, 6:00 PM - 8:00 PM",
     location: "Dojo Martial Arts, Sala 4",
     requirements: "Ropa de entrenamiento, cinturón de artes marciales. El curso es adecuado tanto para principiantes como para personas con experiencia previa en artes marciales.",
-    image: "https://via.placeholder.com/300",
+    image: image5,
     whatsappMessage: "Hola, estoy interesado en el curso de Artes Marciales. ¿Podrías darme más información?"
   },
   {
@@ -80,7 +89,7 @@ export const COURSES_DATA = [
     schedule: "Lunes, Miércoles y Viernes, 7:00 AM - 8:30 AM",
     location: "Gimnasio CrossFit, Sala 2",
     requirements: "Ropa deportiva, zapatillas deportivas. Se recomienda tener una buena condición física previa y disposición para el entrenamiento intenso.",
-    image: "https://via.placeholder.com/300",
+    image: image6,
     whatsappMessage: "Hola, estoy interesado en el curso de CrossFit. ¿Podrías darme más información?"
   },
   {
@@ -94,21 +103,8 @@ export const COURSES_DATA = [
     schedule: "Martes y Jueves, 9:00 AM - 10:30 AM",
     location: "Estudio Pilates, Sala 3",
     requirements: "Ropa cómoda, esterilla de Pilates. Ideal para principiantes y personas que buscan mejorar su bienestar físico con un enfoque en la flexibilidad y el fortalecimiento del núcleo.",
-    image: "https://via.placeholder.com/300",
+    image: image7,
     whatsappMessage: "Hola, estoy interesado en el curso de Pilates. ¿Podrías darme más información?"
   },
-  {
-    id: 8,
-    title: "Curso de Spinning",
-    description: "Participa en sesiones de ciclismo en interiores con nuestro curso de Spinning. Mejora tu resistencia cardiovascular y tonifica tus músculos con entrenamientos intensos en una bicicleta estática en un entorno motivador. Las sesiones están diseñadas para ser energizantes y desafiantes.",
-    category: "Ciclismo",
-    price: "$140",
-    duration: "4 semanas",
-    instructor: "Elena Ruiz",
-    schedule: "Lunes y Miércoles, 6:00 PM - 7:00 PM",
-    location: "Gimnasio Central, Sala de Spinning",
-    requirements: "Bicicleta de spinning, ropa deportiva. No se requiere experiencia previa, pero se recomienda estar en buena forma física para aprovechar al máximo las sesiones de spinning.",
-    image: "https://via.placeholder.com/300",
-    whatsappMessage: "Hola, estoy interesado en el curso de Spinning. ¿Podrías darme más información?"
-  }
+
 ];

@@ -1,130 +1,88 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-import flyer_1 from "../../imgs/internationals/flyers/image5.jpg";
-import bannerVideo from "../../videos/internationals/bannerroro2.mp4";
-import flyer_2 from "../../imgs/internationals/flyers/image2.jpg";
-import banner from "../../imgs/internationals/banners/large/image3.jpg";
-
-import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle } from "react-icons/io";
-import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
+import React, { useRef, useState } from "react";
+import Slider from "react-slick";
+import { Link } from "react-router-dom";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { TOURNAMENTS_DATA } from "../../data/tournaments";
 
 const Internationals = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 742);
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef(null);
+  const [searchTerm, setSearchTerm] = useState(""); // Estado para el filtro
+  const sliderRef = useRef(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const INTERNATIONALS = [
-    {
-      titulo: "TITULO 3",
-      description: "asdsadsadadsadjsakdjlsakjklsajldjskadjlkadjslakdjs",
-      image: flyer_1,
-      video: bannerVideo,
-      banner: null,
-      backgroundColor: "bg-green-500",
-    },
-    {
-      titulo: "TITULO 3",
-      description: "asdsadsadadsadjsakdjlsakjklsajldjskadjlkadjslakdjs",
-      image: flyer_2,
-      video: null,
-      banner: banner,
-      backgroundColor: "bg-green-500",
-    },
-  ];
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === INTERNATIONALS.length - 1 ? 0 : prevIndex + 1));
+  const next = () => {
+    sliderRef.current.slickNext();
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? INTERNATIONALS.length - 1 : prevIndex - 1));
+  const previous = () => {
+    sliderRef.current.slickPrev();
   };
 
-  const toggleMute = () => {
-    setIsMuted((prevMuted) => !prevMuted);
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-    }
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: "linear"
   };
+
+  // Filtra los torneos para obtener solo aquellos con banners y tag nacional
+  // También aplica el filtro por título
+  const filteredTournaments = TOURNAMENTS_DATA.filter(tournament =>
+    tournament.banner &&
+    tournament.tag === "nacional" &&
+    tournament.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <section className="w-full h-[80vh] relative overflow-hidden">
-      {INTERNATIONALS[currentIndex].video ? (
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          src={INTERNATIONALS[currentIndex].video}
-          autoPlay
-          loop
-          muted={isMuted}
-          ref={videoRef}
+    <section className="w-full h-auto">
+      <h2 className="text-2xl font-bold mb-5 text-center">Torneos Nacionales</h2>
+      <div className="w-full mb-5 flex justify-center">
+        <input
+          type="text"
+          placeholder="Buscar por título..."
+          className="border rounded-lg p-2"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
-      ) : (
-        <img
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          src={INTERNATIONALS[currentIndex].banner}
-          alt="Banner"
-        />
-      )}
-      <div
-        className={`relative w-full h-full flex flex-col sm:flex-row items-center justify-center ${INTERNATIONALS[currentIndex].backgroundColor} ${isMobile ? "mt-[-50px]" : ""}`}
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.3)",
-          backgroundBlendMode: "darken",
-        }}
-      >
-        <div className="absolute top-4 right-4 z-10">
-          <button
-            onClick={toggleMute}
-            className="text-3xl text-white px-4 py-2 rounded-lg transition-colors duration-300"
-          >
-            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-          </button>
-        </div>
-        <div className="w-full sm:w-1/2 h-[80%] flex items-center justify-center"></div>
-        <div className={`backdrop-blur-md w-[400px] border-[1px] border-white/10 shadow-2xl rounded-lg sm:w-1/2 ml-56 mr-10 m-56 flex items-center justify-center ${isMobile ? "mt-8" : ""}`}>
-          <div className="max-w-sm w-[70%] mx-auto flex items-center justify-center">
-            <button
-              className="left-0 text-4xl text-white px-4 py-2 rounded-lg transition-colors duration-300 z-10"
-              onClick={prevSlide}
+      </div>
+      <div className="w-full h-full">
+        <Slider
+          ref={sliderRef}
+          {...settings}
+          className="slick-slide_themes"
+        >
+          {filteredTournaments.map((item, i) => (
+            <div
+              key={i}
+              className="w-full h-full bg-blue-400 flex items-center justify-center"
             >
-              <IoIosArrowDropleftCircle />
-            </button>
-            <div className="w-[300px] h-[350px] flex justify-center items-center">
-              <AnimatePresence initial={false} custom={currentIndex}>
-                {INTERNATIONALS.map((item, index) =>
-                  index === currentIndex ? (
-                    <motion.div
-                      key={index}
-                      className="flex items-center justify-center"
-                      initial={{ x: 100, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: -100, opacity: 0 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    >
-                      <img src={item.image} alt="" className="rounded-xl h-full w-full" />
-                    </motion.div>
-                  ) : null
-                )}
-              </AnimatePresence>
+              <Link to={`/tournament/${item.title}`}>
+                <img
+                  src={item.banner}
+                  alt={`Banner ${i}`}
+                  className="w-full h-full object-cover cursor-pointer"
+                />
+              </Link>
             </div>
-            <button
-              className="left-0 text-4xl text-white px-4 py-2 rounded-lg transition-colors duration-300 z-10"
-              onClick={nextSlide}
-            >
-              <IoIosArrowDroprightCircle />
-            </button>
-          </div>
+          ))}
+        </Slider>
+        <div className="w-full mt-5 flex justify-center items-center gap-8">
+          <button
+            className="btn-lg bg-primary-200 text-primary-300 hover:text-primary-200 hover:bg-primary-300 transition-all duration-150"
+            onClick={previous}
+          >
+            Previous
+          </button>
+          <button
+            className="btn-lg bg-primary-200 text-primary-300 hover:text-primary-200 hover:bg-primary-300 transition-all duration-150"
+            onClick={next}
+          >
+            Next
+          </button>
         </div>
       </div>
     </section>

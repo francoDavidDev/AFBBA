@@ -9,13 +9,13 @@ const EventsViews = () => {
   const { title, image, description } = item;
 
   return (
-    <section className="py-20 flex flex-col justify-center h-auto items-center w-full">
+    <section className="py-20 bg-red-500 h-[500px] flex flex-col justify-center  items-center w-full">
       <div
         className="w-full h-[300px] sm:h-[400px] bg-cover bg-top bg-no-repeat "
         style={{ backgroundImage: `url('${image}')` }}
       ></div>
 
-      <section className="w-full h-auto   flex flex-col justify-center gap-y-10">
+      <section className="w-full h-auto flex flex-col justify-center gap-y-10">
         {/* Contenedor de texto/ */}
         <div className="w-full h-auto  flex">
           {/* Contenido de texto/ */}
