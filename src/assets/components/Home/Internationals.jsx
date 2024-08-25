@@ -39,16 +39,7 @@ const Internationals = () => {
 
   return (
     <section className="w-full h-auto">
-      <h2 className="text-2xl font-bold mb-5 text-center">Torneos Nacionales</h2>
-      <div className="w-full mb-5 flex justify-center">
-        <input
-          type="text"
-          placeholder="Buscar por título..."
-          className="border rounded-lg p-2"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+     
       <div className="w-full h-full">
         <Slider
           ref={sliderRef}

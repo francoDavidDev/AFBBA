@@ -5,9 +5,7 @@ import Header from "./assets/components/Header";
 import Home from "./assets/pages/Home";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
-
 import Calendar from "./assets/pages/Calendar";
-
 
 import EventsViews from "./assets/components/Views/home/EventsViews";
 import RegistrationForm from "./assets/pages/RegistrationForm";
@@ -20,13 +18,13 @@ import Result from "postcss/lib/result";
 import Results from "./assets/pages/Result";
 import Footer from "./assets/components/footer";
 import TournamentDetails from "./assets/pages/TournamentDetails";
-
+import NoticesPage from "./assets/pages/Notices";
 
 const App = () => {
   return (
     <div>
       <HashRouter>
-      <Header/>
+        <Header />
         <Routes>
           <Route
             path="/"
@@ -88,7 +86,7 @@ const App = () => {
               </motion.div>
             }
           />
-      
+
           {/* ABOUT */}
 
           <Route
@@ -132,7 +130,7 @@ const App = () => {
           />
 
           <Route
-            path="/CourseDetails/:courseId"
+           path="/courses/:courseId"
             element={
               <motion.div
                 whileInView={{ opacity: 1, y: 0 }}
@@ -144,8 +142,8 @@ const App = () => {
             }
           />
 
-<Route
-          path="/tournament/:title"
+          <Route
+            path="/tournament/:title"
             element={
               <motion.div
                 whileInView={{ opacity: 1, y: 0 }}
@@ -157,9 +155,20 @@ const App = () => {
             }
           />
 
-
+          <Route
+            path="/notices"
+            element={
+              <motion.div
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.5 }}
+              >
+                <NoticesPage />
+              </motion.div>
+            }
+          />
         </Routes>
-        <Footer/>
+        <Footer />
       </HashRouter>
     </div>
   );

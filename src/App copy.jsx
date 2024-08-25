@@ -14,6 +14,7 @@ import MoreElite1 from "./assets/components/ElitePro/MoreElite1";
 import MoreElite2 from "./assets/components/ElitePro/MoreElite2";
 import EventsViews from "./assets/components/Views/home/EventsViews";
 import RegistrationForm from "./assets/pages/RegistrationForm";
+import NoticesPage from "./assets/pages/Notices";
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
 
           {/* REGISTRATION FORM */}
           <Route path="/EventViews/:id/RegistrationForm" element={<RegistrationForm />} />
+
+
+          <Route path="/notices" element={<NoticesPage />} />
 
         </Routes>
       </HashRouter>

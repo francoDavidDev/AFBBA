@@ -2,7 +2,7 @@ import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
-import { COURSES_DATA } from '../../data/curses';
+import { COURSES_DATA } from "../../data/courses/index";
 
 const CourseDetails = () => {
   const { courseId } = useParams();
@@ -13,7 +13,7 @@ const CourseDetails = () => {
   }
 
   return (
-    <div className="w-full h-auto flex flex-col items-center gap-y-10 bg-gradient-to-b from-gray-900 to-black text-white py-20">
+    <div className="w-full h-auto flex flex-col items-center gap-y-10 b text-white py-20">
       <div className="w-[90%] max-w-7xl mx-auto mt-8 gap-y-10">
         
         {/* Línea blanca animada */}

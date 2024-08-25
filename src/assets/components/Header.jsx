@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-primary-300/70 py-[10px]  " : "bg-none  py-[20px] text-lg "
+        isActive ? "bg-primary-300/70 py-[10px]  " : "bg-primary-300/70  py-[20px] text-lg "
       }  flex items-center justify-center fixed w-full  z-50 `}
     >
       <img src= {image} alt="logo"      className={`${

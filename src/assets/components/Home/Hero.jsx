@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 //import logo
 import logo from "../../imgs/logo.png";
 //import banner
-import banner from "../../imgs/hero/4.jpg";
+import banner from "../../imgs/hero/BANNER FAMF.png";
 
 
 function Hero() {
@@ -28,18 +28,7 @@ function Hero() {
     >
     
 
-      {/* title and subtitle */}
-      <div className="absolute w-[80%] m-auto text-white flex flex-col justify-center items-center left-0 right-0 top-[23%] sm:top-[30%] gap-y-1 ">
-        <div>
-          <img src={logo} alt="logo" width={150} />
-        </div>
-        <div className="text-center flex flex-col gap-y-4">
-          <h1 className="h2 text-primary-400">FAMF</h1>
-          <h2 className="h4  text-white uppercase w-[100%] m-auto ">
-            Federacion de Fisicoculturismo & Fitness
-          </h2>
-        </div>
-      </div>
+ 
 
    
      

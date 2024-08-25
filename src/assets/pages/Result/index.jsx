@@ -1,95 +1,108 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { TOURNAMENTS_DATA } from '../../data/tournaments'; // Ajusta la ruta según tu estructura
-import "../../../styles/resutlCards/index.css";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import "../../../styles/reglametCards/index.css";
+import { REGLAMETS } from "../../data/reglaments";
 
-const TournamentDetails = () => {
-  const { title } = useParams(); // Usa el título en lugar del id
-  const tournament = TOURNAMENTS_DATA.find(t => t.title === decodeURIComponent(title));
+const Reglaments = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  if (!tournament) {
-    return <div>Torneo no encontrado</div>;
-  }
+  const handleSetIndex = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const filteredReglaments = Object.values(REGLAMETS).filter((reglament) =>
+    reglament.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <section className="w-full h-auto flex flex-col justify-center items-center gap-y-10">
-      {/* Sección de encabezado */}
-      <div className="w-full h-[100vh] text-center flex justify-start pt-36 items-center flex-col">
-        <h2 className="xl:text-[140px] lg:text-[100px] md:text-[80px] text-[50px] w-full h-auto">
-          {tournament.title.toUpperCase()}
-        </h2>
-        <p className="xl:text-[50px] lg:text-[40px] md:text-[30px] text-[20px] text-primary-400">
-          {tournament.subtitle || "Información del Torneo"}
-        </p>
-      </div>
-
-      {/* Sección de detalles del torneo */}
-      <div className="w-full h-auto px-20">
-        <div className="container">
-          <div className="card__container">
-            <article className="card__article">
-              <img
-                src={tournament.flyer}
-                alt={tournament.title}
-                className="card__img"
-              />
-              <div className="card__data">
-                <p><strong>Dirección:</strong> {tournament.address}</p>
-                <p><strong>Localidad:</strong> {tournament.locality}</p>
-                <p><strong>Fecha:</strong> {tournament.date}</p>
-                <p><strong>Horario de Inscripción:</strong> {tournament.hour_inscription}</p>
-                <p><strong>Inicio de Competencia:</strong> {tournament.start_competition}</p>
-                {tournament.more_info && (
-                  <div>
-                    <h2>Más Información</h2>
-                    {tournament.more_info.map((info, index) => (
-                      <p key={index}><strong>{info.name}:</strong> {info.contact}</p>
-                    ))}
-                  </div>
-                )}
-                {tournament.social_networks && (
-                  <div>
-                    <h2>Redes Sociales</h2>
-                    {tournament.social_networks.map((network, index) => (
-                      <div key={index}>
-                        {network.facebook && (
-                          <a href={network.facebook.href} target="_blank" rel="noopener noreferrer">
-                            {network.facebook.name}
-                          </a>
-                        )}
-                        {network.instagram && (
-                          <a href={network.instagram.href} target="_blank" rel="noopener noreferrer">
-                            {network.instagram.name}
-                          </a>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      {/* Sección de calendario */}
-      <div
-        className="w-full text-center h-[300px] flex flex-col justify-end items-center py-8 mt-8 bg-cover bg-none bg-top"
-        style={{ backgroundImage: `url('${bannerCalendar}')` }}
+    <motion.section
+      className="w-full h-auto flex flex-col justify-center gap-y-10 items-center"
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        className="w-[90%] h-auto m-auto mt-[100px] gap-y-10"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.5 }}
       >
-        <div>
-          <h2 className="text-primary-300 font-bold">CALENDARIO</h2>
-          <p className="text-primary-400">NO TE QUEDES AFUERA</p>
-        </div>
-        <Link
-          to="/calendar"
-          className="mt-4 inline-block bg-primary-300 text-primary-500 px-6 py-5 rounded-md font-semibold"
+        <motion.div
+          className="h-[1px] bg-white flex justify-center mb-8"
+          initial={{ width: 0, transformOrigin: "center" }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 1 }}
+        />
+        <motion.div
+          className="flex justify-center flex-col text-center mt-10"
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.5 }}
         >
-          Ir al calendario
-        </Link>
+          <motion.h2
+            className="text-[60px] font-bold tracking-widest"
+            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5 }}
+          >
+            AFBBA REGLAMENTOS
+          </motion.h2>
+          <motion.p
+            className="text-[30px] text-primary-400/80 mb-4"
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+          >
+            AQUÍ PODRÁS VER TODOS LOS REGLAMENTOS
+          </motion.p>
+        </motion.div>
+      </motion.div>
+
+      <div className="inputBox m-auto py-20">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          required="required"
+        />
+        <span>Filtrar</span>
       </div>
-    </section>
+      <div className="w-full h-full flex justify-center items-center gap-10 flex-wrap">
+        {filteredReglaments.length > 0 ? (
+          filteredReglaments.map((reglament, index) => (
+            <div key={index} className="wrapper">
+              <div className="content">
+                <div className="profile_pic">
+                  <img src={reglament.image} alt={reglament.title} />
+                </div>
+                <h2>{reglament.title}</h2>
+                <div className="btns">
+                  <a
+                    href={reglament.pdf}
+                    className="f-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver reglamento
+                  </a>
+                  <a
+                    href={reglament.pdf}
+                    download
+                    className="f-btn"
+                  >
+                    Descargar Reglamento
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No se encontraron reglamentos.</p>
+        )}
+      </div>
+    </motion.section>
   );
 };
 
-export default TournamentDetails;
+export default Reglaments;
