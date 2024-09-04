@@ -19,12 +19,13 @@ import MERCOSUR_FLYER from '../../imgs/tournaments/internationals/flyers/mercosu
 export const TOURNAMENTS_DATA = [
   {
     id: 1,
-    flyer:ARGENTINO_FLYER,
-    banner:ARGENTINO_BANNER,
+    flyer: ARGENTINO_FLYER,
+    banner: ARGENTINO_BANNER,
     title: "CAMPEONATO ARGENTINO",
     tag: "nacional",
     address: "TEATRO ENRIQUE SANTOS DICEPOLO",
-    date: "",
+    date: "2024-08-24",
+    formattedDate: "2024-08-24", // Considera poner una fecha válida o eliminarla si no es aplicable
     locality: "Merlo",
     hour_inscription: "Sábado 09:00 a 12:00 hs",
     start_competition: "Sábado 15:00 hs - Domingo 10:00 hs",
@@ -43,13 +44,14 @@ export const TOURNAMENTS_DATA = [
   },
   {
     id: 2,
-    flyer:NOCHE_CAMPEONES_BANNER,
-    banner:null,
+    flyer: NOCHE_CAMPEONES_BANNER,
+    banner: null,
     tag: "internacional",
     title: "NOCHE DE CAMPEONES",
     address: "CORDOBA",
     locality: "CARLOS PAZ",
     date: "2 y 3 de Noviembre",
+    formattedDate: "2024-11-02", // Formato estandarizado
     hour_inscription: "Sábado 09:00 a 12:00 hs",
     start_competition: "Sábado 15:00 hs - Domingo 10:00 hs",
     more_info: null,
@@ -57,14 +59,15 @@ export const TOURNAMENTS_DATA = [
   },
   {
     id: 3,
-    flyer:PROV_UNIDAS_FLYER,
-    banner:PROV_UNIDAS_BANNER,
+    flyer: PROV_UNIDAS_FLYER,
+    banner: PROV_UNIDAS_BANNER,
     tag: "nacional",
     title: "COPA PROVINCIAS UNIDAS",
     address: "CINE TEATRO AMERICA 25 DE MAYO Y ESPAÑA",
     locality: "SALTA CAPITAL",
     date: "21 de Septiembre",
-    hour_inscription: "inscripcion y pesaje de 9 a 11 hs",
+    formattedDate: "2024-09-21", // Formato estandarizado
+    hour_inscription: "inscripción y pesaje de 9 a 11 hs",
     start_competition: "inicio de competencia 13:00hs",
     more_info: [{ name: "Osvaldo Medina ", contact: "+54 9 3875 702885" }],
     social_networks: [
@@ -82,24 +85,23 @@ export const TOURNAMENTS_DATA = [
   },
   {
     id: 4,
-    flyer:PATAGONICO_FLYER,
-    banner:PATAGONICO_BANNER,
+    flyer: PATAGONICO_FLYER,
+    banner: PATAGONICO_BANNER,
     tag: "nacional",
     title: "SUPER PATAGONICO 'FISICOCULTURISMO Y FITNESS",
     address: null,
     locality: null,
     date: "Sabado 5 de Octubre",
-    hour_inscription: "inscripcion Sabado 10:00hs a 12:00hs",
+    formattedDate: "2024-10-05", // Formato estandarizado
+    hour_inscription: "inscripción Sábado 10:00hs a 12:00hs",
     start_competition: "inicio de competencia 15:00hs",
-
     more_info: [
       {
-        name: "Adrian Ledesma Presidente AF CHUBUT  ",
+        name: "Adrian Ledesma Presidente AF CHUBUT",
         contact: "+54 9 280 4415450",
       },
       { name: "Secretario FAMF", contact: "+54 9 3794076303" },
     ],
-
     social_networks: [
       {
         facebook: <FaFacebook />,
@@ -115,24 +117,24 @@ export const TOURNAMENTS_DATA = [
   },
   {
     id: 5,
-    flyer:MERCOSUR_FLYER,
-    banner:null,
+    flyer: MERCOSUR_FLYER,
+    banner: null,
     tag: "internacional",
     title: "COPA MERCOSUR 2024",
     address: 'MENDOZA',
     locality: 'ARGENTINA',
     date: "4 Y 5 DE MAYO",
+    formattedDate: "2024-05-04", // Formato estandarizado
     hour_inscription: null,
     start_competition: null,
-
     more_info: [
       {
-        name: "Dario Dominguez Promotor  ",
+        name: "Dario Dominguez Promotor",
         contact: "+54 9 261 515 6689",
       },
-      { name: "Osvaldo Medina Secretario", contact: "+549 379 407 6303" },
+      { name: "Osvaldo Medina Secretario", contact: "+54 9 379 407 6303" },
     ],
-
     social_networks: null
   },
 ];
+

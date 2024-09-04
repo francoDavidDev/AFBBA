@@ -1,25 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
-import { delay, motion, useAnimate } from "framer-motion";
-import image from "../imgs/calendar/wheyProtein.jpg";
-import banner from "../imgs/calendar/bannerMain2.png";
-import poweradeVideo from "../videos/powerade.mp4";
-import { CALENDAR } from "../../data";
 import CardLarge from "../components/Calendar/CardLarge";
 import CardSmall from "../components/Calendar/CardSmall";
 import file from "../../files/rules.pdf";
-import bsn from '../imgs/sponsors/bsn.jpg';
-import sansongym from '../imgs/sponsors/sansongym.jpg';
-import vees from '../imgs/sponsors/vees.jpg';
-
-const SPONSORS = [
-  { image: bsn },
-  { image: sansongym },
-  { image: vees },
-];
+import { TOURNAMENTS_DATA } from "../data/tournaments";
+import CarrouselSponsors from "../components/CarrouselSponsors";
+import { motion } from "framer-motion";
 
 const ElitePro = () => {
   const [w, setW] = useState(window.innerWidth);
-  const [dropdown, setDropdown] = useState("");
+  const [filteredTournaments, setFilteredTournaments] = useState(TOURNAMENTS_DATA);
+  const [sortOrder, setSortOrder] = useState("newest"); // "newest" or "oldest"
   const videoRef = useRef();
 
   useEffect(() => {
@@ -32,109 +22,106 @@ const ElitePro = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Sort the tournaments whenever the sortOrder changes
+    const sorted = [...filteredTournaments].sort((a, b) => {
+      const dateA = new Date(a.formattedDate);
+      const dateB = new Date(b.formattedDate);
+      return sortOrder === "newest" ? dateB - dateA : dateA - dateB;
+    });
+
+    setFilteredTournaments(sorted);
+  }, [sortOrder]);
+
+  // Toggle sort order between "newest" and "oldest"
+  const toggleSortOrder = () => {
+    setSortOrder((prevOrder) => (prevOrder === "newest" ? "oldest" : "newest"));
+  };
+
   return (
-    <section className="w-full h-auto bg-gradient-to-t from-primary-300 to-primary-100 flex flex-col justify-center">
-      <div
-        className="w-full h-[100vh] flex flex-col-reverse bg-center bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url('${banner}')` }}
-      ></div>
+    <section className="w-full h-auto flex flex-col justify-center gap-y-10">
+      <motion.div
+        className="w-[90%] h-auto m-auto mt-[100px]"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          className="h-[1px] bg-white flex justify-center"
+          initial={{ width: 0, transformOrigin: "center" }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 1 }}
+        />
 
-      <div className="w-full h-auto flex">
-        <div className="w-full h-full flex flex-col justify-center">
-          <div className="text-center my-10 flex flex-col gap-y-10">
-            <h1 className="h1 text-primary-400">CALENDARIO</h1>
-            <p className="w-[90%] md:w-[70%] text-lg md:text-2xl text-left m-auto tracking-[4px] leading-loose font-light">
-              <span className="text-primary-400">
-                La Federación de Fisicoculturismo
-              </span>{" "}
-              El calendario es una herramienta indispensable para los
-              aficionados y competidores de todo el país. Aquí, los usuarios
-              pueden explorar y acceder a información detallada sobre los
-              próximos torneos, incluyendo fechas, ubicaciones y detalles sobre
-              las categorías de competición. Además, el calendario proporciona
-              información sobre las reglas y regulaciones de cada torneo,
-              garantizando así que los participantes estén debidamente
-              informados y preparados para competir. Ya sea que se trate de un
-              culturista experimentado o un novato entusiasta.
-            </p>
-          </div>
-        </div>
-      </div>
+        <motion.div
+          className="flex justify-center flex-col text-center mt-10"
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.h2
+            className="text-[60px] font-bold tracking-widest"
+            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5 }}
+          >
+            ENTERATE DE LOS ULTIMOS EVENTOS
+          </motion.h2>
+          <motion.p
+            className="text-[30px] text-primary-400/80 mb-4"
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+          >
+            TODOS LOS EVENTOS DISPONIBLES
+          </motion.p>
+        </motion.div>
+      </motion.div>
 
-      <div className="flex justify-center items-center flex-col text-center gap-y-6 py-10">
-        <h2 className="h3 uppercase text-primary-400 w-[90%]">
-          ENTERATE DE LOS ULTIMOS EVENTOS
-        </h2>
-        <h5 className="h5 w-[90%] md:w-[70%] text-left text-lg tracking-[4px] font-light">
-          Podes ver en nuestro calendario los últimos eventos, no te quedes
-          afuera, anotate como competidor o como visitante. Lee bien las reglas
-          y las fechas de los eventos.
-        </h5>
+      <div className="flex flex-col items-center gap-y-4">
+        <button
+          onClick={toggleSortOrder}
+          className="mt-4 p-2 bg-primary-400 text-white rounded"
+        >
+          Ordenar por {sortOrder === "newest" ? "Más Viejo" : "Más Nuevo"}
+        </button>
       </div>
 
       <div className="h-[auto] w-[98%] m-auto flex lg:flex-row flex-col justify-center gap-y-5 items-start">
         <div className="md:w-[100%] w-[100%] h-[auto] gap-y-5 flex flex-col justify-center items-center">
-          {CALENDAR.map((item, index) =>
+          {filteredTournaments.map((item, index) =>
             w <= 640 ? (
               <CardSmall
                 key={index}
                 date={item.date}
                 title={item.title}
-                subtitle={item.subtitle}
-                hour={item.hour}
-                hours={item.hours}
-                zone={item.zone}
-                rules={item.rules}
+                subtitle={item.locality}
+                hour={item.hour_inscription}
+                hours={item.start_competition}
+                zone={item.address}
+                formattedDate={item.formattedDate}
                 file={file}
+                flyer={item.flyer}
               />
             ) : (
               <CardLarge
                 key={index}
                 date={item.date}
                 title={item.title}
-                subtitle={item.subtitle}
-                hour={item.hour}
-                hours={item.hours}
-                zone={item.zone}
-                rules={item.rules}
+                subtitle={item.locality}
+                hour={item.hour_inscription}
+                hours={item.start_competition}
+                zone={item.address}
+                formattedDate={item.formattedDate}
                 file={file}
+                flyer={item.flyer}
               />
             )
           )}
         </div>
-
-        <div className="h-[full] md:h-[auto] w-full lg:w-[30%] flex flex-row gap-5 lg:flex-col justify-center items-center flex-wrap">
-          <img src={image} alt="" className="w-full h-full sm:w-[300px] sm:h-[200px]" />
-          <img src={image} alt="" className="w-full h-full sm:w-[300px] sm:h-[200px]" />
-        </div>
       </div>
 
-      <div className="w-full h-[auto] py-5 justify-center items-center">
-        <div className="w-[90%] flex justify-start items-center m-auto py-10">
-          <h5 className="h5 text-primary-400">EVENT SPONSORS</h5>
-        </div>
-        <div className="w-[90%] m-auto">
-          <div className="flex flex-row justify-start items-center m-auto gap-x-10">
-            {SPONSORS.map((item, index) => (
-              <div key={index} className="w-[200px] h-[100px]">
-                <img src={item.image} alt="" className="w-full h-full" />
-              </div>
-            ))}
-            <div className="w-[500px] h-[200px] flex-grow">
-              <video
-                className="pointer-events-none w-full h-full scale"
-                playsInline
-                preload="none"
-                muted
-                autoPlay
-                loop
-              >
-                <source src={poweradeVideo} ref={videoRef} type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CarrouselSponsors />
     </section>
   );
 };

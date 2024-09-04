@@ -19,11 +19,16 @@ import Results from "./assets/pages/Result";
 import Footer from "./assets/components/footer";
 import TournamentDetails from "./assets/pages/TournamentDetails";
 import NoticesPage from "./assets/pages/Notices";
+import ResultsCampeonatoArgentino from "./assets/components/Results/ResultsCampeonatoArgentino";
+
+import ScrollToTop from "./assets/utils/ScrollToTop";
 
 const App = () => {
   return (
     <div>
+      
       <HashRouter>
+      <ScrollToTop>
         <Header />
         <Routes>
           <Route
@@ -167,9 +172,25 @@ const App = () => {
               </motion.div>
             }
           />
+
+<Route
+            path="/campeonatoArgentinoResults"
+            element={
+              <motion.div
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.5 }}
+              >
+                <ResultsCampeonatoArgentino />
+              </motion.div>
+            }
+          />
+     
         </Routes>
         <Footer />
+        </ScrollToTop>
       </HashRouter>
+
     </div>
   );
 };

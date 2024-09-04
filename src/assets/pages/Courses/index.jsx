@@ -17,19 +17,13 @@ const CourseCard = ({ course }) => {
     >
       {/* Tarjeta del Curso */}
       <div className="relative bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform duration-300 group-hover:scale-105 h-[400px]">
-      <Link  to={`/courses/${course.id}`}>
-       <img
-          src={course.image}
-          alt={course.title}
-          className="w-full h-[250px] object-cover"
-        />
+        <Link to={`/courses/${course.id}`}>
+          <img
+            src={course.imageMain}  
+            alt={course.title}
+            className="w-full h-[100%] object-cover"
+          />
         </Link>
-        <div className="p-4 h-[150px] flex flex-col justify-between">
-          <h3 className="text-xl font-semibold text-gray-800">{course.title}</h3>
-          <p className="text-gray-600 text-sm mt-2">
-            {course.description.substring(0, 80)}...
-          </p>
-        </div>
       </div>
     </div>
   );
@@ -37,15 +31,18 @@ const CourseCard = ({ course }) => {
 
 // Componente principal que muestra todos los cursos
 const Courses = () => {
-  const [search, setSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("Todos");
 
   // Filtrar cursos según la búsqueda y el filtro seleccionado
   const filteredCourses = COURSES_DATA.filter(
     (course) =>
       (filter === "Todos" || course.category === filter) &&
-      course.title.toLowerCase().includes(search.toLowerCase())
+      course.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // Obtener categorías únicas de los cursos
+  const categories = ["Todos", ...new Set(COURSES_DATA.map(course => course.category))];
 
   return (
     <section className="w-full flex justify-center items-center flex-col gap-y-10 ">
@@ -61,7 +58,7 @@ const Courses = () => {
           animate={{ width: "100%" }}
           transition={{ duration: 1 }}
         />
-        
+
         <motion.div
           className="flex justify-center flex-col text-center mt-10"
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,25 +85,37 @@ const Courses = () => {
       </motion.div>
 
       {/* Filtro y Buscador */}
-      <div className="w-[90%] flex flex-col sm:flex-row justify-between items-center mb-8">
-        {/* Buscador */}
-        <input
-          type="text"
-          placeholder="Buscar cursos..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="p-2 border text-black border-gray-300 rounded-lg mb-4 sm:mb-0 w-full sm:w-1/2"
-        />
+      <div className="w-[90%] flex flex-col sm:flex-row justify-center items-center gap-y-4 mb-8">
+        <div className="inputBox py-20 mx-auto">
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            required="required"
+          />
+          <span>Filtrar</span>
+        </div>
+
         {/* Filtro */}
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="p-2 border border-gray-300 text-black rounded-lg w-full sm:w-1/4"
+          className="w-full sm:w-1/4 p-2 bg-[#1d2b3a] border border-gray-300 text-white rounded-lg outline-none transition duration-500 ease-in-out focus:border-[#00dfc4] hover:scale-[110%] mx-auto"
+          style={{
+            padding: "10px",
+            border: "1px solid rgba(255, 255, 255, 0.25)",
+            background: "#1d2b3a",
+            borderRadius: "5px",
+            color: "#fff",
+            fontSize: "1em",
+            transition: "0.5s",
+          }}
         >
-          <option value="Todos">Todos</option>
-          <option value="Category1">Categoría 1</option>
-          <option value="Category2">Categoría 2</option>
-          {/* Agrega más opciones según tus categorías */}
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
       </div>
 
@@ -116,7 +125,7 @@ const Courses = () => {
           <CourseCard key={course.id} course={course} />
         ))}
       </div>
-      <CarrouselSponsors/>
+      <CarrouselSponsors />
     </section>
   );
 };

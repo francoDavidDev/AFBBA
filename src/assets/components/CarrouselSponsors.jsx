@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // Import react-slick
 import Slider from "react-slick";
 // Import css files
@@ -6,9 +6,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { Link } from "react-router-dom";
-import { EVENTS } from "../data/home";
+import { SPONSORS } from "../data/sponsors";
 
 const CarrouselSponsors = () => {
+  const [randomBanner, setRandomBanner] = useState(null);
+
+  useEffect(() => {
+    // Seleccionar una imagen aleatoria
+    const randomSponsor = SPONSORS[Math.floor(Math.random() * SPONSORS.length)];
+    setRandomBanner(randomSponsor.image);
+  }, []);
+
   var settings = {
     dots: false,
     infinite: true,
@@ -45,33 +53,30 @@ const CarrouselSponsors = () => {
       },
     ],
   };
-  return (
-    <div className="w-full">
-    <Slider {...settings} className="slick-slide_themes">
-      {EVENTS.map((item, i) => (
-        <Link to={`/EventsViews/${item.id}`} key={i}>
-          <div
-            className="rounded-xl m-1 overflow-hidden w-[70%] h-[150px] cursor-pointer bg-no-repeat bg-cover bg-center duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.0)]"
-            style={{ backgroundImage: `url('${item.image}')` }}
-          ></div>
-         
-        </Link>
-      ))}
-    </Slider>
 
-    <Slider {...settings} className="slick-slide_themes">
-      {EVENTS.map((item, i) => (
-        <Link to={`/EventsViews/${item.id}`} key={i}>
+  return (
+    <div className="w-full my-10 ">
+      <Slider {...settings} className="slick-slide_themes">
+        {SPONSORS.map((item, i) => (
+          <Link key={i} to={item.link || "#"} target="_blank" rel="noopener noreferrer">
+            <div
+              className="rounded-xl m-1 overflow-hidden w-[70%] h-[150px] cursor-pointer bg-no-repeat bg-cover bg-center duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.0)]"
+              style={{ backgroundImage: `url('${item.image}')` }}
+            ></div>
+          </Link>
+        ))}
+      </Slider>
+
+      {/* Sección del banner con imagen aleatoria */}
+      <div className="w-full mt-10 flex justify-center items-center">
+        {randomBanner && (
           <div
-            className="rounded-xl m-1 overflow-hidden w-[70%] h-[150px] cursor-pointer bg-no-repeat bg-cover bg-center duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.0)]"
-            style={{ backgroundImage: `url('${item.image}')` }}
+            className="w-full h-[200px] md:h-[400px] bg-repeat-x bg-center rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+            style={{ backgroundImage: `url('${randomBanner}')` }}
           ></div>
-         
-        </Link>
-      ))}
-    </Slider>
-  </div>
-  
+        )}
+      </div>
+    </div>
   );
 };
 

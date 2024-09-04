@@ -10,7 +10,7 @@ import CarrouselAbout from "../../components/About/CarrouselAbout";
 const About = () => {
 
   return (
-    <section className="w-full h-auto flex flex-col justify-center items-center gap-y-10  bg-gradient-to-b from-primary-300 to-black">
+    <section className="w-full h-auto flex flex-col justify-center items-center gap-y-10  ">
       <div className="w-[90%] min-h-screen m-auto mt-[100px] gap-y-10">
         {/* Animación del div */}
         <motion.div

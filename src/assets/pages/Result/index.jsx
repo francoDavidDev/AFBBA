@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import "../../../styles/reglametCards/index.css";
-import { REGLAMETS } from "../../data/reglaments";
+import "../../../styles/resutlCards/index.css";
 
-const Reglaments = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+import { RESULTS } from "../../data/results";
+import { Link } from "react-router-dom";
+
+const Results = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSetIndex = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  const filteredReglaments = Object.values(REGLAMETS).filter((reglament) =>
-    reglament.title.toLowerCase().includes(searchTerm.toLowerCase())
+  // Filtra los resultados según el término de búsqueda
+  const filteredResults = RESULTS.filter((result) =>
+    result.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -46,7 +44,7 @@ const Reglaments = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5 }}
           >
-            AFBBA REGLAMENTOS
+            AFBBA RESULTADOS
           </motion.h2>
           <motion.p
             className="text-[30px] text-primary-400/80 mb-4"
@@ -54,7 +52,7 @@ const Reglaments = () => {
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
           >
-            AQUÍ PODRÁS VER TODOS LOS REGLAMENTOS
+            AQUÍ PODRÁS VER TODOS LOS RESULTADOS
           </motion.p>
         </motion.div>
       </motion.div>
@@ -68,41 +66,41 @@ const Reglaments = () => {
         />
         <span>Filtrar</span>
       </div>
+      
       <div className="w-full h-full flex justify-center items-center gap-10 flex-wrap">
-        {filteredReglaments.length > 0 ? (
-          filteredReglaments.map((reglament, index) => (
-            <div key={index} className="wrapper">
-              <div className="content">
-                <div className="profile_pic">
-                  <img src={reglament.image} alt={reglament.title} />
-                </div>
-                <h2>{reglament.title}</h2>
+        {filteredResults.length > 0 ? (
+          filteredResults.map((result, index) => (
+            <div key={index} className="card__article">
+              <div className="card__img rounded-xl">
+                <img src={result.image} alt={result.title} className="rounded-xl" />
+              </div>
+              <div className="card__data">
+                <h2 className="card__title">{result.title}</h2>
                 <div className="btns">
-                  <a
-                    href={reglament.pdf}
-                    className="f-btn"
-                    target="_blank"
+                  <Link
+                    to={result.path}
+                    className="card__button"
                     rel="noopener noreferrer"
                   >
-                    Ver reglamento
-                  </a>
+                    Ver Resultados
+                  </Link>
                   <a
-                    href={reglament.pdf}
+                    href={result.pdf}
                     download
-                    className="f-btn"
+                    className="card__button"
                   >
-                    Descargar Reglamento
+                    Descargar Resultado
                   </a>
                 </div>
               </div>
             </div>
           ))
         ) : (
-          <p>No se encontraron reglamentos.</p>
+          <p>No se encontraron resultados.</p>
         )}
       </div>
     </motion.section>
   );
 };
 
-export default Reglaments;
+export default Results;

@@ -35,10 +35,11 @@ footer .social_icon li a {
 
 footer .social_icon li a:hover {
   transform: translateY(-10px);
+  color: gold;
 }
 
 footer .menu li a {
-  font-size: 1.2em;
+  font-size: 1em;
   color:gold;
   margin: 0 10px;
   display: inline-block;

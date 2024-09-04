@@ -1,17 +1,20 @@
 // results.js
+import campeonato_argentino from '../../imgs/tournaments/nationals/flyers/ARGENTINO.jpg'
+// sabado
+import pdf_sabado_campeonato_argentino from '../../pdf/campeonato_argentino/sabado.pdf'
+import pdf_domingo_campeonato_argentino from '../../pdf/campeonato_argentino/domingo.pdf'
+
+
 export const RESULTS = [
     {
-      title: "Torneo Nacional 2024",
+      title: "Campeonato Argentino",
       year: 2024,
       pdf: "path/to/national_tournament_2024.pdf",
-      image: "path/to/national_tournament_2024.jpg",
+      image: campeonato_argentino,
+      path:'/campeonatoArgentinoResults',
+      sabado:pdf_sabado_campeonato_argentino,
+      domingo:pdf_domingo_campeonato_argentino
     },
-    {
-      title: "Copa Sudamericana 2024",
-      year: 2024,
-      pdf: "path/to/southamerican_cup_2024.pdf",
-      image: "path/to/southamerican_cup_2024.jpg",
-    },
-    // Agrega más resultados según sea necesario
+ 
   ];
   

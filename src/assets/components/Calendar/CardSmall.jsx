@@ -1,5 +1,4 @@
 import React from "react";
-// import icon
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
@@ -13,6 +12,8 @@ const CardSmall = ({
   hour,
   date,
   file,
+  formattedDate,
+  flyer // Asegúrate de que el flyer se pase como prop
 }) => {
   const RULES_PDF = file;
 
@@ -30,46 +31,36 @@ const CardSmall = ({
         aTag.remove();
       });
   };
-  return (
-    <div className="w-[90%] bg-[#282728] p-5 rounded-lg  text-primary-200 [200px] sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2  transition-all duration-300  hover:rounded-xl  hover:shadow-primary-400 hover:shadow-md  shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ">
-      <div className="h-full w-full p-3  ">
-        <h4 className="h4 text-primary-200 font-light text-2xl ">{title} </h4>
-        {/* reglasa */}
-        <div className="flex justify-start items-start gap-10 py-5 font-bold  ">
-          <p
-            onClick={() => {
-              downloadFileAtURL(RULES_PDF);
-            }}
-            className="text-md hover:text-primary-400 transition-all duration-200 cursor-pointer hover:scale-105  "
-          >
-            VER REGLAS
-          </p>
-          <p className="text-md  hover:text-primary-400 hover:scale-105 transition-all duration-200 cursor-pointer  ">
-            INSCRIPCIONES
-          </p>
-        </div>
-        <h3 className="h3  text-primary-200">{date}</h3>
-      </div>
-      <div className=" h-full w-[100%]   flex flex-col sm:flex-row justify-between  text-left ">
-        <div className="p-2 w-full  flex  flex-col justify-start gap-y-2 ">
-          <h5 className="text-primary-200 font-light h4 ">{subtitle}</h5>
 
-          <div className="h-full     w-full ">
-            <p className="p text-primary-200 ">
-              <span className="text-primary-400  ">{rules.split(" ")[0]}</span>{" "}
-              {rules.substring(rules.indexOf(" ") + 1)}
+  return (
+    <div
+      className="w-[90%] bg-cover bg-center bg-[#282728] p-5 rounded-lg text-primary-200 sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+      style={{ backgroundImage: `url(${flyer})` }}
+    >
+      <div className="h-full w-full p-3 bg-black bg-opacity-50 rounded-lg flex flex-col justify-between">
+        <div className="flex flex-col gap-y-2">
+          <h4 className="h4 text-primary-200 font-light text-2xl">{title}</h4>
+          <div className="flex justify-start items-start gap-10 py-5 font-bold">
+            <p
+              onClick={() => {
+                downloadFileAtURL(RULES_PDF);
+              }}
+              className="text-md hover:text-primary-400 transition-all duration-200 cursor-pointer hover:scale-105"
+            >
+              VER REGLAS
+            </p>
+            <p className="text-md hover:text-primary-400 hover:scale-105 transition-all duration-200 cursor-pointer">
+              INSCRIPCIONES
             </p>
           </div>
+          <h3 className="h3 text-primary-200">{formattedDate}</h3>
         </div>
-        <div className="h-full flex flex-row justify-around w-full py-5  text-xl text-primary-400 flex-grow  ">
-          <p className="flex flex-row gap-2  items-center ">
-            {" "}
+        <div className="flex flex-col gap-y-2 mt-4 text-primary-200">
+          <p className="flex flex-row gap-2 items-center">
             <FaMapMarkerAlt /> {zone}
           </p>
-          <p className="flex flex-row gap-2   items-center">
-            {" "}
-            <FaClock />
-            {hours}
+          <p className="flex flex-row gap-2 items-center">
+            <FaClock /> {hour}
           </p>
         </div>
       </div>

@@ -1,13 +1,38 @@
 .banner {
-    width: 100%;
-    height: 120vh;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-   
+  width: 100%;
+  height: 100vh; /* Tamaño por defecto */
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+}
+
+/* Media Queries para el tamaño del contenedor */
+@media (max-width: 1200px) {
+  .banner {
+      height: 90vh; /* Tamaño ajustado para pantallas medianas */
   }
-  
-  .banner .slider {
+}
+
+@media (max-width: 992px) {
+  .banner {
+      height: 80vh; /* Tamaño ajustado para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+      height: 70vh; /* Tamaño ajustado para pantallas aún más pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+      height: 70vh; /* Tamaño ajustado para pantallas muy pequeñas */
+  }
+}
+
+.banner .slider {
     position: absolute;
     width: 200px;
     height: 250px;
@@ -18,33 +43,46 @@
     animation: autoRun 20s linear infinite;
     --quantity: 8; /* Define la cantidad aquí */
     z-index: 2;
+}
 
-  }
-  
-  @keyframes autoRun {
+@keyframes autoRun {
     from {
-      transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
     }
     to {
-      transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
     }
-  }
-  
-  .banner .slider .item {
+}
+
+.banner .slider .item {
     position: absolute;
     inset: 0;
     cursor: pointer;
-    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(450px);
-  }
-  
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(350px);
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
   .banner .slider .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 40px;
+      padding: 5px;
   }
-  
-  .banner .content {
+}
+
+/* Estilos para tablets y PCs */
+@media (min-width: 768px) {
+  .banner .slider .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+  }
+}
+.banner .content {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -55,36 +93,69 @@
     flex-direction: column;
     align-items: center;
     z-index: 1;
-  }
-  
-  .banner .content h1 {
+}
+
+.banner .content h1 {
     font-family: 'ICA Rubrik', sans-serif;
     font-size: 12em;
     line-height: 1em;
     color: #252838;
     position: relative;
+}
+
+.banner .content h1 {
+  font-family: 'ICA Rubrik', sans-serif;
+  font-size: 12em; /* Tamaño por defecto */
+  line-height: 1em;
+  color: #252838;
+  position: relative;
+}
+
+/* Media Queries para el tamaño del texto en h1 */
+@media (max-width: 1200px) {
+  .banner .content h1 {
+      font-size: 10em; /* Tamaño para pantallas medianas */
   }
-  
-  .banner .content h1::after {
+}
+
+@media (max-width: 992px) {
+  .banner .content h1 {
+      font-size: 8em; /* Tamaño para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .banner .content h1 {
+      font-size: 6em; /* Tamaño para pantallas aún más pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .banner .content h1 {
+      font-size: 4em; /* Tamaño para pantallas muy pequeñas */
+  }
+}
+
+.banner .content h1::after {
     content: attr(data-content);
     position: absolute;
     inset: 0;
     z-index: 2;
     -webkit-text-stroke: 2px #d2d2d2;
     color: transparent;
-  }
-  
-  .banner .author {
+}
+
+.banner .author {
     font-family: 'Poppins', sans-serif;
     text-align: right;
     max-width: 200px;
-  }
-  
-  .banner .author h2 {
+}
+
+.banner .author h2 {
     font-size: 3em;
-  }
-  
-  .banner .model {
+}
+
+.banner .model {
     background-image: url('/path/to/images/model'); /* Ajusta la ruta a tu imagen */
     width: 100%;
     height: 75vh;
@@ -95,5 +166,79 @@
     background-repeat: no-repeat;
     background-position: top center;
     z-index: 1;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .banner .slider {
+        width: 180px;
+        height: 230px;
+        top: 15%;
+        left: calc(50% - 90px);
+    }
+
+    .banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(300px);
+    }
+}
+
+@media (max-width: 992px) {
+    .banner .slider {
+        width: 160px;
+        height: 200px;
+        top: 10%;
+        left: calc(50% - 80px);
+    }
+
+    .banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(250px);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner .slider {
+        width: 140px;
+        height: 170px;
+        top: 5%;
+        left: calc(50% - 70px);
+    }
+
+    .banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (720deg / var(--quantity)))) translateZ(200px);
+    }
+}
+
+@media (max-width: 576px) {
+    .banner .slider {
+        width: 120px;
+        height: 150px;
+        top: 0;
+        left: calc(50% - 60px);
+    }
+
+    .banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (720deg / var(--quantity)))) translateZ(150px);
+    }
+}
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .banner .slider .item {
+    display: none;
   }
-  
+
+  .banner .slider .item:nth-of-type(1),
+  .banner .slider .item:nth-of-type(2),
+  .banner .slider .item:nth-of-type(3),
+  .banner .slider .item:nth-of-type(4) {
+    display: block;
+  }
+}
+
+/* Estilos para tablets y PCs */
+@media (min-width: 768px) {
+  .banner .slider .item {
+    display: block;
+  }
+}

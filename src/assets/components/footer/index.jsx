@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../styles/footer/index.css";
+import { NAV } from "../../../data";
 import {
   FaInstagram,
   FaFacebookF,
@@ -16,30 +17,34 @@ const Footer = () => {
         <div className="wave" id="wave3"></div>
         <div className="wave" id="wave4"></div>
       </div>
-      <ul className="social_icon">
+      
+      <ul className="social_icon flex justify-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10">
         <li>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
+            className="text-2xl sm:text-3xl lg:text-4xl"
           >
             <FaInstagram />
           </a>
         </li>
         <li>
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/profile.php?id=61555560761729"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-2xl sm:text-3xl lg:text-4xl"
           >
             <FaFacebookF />
           </a>
         </li>
         <li>
           <a
-            href="https://www.youtube.com"
+            href="https://www.youtube.com/@ifbbargentinacanaloficial6221"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-2xl sm:text-3xl lg:text-4xl"
           >
             <FaYoutube />
           </a>
@@ -49,29 +54,29 @@ const Footer = () => {
             href="https://wa.me/541121736846"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-2xl sm:text-3xl lg:text-4xl"
           >
             <FaWhatsapp />
           </a>
         </li>
       </ul>
-      <ul className="menu">
-        <li>
-          <a href="">Home</a>
-        </li>
-        <li>
-          <a href="">About</a>
-        </li>
-        <li>
-          <a href="">Service</a>
-        </li>
-        <li>
-          <a href="">Team</a>
-        </li>
-        <li>
-          <a href="">Contact</a>
-        </li>
+      
+      <ul className="menu flex flex-col sm:flex-row justify-center items-center mt-8 space-y-2 sm:space-y-0 sm:space-x-4">
+        {NAV.map((item, index) => (
+          <li key={index}>
+            <a
+              href={item.href}
+              className="text-base sm:text-lg lg:text-xl hover:text-gray-400 transition-colors duration-300"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
       </ul>
-      <p>@2024 FAMF PÁGINA WEB All rights reserved</p>
+      
+      <p className="text-center text-sm sm:text-base mt-8">
+      © 2024 FAMF PÁGINA WEB. Todos los derechos reservados.
+      </p>
     </footer>
   );
 };
