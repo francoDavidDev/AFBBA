@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaWhatsapp,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -64,12 +65,12 @@ const Footer = () => {
       <ul className="menu flex flex-col sm:flex-row justify-center items-center mt-8 space-y-2 sm:space-y-0 sm:space-x-4">
         {NAV.map((item, index) => (
           <li key={index}>
-            <a
-              href={item.href}
+            <Link
+              to={item.href}
               className="text-base sm:text-lg lg:text-xl hover:text-gray-400 transition-colors duration-300"
             >
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
