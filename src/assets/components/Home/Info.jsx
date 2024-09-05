@@ -56,7 +56,7 @@ const Info = () => {
               className="w-full md:w-[45%] lg:w-full h-[150px] overflow-hidden rounded-xl flex flex-col justify-center cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
             >
               <Link
-                to={`/viewPageHome/${item.title}`}
+                to={`${item.path}`}
                 className="h-full w-full flex bg-cover bg-top transition-all duration-200 justify-between items-center cursor-pointer"
               >
                 <div className="h-full w-full">

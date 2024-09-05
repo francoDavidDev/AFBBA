@@ -17,7 +17,8 @@ export const NAV = [
 
 //HOME DATA
 // aqui esta la informacion de banner main
-import bannerMain from "./assets/imgs/present/main/event1.jpg";
+
+import bannerMain from './assets/imgs/tournaments/nationals/flyers/PATAGONICO_TRELEW.jpg'
 export const ACTUALIDAD = [
   {
     title: "COPA MENDOZA ARGENTINA",
@@ -29,36 +30,28 @@ export const ACTUALIDAD = [
 ];
 
 import other1 from "./assets/imgs/present/others/paraguay.jpg";
+import campeotanoArgentino from './assets/imgs/tournaments/nationals/flyers/ARGENTINO.jpg'
+import logo from "./assets/imgs/logo.jpg";
+
 
 export const PRESENT_HOME = [
   {
     id:'1',
-    title: "Resultados T. Femenino | Cordoba",
-    image: other1,
+    title: "Resultados del Campeonato Argentino",
+    image: campeotanoArgentino,
+    path:'/results',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Haz click para poder ver los resultados",
   },
   {
     id:'2',
-    title: "Resultados Competencia de Hombres | Córdoba",
-    image: other1,
+    title: "Mira los cursos de FAMF",
+    image: logo,
+    path:'/courses',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    id:'3',
-    title: "Resultados T. FemeninoS | Cordoba",
-    image: other1,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    id:'4',
-    title: "Resultados Torneo de Varones | Córdoba",
-    image: other1,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
+'Haz click para poder ver todos los cursos diponibles'  },
+ 
+
 ];
 
 
