@@ -18,10 +18,10 @@ export const NAV = [
 //HOME DATA
 // aqui esta la informacion de banner main
 
-import bannerMain from './assets/imgs/tournaments/nationals/flyers/PATAGONICO_TRELEW.jpg'
+import bannerMain from './assets/imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg'
 export const ACTUALIDAD = [
   {
-    title: "COPA MENDOZA ARGENTINA",
+    title: "COPA PROVINCIAS UNIDAS",
     subtitle: "Forjando Leyendas en el Corazón del Fisicoculturismo",
     image: bannerMain,
     description:

@@ -5,18 +5,17 @@ import { ASSOCIATIONS } from "../../../constants";
 
 const Associations = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedProvince, setSelectedProvince] = useState("");
+  const [selectedProvince, setSelectedProvince] = useState("Todas las provincias");
   const [showAll, setShowAll] = useState(false);
 
   // Obtener provincias únicas para el selector
-  const provinces = Array.from(
-    new Set(ASSOCIATIONS.map((association) => association.date))
-  );
+  const provinces = ["Todas las provincias", ...new Set(ASSOCIATIONS.map((association) => association.date))];
 
   // Filtrar asociaciones según la provincia seleccionada y el término de búsqueda
-  const filteredAssociations = ASSOCIATIONS.filter((association) =>
-    (association.date.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === "") &&
-    (association.date === selectedProvince || selectedProvince === "")
+  const filteredAssociations = ASSOCIATIONS.filter(
+    (association) =>
+      (selectedProvince === "Todas las provincias" || association.date === selectedProvince) &&
+      association.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Mostrar solo las primeras 4 asociaciones si showAll es false
@@ -25,23 +24,35 @@ const Associations = () => {
   return (
     <section className="w-full h-[auto] my-20">
       <div className="maincontainer w-full m-auto flex flex-col items-center">
-        {/* Campo de búsqueda */}
-        <div className="w-[80%] flex gap-10 flex-wrap justify-center items-center">
-          <input
-            type="text"
-            placeholder="Buscar por provincia"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="mb-4 p-2 border border-gray-300 rounded"
-          />
+        <h2 className="h3 m-auto my-10">ASOCIACIONES PROVINCIALES</h2>
+
+        {/* Campo de búsqueda y selector */}
+        <div className="w-[80%] flex gap-10 flex-wrap justify-center items-center mb-8">
+          <div className="inputBox py-20 mx-auto">
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              required="required"
+            />
+            <span>Filtrar</span>
+          </div>
 
           {/* Selector de provincias */}
           <select
             value={selectedProvince}
             onChange={(e) => setSelectedProvince(e.target.value)}
-            className="mb-4 p-2 border border-gray-300 rounded"
+            className="w-full sm:w-1/4 p-2 bg-[#1d2b3a] border border-gray-300 text-white rounded-lg outline-none transition duration-500 ease-in-out focus:border-[#00dfc4] hover:scale-[110%] mx-auto"
+            style={{
+              padding: "10px",
+              border: "1px solid rgba(255, 255, 255, 0.25)",
+              background: "#1d2b3a",
+              borderRadius: "5px",
+              color: "#fff",
+              fontSize: "1em",
+              transition: "0.5s",
+            }}
           >
-            <option value="">Todas las provincias</option>
             {provinces.map((province, index) => (
               <option key={index} value={province}>
                 {province}

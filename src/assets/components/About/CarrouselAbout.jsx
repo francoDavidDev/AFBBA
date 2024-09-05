@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CARROUSEL_ABOUT } from "../../data/about";
-
 import image from "../../imgs/about/members/oscar.png";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
@@ -20,47 +19,27 @@ const CarrouselAbout = () => {
 
   return (
     <div>
-      {/* Sección del carrusel */}
-      <div className=" h-[300px] w-full flex">
-        <div className="w-[60%] overflow-hidden rounded-2xl">
-          <Slider {...settings}>
-            {CARROUSEL_ABOUT.map((item, index) => (
-              <div key={index}>
-                <img
-                  src={item.image}
-                  alt={`Imagen ${index + 1}`}
-                  className="w-full h-full object-cover rounded-2xl"
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
-        <div className="w-[40%] flex justify-center items-center">
+  
+
+      {/* Sección de tarjetas */}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {CARROUSEL_ABOUT.map((item, index) => (
           <div
-            className="w-[95%] h-[95%]  border-[1px] rounded-xl bg-cover bg-top flex justify-between items-start flex-col"
-            style={{ backgroundImage: `url(${image})` }}
+            key={index}
+            className="border rounded-lg shadow-md flex flex-col items-center"
           >
-            <div className="flex justify-start items-start py-2 gap-y-6 px-4 flex-col">
-              <p className="text-xl ml-10">MAS DE 30 AÑOS</p>
-              <p className="text-left font-normal">
-                Presidente AFFB Oscar Villareal,
-              </p>
+            <div
+              className="w-full h-60 bg-cover bg-top rounded-lg"
+              style={{ backgroundImage: `url(${item.image})` }}
+            >
+              {/* Si quieres que el contenido esté sobre la imagen, agrega esto dentro del div */}
             </div>
-            <div className="flex px-3">
-              <a
-                href="https://wa.me/541121736846"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 justify-center font-light mb-5 border-[1px] rounded-full py-1 px-3"
-              >
-                Hablemos{" "}
-                <span>
-                  <MdOutlineArrowOutward />
-                </span>
-              </a>
+            <div className="w-full flex flex-col items-center p-4">
+              <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
+              <p className="text-sm text-gray-600">{item.tag}</p>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

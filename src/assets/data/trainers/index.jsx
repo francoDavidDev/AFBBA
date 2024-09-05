@@ -1,13 +1,16 @@
+import entrenadorTrue from '../../imgs/entrenador2.jpg'
+
 export const TRAINERS = [
     {
       id: 1,
-      name: "Evalyn Adson",
-      profession: "Web Designer",
-      profileImage: "https://plus.unsplash.com/premium_photo-1674933213970-e270ae5010e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmV0cmF0byUyMGZpdG5lc3N8ZW58MHx8MHx8fDA%3D",
+      name: "RAFAEL GOMEZ",
+      profession: "Entrenador",
+      profileImage: entrenadorTrue,
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/evalynadson",
         tiktok: "https://www.tiktok.com/@evalynadson",
-        instagram: "https://instagram.com/evalynadson"
+        instagram: "https://instagram.com/evalynadson",
+        whatsapp: "https://wa.me/541131228292" // Agrega el enlace de WhatsApp aquí
       },
       province: "Buenos Aires"
     },
@@ -19,7 +22,8 @@ export const TRAINERS = [
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/alexjohnson",
         tiktok: "https://www.tiktok.com/@alexjohnson",
-        instagram: "https://instagram.com/alexjohnson"
+        instagram: "https://instagram.com/alexjohnson",
+        whatsapp: "https://wa.me/5491122334456" // Agrega el enlace de WhatsApp aquí
       },
       province: "CABA"
     },
@@ -31,7 +35,8 @@ export const TRAINERS = [
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/mariagomez",
         tiktok: "https://www.tiktok.com/@mariagomez",
-        instagram: "https://instagram.com/mariagomez"
+        instagram: "https://instagram.com/mariagomez",
+        whatsapp: "https://wa.me/5491122334457" // Agrega el enlace de WhatsApp aquí
       },
       province: "Mendoza"
     },
@@ -43,21 +48,22 @@ export const TRAINERS = [
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/davidlee",
         tiktok: "https://www.tiktok.com/@davidlee",
-        instagram: "https://instagram.com/davidlee"
+        instagram: "https://instagram.com/davidlee",
+        whatsapp: "https://wa.me/5491122334458" // Agrega el enlace de WhatsApp aquí
       },
       province: "San Juan"
     },
     {
       id: 5,
       name: "Sofia Martinez",
-      profession: "Yoga Instructor",
+      profession: "Personal Trainer",
       profileImage: "https://images.unsplash.com/photo-1578924608828-79a71150f711?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/sofia-martinez",
         tiktok: "https://www.tiktok.com/@sofia-martinez",
-        instagram: "https://instagram.com/sofia-martinez"
+        instagram: "https://instagram.com/sofia-martinez",
+        whatsapp: "https://wa.me/5491122334459" // Agrega el enlace de WhatsApp aquí
       },
       province: "Cordoba"
     }
   ];
-  

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaTiktok, FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import "../../../styles/trainersCards/index.css";
 import { TRAINERS } from "../../data/trainers";
 import CarrouselSponsors from "../../components/CarrouselSponsors";
@@ -50,7 +50,7 @@ const Trainers = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5 }}
           >
-            ENTRENADORES AFBBA
+            ENTRENADORES IFBB
           </motion.h2>
           <motion.p
             className="text-[30px] text-primary-400 mb-4"
@@ -123,26 +123,6 @@ const Trainers = () => {
                     {trainer.province}
                   </h3>
                   <div className="flex justify-center gap-3 mb-4">
-                    {trainer.socialLinks.linkedin && (
-                      <a
-                        href={trainer.socialLinks.linkedin}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-blue-600 hover:text-blue-800"
-                      >
-                        <FaLinkedin className="text-xl" />
-                      </a>
-                    )}
-                    {trainer.socialLinks.tiktok && (
-                      <a
-                        href={trainer.socialLinks.tiktok}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-black hover:text-gray-800"
-                      >
-                        <FaTiktok className="text-xl" />
-                      </a>
-                    )}
                     {trainer.socialLinks.instagram && (
                       <a
                         href={trainer.socialLinks.instagram}
@@ -153,13 +133,17 @@ const Trainers = () => {
                         <FaInstagram className="text-xl" />
                       </a>
                     )}
+                    {trainer.socialLinks.whatsapp && (
+                      <a
+                        href={`https://wa.me/${trainer.socialLinks.whatsapp}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-green-500 hover:text-green-700"
+                      >
+                        <FaWhatsapp className="text-xl" />
+                      </a>
+                    )}
                   </div>
-                  <a
-                    href="#"
-                    className="bg-blue-600 text-white px-4 py-2 rounded-full flex items-center justify-center gap-2 hover:bg-blue-700 transition-all"
-                  >
-                    <span>Enviar Mensaje</span>
-                  </a>
                 </div>
               </motion.article>
             ))

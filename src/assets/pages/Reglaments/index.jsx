@@ -41,7 +41,7 @@ const Reglaments = () => {
   initial={{ opacity: 0, scale: 0.9 }}
   transition={{ duration: 0.5 }}
 >
-  AFBBA REGLAMENTOS
+  FAMF REGLAMENTOS
 </motion.h2>
           <motion.p
             className="text-[30px] text-primary-400 mb-4"

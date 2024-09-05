@@ -37,12 +37,12 @@ import REGLAMENTO_FIT_PAIRS_PAREJAS_FITNESS_CSFF from "../../pdf/reglaments/REGL
 
 export const REGLAMETS = {
   BikiniFitness: {
-    title: "BIKINI FITNESS",
+    title: "BIKINI",
     image: bikiniFitness,
     pdf: manual_de_BIKINI_FITNESS,
   },
   WellnessFitness: {
-    title: "WELLNESS FITNESS",
+    title: "WELLNESS",
     image: wellness_fitness_reglamento_ifbb,
     pdf: manual_de_WELLNESS_FITNESS,
   },
@@ -77,7 +77,7 @@ export const REGLAMETS = {
     pdf: manual_de_FISICOCULTURISMO_MENS_BODYBUILDING,
   },
   CulturismoClasico: {
-    title: "CULTURISMO CLÁSICO / CLASSIC BODYBUILDING",
+    title: "CULTURISMO CLÁSICO",
     image: culturismo_clasico_reglamento_ifbb,
     pdf: manual_de_CULTURISMO_CLASICO_CLASSIC_BODYBUILDING,
   },

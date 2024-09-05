@@ -22,7 +22,7 @@ const About = () => {
         </motion.div>
         
         <div className="flex justify-center flex-col text-center mt-10 ">
-          <h2 className="text-[60px] font-bold tracking-widest">AFFBA</h2>
+          <h2 className="text-[60px] font-bold tracking-widest">FAMF</h2>
           <p className="text-[30px] text-primary-400/80 mb-4">
             FEDERACION ARGENTINA DE MUSCULACION Y FITNESS
           </p>

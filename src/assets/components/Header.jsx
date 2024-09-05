@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import image from "../imgs/logo.png";
+import image from "../imgs/logoFAMF.png";
 import  Nav  from "./Nav";
 import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 import NavMobile from "./NavMobile";
@@ -21,15 +21,15 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-primary-300/90 py-[10px]" : "bg-primary-300 py-[0px] text-lg "
+        isActive ? "bg-primary-300/90 py-[5px]" : "bg-primary-300 py-[0px] text-lg "
       } flex items-center justify-between sticky top-0 w-full  `}
     >
       <img
         src={image}
         alt="logo"
         className={`${
-          isActive ? "w-[90px]" : "w-[100px]"
-        } transition-all duration-300`}
+          isActive ? "w-[50px]" : "w-[70px] "
+        } transition-all duration-300 m-1 `}
       />
 
       {/* Nav for desktop */}

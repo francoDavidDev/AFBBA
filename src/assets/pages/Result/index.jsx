@@ -44,7 +44,7 @@ const Results = () => {
   initial={{ opacity: 0, scale: 0.9 }}
   transition={{ duration: 0.5 }}
 >
-  AFBBA RESULTADOS
+  FAMF RESULTADOS
 </motion.h2>
 
           <motion.p
