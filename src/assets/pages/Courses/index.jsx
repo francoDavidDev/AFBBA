@@ -65,14 +65,15 @@ const Courses = () => {
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
         >
-          <motion.h2
-            className="text-[60px] font-bold tracking-widest"
-            whileInView={{ opacity: 1, scale: 1 }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.5 }}
-          >
-            CURSOS
-          </motion.h2>
+         <motion.h2
+  className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold tracking-widest"
+  whileInView={{ opacity: 1, scale: 1 }}
+  initial={{ opacity: 0, scale: 0.9 }}
+  transition={{ duration: 0.5 }}
+>
+  CURSOS
+</motion.h2>
+
           <motion.p
             className="text-[30px] text-primary-400/80 mb-4"
             whileInView={{ opacity: 1, y: 0 }}
