@@ -11,7 +11,12 @@ const Nav = ({ className }) => {
             key={index}
             className="hover:text-primary-400 cursor-pointer transition-all duration-100"
           >
-            <Link to={item.href}>{item.name}</Link>
+            <Link
+              to={item.href}
+              className="text-sm sm:text-base md:text-sm lg:text-xl"
+            >
+              {item.name}
+            </Link>
           </li>
         ))}
       </ul>
