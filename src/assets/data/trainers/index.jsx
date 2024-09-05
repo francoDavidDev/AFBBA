@@ -1,6 +1,4 @@
-
-
-export const TRAINERS =[
+export const TRAINERS = [
     {
       id: 1,
       name: "Evalyn Adson",
@@ -10,7 +8,8 @@ export const TRAINERS =[
         linkedin: "https://www.linkedin.com/in/evalynadson",
         tiktok: "https://www.tiktok.com/@evalynadson",
         instagram: "https://instagram.com/evalynadson"
-      }
+      },
+      province: "Buenos Aires"
     },
     {
       id: 2,
@@ -21,7 +20,8 @@ export const TRAINERS =[
         linkedin: "https://www.linkedin.com/in/alexjohnson",
         tiktok: "https://www.tiktok.com/@alexjohnson",
         instagram: "https://instagram.com/alexjohnson"
-      }
+      },
+      province: "CABA"
     },
     {
       id: 3,
@@ -32,7 +32,8 @@ export const TRAINERS =[
         linkedin: "https://www.linkedin.com/in/mariagomez",
         tiktok: "https://www.tiktok.com/@mariagomez",
         instagram: "https://instagram.com/mariagomez"
-      }
+      },
+      province: "Mendoza"
     },
     {
       id: 4,
@@ -43,7 +44,8 @@ export const TRAINERS =[
         linkedin: "https://www.linkedin.com/in/davidlee",
         tiktok: "https://www.tiktok.com/@davidlee",
         instagram: "https://instagram.com/davidlee"
-      }
+      },
+      province: "San Juan"
     },
     {
       id: 5,
@@ -54,7 +56,8 @@ export const TRAINERS =[
         linkedin: "https://www.linkedin.com/in/sofia-martinez",
         tiktok: "https://www.tiktok.com/@sofia-martinez",
         instagram: "https://instagram.com/sofia-martinez"
-      }
+      },
+      province: "Cordoba"
     }
-  ]
+  ];
   
