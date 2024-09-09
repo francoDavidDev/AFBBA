@@ -25,8 +25,11 @@ const Associations = () => {
 
   return (
     <section className="w-full h-[auto] my-20">
-      <div className="maincontainer w-full m-auto flex flex-col items-center">
-        <h2 className="h3 m-auto my-10">ASOCIACIONES PROVINCIALES</h2>
+      <div className="maincontainer w-full m-auto flex flex-col   items-center">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center m-auto my-10">
+  ASOCIACIONES PROVINCIALES
+</h2>
+
 
         {/* Campo de búsqueda y selector */}
         <div className="w-[80%] flex gap-10 flex-wrap justify-center items-center mb-8">
@@ -35,7 +38,7 @@ const Associations = () => {
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Buscar asociaciones..."
+  
               required
             />
             <span>Filtrar</span>
