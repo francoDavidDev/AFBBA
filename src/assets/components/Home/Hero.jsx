@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-//import logo
-import logo from "../../imgs/logo.png";
+
 //import banner
 import banner from "../../imgs/hero/BANNER FAMF.png";
 
