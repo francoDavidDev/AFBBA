@@ -5,7 +5,7 @@ import { NAV } from "../../data";
 const Nav = ({ className }) => {
   return (
     <nav className={`flex w-full justify-center ${className}`}>
-      <ul className="flex text-primary-200 font-semibold gap-x-6">
+      <ul className="flex flex-col md:flex-row text-primary-200 font-semibold gap-y-4 md:gap-x-6">
         {NAV.map((item, index) => (
           <li
             key={index}
@@ -13,7 +13,7 @@ const Nav = ({ className }) => {
           >
             <Link
               to={item.href}
-              className="text-sm sm:text-base md:text-sm lg:text-xl"
+              className="text-lg sm:text-xl md:text-base lg:text-lg"
             >
               {item.name}
             </Link>

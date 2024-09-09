@@ -15,14 +15,14 @@ const TournamentDetails = () => {
 
   return (
     <motion.div
-      className="w-full h-auto flex flex-col justify-center items-center gap-y-10"
+      className="w-full h-auto flex flex-col justify-center items-center gap-y-10 px-4 sm:px-6 md:px-8 lg:px-12"
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
     >
       {/* Banner */}
       <motion.div
-        className="w-[90%] min-h-screen m-auto mt-[100px] gap-y-10"
+        className="w-full max-w-screen-lg min-h-screen m-auto mt-10 gap-y-10"
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
@@ -42,7 +42,7 @@ const TournamentDetails = () => {
           {tournaments.map(tournament => (
             <motion.h2
               key={tournament.id}
-              className="text-[60px] font-bold tracking-widest text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl my-10 font-bold tracking-widest text-white"
               whileInView={{ opacity: 1, scale: 1 }}
               initial={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5 }}
@@ -63,13 +63,13 @@ const TournamentDetails = () => {
             <motion.img
               src={tournament.flyer}
               alt={tournament.title}
-              className="w-full max-w-md h-[100vh] object-cover mb-4 rounded-md"
+              className="w-full max-w-md h-auto object-cover mb-4 rounded-md"
               whileInView={{ scale: 1 }}
               initial={{ scale: 0.95 }}
               transition={{ duration: 0.5 }}
             />
             <motion.p
-              className="text-white font-semibold mb-2"
+              className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-2"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
@@ -77,7 +77,7 @@ const TournamentDetails = () => {
               <strong className="text-gray-300">Dirección:</strong> {tournament.address}
             </motion.p>
             <motion.p
-              className="text-white mb-2"
+              className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-2"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
@@ -85,7 +85,7 @@ const TournamentDetails = () => {
               <strong className="text-gray-300">Localidad:</strong> {tournament.locality}
             </motion.p>
             <motion.p
-              className="text-white mb-2"
+              className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-2"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
@@ -93,7 +93,7 @@ const TournamentDetails = () => {
               <strong className="text-gray-300">Fecha:</strong> {tournament.date}
             </motion.p>
             <motion.p
-              className="text-white mb-2"
+              className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-2"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
@@ -101,7 +101,7 @@ const TournamentDetails = () => {
               <strong className="text-gray-300">Horario de Inscripción:</strong> {tournament.hour_inscription}
             </motion.p>
             <motion.p
-              className="text-white mb-2"
+              className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-2"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
@@ -116,9 +116,9 @@ const TournamentDetails = () => {
                 initial={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-primary">Más Información</h2>
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-primary">Más Información</h2>
                 {tournament.more_info.map((info, index) => (
-                  <p key={index} className="text-white mb-2">
+                  <p key={index} className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-2">
                     <strong className="">{info.name}:</strong> {info.contact}
                   </p>
                 ))}
@@ -132,7 +132,7 @@ const TournamentDetails = () => {
                 initial={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-white">Síguenos en Redes Sociales</h2>
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-white">Síguenos en Redes Sociales</h2>
                 <div className="flex gap-4">
                   {tournament.social_networks.map((network, index) => (
                     <div key={index} className="flex items-center">
@@ -143,7 +143,7 @@ const TournamentDetails = () => {
                           rel="noopener noreferrer"
                           className="flex items-center text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition"
                         >
-                          <FaFacebook className="text-xl" />
+                          <FaFacebook className="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
                         </a>
                       )}
                       {network.instagram && network.href && (
@@ -153,7 +153,7 @@ const TournamentDetails = () => {
                           rel="noopener noreferrer"
                           className="flex items-center text-white bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition ml-2"
                         >
-                          <FaInstagram className="text-xl" />
+                          <FaInstagram className="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
                         </a>
                       )}
                     </div>
