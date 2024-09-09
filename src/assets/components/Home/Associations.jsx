@@ -12,11 +12,13 @@ const Associations = () => {
   const provinces = ["Todas las provincias", ...new Set(ASSOCIATIONS.map((association) => association.date))];
 
   // Filtrar asociaciones según la provincia seleccionada y el término de búsqueda
-  const filteredAssociations = ASSOCIATIONS.filter(
-    (association) =>
-      (selectedProvince === "Todas las provincias" || association.date === selectedProvince) &&
-      association.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredAssociations = ASSOCIATIONS.filter((association) => {
+    const matchesProvince = selectedProvince === "Todas las provincias" || association.date === selectedProvince;
+    const matchesSearchTerm = 
+      association.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      association.icon.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesProvince && matchesSearchTerm;
+  });
 
   // Mostrar solo las primeras 4 asociaciones si showAll es false
   const visibleAssociations = showAll ? filteredAssociations : filteredAssociations.slice(0, 4);
@@ -33,7 +35,8 @@ const Associations = () => {
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              required="required"
+              placeholder="Buscar asociaciones..."
+              required
             />
             <span>Filtrar</span>
           </div>
@@ -88,7 +91,7 @@ const Associations = () => {
               </div>
             ))
           ) : (
-            <p>No se encontraron asociaciones para la provincia seleccionada.</p>
+            <p>No se encontraron asociaciones para la provincia seleccionada y el término de búsqueda.</p>
           )}
         </div>
 

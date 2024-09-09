@@ -195,7 +195,7 @@ const ASSOCIATIONS = [
       "https://www.instagram.com/afibaoficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     ],
     web: [
-      "",
+      "https://afiba.com.ar/",
     ],
   },
   {
