@@ -112,7 +112,7 @@ export const REGLAMETS = {
     pdf: reglamento_fit_model_masculino_ifbb,
   },
   FitPairs: {
-    title: "FIT PAIRS PAREJAS",
+    title: "PAREJA FITNESS",
     image: fisico_culturismo_parejas_reglamento_ifbb,
     pdf: REGLAMENTO_FIT_PAIRS_PAREJAS_FITNESS_CSFF,
   },

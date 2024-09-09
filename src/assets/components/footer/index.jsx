@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="wave" id="wave3"></div>
         <div className="wave" id="wave4"></div>
       </div>
-      
+
       <ul className="social_icon flex justify-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10">
         <li>
           <a
@@ -61,7 +61,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      
+
       <ul className="menu flex flex-col sm:flex-row justify-center items-center mt-8 space-y-2 sm:space-y-0 sm:space-x-4">
         {NAV.map((item, index) => (
           <li key={index}>
@@ -74,9 +74,13 @@ const Footer = () => {
           </li>
         ))}
       </ul>
-      
+
       <p className="text-center text-sm sm:text-base mt-8">
-      © 2024 FAMF PÁGINA WEB. Todos los derechos reservados.
+        <a href="mailto:rubenoscarvillareal1963@gmail.com" className="hover:text-gray-400 transition-colors duration-300">rubenoscarvillareal1963@gmail.com</a>
+      </p>
+      
+      <p className="text-center text-sm sm:text-base mt-2">
+        © 2024 FAMF PÁGINA WEB. Todos los derechos reservados.
       </p>
     </footer>
   );

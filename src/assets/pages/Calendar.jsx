@@ -25,15 +25,20 @@ const ElitePro = () => {
   }, []);
 
   useEffect(() => {
-    // Obtener la fecha actual
-    const today = new Date().toISOString().split('T')[0]; // Formato YYYY-MM-DD
+    const today = new Date(); // Fecha actual
 
     // Filtrar eventos pasados
-    const pastEvents = TOURNAMENTS_DATA.filter(tournament => tournament.date < today);
+    const pastEvents = TOURNAMENTS_DATA.filter(tournament => {
+      const tournamentDate = new Date(tournament.date.split('/').reverse().join('-')); // Convertir a formato "YYYY-MM-DD"
+      return tournamentDate < today;
+    });
     setPastTournaments(pastEvents);
 
-    // Aplicar filtro y orden a los eventos futuros
-    let tournaments = TOURNAMENTS_DATA.filter(tournament => tournament.date >= today);
+    // Filtrar eventos futuros
+    let tournaments = TOURNAMENTS_DATA.filter(tournament => {
+      const tournamentDate = new Date(tournament.date.split('/').reverse().join('-')); // Convertir a formato "YYYY-MM-DD"
+      return tournamentDate >= today;
+    });
 
     // Aplicar filtro por tipo
     if (filterType !== "all") {
@@ -42,20 +47,18 @@ const ElitePro = () => {
 
     // Ordenar los torneos
     const sorted = tournaments.sort((a, b) => {
-      const dateA = new Date(a.formattedDate);
-      const dateB = new Date(b.formattedDate);
+      const dateA = new Date(a.date.split('/').reverse().join('-'));
+      const dateB = new Date(b.date.split('/').reverse().join('-'));
       return sortOrder === "newest" ? dateB - dateA : dateA - dateB;
     });
 
     setFilteredTournaments(sorted);
   }, [sortOrder, filterType]);
 
-  // Cambiar el orden de los eventos entre "Más Nuevo" y "Más Viejo"
   const toggleSortOrder = () => {
-    setSortOrder((prevOrder) => (prevOrder === "newest" ? "oldest" : "newest"));
+    setSortOrder(prevOrder => (prevOrder === "newest" ? "oldest" : "newest"));
   };
 
-  // Filtrar eventos por tipo
   const filterTournaments = (type) => {
     setFilterType(type);
   };
@@ -74,7 +77,6 @@ const ElitePro = () => {
           animate={{ width: "100%" }}
           transition={{ duration: 1 }}
         />
-
         <motion.div
           className="flex justify-center flex-col text-center mt-10"
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +91,6 @@ const ElitePro = () => {
           >
             ENTERATE DE LOS ULTIMOS EVENTOS
           </motion.h2>
-
           <motion.p
             className="text-[30px] text-primary-400/80 mb-4"
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +109,6 @@ const ElitePro = () => {
         >
           Ordenar por {sortOrder === "newest" ? "Más Viejo" : "Más Nuevo"}
         </button>
-
         <div className="flex gap-4">
           <button
             onClick={() => filterTournaments("all")}

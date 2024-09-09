@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import image from "../imgs/logoFAMF.png";
-import  Nav  from "./Nav";
+import Nav from "./Nav";
 import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 import NavMobile from "./NavMobile";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -21,16 +22,18 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-primary-300/90 py-[5px]" : "bg-primary-300 py-[0px] text-lg "
-      } flex items-center justify-between sticky top-0 w-full  `}
+        isActive ? "bg-primary-300/90 py-[5px]" : "bg-primary-300 py-[0px] text-lg"
+      } flex items-center justify-between sticky top-0 w-full`}
     >
-      <img
-        src={image}
-        alt="logo"
-        className={`${
-          isActive ? "w-[50px]" : "w-[70px] "
-        } transition-all duration-300 m-1 `}
-      />
+      <Link to="/" className="flex items-center m-1">
+        <img
+          src={image}
+          alt="logo"
+          className={`${
+            isActive ? "w-[50px]" : "w-[70px]"
+          } transition-all duration-300`}
+        />
+      </Link>
 
       {/* Nav for desktop */}
       <Nav className="hidden md:flex" />
