@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
-//import image
-import banner from "../../imgs/banners/arnold.jpeg";
-import video from '../../videos/oscar.mp4'
+import video from '../../videos/oscar.mp4';
 
 const Banner = () => {
   const videoRef = useRef(null);
@@ -21,12 +19,21 @@ const Banner = () => {
             SEPTIEMBRE 14, 2023 | ASUNCION, PARAGUAY
           </h6>
           <h4 className="h4 text-primary-300">OSCAR VILLARREAL PRESIDENTE DE IFBB ARGENTINA</h4>
-          <p className="h6 font-normal text-primary-200 mt-5">Reconocimiento a oscar villarreal presidente de ifbb argentina en noche de campeones ifbb asunción paraguay
+          <p className="h6 font-normal text-primary-200 mt-5">
+            Reconocimiento a Oscar Villarreal, presidente de IFBB Argentina, en la noche de campeones IFBB en Asunción, Paraguay.
           </p>
         </div>
       </div>
       <div className="w-full h-full bg-cover bg-no-repeat bg-center">
-        <video ref={videoRef} src={video} loop muted controls className="w-full h-full object-cover"></video>
+        <video
+          ref={videoRef}
+          src={video}
+          loop
+          muted
+          autoPlay
+          playsInline
+          className="w-full h-full object-cover pointer-events-none"
+        />
       </div>
     </section>
   );
