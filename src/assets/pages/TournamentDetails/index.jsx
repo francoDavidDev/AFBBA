@@ -39,20 +39,23 @@ const TournamentDetails = () => {
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
         >
-          <motion.h2
-            className="text-[60px] font-bold tracking-widest text-white"
-            whileInView={{ opacity: 1, scale: 1 }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.5 }}
-          >
-            Detalles de Torneos
-          </motion.h2>
+          {tournaments.map(tournament => (
+            <motion.h2
+              key={tournament.id}
+              className="text-[60px] font-bold tracking-widest text-white"
+              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.5 }}
+            >
+              DETALLES DE <br /> <span className='text-primary-400'>{tournament.title}</span> 
+            </motion.h2>
+          ))}
         </motion.div>
 
         {tournaments.map(tournament => (
           <motion.div
             key={tournament.id}
-            className="w-full mb-10"
+            className="w-full mb-10 flex flex-col items-center"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.5 }}
@@ -60,7 +63,7 @@ const TournamentDetails = () => {
             <motion.img
               src={tournament.flyer}
               alt={tournament.title}
-              className="w-full h-64 object-cover mb-4 rounded-md"
+              className="w-full max-w-md h-[100vh] object-cover mb-4 rounded-md"
               whileInView={{ scale: 1 }}
               initial={{ scale: 0.95 }}
               transition={{ duration: 0.5 }}
@@ -71,7 +74,7 @@ const TournamentDetails = () => {
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
-              <strong>Dirección:</strong> {tournament.address}
+              <strong className="text-gray-300">Dirección:</strong> {tournament.address}
             </motion.p>
             <motion.p
               className="text-white mb-2"
@@ -79,7 +82,7 @@ const TournamentDetails = () => {
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
-              <strong>Localidad:</strong> {tournament.locality}
+              <strong className="text-gray-300">Localidad:</strong> {tournament.locality}
             </motion.p>
             <motion.p
               className="text-white mb-2"
@@ -87,7 +90,7 @@ const TournamentDetails = () => {
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
-              <strong>Fecha:</strong> {tournament.date}
+              <strong className="text-gray-300">Fecha:</strong> {tournament.date}
             </motion.p>
             <motion.p
               className="text-white mb-2"
@@ -95,7 +98,7 @@ const TournamentDetails = () => {
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
-              <strong>Horario de Inscripción:</strong> {tournament.hour_inscription}
+              <strong className="text-gray-300">Horario de Inscripción:</strong> {tournament.hour_inscription}
             </motion.p>
             <motion.p
               className="text-white mb-2"
@@ -103,26 +106,26 @@ const TournamentDetails = () => {
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
-              <strong>Inicio de Competencia:</strong> {tournament.start_competition}
+              <strong className="text-gray-300">Inicio de Competencia:</strong> {tournament.start_competition}
             </motion.p>
 
-            {tournament.more_info && (
+            {tournament.more_info && Array.isArray(tournament.more_info) && (
               <motion.div
-                className="mt-8 p-6 bg-gray-100 rounded-lg"
+                className="mt-8 p-6 bg-primary-400 rounded-lg"
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-white">Más Información</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-primary">Más Información</h2>
                 {tournament.more_info.map((info, index) => (
                   <p key={index} className="text-white mb-2">
-                    <strong>{info.name}:</strong> {info.contact}
+                    <strong className="">{info.name}:</strong> {info.contact}
                   </p>
                 ))}
               </motion.div>
             )}
 
-            {tournament.social_networks && (
+            {tournament.social_networks && Array.isArray(tournament.social_networks) && (
               <motion.div
                 className="mt-8 flex flex-col items-center gap-4"
                 whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +136,7 @@ const TournamentDetails = () => {
                 <div className="flex gap-4">
                   {tournament.social_networks.map((network, index) => (
                     <div key={index} className="flex items-center">
-                      {network.facebook && (
+                      {network.facebook && network.href && (
                         <a
                           href={network.href}
                           target="_blank"
@@ -143,7 +146,7 @@ const TournamentDetails = () => {
                           <FaFacebook className="text-xl" />
                         </a>
                       )}
-                      {network.instagram && (
+                      {network.instagram && network.href && (
                         <a
                           href={network.href}
                           target="_blank"

@@ -1,7 +1,7 @@
 import React from "react";
 import image1 from "../../imgs/about/info/image_1.jpg";
-import image2 from "../../imgs/about/info/image_8.jpg";
-import image3 from "../../imgs/about/info/image_9.jpg";
+import image2 from "../../imgs/about/info/image_2.jpg";
+import image3 from "../../imgs/about/info/image_3.jpg";
 
 const Info = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CARROUSEL_ABOUT } from '../../data/about';
+import { GALLERY_ABOUT } from '../../data/about';
 import Modal from 'react-modal';
 import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 
@@ -32,13 +32,13 @@ const GalleryAbout = () => {
 
   const handlePreviousImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? CARROUSEL_ABOUT.length - 1 : prevIndex - 1
+      prevIndex === 0 ? GALLERY_ABOUT.length - 1 : prevIndex - 1
     );
   };
 
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === CARROUSEL_ABOUT.length - 1 ? 0 : prevIndex + 1
+      prevIndex === GALLERY_ABOUT.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -48,7 +48,7 @@ const GalleryAbout = () => {
         Galería de Imágenes
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-fr">
-        {CARROUSEL_ABOUT.map((item, index) => (
+        {GALLERY_ABOUT.map((item, index) => (
           <div
             key={index}
             className="relative cursor-pointer"
@@ -90,7 +90,7 @@ const GalleryAbout = () => {
               <FaChevronLeft />
             </button>
             <img
-              src={CARROUSEL_ABOUT[currentImageIndex].image}
+              src={GALLERY_ABOUT[currentImageIndex].image}
               alt="Imagen Ampliada"
               className="w-auto max-w-full max-h-[80vh] object-contain"
             />
@@ -101,7 +101,7 @@ const GalleryAbout = () => {
               <FaChevronRight />
             </button>
             <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white text-sm bg-gray-800 rounded-full p-2 z-40">
-              {currentImageIndex + 1} de {CARROUSEL_ABOUT.length}
+              {currentImageIndex + 1} de {GALLERY_ABOUT.length}
             </div>
           </div>
         </div>

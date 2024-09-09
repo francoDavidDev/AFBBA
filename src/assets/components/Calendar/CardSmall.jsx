@@ -1,7 +1,6 @@
-import React from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaClock } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaMapMarkerAlt, FaClock, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CardSmall = ({
   title,
@@ -12,9 +11,10 @@ const CardSmall = ({
   hour,
   date,
   file,
-  formattedDate,
   flyer // Asegúrate de que el flyer se pase como prop
 }) => {
+  const [hover, setHover] = useState(false);
+
   const RULES_PDF = file;
 
   const downloadFileAtURL = (url) => {
@@ -34,10 +34,12 @@ const CardSmall = ({
 
   return (
     <div
-      className="w-[90%] bg-cover bg-center bg-[#282728] p-5 rounded-lg text-primary-200 sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+      className="relative w-[90%] bg-cover bg-center bg-[#282728] p-5 rounded-lg text-primary-200 sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
       style={{ backgroundImage: `url(${flyer})` }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
-      <div className="h-full w-full p-3 bg-black bg-opacity-50 rounded-lg flex flex-col justify-between">
+      <div className="h-full w-full p-3 bg-black bg-opacity-70 rounded-lg flex flex-col justify-between">
         <div className="flex flex-col gap-y-2">
           <h4 className="h4 text-primary-200 font-light text-2xl">{title}</h4>
           <div className="flex justify-start items-start gap-10 py-5 font-bold">
@@ -53,7 +55,7 @@ const CardSmall = ({
               INSCRIPCIONES
             </p>
           </div>
-          <h3 className="h3 text-primary-200">{formattedDate}</h3>
+          <h3 className="h3 text-primary-200">{date}</h3>
         </div>
         <div className="flex flex-col gap-y-2 mt-4 text-primary-200">
           <p className="flex flex-row gap-2 items-center">
@@ -64,6 +66,14 @@ const CardSmall = ({
           </p>
         </div>
       </div>
+      {hover && (
+        <Link   to={`/tournament/${title}`}
+          href="#more-info" // Cambia esto según la URL deseada
+          className="absolute bottom-2 right-2 p-2 bg-primary-400 rounded-full"
+        >
+          <FaArrowRight className="text-white text-2xl" />
+        </Link>
+      )}
     </div>
   );
 };

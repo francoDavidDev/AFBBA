@@ -24,17 +24,20 @@ const Info = () => {
             transition={{ duration: 0.5 }}
             className="w-[100%] lg:w-[60%] flex flex-col gap-y-3 cursor-pointer"
           >
+                     <Link to={`tournament/${item.path}`}>
             <div
               onMouseEnter={() => setDropdown(true)}
               onMouseLeave={() => setDropdown(false)}
               className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
             >
+        
               <div
                 className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"
                 style={{ backgroundImage: `url('${item.image}')` }}
               ></div>
+            
             </div>
-
+            </Link>
             <h4 className="h4 text-primary-200">{item.title}</h4>
             <div className="flex gap-3 items-center">
               <IoMdFitness className="text-primary-400 text-3xl" />

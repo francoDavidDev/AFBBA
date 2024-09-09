@@ -18,11 +18,12 @@ import Result from "postcss/lib/result";
 import Results from "./assets/pages/Result";
 import Footer from "./assets/components/footer";
 import TournamentDetails from "./assets/pages/TournamentDetails";
-import NoticesPage from "./assets/pages/Notices";
+
 import ResultsCampeonatoArgentino from "./assets/components/Results/ResultsCampeonatoArgentino";
 
 import ScrollToTop from "./assets/utils/ScrollToTop";
 import Trainers from "./assets/pages/Trainers";
+import CarrouselSponsors from "./assets/components/CarrouselSponsors";
 
 const App = () => {
   return (
@@ -160,18 +161,7 @@ const App = () => {
               }
             />
 
-            <Route
-              path="/notices"
-              element={
-                <motion.div
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <NoticesPage />
-                </motion.div>
-              }
-            />
+        
 
             <Route
               path="/campeonatoArgentinoResults"
@@ -199,6 +189,7 @@ const App = () => {
               }
             />
           </Routes>
+          <CarrouselSponsors />
           <Footer />
         </ScrollToTop>
       </HashRouter>

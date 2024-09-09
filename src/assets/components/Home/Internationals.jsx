@@ -26,42 +26,22 @@ const Internationals = () => {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
-    cssEase: "linear"
+    cssEase: "linear",
   };
 
-  // Filtra los torneos para obtener solo aquellos con banners y tag nacional
+  // Filtra los torneos para obtener solo aquellos con tag nacional
   // También aplica el filtro por título
-  const filteredTournaments = TOURNAMENTS_DATA.filter(tournament =>
-    tournament.banner &&
-    tournament.tag === "nacional" &&
-    tournament.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredTournaments = TOURNAMENTS_DATA.filter(
+    (tournament) =>
+      tournament.tag === "nacional" &&
+      tournament.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <section className="w-full h-auto">
-     
-      <div className="w-full h-full">
-        <Slider
-          ref={sliderRef}
-          {...settings}
-          className="slick-slide_themes"
-        >
-          {filteredTournaments.map((item, i) => (
-            <div
-              key={i}
-              className="w-full h-full bg-blue-400 flex items-center justify-center"
-            >
-              <Link to={`/tournament/${item.title}`}>
-                <img
-                  src={item.banner}
-                  alt={`Banner ${i}`}
-                  className="w-full h-full object-cover cursor-pointer"
-                />
-              </Link>
-            </div>
-          ))}
-        </Slider>
-        <div className="w-full mt-5 flex justify-center items-center gap-8">
+      <div className="w-full h-auto">
+        {/* Botones de navegación arriba */}
+        <div className="w-full mb-5 flex justify-center items-center gap-8">
           <button
             className="btn-lg bg-primary-200 text-primary-300 hover:text-primary-200 hover:bg-primary-300 transition-all duration-150"
             onClick={previous}
@@ -75,6 +55,26 @@ const Internationals = () => {
             Next
           </button>
         </div>
+
+        {/* Slider */}
+        <Slider ref={sliderRef} {...settings} className="slick-slide_themes">
+          {filteredTournaments.map((item, i) => (
+            <div
+              key={i}
+              className="w-full flex items-center justify-center h-auto"
+            >
+              <Link to={`/tournament/${item.title}`} className="flex justify-center items-center w-full">
+                <img
+                  src={item.banner || item.flyer} // Si no hay banner, se muestra el flyer
+                  alt={`Torneo ${item.title}`}
+                  className={`${
+                    item.banner ? "w-full h-auto object-cover" : "w-2/3 h-auto object-contain mx-auto"
+                  } cursor-pointer`} // Diferentes estilos según sea banner o flyer
+                />
+              </Link>
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );

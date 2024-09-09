@@ -126,7 +126,7 @@ const Courses = () => {
           <CourseCard key={course.id} course={course} />
         ))}
       </div>
-      <CarrouselSponsors />
+     
     </section>
   );
 };

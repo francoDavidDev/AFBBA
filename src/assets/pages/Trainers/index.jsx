@@ -58,7 +58,7 @@ const Trainers = () => {
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
           >
-            CONOCE A NUESTROS ENTRENADORES
+            SELECCIONA A TU ENTRENADOR SEGÚN TU PROVINCIA
           </motion.p>
         </motion.div>
 
@@ -135,7 +135,7 @@ const Trainers = () => {
                     )}
                     {trainer.socialLinks.whatsapp && (
                       <a
-                        href={`https://wa.me/${trainer.socialLinks.whatsapp}`}
+                        href={`${trainer.socialLinks.whatsapp}`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-green-500 hover:text-green-700"
@@ -152,7 +152,7 @@ const Trainers = () => {
           )}
         </div>
       </motion.div>
-      <CarrouselSponsors />
+      
     </section>
   );
 };
