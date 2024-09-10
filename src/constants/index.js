@@ -19,7 +19,7 @@ const ASSOCIATIONS = [
   {
     title: "Asociación Salteña de Fisicoculturismo y Fitness",
     company_name: "Presidente",
-    icon: asff,
+    icon: assfl,
     iconBg: "#383E56",
     date: "Salta",
     instagram: [
