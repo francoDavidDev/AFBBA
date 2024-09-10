@@ -17,7 +17,7 @@ import assfl from '../assets/imgs/associations/assfl.png';
 
 const ASSOCIATIONS = [
   {
-    title: "Asociación Salteña de Fisicoculturismo Fitness",
+    title: "Asociación Salteña de Fisicoculturismo y Fitness",
     company_name: "Presidente",
     icon: asff,
     iconBg: "#383E56",
