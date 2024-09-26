@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "../../../styles/resutlCards/index.css";
-
 import { RESULTS } from "../../data/results";
 import { Link } from "react-router-dom";
 
@@ -38,14 +37,14 @@ const Results = () => {
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
         >
-        <motion.h2
-  className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold tracking-widest"
-  whileInView={{ opacity: 1, scale: 1 }}
-  initial={{ opacity: 0, scale: 0.9 }}
-  transition={{ duration: 0.5 }}
->
-  FAMF RESULTADOS
-</motion.h2>
+          <motion.h2
+            className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold tracking-widest"
+            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5 }}
+          >
+            FAMF RESULTADOS
+          </motion.h2>
 
           <motion.p
             className="text-[30px] text-primary-400/80 mb-4"
@@ -67,8 +66,8 @@ const Results = () => {
         />
         <span>Filtrar</span>
       </div>
-      
-      <div className="w-full h-full flex justify-center items-center gap-10 flex-wrap">
+
+      <div className="w-full h-full flex justify-center items-center gap-10 flex-wrap my-20">
         {filteredResults.length > 0 ? (
           filteredResults.map((result, index) => (
             <div key={index} className="card__article">
@@ -77,21 +76,38 @@ const Results = () => {
               </div>
               <div className="card__data">
                 <h2 className="card__title">{result.title}</h2>
+                
+                {/* Mostrar texto pequeño si hay más de un día */}
+                {result.dia_1 && result.dia_2 ? (
+                  <p className="text-[10px] text-gray-500 mb-2">
+                    Selecciona el día que quieres descargar
+                  </p>
+                ) : (
+                  <p className="text-[10px] text-gray-500 mb-2">
+                    Descargar resultado
+                  </p>
+                )}
+
                 <div className="btns">
-                  <Link
-                    to={result.path}
-                    className="card__button"
-                    rel="noopener noreferrer"
-                  >
-                    Ver Resultados
-                  </Link>
-                  <a
-                    href={result.pdf}
-                    download
-                    className="card__button"
-                  >
-                    Descargar Resultado
-                  </a>
+                  {/* Verificar si existen dia_1 y dia_2 */}
+                  {result.dia_1 && (
+                    <a
+                      href={result.dia_1}
+                      download
+                      className="card__button"
+                    >
+                      {result.dia_2 ? "Sábado" : "Descargar Día"}
+                    </a>
+                  )}
+                  {result.dia_2 && (
+                    <a
+                      href={result.dia_2}
+                      download
+                      className="card__button"
+                    >
+                      Domingo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

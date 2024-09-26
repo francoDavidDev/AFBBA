@@ -1,118 +1,128 @@
-.maincontainer{
+.maincontainer {
     position: relative;
     width: 100%;
     height: 100%;
- 
 }
 
-.thecard{
+.thecard {
     position: relative;
     width: 300px;
     height: 400px;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-
+    perspective: 1000px;
 }
 
-.thecard:hover{
+.thecard:hover {
     transform: rotateY(180deg);
 }
 
-.thefront{
+.thefront
+ {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    
-    color: #333;
-    text-align: center;
-
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-
-}
-.theback{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-
-    color: #333;
-    text-align: center;
-
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    transform: rotateY(180deg);
-
-
-    overflow: hidden;
-    box-shadow: 5px 5px 15px #FFB11B ;
-}
-
-.thefront img{
-    width: 100%;
-    height: 80%;
-    border-radius: 10px;
- 
-    display: block;
-    transition: transform 0.3s;
-}
-
-.theback img{
-    width: 100%;
-    height: 80%;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.3s;
-}
-
-.overlay{
-    height: 0;
-    width: 100%;
-    background: linear-gradient(transparent,#82580ba7 58% );
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    padding: 0 4px;
+    justify-content: end;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2; /* Asegura que el contenido esté encima */
     text-align: center;
-    font-size: 14px;
-    transition: height 0.3s;
+    padding-bottom:10px ;
 }
 
-.overlay h3{
-    font-weight: 500;
-    margin-bottom: 5px;
-    margin-top: 80%;
 
+.theback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2; /* Asegura que el contenido esté encima */
+}
+
+.theback {
+    transform: rotateY(180deg);
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px #FFB11B;
+}
+
+.thefront {
+    z-index: 1;
+}
+
+.thefront img {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s;
+    z-index: -1; /* Imagen detrás del contenido */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.theback img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Imagen detrás del contenido */
+}
+
+.overlay {
+    z-index: 3; /* Superponemos el overlay y el contenido por encima */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: height 0.3s;
+    opacity: 1; /* Aseguramos visibilidad */
+}
+
+.overlay h3 {
+    font-weight: 500;
+    color: #fff; /* Texto en blanco sobre el overlay oscuro */
     font-size: 20px;
     letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-.overlay a{
-    margin-top: 10px;
-    color: #262626;
+.overlay a {
+    color: #fff;
     text-decoration: none;
-    font-size: 13px;
-    background-color: #fff;
-    border-radius: 50px;
-    text-align: center;
+    font-size: 14px;
     padding: 5px 15px;
-
-    transition: background-color 0.3s; /* Cambiado a transición más corta */
-
-}
-.theback:hover img{
-    transform: scale(1.2);
-}
-.theback:hover .overlay {
-    height: 100%;
+    background-color: #FFB11B;
+    border-radius: 20px;
+    transition: background-color 0.3s;
 }
 
+.overlay a:hover {
+    background-color: #e69b0f; /* Efecto hover para el botón */
+}
+
+.thecard:hover .overlay {
+    height: 100%; /* Muestra la información completa cuando se hace hover */
+}

@@ -4,6 +4,12 @@ import campeonato_argentino from '../../imgs/tournaments/nationals/flyers/ARGENT
 import pdf_sabado_campeonato_argentino from '../../pdf/campeonato_argentino/sabado.pdf'
 import pdf_domingo_campeonato_argentino from '../../pdf/campeonato_argentino/domingo.pdf'
 
+// PROVINCIAS UNIDAS
+//pdf
+import pdf_provincias_unidas from '../../pdf/results/provincias_unidas_2024/resultados.pdf'
+//img
+import img_provincias_unidas from '../../imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg'
+
 
 export const RESULTS = [
     {
@@ -12,9 +18,20 @@ export const RESULTS = [
       pdf: "path/to/national_tournament_2024.pdf",
       image: campeonato_argentino,
       path:'/campeonatoArgentinoResults',
-      sabado:pdf_sabado_campeonato_argentino,
-      domingo:pdf_domingo_campeonato_argentino
+      dia_1:pdf_sabado_campeonato_argentino,
+      dia_2:pdf_domingo_campeonato_argentino
     },
+
+    {
+      title: "Copa Provincias Unidas",
+      year: 2024,
+      pdf: "path/to/national_tournament_2024.pdf",
+      image: img_provincias_unidas,
+      path:'/campeonatoArgentinoResults',
+      dia_1:pdf_provincias_unidas,
+      dia_2:null
+    },
+ 
  
   ];
   

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "react-vertical-timeline-component/style.min.css";
+import { FaInstagram, FaGlobe } from "react-icons/fa"; // Importa los íconos de react-icons
 import "../../../styles/associationCards/index.css";
 import { ASSOCIATIONS } from "../../../constants";
 
@@ -8,43 +8,43 @@ const Associations = () => {
   const [selectedProvince, setSelectedProvince] = useState("Todas las provincias");
   const [showAll, setShowAll] = useState(false);
 
-  // Obtener provincias únicas para el selector
+  // Crear un conjunto de provincias únicas, tomando el campo 'date' como la provincia.
   const provinces = ["Todas las provincias", ...new Set(ASSOCIATIONS.map((association) => association.date))];
 
-  // Filtrar asociaciones según la provincia seleccionada y el término de búsqueda
+  // Filtrar asociaciones según el término de búsqueda y la provincia seleccionada
   const filteredAssociations = ASSOCIATIONS.filter((association) => {
     const matchesProvince = selectedProvince === "Todas las provincias" || association.date === selectedProvince;
-    const matchesSearchTerm = 
+    const matchesSearchTerm =
       association.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      association.icon.toLowerCase().includes(searchTerm.toLowerCase());
+      association.icon.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      association.date.toLowerCase().includes(searchTerm.toLowerCase()); // Buscar también en el campo 'date'
+
     return matchesProvince && matchesSearchTerm;
   });
 
-  // Mostrar solo las primeras 4 asociaciones si showAll es false
+  // Mostrar solo las primeras 4 asociaciones, o todas si showAll está habilitado
   const visibleAssociations = showAll ? filteredAssociations : filteredAssociations.slice(0, 4);
 
   return (
     <section className="w-full h-[auto] my-20">
-      <div className="maincontainer w-full m-auto flex flex-col   items-center">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center m-auto my-10">
-  ASOCIACIONES PROVINCIALES
-</h2>
+      <div className="maincontainer w-full m-auto flex flex-col items-center">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center m-auto my-10">
+          ASOCIACIONES PROVINCIALES
+        </h2>
 
-
-        {/* Campo de búsqueda y selector */}
         <div className="w-[80%] flex gap-10 flex-wrap justify-center items-center mb-8">
+          {/* Campo de búsqueda */}
           <div className="inputBox py-20 mx-auto">
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-  
               required
             />
             <span>Filtrar</span>
           </div>
 
-          {/* Selector de provincias */}
+          {/* Seleccionar provincia */}
           <select
             value={selectedProvince}
             onChange={(e) => setSelectedProvince(e.target.value)}
@@ -67,28 +67,35 @@ const Associations = () => {
           </select>
         </div>
 
+        {/* Mostrar asociaciones filtradas */}
         <div className="w-full flex gap-10 flex-wrap justify-center items-center">
           {visibleAssociations.length > 0 ? (
             visibleAssociations.map((association, index) => (
-              <div className="thecard" key={index}>
-                <div className="thefront bg-gray-800 border-[1px] border-gray-500">
-                  <img src={association.icon} alt={association.title} />
-                  <h3 className="px-4">{association.title}</h3>
-                </div>
+              <div className="thecard-container" key={index}>
+                <div className="thecard">
+                  <div className="thefront bg-gray-800 border-[1px] border-gray-500">
+                    <img src={association.icon} alt={association.title} />
+                    <h3 className="px-4">{association.title}</h3>
+                  </div>
 
-                <div className="theback bg-primary-400/70 border-[2px] border-primary-400/70">
-                  <img src={association.icon} alt={association.title} />
-                  <div className="overlay">
-                    <h3 className="text-sm">{association.title}</h3>
-                    <div className="flex justify-center gap-10">
-                      <a href={association.web[0]} target="_blank" rel="noopener noreferrer">
-                        VISITAR WEB
-                      </a>
-                      <a href={association.instagram[0]} target="_blank" rel="noopener noreferrer">
-                        INSTAGRAM
-                      </a>
+                  <div className="theback bg-primary-400/70 border-[2px] border-primary-400/70">
+                    <img src={association.img_original} alt={association.title} />
+                    <div className="flex flex-col items-center">
+                    
+                      <div className="flex justify-center gap-4 pt-2">
+                        <a href={association.web[0]} target="_blank" rel="noopener noreferrer">
+                          <button className="bg-primary-300 hover:bg-blue-600 text-white py-2 px-4 rounded flex items-center gap-2">
+                            <FaGlobe /> Web
+                          </button>
+                        </a>
+                        <a href={association.instagram[0]} target="_blank" rel="noopener noreferrer">
+                          <button className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded flex items-center gap-2">
+                            <FaInstagram /> Instagram
+                          </button>
+                        </a>
+                      </div>
+          
                     </div>
-                    <p className="pt-4 text-primary-300 text-lg">{association.date}</p>
                   </div>
                 </div>
               </div>
@@ -98,7 +105,7 @@ const Associations = () => {
           )}
         </div>
 
-        {/* Botón de ver todas / ocultar */}
+        {/* Botón para ver todas las asociaciones */}
         {filteredAssociations.length > 4 && (
           <button
             onClick={() => setShowAll(!showAll)}

@@ -14,12 +14,28 @@ import asff from '../assets/imgs/associations/asff.png';
 import asfyc from '../assets/imgs/associations/asfyc.png';
 import assfl from '../assets/imgs/associations/assfl.png';
 
+import acefisJpg from '../assets/imgs/associations/originals/acefis.jpg';
+import acmufiseJpg from '../assets/imgs/associations/originals/acmufise.jpg';
+import acomeiJpg from '../assets/imgs/associations/originals/acomei.jpg';
+import acorffiJpg from '../assets/imgs/associations/originals/acorffi.jpg';
+import acufimJpg from '../assets/imgs/associations/originals/acufim.jpg';
+import affslJpg from '../assets/imgs/associations/originals/affsl.jpg';
+import afibaJpg from '../assets/imgs/associations/originals/afiba.jpg';
+import aficJpg from '../assets/imgs/associations/originals/afic.jpg';
+import aformJpg from '../assets/imgs/associations/originals/aform.jpg';
+import amfimJpg from '../assets/imgs/associations/originals/amfim.jpg';
+import amuchJpg from '../assets/imgs/associations/originals/amuch.jpg';
+import arffiJpg from '../assets/imgs/associations/originals/arffi.jpg';
+import asffJpg from '../assets/imgs/associations/originals/asff.jpg';
+import asfycJpg from '../assets/imgs/associations/originals/asfyc.jpg';
+import assflJpg from '../assets/imgs/associations/originals/assfl.jpg';
 
 const ASSOCIATIONS = [
   {
     title: "Asociación Salteña de Fisicoculturismo y Fitness",
     company_name: "Presidente",
     icon: assfl,
+    img_original: assflJpg,
     iconBg: "#383E56",
     date: "Salta",
     instagram: [
@@ -33,6 +49,7 @@ const ASSOCIATIONS = [
     title: "Asociación Formoseña de Musculación",
     company_name: "Presidente",
     icon: aform,
+    img_original: aformJpg,
     iconBg: "#383E56",
     date: "Formosa",
     instagram: [
@@ -46,6 +63,7 @@ const ASSOCIATIONS = [
     title: "Asociación Civil, Musculacion y Fitness Santiago del Estero",
     company_name: "Presidente",
     icon: acmufise,
+    img_original: acmufiseJpg,
     iconBg: "#383E56",
     date: "Santiago del Estero",
     instagram: [
@@ -59,6 +77,7 @@ const ASSOCIATIONS = [
     title: "Asociación de Musculación Chaqueña",
     company_name: "Presidente",
     icon: amuch,
+    img_original: amuchJpg,
     iconBg: "#383E56",
     date: "Chaco",
     instagram: [
@@ -72,6 +91,7 @@ const ASSOCIATIONS = [
     title: "Asociación Correntina de Musculación y Fitness",
     company_name: "Presidente",
     icon: acomei,
+    img_original: acomeiJpg,
     iconBg: "#383E56",
     date: "Corrientes",
     instagram: [
@@ -85,6 +105,7 @@ const ASSOCIATIONS = [
     title: "Asociación de Físicoculturismo y Fitness de Misiones",
     company_name: "Presidente",
     icon: acufim,
+    img_original: acufimJpg,
     iconBg: "#383E56",
     date: "Misiones",
     instagram: [
@@ -98,6 +119,7 @@ const ASSOCIATIONS = [
     title: "Asociación Civil de Entrenamiento y Fitness",
     company_name: "San Juan",
     icon: acefis,
+    img_original: acefisJpg,
     iconBg: "#383E56",
     date: "San Juan",
     instagram: [
@@ -111,6 +133,7 @@ const ASSOCIATIONS = [
     title: "Asociación de Fisicoculturismo y Fitness de la Prov. De San Luis",
     company_name: "Presidente",
     icon: affsl,
+    img_original: affslJpg,
     iconBg: "#383E56",
     date: "San Luis",
     instagram: [
@@ -124,6 +147,7 @@ const ASSOCIATIONS = [
     title: "Asociación Santafecina de fisiculturismo y Fitness",
     company_name: "Presidente",
     icon: asff,
+    img_original: asffJpg,
     iconBg: "#383E56",
     date: "Santa Fe",
     instagram: [
@@ -137,6 +161,7 @@ const ASSOCIATIONS = [
     title: "Asociación Cordobesa de Fisicoculturismo Y Fitness",
     company_name: "Presidente",
     icon: acorffi,
+    img_original: acorffiJpg,
     iconBg: "#383E56",
     date: "Cordoba",
     instagram: [
@@ -150,6 +175,7 @@ const ASSOCIATIONS = [
     title: "Asociación Mendocina De Fitness y Musculación",
     company_name: "Presidente",
     icon: amfim,
+    img_original: amfimJpg,
     iconBg: "#383E56",
     date: "Mendoza",
     instagram: [
@@ -163,6 +189,7 @@ const ASSOCIATIONS = [
     title: "Asociación de Fisicoculturismo y Fitness de CABA",
     company_name: "Presidente",
     icon: afic,
+    img_original: aficJpg,
     iconBg: "#383E56",
     date: "CABA",
     instagram: [
@@ -176,36 +203,39 @@ const ASSOCIATIONS = [
     title: "Asociación Ruojana de Fisicoculturismo y Fitness",
     company_name: "Presidente",
     icon: arffi,
+    img_original: arffiJpg,
     iconBg: "#383E56",
     date: "La Rioja",
     instagram: [
-      "https://www.instagram.com/ariffi_larioja?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      "https://www.instagram.com/arffi_la_rioja?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     ],
     web: [
       "",
     ],
   },
   {
-    title: "Asociación Civil De Fisicoculturismo De La Provincia de Buenos Aires",
-    company_name: "Maria Mernes",
+    title: "Asociación Bonaerense de Fisicoculturismo",
+    company_name: "Presidente",
     icon: afiba,
+    img_original: afibaJpg,
     iconBg: "#383E56",
     date: "Buenos Aires",
     instagram: [
-      "https://www.instagram.com/afibaoficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      "https://www.instagram.com/afiba_ifbbargentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     ],
     web: [
-      "https://afiba.com.ar/",
+      "",
     ],
   },
   {
-    title: "Asociación Santacruceña de Fitness y Culturismo",
+    title: "Asociación Fitclub de Fisicoculturismo y Fitness",
     company_name: "Presidente",
     icon: asfyc,
+    img_original: asfycJpg,
     iconBg: "#383E56",
-    date: "Santa Cruz",
+    date: "Buenos Aires",
     instagram: [
-      "https://www.instagram.com/sansongym_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      "https://www.instagram.com/asfyc_fitclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     ],
     web: [
       "",

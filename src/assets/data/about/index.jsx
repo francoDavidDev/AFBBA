@@ -17,7 +17,7 @@ import member2 from '../../imgs/about/members/IMAGEN_1.png';
 //presi
 import member3 from "../../imgs/about/members/oscar.png";
 //secretario
-import osvaldo from '../../imgs/about/members/osvaldo.jpg';
+import maria from '../../imgs/about/members/maria.jpg';
 
 //tesorero
 import member4 from '../../imgs/about/members/IMAGEN_4.png';
@@ -25,7 +25,7 @@ import member4 from '../../imgs/about/members/IMAGEN_4.png';
 export const CARROUSEL_ABOUT = [
   { image: member3 ,name:'Oscar Villareal',tag:'Presidente'},
   { image: member2 ,name:'Jorge Asp',tag:'Vice Presidente'},
-  { image: osvaldo,name:'Osvaldo Medina',tag:'Secretario General' },
+  { image: maria,name:'Maria Mernes',tag:'Secretario General' },
   { image: member1,name:'Claudio Nieto',tag:'Vocal titular' },
   { image: member4,name:'Dario Dominguez',tag:'Tesorero' },
 
