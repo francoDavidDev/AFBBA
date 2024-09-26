@@ -145,4 +145,7 @@ transition: 0.5s;
   }
 
 
+  .grayscale {
+    filter: grayscale(100%);
+  }
   

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaMapMarkerAlt, FaClock, FaInfoCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import '../../../styles/cardLarge/index.css'
 
-const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flyer }) => {
+const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flyer, isPastEvent }) => {
   const [hover, setHover] = useState(false);
 
   const RULES_PDF = file;
@@ -20,11 +21,13 @@ const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flye
         aTag.click();
         aTag.remove();
       });
-  }
+  };
 
   return (
     <div
-      className="w-[95%] bg-[#282728] rounded-lg text-primary-200 md:h-[110px] sm:h-[140px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+      className={`w-[95%] bg-[#282728] rounded-lg text-primary-200 md:h-[110px] sm:h-[140px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ${
+        isPastEvent ? 'opacity-50' : ''
+      }`}  // Aplicar estilo si es un evento pasado
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -47,7 +50,7 @@ const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flye
         </div>
       </div>
       <div
-        className="relative h-full p-2 bg-cover bg-center rounded-r-lg md:w-[350px] w-[200px] flex flex-col justify-between"
+        className={`relative h-full p-2 bg-cover bg-center rounded-r-lg md:w-[350px] w-[200px] flex flex-col justify-between ${isPastEvent ? 'grayscale' : ''}`} // Estilo condicional si es un evento pasado
         style={{ backgroundImage: `url(${flyer})` }}
       >
         {hover && (

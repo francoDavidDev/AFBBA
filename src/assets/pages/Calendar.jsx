@@ -166,41 +166,44 @@ const ElitePro = () => {
         </div>
       </div>
 
-      {/* Eventos pasados */}
-      <div className="h-[auto] w-[98%] m-auto flex lg:flex-row flex-col justify-center gap-y-5 items-start mt-10">
-        <h3 className="text-[24px] font-bold m-auto h3 text-primary-400">EVENTOS TERMINADOS</h3>
-        <div className="md:w-[100%] w-[100%] h-[auto] gap-y-5 flex flex-col justify-center items-center">
-          {pastTournaments.map((item, index) =>
-            w <= 640 ? (
-              <CardSmall
-                key={index}
-                date={item.date}
-                title={item.title}
-                subtitle={item.locality}
-                hour={item.hour_inscription}
-                hours={item.start_competition}
-                zone={item.address}
-                formattedDate={item.formattedDate}
-                file={file}
-                flyer={item.flyer}
-              />
-            ) : (
-              <CardLarge
-                key={index}
-                date={item.date}
-                title={item.title}
-                subtitle={item.locality}
-                hour={item.hour_inscription}
-                hours={item.start_competition}
-                zone={item.address}
-                formattedDate={item.formattedDate}
-                file={file}
-                flyer={item.flyer}
-              />
-            )
-          )}
-        </div>
-      </div>
+    {/* Eventos pasados */}
+<div className="h-[auto] w-[98%] m-auto flex lg:flex-row flex-col justify-center gap-y-5 items-start mt-10">
+  <h3 className="text-[24px] font-bold m-auto h3 text-primary-400">EVENTOS TERMINADOS</h3>
+  <div className="md:w-[100%] w-[100%] h-[auto] gap-y-5 flex flex-col justify-center items-center">
+    {pastTournaments.map((item, index) =>
+      w <= 640 ? (
+        <CardSmall
+          key={index}
+          date={item.date}
+          title={item.title}
+          subtitle={item.locality}
+          hour={item.hour_inscription}
+          hours={item.start_competition}
+          zone={item.address}
+          formattedDate={item.formattedDate}
+          file={file}
+          flyer={item.flyer}
+          isPastEvent={true} // Pasamos esta propiedad a los eventos pasados
+        />
+      ) : (
+        <CardLarge
+          key={index}
+          date={item.date}
+          title={item.title}
+          subtitle={item.locality}
+          hour={item.hour_inscription}
+          hours={item.start_competition}
+          zone={item.address}
+          formattedDate={item.formattedDate}
+          file={file}
+          flyer={item.flyer}
+          isPastEvent={true} // Pasamos esta propiedad a los eventos pasados
+        />
+      )
+    )}
+  </div>
+</div>
+
     </section>
   );
 };

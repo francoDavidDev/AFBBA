@@ -11,7 +11,8 @@ const CardSmall = ({
   hour,
   date,
   file,
-  flyer // Asegúrate de que el flyer se pase como prop
+  flyer, // Asegúrate de que el flyer se pase como prop
+  isPastEvent // Nueva prop
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -34,7 +35,7 @@ const CardSmall = ({
 
   return (
     <div
-      className="relative w-[90%] bg-cover bg-center bg-[#282728] p-5 rounded-lg text-primary-200 sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+      className={`relative w-[90%] bg-cover bg-center bg-[#282728] p-5 rounded-lg text-primary-200 sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ${isPastEvent ? 'grayscale' : ''}`} // Aplicar clase grayscale si es evento pasado
       style={{ backgroundImage: `url(${flyer})` }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
@@ -67,8 +68,8 @@ const CardSmall = ({
         </div>
       </div>
       {hover && (
-        <Link   to={`/tournament/${title}`}
-          href="#more-info" // Cambia esto según la URL deseada
+        <Link
+          to={`/tournament/${title}`} // Cambia esto según la URL deseada
           className="absolute bottom-2 right-2 p-2 bg-primary-400 rounded-full"
         >
           <FaArrowRight className="text-white text-2xl" />
