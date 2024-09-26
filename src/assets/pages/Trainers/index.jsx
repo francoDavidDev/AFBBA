@@ -25,7 +25,7 @@ const Trainers = () => {
   ];
 
   return (
-    <section className="w-full h-auto flex flex-col justify-center items-center gap-y-10">
+    <section className="w-full h-auto flex flex-col justify-center items-center my-20 gap-y-10">
       <motion.div
         className="w-[90%] h-auto m-auto mt-[100px] gap-y-10"
         whileInView={{ opacity: 1, y: 0 }}
