@@ -131,28 +131,5 @@ export const CALENDAR = [
   },
 ];
 
-// Definimos un array de objetos que contienen iconos de redes sociales
-import { BsInstagram, BsWhatsapp, BsFacebook, BsYoutube } from "react-icons/bs";
 
-import oscar from "./assets/imgs/about/members/oscar.png";
-import maria from "./assets/imgs/about/members/maria.png";
 
-export const MEMBERS = [
-  {
-    name: "OSCAR",
-    tag: "PRESIDENTE",
-    image: oscar,
-    icon_options: [
-      { icon: <BsInstagram /> },
-      { icon: <BsWhatsapp /> },
-      { icon: <BsFacebook /> },
-      { icon: <BsYoutube /> },
-    ],
-  },
-  /* {
-    name: "MARIA MERNES",
-    tag: "PRESIDENTE",
-    image: maria,
-    icon_options: [{ icon: <BsInstagram /> }, { icon: <BsYoutube /> }],
-  },*/
-];

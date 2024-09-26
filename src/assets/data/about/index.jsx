@@ -25,11 +25,9 @@ import member4 from '../../imgs/about/members/IMAGEN_4.png';
 export const CARROUSEL_ABOUT = [
   { image: member3 ,name:'Oscar Villareal',tag:'Presidente'},
   { image: member2 ,name:'Jorge Asp',tag:'Vice Presidente'},
-  { image: maria,name:'Maria Mernes',tag:'Secretario General' },
+  { image: maria,name:'Maria Mernes',tag:'Secretaria General' },
   { image: member1,name:'Claudio Nieto',tag:'Vocal titular' },
   { image: member4,name:'Dario Dominguez',tag:'Tesorero' },
-
-
 ];
 
 import photographer_image1 from '../../imgs/about/photographer/image1.jpg';
