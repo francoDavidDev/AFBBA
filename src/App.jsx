@@ -24,6 +24,7 @@ import ResultsCampeonatoArgentino from "./assets/components/Results/ResultsCampe
 import ScrollToTop from "./assets/utils/ScrollToTop";
 import Trainers from "./assets/pages/Trainers";
 import CarrouselSponsors from "./assets/components/CarrouselSponsors";
+import NocheDeCampeonesInfo from "./assets/components/Tournaments/NocheDeCampeonesInfo";
 
 const App = () => {
   return (
@@ -161,8 +162,6 @@ const App = () => {
               }
             />
 
-        
-
             <Route
               path="/campeonatoArgentinoResults"
               element={
@@ -176,7 +175,7 @@ const App = () => {
               }
             />
 
-<Route
+            <Route
               path="/trainers"
               element={
                 <motion.div
@@ -185,6 +184,20 @@ const App = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <Trainers />
+                </motion.div>
+              }
+            />
+
+            
+<Route
+              path="/nocheDeCampeonesInfo"
+              element={
+                <motion.div
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <NocheDeCampeonesInfo />
                 </motion.div>
               }
             />

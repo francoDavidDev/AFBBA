@@ -157,3 +157,32 @@
 
     }
 }
+@media screen and (max-width: 768px) {
+    .card__img {
+        width: 250px; /* Reduce el tamaño de la imagen en móviles */
+    }
+
+    .card__data {
+        width: 220px; /* Ajusta el contenedor de los datos */
+        padding: 1rem; /* Disminuye el padding */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card__img {
+        width: 200px; /* Ajusta aún más para dispositivos más pequeños */
+    }
+
+    .card__data {
+        width: 180px; /* Ajusta el tamaño de los datos para pantallas pequeñas */
+        padding: 0.8rem; /* Reduce el padding en dispositivos muy pequeños */
+    }
+
+    .card__title {
+        font-size: 1rem; /* Reduce el tamaño del título */
+    }
+
+    .card__button {
+        font-size: 0.9rem; /* Reduce el tamaño del botón */
+    }
+}

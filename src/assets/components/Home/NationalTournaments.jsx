@@ -28,10 +28,10 @@ const NationalTournaments = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Link to={`/tournament/${tournament.title}`}>
+              <Link to={tournament.path}>
                 <img src={tournament.flyer} alt={tournament.title} className='image' />
               </Link>
-              <Link to={`/tournament/${tournament.title}`}>
+              <Link to={tournament.path}>
                 <img src={tournament.flyer} alt={`${tournament.title} Background`} className='background' />
               </Link>
               <div className='layer'>

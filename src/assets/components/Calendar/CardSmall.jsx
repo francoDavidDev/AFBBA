@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaMapMarkerAlt, FaClock, FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Agrega useNavigate
 
 const CardSmall = ({
   title,
@@ -15,6 +15,7 @@ const CardSmall = ({
   isPastEvent // Nueva prop
 }) => {
   const [hover, setHover] = useState(false);
+  const navigate = useNavigate(); // Hook para redirigir
 
   const RULES_PDF = file;
 
@@ -33,12 +34,22 @@ const CardSmall = ({
       });
   };
 
+  // Función para manejar el clic en la imagen del torneo
+  const handleImageClick = () => {
+    if (title === "NOCHE DE CAMPEONES") {
+      navigate('/nocheDeCampeonesInfo'); // Redirige a esta URL si es "Noche de Campeones"
+    } else {
+      navigate(`/tournament/${title}`); // Redirige a la URL estándar para otros torneos
+    }
+  };
+
   return (
     <div
       className={`relative w-[90%] bg-cover bg-center bg-[#282728] p-5 rounded-lg text-primary-200 sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ${isPastEvent ? 'grayscale' : ''}`} // Aplicar clase grayscale si es evento pasado
       style={{ backgroundImage: `url(${flyer})` }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={handleImageClick} // Agrega la lógica para redirigir al hacer clic
     >
       <div className="h-full w-full p-3 bg-black bg-opacity-70 rounded-lg flex flex-col justify-between">
         <div className="flex flex-col gap-y-2">
@@ -68,12 +79,9 @@ const CardSmall = ({
         </div>
       </div>
       {hover && (
-        <Link
-          to={`/tournament/${title}`} // Cambia esto según la URL deseada
-          className="absolute bottom-2 right-2 p-2 bg-primary-400 rounded-full"
-        >
+        <div className="absolute bottom-2 right-2 p-2 bg-primary-400 rounded-full">
           <FaArrowRight className="text-white text-2xl" />
-        </Link>
+        </div>
       )}
     </div>
   );

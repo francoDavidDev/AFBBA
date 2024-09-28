@@ -12,7 +12,7 @@ const Info = () => {
 
   return (
     <div className=" h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
-      <h2 className="h3 uppercase text-primary-400 w-[90%]">ACTUALIDAD</h2>
+      <h2 className="h3 uppercase text-primary-400 w-[90%]">NOVEDADES</h2>
 
       <div className="w-[90%] h-[auto] flex flex-col lg:flex-row items-start justify-between gap-5">
         {/* Card BANER MAIN */}
@@ -22,9 +22,9 @@ const Info = () => {
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="w-[100%] lg:w-[60%] flex flex-col gap-y-3 cursor-pointer"
+            className="w-[100%] lg:w-[50%] flex flex-col gap-y-3 cursor-pointer"
           >
-                     <Link to={`tournament/${item.path}`}>
+                     <Link to={item.path}>
             <div
               onMouseEnter={() => setDropdown(true)}
               onMouseLeave={() => setDropdown(false)}
@@ -41,13 +41,14 @@ const Info = () => {
             <h4 className="h4 text-primary-200">{item.title}</h4>
             <div className="flex gap-3 items-center">
               <IoMdFitness className="text-primary-400 text-3xl" />
-              <p className="text-lg text-neutral-400 font-bold">NOTICIAS</p>
+              <p className="text-lg text-neutral-400 font-bold">¡Haz click e inscribete!</p>
+             
             </div>
           </motion.div>
         ))}
 
         {/* OTHERS OTRAS NOTICIAS */}
-        <div className="w-full lg:w-[40%] my-10 md:my-0 flex gap-0 lg:gap-4 gap-y-4 justify-around lg:justify-center items-center flex-wrap">
+        <div className="w-full lg:w-[50%] my-10 md:my-0 flex gap-0 lg:gap-4 gap-y-4 justify-around lg:justify-center items-center flex-wrap">
           {PRESENT_HOME.map((item, index) => (
             <motion.div
               key={index}
@@ -56,16 +57,16 @@ const Info = () => {
               transition={{ duration: 0.5 }}
               onMouseEnter={() => setDropdown2(true)}
               onMouseLeave={() => setDropdown2(false)}
-              className="w-full md:w-[45%] lg:w-full h-[150px] overflow-hidden rounded-xl flex flex-col justify-center cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+              className="w-full md:w-[45%] lg:w-full h-[190px] overflow-hidden rounded-xl flex flex-col justify-center cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
             >
               <Link
                 to={`${item.path}`}
                 className="h-full w-full flex bg-cover bg-top transition-all duration-200 justify-between items-center cursor-pointer"
               >
                 <div className="h-full w-full">
-                  <div className="h-full w-full bg-gradient-to-r from-gray-900 to-gray-600 flex flex-row justify-center items-center text-left">
+                  <div className="h-full w-full bg-gradient-to-r from-gray-900 to-gray-600 flex flex-row justify-center items-center text-center">
                     <div className="h-full w-full">
-                      <h4 className="text-md sm:text-xl p-5 flex flex-col justify-start items-start md:items-center w-full h-full truncate whitespace-normal tracking-wider">
+                      <h4 className="text-md sm:text-xl uppercase p-5 flex flex-col justify-center items-start md:items-center w-full h-full truncate whitespace-normal tracking-wider">
                         {item.title}
                       </h4>
                     </div>
@@ -73,7 +74,7 @@ const Info = () => {
                     <img
                       src={item.image}
                       alt="banner"
-                      className={`relative w-[40%] h-[100%] md:w-[60%] rounded-xl`}
+                      className={`relative w-[40%] h-[100%] md:w-[50%] rounded-xl`}
                     />
                   </div>
                 </div>

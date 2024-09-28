@@ -5,6 +5,7 @@ import file from "../../files/rules.pdf";
 import { TOURNAMENTS_DATA } from "../data/tournaments";
 import CarrouselSponsors from "../components/CarrouselSponsors";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // 1. Importa useNavigate
 
 const ElitePro = () => {
   const [w, setW] = useState(window.innerWidth);
@@ -12,7 +13,9 @@ const ElitePro = () => {
   const [pastTournaments, setPastTournaments] = useState([]);
   const [sortOrder, setSortOrder] = useState("newest"); // "newest" or "oldest"
   const [filterType, setFilterType] = useState("all"); // "all", "nacional", or "internacional"
+  const [showPreinscriptionOnly, setShowPreinscriptionOnly] = useState(false); // Estado para mostrar solo los torneos con preinscripción
   const videoRef = useRef();
+  const navigate = useNavigate(); // 2. Inicializa el hook useNavigate
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,7 +28,7 @@ const ElitePro = () => {
   }, []);
 
   useEffect(() => {
-    const today = new Date(); // Fecha actual
+    const today = new Date();
 
     // Filtrar eventos pasados
     const pastEvents = TOURNAMENTS_DATA.filter(tournament => {
@@ -45,6 +48,11 @@ const ElitePro = () => {
       tournaments = tournaments.filter(tournament => tournament.tag === filterType);
     }
 
+    // Filtrar por preinscripción
+    if (showPreinscriptionOnly) {
+      tournaments = tournaments.filter(tournament => tournament.preinscription === true);
+    }
+
     // Ordenar los torneos
     const sorted = tournaments.sort((a, b) => {
       const dateA = new Date(a.date.split('/').reverse().join('-'));
@@ -53,7 +61,7 @@ const ElitePro = () => {
     });
 
     setFilteredTournaments(sorted);
-  }, [sortOrder, filterType]);
+  }, [sortOrder, filterType, showPreinscriptionOnly]);
 
   const toggleSortOrder = () => {
     setSortOrder(prevOrder => (prevOrder === "newest" ? "oldest" : "newest"));
@@ -63,8 +71,19 @@ const ElitePro = () => {
     setFilterType(type);
   };
 
+  const togglePreinscriptionFilter = () => {
+    setShowPreinscriptionOnly(prev => !prev);
+  };
+
+  // 3. Función para redirigir si es el torneo "NOCHE DE CAMPEONES"
+  const handleImageClick = (tournament) => {
+    if (tournament.title === "NOCHE DE CAMPEONES") {
+      navigate("/nocheDeCampeonesInfo");
+    }
+  };
+
   return (
-    <section className="w-full h-auto flex flex-col justify-center gap-y-10">
+    <section className="w-full h-auto flex flex-col mb-20 justify-center gap-y-10">
       <motion.div
         className="w-[90%] h-auto m-auto mt-[100px]"
         whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +108,6 @@ const ElitePro = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5 }}
           >
-            
           </motion.h2>
           <motion.p
             className="text-[30px] text-primary-400/80 mb-4"
@@ -129,7 +147,20 @@ const ElitePro = () => {
             Internacionales
           </button>
         </div>
+
+        {/* Botón para filtrar por preinscripción */}
+        <button
+          onClick={togglePreinscriptionFilter}
+          className={`mt-4 p-2 ${showPreinscriptionOnly ? "bg-primary-400 text-white" : "bg-gray-200 text-black"} rounded`}
+        >
+          {showPreinscriptionOnly ? "Mostrar Todos los Torneos" : "Mostrar Solo Torneos con Preinscripción"}
+        </button>
       </div>
+
+      {/* Info sobre las imágenes */}
+      <p className="text-center text-lg text-primary-400 font-semibold my-6">
+        Haz click en la imagen para poder ver más información sobre el torneo
+      </p>
 
       {/* Eventos futuros */}
       <div className="h-[auto] w-[98%] m-auto flex lg:flex-row flex-col justify-center gap-y-5 items-start">
@@ -147,6 +178,7 @@ const ElitePro = () => {
                 formattedDate={item.formattedDate}
                 file={file}
                 flyer={item.flyer}
+                onClick={() => handleImageClick(item)} // 4. Agrega el evento onClick
               />
             ) : (
               <CardLarge
@@ -160,52 +192,62 @@ const ElitePro = () => {
                 formattedDate={item.formattedDate}
                 file={file}
                 flyer={item.flyer}
+                onClick={() => handleImageClick(item)} // 4. Agrega el evento onClick
               />
             )
           )}
         </div>
       </div>
 
-    {/* Eventos pasados */}
-<div className="h-[auto] w-[98%] m-auto flex lg:flex-row flex-col justify-center gap-y-5 items-start mt-10">
-  <h3 className="text-[24px] font-bold m-auto h3 text-primary-400">EVENTOS TERMINADOS</h3>
-  <div className="md:w-[100%] w-[100%] h-[auto] gap-y-5 flex flex-col justify-center items-center">
-    {pastTournaments.map((item, index) =>
-      w <= 640 ? (
-        <CardSmall
-          key={index}
-          date={item.date}
-          title={item.title}
-          subtitle={item.locality}
-          hour={item.hour_inscription}
-          hours={item.start_competition}
-          zone={item.address}
-          formattedDate={item.formattedDate}
-          file={file}
-          flyer={item.flyer}
-          isPastEvent={true} // Pasamos esta propiedad a los eventos pasados
-        />
-      ) : (
-        <CardLarge
-          key={index}
-          date={item.date}
-          title={item.title}
-          subtitle={item.locality}
-          hour={item.hour_inscription}
-          hours={item.start_competition}
-          zone={item.address}
-          formattedDate={item.formattedDate}
-          file={file}
-          flyer={item.flyer}
-          isPastEvent={true} // Pasamos esta propiedad a los eventos pasados
-        />
-      )
-    )}
-  </div>
-</div>
-
+      {/* Eventos pasados */}
+         {/* Eventos pasados */}
+         <div className="h-[auto] w-[98%] m-auto flex lg:flex-row flex-col justify-center gap-y-5 items-start mt-10">
+        <div className="md:w-[100%] w-[100%] h-[auto] gap-y-5 flex flex-col justify-center items-center">
+          <h2 className="text-2xl text-primary-400 font-semibold my-6">
+            Torneos Pasados
+          </h2>
+          {pastTournaments.length > 0 ? (
+            pastTournaments.map((item, index) =>
+              w <= 640 ? (
+                <CardSmall
+                  key={index}
+                  date={item.date}
+                  title={item.title}
+                  subtitle={item.locality}
+                  hour={item.hour_inscription}
+                  hours={item.start_competition}
+                  zone={item.address}
+                  formattedDate={item.formattedDate}
+                  file={file}
+                  flyer={item.flyer}
+                  onClick={() => handleImageClick(item)} // 4. Agrega el evento onClick
+                />
+              ) : (
+                <CardLarge
+                  key={index}
+                  date={item.date}
+                  title={item.title}
+                  subtitle={item.locality}
+                  hour={item.hour_inscription}
+                  hours={item.start_competition}
+                  zone={item.address}
+                  formattedDate={item.formattedDate}
+                  file={file}
+                  flyer={item.flyer}
+                  onClick={() => handleImageClick(item)} // 4. Agrega el evento onClick
+                />
+              )
+            )
+          ) : (
+            <p className="text-lg text-primary-400">
+              No hay torneos pasados disponibles.
+            </p>
+          )}
+        </div>
+      </div>
     </section>
   );
 };
 
 export default ElitePro;
+

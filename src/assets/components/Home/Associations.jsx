@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaInstagram, FaGlobe } from "react-icons/fa"; // Importa los íconos de react-icons
+import { FaInstagram, FaGlobe, FaEnvelope } from "react-icons/fa"; // Importa los íconos de react-icons
 import "../../../styles/associationCards/index.css";
 import { ASSOCIATIONS } from "../../../constants";
 
@@ -26,7 +26,7 @@ const Associations = () => {
   const visibleAssociations = showAll ? filteredAssociations : filteredAssociations.slice(0, 4);
 
   return (
-    <section className="w-full h-[auto] my-20">
+    <section className="w-full h-auto my-20">
       <div className="maincontainer w-full m-auto flex flex-col items-center">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center m-auto my-10">
           ASOCIACIONES PROVINCIALES
@@ -40,24 +40,16 @@ const Associations = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               required
+              placeholder="Filtrar..."
+              className="w-full p-2 border rounded-md border-gray-300 focus:outline-none focus:ring focus:ring-blue-500"
             />
-            <span>Filtrar</span>
           </div>
 
           {/* Seleccionar provincia */}
           <select
             value={selectedProvince}
             onChange={(e) => setSelectedProvince(e.target.value)}
-            className="w-full sm:w-1/4 p-2 bg-[#1d2b3a] border border-gray-300 text-white rounded-lg outline-none transition duration-500 ease-in-out focus:border-[#00dfc4] hover:scale-[110%] mx-auto"
-            style={{
-              padding: "10px",
-              border: "1px solid rgba(255, 255, 255, 0.25)",
-              background: "#1d2b3a",
-              borderRadius: "5px",
-              color: "#fff",
-              fontSize: "1em",
-              transition: "0.5s",
-            }}
+            className="w-full sm:w-1/4 p-2 bg-[#1d2b3a] border border-gray-300 text-white rounded-lg outline-none transition duration-500 ease-in-out focus:border-[#00dfc4] mx-auto"
           >
             {provinces.map((province, index) => (
               <option key={index} value={province}>
@@ -73,28 +65,29 @@ const Associations = () => {
             visibleAssociations.map((association, index) => (
               <div className="thecard-container" key={index}>
                 <div className="thecard">
-                  <div className="thefront bg-gray-800 border-[1px] border-gray-500">
-                    <img src={association.icon} alt={association.title} />
-                    <h3 className="px-4">{association.title}</h3>
-                  </div>
+                  <img src={association.img_original} alt={association.title} />
 
-                  <div className="theback bg-primary-400/70 border-[2px] border-primary-400/70">
-                    <img src={association.img_original} alt={association.title} />
-                    <div className="flex flex-col items-center">
+                  <div className="overlay">
+                    <h3>{association.title}</h3>
                     
-                      <div className="flex justify-center gap-4 pt-2">
-                        <a href={association.web[0]} target="_blank" rel="noopener noreferrer">
-                          <button className="bg-primary-300 hover:bg-blue-600 text-white py-2 px-4 rounded flex items-center gap-2">
-                            <FaGlobe /> Web
-                          </button>
-                        </a>
-                        <a href={association.instagram[0]} target="_blank" rel="noopener noreferrer">
-                          <button className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded flex items-center gap-2">
-                            <FaInstagram /> Instagram
-                          </button>
-                        </a>
-                      </div>
-          
+                    {/* Botón de contacto con ícono */}
+                    <div className="flex justify-center py-2">
+                      <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
+                        <FaEnvelope /> Contacto
+                      </button>
+                    </div>
+
+                    <div className="flex justify-center gap-4 pt-2">
+                      <a href={association.web[0]} target="_blank" rel="noopener noreferrer">
+                        <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
+                          <FaGlobe /> Web
+                        </button>
+                      </a>
+                      <a href={association.instagram[0]} target="_blank" rel="noopener noreferrer">
+                        <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
+                          <FaInstagram /> Instagram
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -109,7 +102,7 @@ const Associations = () => {
         {filteredAssociations.length > 4 && (
           <button
             onClick={() => setShowAll(!showAll)}
-            className="mt-6 px-4 py-2 text-white bg-blue-500 rounded shadow-lg hover:bg-blue-600"
+            className="mt-6 px-4 py-2 text-white bg-gray-700 rounded shadow-lg hover:bg-gray-600 transition-all duration-300"
           >
             {showAll ? "Ocultar" : "Ver todas"}
           </button>

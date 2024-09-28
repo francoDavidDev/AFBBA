@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FaMapMarkerAlt, FaClock, FaInfoCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import '../../../styles/cardLarge/index.css'
+import { Link, useNavigate } from "react-router-dom"; // Agrega useNavigate
+import '../../../styles/cardLarge/index.css';
 
 const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flyer, isPastEvent }) => {
   const [hover, setHover] = useState(false);
+  const navigate = useNavigate(); // Hook para redirigir
 
   const RULES_PDF = file;
 
@@ -21,6 +22,15 @@ const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flye
         aTag.click();
         aTag.remove();
       });
+  };
+
+  // Función para manejar el clic en la imagen del torneo
+  const handleImageClick = () => {
+    if (title === "NOCHE DE CAMPEONES") {
+      navigate('/nocheDeCampeonesInfo'); // Redirige a esta URL si es "Noche de Campeones"
+    } else {
+      navigate(`/tournament/${title}`); // Redirige a la URL estándar para otros torneos
+    }
   };
 
   return (
@@ -52,14 +62,12 @@ const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flye
       <div
         className={`relative h-full p-2 bg-cover bg-center rounded-r-lg md:w-[350px] w-[200px] flex flex-col justify-between ${isPastEvent ? 'grayscale' : ''}`} // Estilo condicional si es un evento pasado
         style={{ backgroundImage: `url(${flyer})` }}
+        onClick={handleImageClick} // Agrega la lógica para redirigir al hacer clic
       >
         {hover && (
-          <Link
-            to={`/tournament/${title}`} // Cambia esto según la ruta deseada
-            className="absolute inset-0 flex items-center justify-center"
-          >
+          <div className="absolute inset-0 flex items-center justify-center">
             <FaInfoCircle className="text-primary-400 text-3xl" />
-          </Link>
+          </div>
         )}
       </div>
     </div>

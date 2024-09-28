@@ -16,7 +16,7 @@ const CourseCard = ({ course }) => {
       onMouseLeave={() => setShowPopup(false)}
     >
       {/* Tarjeta del Curso */}
-      <div className="relative bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform duration-300 group-hover:scale-105 h-[400px]">
+      <div className="relative bg-white border mb-20 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform duration-300 group-hover:scale-105 h-[400px]">
         <Link to={`/courses/${course.id}`}>
           <img
             src={course.imageMain}  

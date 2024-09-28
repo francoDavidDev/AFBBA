@@ -4,8 +4,16 @@ import { RESULTS } from "../../data/results";
 
 const ResultsCampeonatoArgentino = () => {
   const [popupVisible, setPopupVisible] = useState(false);
-  const campeonatoArgentino = RESULTS.find(
-    (result) => result.title === "Campeonato Argentino"
+
+  // Función para normalizar cadenas eliminando acentos
+  const normalizeString = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
+  const campeonatoArgentino = RESULTS.find((result) =>
+    normalizeString(result.title).includes(
+      normalizeString("Campeonato Argentino")
+    )
   );
 
   const handleDownload = () => {

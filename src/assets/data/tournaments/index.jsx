@@ -24,6 +24,7 @@ export const TOURNAMENTS_DATA = [
     flyer: MERCOSUR_FLYER,
     banner: null,
     tag: "internacional",
+    path: null,
     title: "COPA MERCOSUR 2024",
     address: "MENDOZA",
     locality: "ARGENTINA",
@@ -40,7 +41,8 @@ export const TOURNAMENTS_DATA = [
         contact: "+54 9 379 407 6303"
       }
     ],
-    social_networks: null
+    social_networks: null,
+    preinscription: false
   },
   {
     id: 1,
@@ -64,12 +66,14 @@ export const TOURNAMENTS_DATA = [
         name: "Omar Bignon",
         href: "https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
       }
-    ]
+    ],
+    preinscription: false
   },
   {
     id: 7,
     flyer: MISS_ARGENTINA,
     banner: null,
+    path: null,
     tag: "internacional",
     title: "MISS Y MISTER",
     address: "CORDOBA",
@@ -78,7 +82,8 @@ export const TOURNAMENTS_DATA = [
     hour_inscription: "Más información próximamente",
     start_competition: "Más información próximamente",
     more_info: "Más información próximamente",
-    social_networks: null
+    social_networks: null,
+    preinscription: false
   },
   {
     id: 3,
@@ -108,7 +113,8 @@ export const TOURNAMENTS_DATA = [
         name: "Omar Bignon",
         href: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
       }
-    ]
+    ],
+    preinscription: false
   },
   {
     id: 4,
@@ -142,10 +148,12 @@ export const TOURNAMENTS_DATA = [
         name: "Omar Bignon",
         href: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
       }
-    ]
+    ],
+    preinscription: false
   },
   {
     id: 2,
+    path: '/nocheDeCampeonesInfo',
     flyer: NOCHE_CAMPEONES_BANNER,
     banner: null,
     tag: "internacional",
@@ -156,7 +164,8 @@ export const TOURNAMENTS_DATA = [
     hour_inscription: "Sábado 09:00 a 12:00 hs",
     start_competition: "Sábado 15:00 hs - Domingo 10:00 hs",
     more_info: "Más información próximamente",
-    social_networks: null
+    social_networks: null,
+    preinscription: true
   },
   {
     id: 6,
@@ -170,6 +179,7 @@ export const TOURNAMENTS_DATA = [
     hour_inscription: "Sábado de 17:00 a 19:00",
     start_competition: "Competencia domingo a las 10:00hs",
     more_info: "+54 9 11 5806-1674",
-    social_networks: "Más información próximamente"
+    social_networks: "Más información próximamente",
+    preinscription: false
   }
 ];

@@ -18,45 +18,47 @@ export const NAV = [
 //HOME DATA
 // aqui esta la informacion de banner main
 
-import bannerMain from './assets/imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg'
+import bannerMain from "./assets/imgs/tournaments/internationals/flyers/nocheDeCampeones.jpg";
 export const ACTUALIDAD = [
   {
-    title: "COPA PROVINCIAS UNIDAS",
-    subtitle: "Forjando Leyendas en el Corazón del Fisicoculturismo",
+    title: "NOCHE DE CAMPEONES",
+    subtitle:
+      "Haz clik en la imagen para poder informarte e inscribirte al Torneo",
     image: bannerMain,
-    path:'COPA PROVINCIAS UNIDAS',
+    path: "/nocheDeCampeonesInfo",
     description:
       "En el escenario titánico del fisicoculturismo argentino, la Copa Mendoza emerge como un faro de grandeza. Aquí, en el corazón de la competencia, los músculos se convierten en pinceles y el cuerpo es el lienzo donde se escribe la epopeya de la fuerza y la dedicación.  Este evento trasciende la mera contienda; es un festival de determinación donde cada pose cuenta una historia de sacrificio y superación. Desde los debutantes que se adentran en el reino de la musculatura hasta los veteranos que han labrado su legado con sudor y esfuerzo, todos se unen en un santuario común donde la pasión se entrelaza con la gloria. En resumen, la Copa Mendoza Argentina no es solo una competencia; es una odisea, un viaje donde los límites se desafían y las leyendas se forjan en el fragor del combate físico. Es el escenario donde los cuerpos se convierten en obras maestras y donde los sueños se elevan hacia el firmamento de la eternidad.",
   },
 ];
 
-import other1 from "./assets/imgs/present/others/paraguay.jpg";
-import campeotanoArgentino from './assets/imgs/tournaments/nationals/flyers/ARGENTINO.jpg'
+import campeotanoArgentino from "./assets/imgs/tournaments/nationals/flyers/ARGENTINO.jpg";
+import provinciasUnidas from "./assets/imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg";
 import logo from "./assets/imgs/logo.jpg";
-
 
 export const PRESENT_HOME = [
   {
-    id:'1',
-    title: "Resultados del Campeonato Argentino",
-    image: campeotanoArgentino,
-
-    description:
-      "Haz click para poder ver los resultados",
+    id: "2",
+    title: "Resultados de la Copa Provincias Unidas",
+    image: provinciasUnidas,
+    path: "/results",
+    description: "Haz click para poder ver todos los cursos diponibles",
   },
   {
-    id:'2',
+    id: "1",
+    title: "Resultados del Campeonato Argentino",
+    image: campeotanoArgentino,
+    path: "/results",
+    description: "Haz click para poder ver los resultados",
+  },
+
+  {
+    id: "3",
     title: "Mira los cursos de FAMF",
     image: logo,
-    path:'/courses',
-    description:
-'Haz click para poder ver todos los cursos diponibles'  },
- 
-
+    path: "/courses",
+    description: "Haz click para poder ver todos los cursos diponibles",
+  },
 ];
-
-
-
 
 export const CALENDAR = [
   {
@@ -130,6 +132,3 @@ export const CALENDAR = [
     clarification: "Clasificación por categorías de peso",
   },
 ];
-
-
-
