@@ -33,7 +33,7 @@ import asfflJpg from '../assets/imgs/associations/originals/assfl.jpg';
 const ASSOCIATIONS = [
   {
     title: "Asociacion Salteña de Fisicoculturismo y Fitness",
-    company_name: "Presidente",
+    president_name: "",
     icon: asffl,
     img_original: asfflJpg,
     iconBg: "#383E56",
@@ -42,12 +42,13 @@ const ASSOCIATIONS = [
       "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     ],
     web: [
-      "https://www.asfyc.org",
+      "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociación Formoseña de Musculación y Fitness.",
-    company_name: "Presidente",
+    president_name: "",
     icon: aform,
     img_original: aformJpg,
     iconBg: "#383E56",
@@ -58,10 +59,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion Civil, Musculacion y Fitness Santiago del Estero",
-    company_name: "Presidente",
+    president_name: "Juan Carlos Nuno",
     icon: acmufise,
     img_original: acmufiseJpg,
     iconBg: "#383E56",
@@ -72,10 +74,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "+543855944083", // Nuevo campo de contact
   },
   {
     title: "Asociacion de Musculación Chaqueña",
-    company_name: "Presidente",
+    president_name: "",
     icon: amuch,
     img_original: amuchJpg,
     iconBg: "#383E56",
@@ -86,10 +89,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion Correntina de Musculación y Fitness",
-    company_name: "Presidente",
+    president_name: "",
     icon: acomei,
     img_original: acomeiJpg,
     iconBg: "#383E56",
@@ -100,10 +104,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion de Físicoculturismo y Fitness de Misiones",
-    company_name: "Presidente",
+    president_name: "Jorge Bothner",
     icon: acufim,
     img_original: acufimJpg,
     iconBg: "#383E56",
@@ -114,10 +119,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "+543755688062", // Nuevo campo de contact
   },
   {
     title: "Asosiacion Civil de Entrenamiento y Fitness Sanjuanino",
-    company_name: "San Juan",
+    president_name: "San Juan",
     icon: acefis,
     img_original: acefisJpg,
     iconBg: "#383E56",
@@ -128,10 +134,11 @@ const ASSOCIATIONS = [
     web: [
       "https://www.instagram.com/acefissanjuan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion De Fisicoculturismo Y Fitness De La Provincia De San Luis",
-    company_name: "Presidente",
+    president_name: "",
     icon: affsl,
     img_original: affslJpg,
     iconBg: "#383E56",
@@ -142,10 +149,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociación Santafesina de Fisicoculturismo y Fitness",
-    company_name: "Presidente",
+    president_name: "",
     icon: asff,
     img_original: asffJpg,
     iconBg: "#383E56",
@@ -156,10 +164,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion Cordobesa de Fisicoculturismo Y Fitness",
-    company_name: "Presidente",
+    president_name: "Claudio Nieto",
     icon: acorffi,
     img_original: acorffiJpg,
     iconBg: "#383E56",
@@ -170,10 +179,12 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "+543515104601 ", // Nuevo campo de  
+   
   },
   {
     title: "Asociacion Mendocina De Fitness y Musculación",
-    company_name: "Presidente",
+    president_name: "",
     icon: amfim,
     img_original: amfimJpg,
     iconBg: "#383E56",
@@ -184,10 +195,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion de Fisicoculturismo y Fitness de CABA",
-    company_name: "Presidente",
+    president_name: "",
     icon: afic,
     img_original: aficJpg,
     iconBg: "#383E56",
@@ -198,10 +210,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion Riojana de Fisicoculturismo y Fitness",
-    company_name: "Presidente",
+    president_name: "",
     icon: arffi,
     img_original: arffiJpg,
     iconBg: "#383E56",
@@ -212,10 +225,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion Bonaerense de Fisicoculturismo",
-    company_name: "Presidente",
+    president_name: "Maria Mernes",
     icon: afiba,
     img_original: afibaJpg,
     iconBg: "#383E56",
@@ -226,10 +240,11 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
   {
     title: "Asociacion Santacruzeña de Fitness y culturismo ",
-    company_name: "Presidente",
+    president_name: "",
     icon: asfyc,
     img_original: asfycJpg,
     iconBg: "#383E56",
@@ -240,7 +255,9 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
+    contact: "", // Nuevo campo de contact
   },
 ];
+
 
 export { ASSOCIATIONS };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion'; // Importing motion from framer-motion
 import { NOCHE_CAMPEONES_INFO } from '../../data/nocheDeCampeones';
+import { Link } from 'react-router-dom';
 
 const NocheDeCampeonesInfo = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -28,7 +29,7 @@ const NocheDeCampeonesInfo = () => {
           transition={{ duration: 0.3 }} // Duration of the animation
         >
           {/* Encabezado del evento */}
-          <div className="text-center mb-4">
+          <div className="text-center mb-4 flex flex-col">
             {/* Image at the top */}
             <img 
               src={evento.image} // Replace with the actual image URL/path
@@ -39,13 +40,15 @@ const NocheDeCampeonesInfo = () => {
             <p className="text-lg text-[#FFB11B]">{evento.localidad}, {evento.provincia}</p>
             <p className="text-lg text-[#FFB11B]">{evento.fecha}</p>
             {/* Download Button */}
-            <a 
-              href={evento.pdf} // Replace with the actual PDF URL/path
-              download // This attribute triggers a download
-              className="mt-4 inline-block bg-[#FFB11B] text-[#033667] font-semibold py-2 px-4 rounded-lg"
-            >
-              Descargar toda la información
-            </a>
+         
+            <Link
+                to={'/formInscription'}
+              
+                rel="noopener noreferrer"
+                className="mt-4 inline-block bg-[#FFB11B] text-[#033667] font-semibold py-2 px-4 rounded-lg"
+              >
+                Preinscripción
+              </Link>
           </div>
 
           {/* Secciones interactivas */}
@@ -210,9 +213,19 @@ const NocheDeCampeonesInfo = () => {
                 </motion.div>
               )}
             </motion.div>
+
+            <a 
+              href={evento.pdf} // Replace with the actual PDF URL/path
+              download // This attribute triggers a download
+              className="mt-4 w-full text-center   inline-block italic font-semibold py-2 px-4 rounded-lg"
+            >
+              Descargar toda la información
+            </a>
           </div>
+       
         </motion.div>
       ))}
+      
     </div>
   );
 };

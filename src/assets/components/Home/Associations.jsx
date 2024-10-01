@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaInstagram, FaGlobe, FaEnvelope } from "react-icons/fa"; // Importa los íconos de react-icons
+import { FaInstagram, FaGlobe, FaWhatsapp } from "react-icons/fa"; // Importa los íconos de react-icons
 import "../../../styles/associationCards/index.css";
 import { ASSOCIATIONS } from "../../../constants";
 
@@ -17,7 +17,7 @@ const Associations = () => {
     const matchesSearchTerm =
       association.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       association.icon.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      association.date.toLowerCase().includes(searchTerm.toLowerCase()); // Buscar también en el campo 'date'
+      association.date.toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesProvince && matchesSearchTerm;
   });
@@ -69,20 +69,41 @@ const Associations = () => {
 
                   <div className="overlay">
                     <h3>{association.title}</h3>
-                    
-                    {/* Botón de contacto con ícono */}
-                    <div className="flex justify-center py-2">
-                      <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
-                        <FaEnvelope /> Contacto
-                      </button>
+
+                    {/* Nombre del presidente con el fondo de los botones */}
+                    <div className="mt-4 bg-gray-700 text-white py-2 px-4 rounded text-center">
+                      <p>Presidente: {association.president_name || "Información no disponible"}</p>
+
+                      {/* Botón de contacto con ícono de WhatsApp */}
+                      <div className="flex justify-center py-2">
+                        {association.contact_info ? (
+                          <a href={`https://wa.me/543755688062`} target="_blank" rel="noopener noreferrer">
+                            <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
+                              <FaWhatsapp /> Contacto
+                            </button>
+                          </a>
+                        ) : (
+                          <p className="text-white">Información no disponible</p>
+                        )}
+                      </div>
                     </div>
 
                     <div className="flex justify-center gap-4 pt-2">
-                      <a href={association.web[0]} target="_blank" rel="noopener noreferrer">
-                        <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
-                          <FaGlobe /> Web
-                        </button>
-                      </a>
+                      <button
+                        onClick={() => {
+                          const isAfiba = association.title.toLowerCase() === "Asociacion Bonaerense de Fisicoculturismo";
+                          if (isAfiba) {
+                            window.open("https://afibaoficial.com.ar/", "_blank");
+                          } else if (association.web[0] === "https://afibaoficial.com.ar/") {
+                            window.open(association.web[0], "_blank");
+                          } else {
+                            window.location.href = "/";
+                          }
+                        }}
+                        className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300"
+                      >
+                        <FaGlobe /> Web
+                      </button>
                       <a href={association.instagram[0]} target="_blank" rel="noopener noreferrer">
                         <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
                           <FaInstagram /> Instagram

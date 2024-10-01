@@ -25,6 +25,8 @@ import ScrollToTop from "./assets/utils/ScrollToTop";
 import Trainers from "./assets/pages/Trainers";
 import CarrouselSponsors from "./assets/components/CarrouselSponsors";
 import NocheDeCampeonesInfo from "./assets/components/Tournaments/NocheDeCampeonesInfo";
+import Form from "./assets/pages/form/Form";
+import PageNoFound from "./assets/components/PageNoFound";
 
 const App = () => {
   return (
@@ -188,8 +190,7 @@ const App = () => {
               }
             />
 
-            
-<Route
+            <Route
               path="/nocheDeCampeonesInfo"
               element={
                 <motion.div
@@ -198,6 +199,32 @@ const App = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <NocheDeCampeonesInfo />
+                </motion.div>
+              }
+            />
+
+            <Route
+              path="/formInscription"
+              element={
+                <motion.div
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Form />
+                </motion.div>
+              }
+            />
+
+<Route
+              path="/pageNoFound"
+              element={
+                <motion.div
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <PageNoFound />
                 </motion.div>
               }
             />
