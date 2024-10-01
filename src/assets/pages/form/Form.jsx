@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { validateForm } from "../../utils/form/validateForm.jsx";
 import { formatDate } from "../../utils/form/formatDate.jsx";
 import { handleChange } from "../../utils/form/handleChange.jsx"
-import '../../../styles/form/style.css'
+
 
 const Form = () => {
   // Credenciales emailJS
