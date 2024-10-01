@@ -91,13 +91,13 @@ const Associations = () => {
                     <div className="flex justify-center gap-4 pt-2">
                       <button
                         onClick={() => {
-                          const isAfiba = association.title.toLowerCase() === "Asociacion Bonaerense de Fisicoculturismo";
+                          const isAfiba = association.title === "Asociacion Bonaerense de Fisicoculturismo";
                           if (isAfiba) {
                             window.open("https://afibaoficial.com.ar/", "_blank");
                           } else if (association.web[0] === "https://afibaoficial.com.ar/") {
                             window.open(association.web[0], "_blank");
                           } else {
-                            window.location.href = "/";
+                            window.location.href = "#/pageNoFound";
                           }
                         }}
                         className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300"
