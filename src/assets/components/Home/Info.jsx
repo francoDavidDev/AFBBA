@@ -14,9 +14,13 @@ const Info = () => {
     <div className="h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
       {/* Title Section */}
       <div className="w-[90%] text-primary-400 flex flex-col items-center">
-        <span className="text-sm uppercase">Preinscripción Obligatoria</span>
-        <h2 className="h3 uppercase text-center">Noche de Campeones</h2>
-        <span className="text-sm uppercase">Amateur</span>
+        <span className="text-base md:text-lg uppercase">
+          Preinscripción Obligatoria
+        </span>
+        <h2 className="text-xl md:text-2xl uppercase text-center">
+          Noche de Campeones
+        </h2>
+        <span className="text-base md:text-lg uppercase">Amateur</span>
       </div>
 
       <div className="w-[90%] h-[auto] flex flex-col lg:flex-row items-start justify-between gap-5">
@@ -44,8 +48,10 @@ const Info = () => {
             <h4 className="h4 text-primary-200">{item.title}</h4>
             <div className="flex gap-3 items-center">
               <IoMdFitness className="text-primary-400 text-3xl" />
-              <Link to={'/nocheDeCampeonesInfo'}>
-              <p className="text-lg text-primary-400 font-bold hover:underline ">¡NOCHE DE CAMPEONES, HAS CLIK E INSCRIBITE!</p>
+              <Link to={"/nocheDeCampeonesInfo"}>
+                <p className="text-lg text-primary-400 font-bold hover:underline ">
+                  ¡NOCHE DE CAMPEONES, HAS CLIK E INSCRIBITE!
+                </p>
               </Link>
             </div>
           </motion.div>
