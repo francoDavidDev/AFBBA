@@ -338,7 +338,7 @@ const Form = () => {
             <div className="flex justify-center w-full">
               <motion.button
                 type="submit"
-                className="bg-primary-100 text-white font-bold py-2 px-4 rounded hover:bg-primary-200"
+                className="bg-primary-100 text-white font-bold py-2 px-4 rounded hover:bg-primary-300"
                 disabled={loading}
                 whileHover={{ scale: 1.05 }}
               >
@@ -356,17 +356,17 @@ const Form = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <div className="bg-white p-6 rounded-lg">
-                  <h2 className="text-xl font-bold mb-4">¡Formulario Enviado!</h2>
+                <div className="bg-primary-300 text-primary-200 p-6 rounded-lg">
+                  <h2 className="text-xl text-primary-200 font-bold mb-4">¡Formulario Enviado!</h2>
                   <p>Se ha enviado correctamente tu preinscripción.</p>
                   <div className="flex justify-center mt-4">
-                    <Link to="/results" className="text-primary-300 hover:underline">
-                      Ver Resultados
+                    <Link to="/" className="text-primary-400 hover:underline bg-primary-100  font-bold py-2 px-4 rounded ">
+                      Volver al inicio
                     </Link>
                   </div>
                   <div className="flex justify-center mt-4">
                     <motion.button
-                      className="bg-primary-100 text-white font-bold py-2 px-4 rounded hover:bg-primary-200"
+                      className=" text-white font-bold py-2 px-4 rounded hover:bg-primary-200 hover:text-primary-300"
                       onClick={() => setModalOpen(false)}
                     >
                       Cerrar

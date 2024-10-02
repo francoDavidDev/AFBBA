@@ -11,8 +11,13 @@ const Info = () => {
   const videoRef = useRef();
 
   return (
-    <div className=" h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
-      <h2 className="h3 uppercase text-primary-400 w-[90%]">NOVEDADES</h2>
+    <div className="h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
+      {/* Title Section */}
+      <div className="w-[90%] text-primary-400 flex flex-col items-center">
+        <span className="text-sm uppercase">Preinscripción Obligatoria</span>
+        <h2 className="h3 uppercase text-center">Noche de Campeones</h2>
+        <span className="text-sm uppercase">Amateur</span>
+      </div>
 
       <div className="w-[90%] h-[auto] flex flex-col lg:flex-row items-start justify-between gap-5">
         {/* Card BANER MAIN */}
@@ -24,25 +29,24 @@ const Info = () => {
             transition={{ duration: 0.5 }}
             className="w-[100%] lg:w-[50%] flex flex-col gap-y-3 cursor-pointer"
           >
-                     <Link to={item.path}>
-            <div
-              onMouseEnter={() => setDropdown(true)}
-              onMouseLeave={() => setDropdown(false)}
-              className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
-            >
-        
+            <Link to={item.path}>
               <div
-                className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"
-                style={{ backgroundImage: `url('${item.image}')` }}
-              ></div>
-            
-            </div>
+                onMouseEnter={() => setDropdown(true)}
+                onMouseLeave={() => setDropdown(false)}
+                className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+              >
+                <div
+                  className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"
+                  style={{ backgroundImage: `url('${item.image}')` }}
+                ></div>
+              </div>
             </Link>
             <h4 className="h4 text-primary-200">{item.title}</h4>
             <div className="flex gap-3 items-center">
               <IoMdFitness className="text-primary-400 text-3xl" />
-              <p className="text-lg text-neutral-400 font-bold">¡Haz click e inscribete!</p>
-             
+              <Link to={'/nocheDeCampeonesInfo'}>
+              <p className="text-lg text-primary-400 font-bold hover:underline ">¡NOCHE DE CAMPEONES, HAS CLIK E INSCRIBITE!</p>
+              </Link>
             </div>
           </motion.div>
         ))}

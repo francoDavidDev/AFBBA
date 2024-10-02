@@ -59,7 +59,7 @@ export const validateForm = (form) => {
     if (!form.trainer) tempErrors.trainer = "Entrenador es requerido";
 
     if (!form.photo) {
-        tempErrors.photo = "Foto carnet es requerida";
+        tempErrors.photo = "Foto carnet es requerida (solo formatos jpg, jpeg o png) ";
     }
 
     return tempErrors;
