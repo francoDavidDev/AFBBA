@@ -84,5 +84,20 @@ export const CATEGORIES = [
     'CULTURISTA (SOLO PARA PAREJAS)'
 ];
 
+export const SOUTH_AMERICAN_COUNTRIES = [
+  "ARGENTINA",
+  "BOLIVIA",
+  "BRASIL",
+  "CHILE",
+  "COLOMBIA",
+  "ECUADOR",
+  "GUYANA",
+  "PARAGUAY",
+  "PERÚ",
+  "SURINAM",
+  "URUGUAY",
+  "VENEZUELA",
+];
+
 
   

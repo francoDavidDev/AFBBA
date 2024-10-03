@@ -1,29 +1,40 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import axios from 'axios';
-import { LOCALITIES, MODALITIES, CATEGORIES } from "../../data/form";
+import axios from "axios";
+import {
+  LOCALITIES,
+  MODALITIES,
+  CATEGORIES,
+  SOUTH_AMERICAN_COUNTRIES,
+} from "../../data/form";
 import { Link } from "react-router-dom";
 import { validateForm } from "../../utils/form/validateForm.jsx";
 import { formatDate } from "../../utils/form/formatDate.jsx";
-import { handleChange } from "../../utils/form/handleChange.jsx"
+import { handleChange } from "../../utils/form/handleChange.jsx";
 
+import imgCarnet1 from "../../imgs/form/imgCarnet1.jpg";
+import imgCarnet2 from "../../imgs/form/imgCarnet2.jpg";
+import imgCarnet3 from "../../imgs/form/imgCarnet3.jpg";
+import imgCarnet4 from "../../imgs/form/imgCarnet4.webp";
+import imgCarnet5 from "../../imgs/form/imgCarnet5.webp";
 
 const Form = () => {
   // Credenciales emailJS
-  const TEMPLATE_ID = 'template_2b1petm';
-  const SERVICE_ID = 'service_zlwh8pp';
-  const PUBLIC_KEY = 'i_NVru_5O1nhFJ0re';
+  const TEMPLATE_ID = "template_2b1petm";
+  const SERVICE_ID = "service_zlwh8pp";
+  const PUBLIC_KEY = "i_NVru_5O1nhFJ0re";
 
   // Credenciales Cloudinary
-  const CLOUD_NAME = 'dvsyvhqym';
-  const UPLOAD_PRESET = 'Presents_Foto_Carnet';
+  const CLOUD_NAME = "dvsyvhqym";
+  const UPLOAD_PRESET = "Presents_Foto_Carnet";
 
   const [form, setForm] = useState({
     email: "",
     fullName: "",
     birthDate: "",
     dni: "",
+    country:"",
     locality: "",
     modality: "",
     category: "",
@@ -31,13 +42,13 @@ const Form = () => {
     height: "",
     phone: "",
     trainer: "",
-    photo: '',
+    photo: "",
   });
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const fileInputRef = useRef(); 
+  const fileInputRef = useRef();
   const formRef = useRef();
 
   const handleSubmit = async (e) => {
@@ -56,8 +67,8 @@ const Form = () => {
 
           // Subir la imagen a Cloudinary
           const formData = new FormData();
-          formData.append('file', form.photo);
-          formData.append('upload_preset', `${UPLOAD_PRESET}`);
+          formData.append("file", form.photo);
+          formData.append("upload_preset", `${UPLOAD_PRESET}`);
 
           const response = await axios.post(
             `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
@@ -85,9 +96,10 @@ const Form = () => {
           };
 
           // Enviar correo con emailJS
-          emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+          emailjs
+            .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
             .then((response) => {
-              console.log('Correo enviado!', response.status, response.text);
+              console.log("Correo enviado!", response.status, response.text);
               setLoading(false);
               setModalOpen(true);
               // Resetear el formulario
@@ -103,16 +115,16 @@ const Form = () => {
                 height: "",
                 phone: "",
                 trainer: "",
-                photo: '',
+                photo: "",
               });
             })
             .catch((err) => {
-              console.error('Error al enviar el correo:', err);
+              console.error("Error al enviar el correo:", err);
               setLoading(false);
             });
         }
       } catch (error) {
-        console.error('Error al subir la imagen:', error);
+        console.error("Error al subir la imagen:", error);
         setLoading(false);
       }
     } else {
@@ -136,7 +148,10 @@ const Form = () => {
           >
             {/* Correo Electrónico */}
             <div className="flex flex-col w-full">
-              <label htmlFor="email" className="text-sm font-medium text-gray-600">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-gray-600"
+              >
                 Correo Electrónico
               </label>
               <input
@@ -147,12 +162,17 @@ const Form = () => {
                 className="p-2 border border-gray-300 rounded"
                 placeholder="ejemplo@gmail.com"
               />
-              {errors.email && <span className="text-red-500">{errors.email}</span>}
+              {errors.email && (
+                <span className="text-red-500">{errors.email}</span>
+              )}
             </div>
 
             {/* Nombre Completo */}
             <div className="flex flex-col w-full">
-              <label htmlFor="fullName" className="text-sm font-medium text-gray-600">
+              <label
+                htmlFor="fullName"
+                className="text-sm font-medium text-gray-600"
+              >
                 Nombre Completo
               </label>
               <input
@@ -163,12 +183,17 @@ const Form = () => {
                 className="p-2 border border-gray-300 rounded"
                 placeholder="Juan Pérez"
               />
-              {errors.fullName && <span className="text-red-500">{errors.fullName}</span>}
+              {errors.fullName && (
+                <span className="text-red-500">{errors.fullName}</span>
+              )}
             </div>
 
             {/* Fecha de Nacimiento */}
             <div className="flex flex-col w-full">
-              <label htmlFor="birthDate" className="text-sm font-medium text-gray-600">
+              <label
+                htmlFor="birthDate"
+                className="text-sm font-medium text-gray-600"
+              >
                 Fecha de Nacimiento
               </label>
               <input
@@ -178,13 +203,18 @@ const Form = () => {
                 onChange={(e) => handleChange(e, form, setForm)}
                 className="p-2 border border-gray-300 rounded"
               />
-              {errors.birthDate && <span className="text-red-500">{errors.birthDate}</span>}
+              {errors.birthDate && (
+                <span className="text-red-500">{errors.birthDate}</span>
+              )}
             </div>
 
             {/* DNI */}
             <div className="flex flex-col w-full">
-              <label htmlFor="dni" className="text-sm font-medium text-gray-600">
-                DNI
+              <label
+                htmlFor="dni"
+                className="text-sm font-medium text-gray-600"
+              >
+                DNI / Pasaporte
               </label>
               <input
                 type="text"
@@ -197,28 +227,60 @@ const Form = () => {
               {errors.dni && <span className="text-red-500">{errors.dni}</span>}
             </div>
 
-            {/* Localidad */}
+            {/* País */}
             <div className="flex flex-col w-full">
-              <label htmlFor="locality" className="text-sm font-medium text-gray-600">
-                Localidad
+              <label
+                htmlFor="country"
+                className="text-sm font-medium text-gray-600"
+              >
+                País
               </label>
               <select
-                name="locality"
-                value={form.locality}
+                name="country"
+                value={form.country}
                 onChange={(e) => handleChange(e, form, setForm)}
                 className="p-2 border border-gray-300 rounded"
               >
-                <option value="">Seleccionar Localidad</option>
-                {LOCALITIES.map((locality) => (
-                  <option key={locality} value={locality}>{locality}</option>
+                <option value="">Seleccionar País</option>
+                {SOUTH_AMERICAN_COUNTRIES.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
                 ))}
               </select>
-              {errors.locality && <span className="text-red-500">{errors.locality}</span>}
+              {errors.country && (
+                <span className="text-red-500">{errors.country}</span>
+              )}
             </div>
+
+           {/* Localidad / Ciudad */}
+<div className="flex flex-col w-full">
+  <label
+    htmlFor="locality"
+    className="text-sm font-medium text-gray-600"
+  >
+    Localidad / Ciudad
+  </label>
+  <input
+    type="text"
+    name="locality"
+    value={form.locality}
+    onChange={(e) => handleChange(e, form, setForm)}
+    className="p-2 border border-gray-300 rounded"
+    placeholder="Escriba su localidad o ciudad"
+  />
+  {errors.locality && (
+    <span className="text-red-500">{errors.locality}</span>
+  )}
+</div>
+
 
             {/* Modalidad */}
             <div className="flex flex-col w-full">
-              <label htmlFor="modality" className="text-sm font-medium text-gray-600">
+              <label
+                htmlFor="modality"
+                className="text-sm font-medium text-gray-600"
+              >
                 Modalidad
               </label>
               <select
@@ -229,15 +291,22 @@ const Form = () => {
               >
                 <option value="">Seleccionar Modalidad</option>
                 {MODALITIES.map((modality) => (
-                  <option key={modality} value={modality}>{modality}</option>
+                  <option key={modality} value={modality}>
+                    {modality}
+                  </option>
                 ))}
               </select>
-              {errors.modality && <span className="text-red-500">{errors.modality}</span>}
+              {errors.modality && (
+                <span className="text-red-500">{errors.modality}</span>
+              )}
             </div>
 
             {/* Categoría */}
             <div className="flex flex-col w-full">
-              <label htmlFor="category" className="text-sm font-medium text-gray-600">
+              <label
+                htmlFor="category"
+                className="text-sm font-medium text-gray-600"
+              >
                 Categoría
               </label>
               <select
@@ -248,15 +317,22 @@ const Form = () => {
               >
                 <option value="">Seleccionar Categoría</option>
                 {CATEGORIES.map((category) => (
-                  <option key={category} value={category}>{category}</option>
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
                 ))}
               </select>
-              {errors.category && <span className="text-red-500">{errors.category}</span>}
+              {errors.category && (
+                <span className="text-red-500">{errors.category}</span>
+              )}
             </div>
 
             {/* Peso de Competencia */}
             <div className="flex flex-col w-full">
-              <label htmlFor="competitionWeight" className="text-sm font-medium text-gray-600">
+              <label
+                htmlFor="competitionWeight"
+                className="text-sm font-medium text-gray-600"
+              >
                 Peso de Competencia
               </label>
               <input
@@ -267,12 +343,17 @@ const Form = () => {
                 className="p-2 border border-gray-300 rounded"
                 placeholder="Ej: 80.6"
               />
-              {errors.competitionWeight && <span className="text-red-500">{errors.competitionWeight}</span>}
+              {errors.competitionWeight && (
+                <span className="text-red-500">{errors.competitionWeight}</span>
+              )}
             </div>
 
             {/* Altura */}
             <div className="flex flex-col w-full">
-              <label htmlFor="height" className="text-sm font-medium text-gray-600">
+              <label
+                htmlFor="height"
+                className="text-sm font-medium text-gray-600"
+              >
                 Altura
               </label>
               <input
@@ -283,28 +364,39 @@ const Form = () => {
                 className="p-2 border border-gray-300 rounded"
                 placeholder="Ej: 175"
               />
-              {errors.height && <span className="text-red-500">{errors.height}</span>}
+              {errors.height && (
+                <span className="text-red-500">{errors.height}</span>
+              )}
             </div>
 
-            {/* Número de Teléfono */}
-            <div className="flex flex-col w-full">
-              <label htmlFor="phone" className="text-sm font-medium text-gray-600">
-                Número de Teléfono
-              </label>
-              <input
-                type="text"
-                name="phone"
-                value={form.phone}
-                onChange={(e) => handleChange(e, form, setForm)}
-                className="p-2 border border-gray-300 rounded"
-                placeholder="1123456789"
-              />
-              {errors.phone && <span className="text-red-500">{errors.phone}</span>}
-            </div>
+        {/* Número de Teléfono */}
+<div className="flex flex-col w-full">
+  <label
+    htmlFor="phone"
+    className="text-sm font-medium text-gray-600"
+  >
+    Número de Teléfono (incluya el código de área de su país)
+  </label>
+  <input
+    type="text"
+    name="phone"
+    value={form.phone}
+    onChange={(e) => handleChange(e, form, setForm)}
+    className="p-2 border border-gray-300 rounded"
+    placeholder="+54 1123456789"
+  />
+  {errors.phone && (
+    <span className="text-red-500">{errors.phone}</span>
+  )}
+</div>
+
 
             {/* Entrenador */}
             <div className="flex flex-col w-full">
-              <label htmlFor="trainer" className="text-sm font-medium text-gray-600">
+              <label
+                htmlFor="trainer"
+                className="text-sm font-medium text-gray-600"
+              >
                 Entrenador
               </label>
               <input
@@ -313,16 +405,60 @@ const Form = () => {
                 value={form.trainer}
                 onChange={(e) => handleChange(e, form, setForm)}
                 className="p-2 border border-gray-300 rounded"
-                placeholder="Entrenador"
+                placeholder="Coloque el nombre de su entrenador"
               />
-              {errors.trainer && <span className="text-red-500">{errors.trainer}</span>}
+              {errors.trainer && (
+                <span className="text-red-500">{errors.trainer}</span>
+              )}
             </div>
 
-            {/* Foto Carnet */}
+            {/* photo - foto carnet */}
             <div className="flex flex-col w-full">
-              <label htmlFor="photo" className="text-sm font-medium text-gray-600">
-                Foto Carnet
+              <label
+                htmlFor="photo"
+                className="text-sm font-medium text-gray-600"
+              >
+                Foto 'estilo' Carnet <span className="text-red-500"> (solo se aceptan archivos jpg, jpeg y png)</span> 
               </label>
+
+              {/* imágenes de ejemplo */}
+              <div className="w-full h-30 flex justify-center flex-col gap-y-4 items-center rounded p-2 border border-gray-300 mb-4">
+                <span>
+                  La fotografía debe ser tomada de frente, asegurando que el
+                  rostro sea claramente visible.
+                </span>{" "}
+                <span>
+                  Si se envía una imagen incorrecta o inapropiada, no se podrá
+                  continuar con el proceso de preinscripción.
+                </span>{" "}
+                <span className="text-sm font-bold text-gray-600">
+                  Ejemplos
+                </span>
+                <div className="w-full flex justify-around items-center">
+                  <div
+                    className="w-16 h-16 rounded-full border border-gray-300 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${imgCarnet1})` }}
+                  ></div>
+                  <div
+                    className="w-16 h-16 rounded-full border border-gray-300 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${imgCarnet2})` }}
+                  ></div>
+                  <div
+                    className="w-16 h-16 rounded-full border border-gray-300 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${imgCarnet3})` }}
+                  ></div>
+                  {/* Mostrar más imágenes en pantallas grandes */}
+                  <div
+                    className="hidden sm:block w-16 h-16 rounded-full border border-gray-300 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${imgCarnet4})` }}
+                  ></div>
+                  <div
+                    className="hidden sm:block w-16 h-16 rounded-full border border-gray-300 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${imgCarnet5})` }}
+                  ></div>
+                </div>
+              </div>
+
               <input
                 type="file"
                 name="photo"
@@ -331,7 +467,9 @@ const Form = () => {
                 ref={fileInputRef}
                 className="p-2 border border-gray-300 rounded"
               />
-              {errors.photo && <span className="text-red-500">{errors.photo}</span>}
+              {errors.photo && (
+                <span className="text-red-500">{errors.photo}</span>
+              )}
             </div>
 
             {/* Botón de Enviar */}
@@ -357,10 +495,15 @@ const Form = () => {
                 exit={{ opacity: 0 }}
               >
                 <div className="bg-primary-300 text-primary-200 p-6 rounded-lg">
-                  <h2 className="text-xl text-primary-200 font-bold mb-4">¡Formulario Enviado!</h2>
+                  <h2 className="text-xl text-primary-200 font-bold mb-4">
+                    ¡Formulario Enviado!
+                  </h2>
                   <p>Se ha enviado correctamente tu preinscripción.</p>
                   <div className="flex justify-center mt-4">
-                    <Link to="/" className="text-primary-400 hover:underline bg-primary-100  font-bold py-2 px-4 rounded ">
+                    <Link
+                      to="/"
+                      className="text-primary-400 hover:underline bg-primary-100  font-bold py-2 px-4 rounded "
+                    >
                       Volver al inicio
                     </Link>
                   </div>

@@ -12,7 +12,7 @@ export const handleChange = (e, form, setForm) => {
       const fileExtension = file?.name.split('.').pop().toLowerCase();
 
       if (file && !validExtensions.includes(fileExtension)) {
-          alert('Formato no soportado, por favor suba otra imagen o conviértalo.');
+          alert('Formato no soportado, por favor suba otra imagen o conviértalo (jpg, jpeg o png).');
       } else {
           setForm({ ...form, [name]: file });
       }
