@@ -217,17 +217,17 @@ const App = () => {
             />
 
 <Route
-              path="/pageNoFound"
-              element={
-                <motion.div
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <PageNoFound />
-                </motion.div>
-              }
-            />
+  path="/pageNoFound"
+  element={
+    <motion.div
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.5 }}
+    >
+      <PageNoFound />
+    </motion.div>
+  }
+/>
           </Routes>
           <CarrouselSponsors />
           <Footer />

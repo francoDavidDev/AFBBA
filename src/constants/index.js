@@ -1,40 +1,43 @@
-import acefis from '../assets/imgs/associations/acefis.png';
-import acmufise from '../assets/imgs/associations/acmufise.png';
-import acomei from '../assets/imgs/associations/acomei.png';
-import acorffi from '../assets/imgs/associations/acorffi.png';
-import acufim from '../assets/imgs/associations/acufim.png';
-import affsl from '../assets/imgs/associations/affsl.png';
-import afiba from '../assets/imgs/associations/afiba.png';
-import afic from '../assets/imgs/associations/afic.png';
-import aform from '../assets/imgs/associations/aform.png';
-import amfim from '../assets/imgs/associations/amfim.png';
-import amuch from '../assets/imgs/associations/amuch.png';
-import arffi from '../assets/imgs/associations/arffi.png';
-import asff from '../assets/imgs/associations/asff.png';
-import asfyc from '../assets/imgs/associations/asfyc.png';
-import asffl from '../assets/imgs/associations/assfl.png';
 
-import acefisJpg from '../assets/imgs/associations/originals/acefis.jpg';
-import acmufiseJpg from '../assets/imgs/associations/originals/acmufise.jpg';
-import acomeiJpg from '../assets/imgs/associations/originals/acomei.jpg';
-import acorffiJpg from '../assets/imgs/associations/originals/acorffi.jpg';
-import acufimJpg from '../assets/imgs/associations/originals/acufim.jpg';
-import affslJpg from '../assets/imgs/associations/originals/affsl.jpg';
-import afibaJpg from '../assets/imgs/associations/originals/afiba.jpg';
-import aficJpg from '../assets/imgs/associations/originals/afic.jpg';
-import aformJpg from '../assets/imgs/associations/originals/aform.jpg';
-import amfimJpg from '../assets/imgs/associations/originals/amfim.jpg';
-import amuchJpg from '../assets/imgs/associations/originals/amuch.jpg';
-import arffiJpg from '../assets/imgs/associations/originals/arffi.jpg';
-import asffJpg from '../assets/imgs/associations/originals/asff.jpg';
-import asfycJpg from '../assets/imgs/associations/originals/asfyc.jpg';
-import asfflJpg from '../assets/imgs/associations/originals/assfl.jpg';
+
+import acefisJpg from '../assets/imgs/associations/acefis.jpg';
+import acmufiseJpg from '../assets/imgs/associations/acmufise.jpg';
+import acomeiJpg from '../assets/imgs/associations/acomei.jpg';
+import acorffiJpg from '../assets/imgs/associations/acorffi.jpg';
+import acufimJpg from '../assets/imgs/associations/acufim.jpg';
+import affslJpg from '../assets/imgs/associations/affsl.jpg';
+import afibaJpg from '../assets/imgs/associations/afiba.jpg';
+import aficJpg from '../assets/imgs/associations/afic.jpg';
+import aformJpg from '../assets/imgs/associations/aform.jpg';
+import amfimJpg from '../assets/imgs/associations/amfim.jpg';
+import amuchJpg from '../assets/imgs/associations/amuch.jpg';
+import arffiJpg from '../assets/imgs/associations/arffi.jpg';
+import asffJpg from '../assets/imgs/associations/asff.jpg';
+import asfycJpg from '../assets/imgs/associations/asfyc.jpg';
+import asfflJpg from '../assets/imgs/associations/assfl.jpg';
+import afcJpg from '../assets/imgs/associations/afc.jpg';
+
 
 const ASSOCIATIONS = [
   {
+    title: "Asociacion Bonaerense de Fisicoculturismo",
+    president_name: "Maria Mernes",
+    letters: "afiba",
+    img_original: afibaJpg,
+    iconBg: "#383E56",
+    date: "Buenos Aires",
+    instagram: [
+      "https://www.instagram.com/afibaoficial/",
+    ],
+    web: [
+      "",
+    ],
+    contact: "+541128729216", // Nuevo campo de contact
+  },
+  {
     title: "Asociacion Salteña de Fisicoculturismo y Fitness",
-    president_name: "",
-    icon: asffl,
+    president_name: "Omar Bignon",
+    letters: "asffl",
     img_original: asfflJpg,
     iconBg: "#383E56",
     date: "Salta",
@@ -44,12 +47,12 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
-    contact: "", // Nuevo campo de contact
+    contact: "+543875603100", // Nuevo campo de contact
   },
   {
     title: "Asociación Formoseña de Musculación y Fitness.",
     president_name: "",
-    icon: aform,
+    letters: "aform",
     img_original: aformJpg,
     iconBg: "#383E56",
     date: "Formosa",
@@ -64,7 +67,7 @@ const ASSOCIATIONS = [
   {
     title: "Asociacion Civil, Musculacion y Fitness Santiago del Estero",
     president_name: "Juan Carlos Nuno",
-    icon: acmufise,
+    letters: "acmufise",
     img_original: acmufiseJpg,
     iconBg: "#383E56",
     date: "Santiago del Estero",
@@ -79,7 +82,7 @@ const ASSOCIATIONS = [
   {
     title: "Asociacion de Musculación Chaqueña",
     president_name: "",
-    icon: amuch,
+    letters: "amuch",
     img_original: amuchJpg,
     iconBg: "#383E56",
     date: "Chaco",
@@ -94,7 +97,7 @@ const ASSOCIATIONS = [
   {
     title: "Asociacion Correntina de Musculación y Fitness",
     president_name: "",
-    icon: acomei,
+    letters: "acomei",
     img_original: acomeiJpg,
     iconBg: "#383E56",
     date: "Corrientes",
@@ -109,7 +112,7 @@ const ASSOCIATIONS = [
   {
     title: "Asociacion de Físicoculturismo y Fitness de Misiones",
     president_name: "Jorge Bothner",
-    icon: acufim,
+    letters: "acufim",
     img_original: acufimJpg,
     iconBg: "#383E56",
     date: "Misiones",
@@ -123,8 +126,8 @@ const ASSOCIATIONS = [
   },
   {
     title: "Asosiacion Civil de Entrenamiento y Fitness Sanjuanino",
-    president_name: "San Juan",
-    icon: acefis,
+    president_name: "",
+    letters: "acefis",
     img_original: acefisJpg,
     iconBg: "#383E56",
     date: "San Juan",
@@ -139,7 +142,7 @@ const ASSOCIATIONS = [
   {
     title: "Asociacion De Fisicoculturismo Y Fitness De La Provincia De San Luis",
     president_name: "",
-    icon: affsl,
+    letters: "affsl",
     img_original: affslJpg,
     iconBg: "#383E56",
     date: "San Luis",
@@ -154,7 +157,7 @@ const ASSOCIATIONS = [
   {
     title: "Asociación Santafesina de Fisicoculturismo y Fitness",
     president_name: "",
-    icon: asff,
+    letters: "asff",
     img_original: asffJpg,
     iconBg: "#383E56",
     date: "Santa Fe",
@@ -169,7 +172,7 @@ const ASSOCIATIONS = [
   {
     title: "Asociacion Cordobesa de Fisicoculturismo Y Fitness",
     president_name: "Claudio Nieto",
-    icon: acorffi,
+    letters: "acorffi",
     img_original: acorffiJpg,
     iconBg: "#383E56",
     date: "Cordoba",
@@ -179,13 +182,12 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
-    contact: "+543515104601 ", // Nuevo campo de  
-   
+    contact: "+543515104601 ", // Nuevo campo de contact
   },
   {
     title: "Asociacion Mendocina De Fitness y Musculación",
     president_name: "",
-    icon: amfim,
+    letters: "amfim",
     img_original: amfimJpg,
     iconBg: "#383E56",
     date: "Mendoza",
@@ -199,8 +201,8 @@ const ASSOCIATIONS = [
   },
   {
     title: "Asociacion de Fisicoculturismo y Fitness de CABA",
-    president_name: "",
-    icon: afic,
+    president_name: "Susana Ortega",
+    letters: "afic",
     img_original: aficJpg,
     iconBg: "#383E56",
     date: "CABA",
@@ -210,12 +212,12 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
-    contact: "", // Nuevo campo de contact
+    contact: "+541148893761", // Nuevo campo de contact
   },
   {
     title: "Asociacion Riojana de Fisicoculturismo y Fitness",
     president_name: "",
-    icon: arffi,
+    letters: "arffi",
     img_original: arffiJpg,
     iconBg: "#383E56",
     date: "La Rioja",
@@ -227,15 +229,16 @@ const ASSOCIATIONS = [
     ],
     contact: "", // Nuevo campo de contact
   },
+ 
   {
-    title: "Asociacion Bonaerense de Fisicoculturismo",
-    president_name: "Maria Mernes",
-    icon: afiba,
-    img_original: afibaJpg,
+    title: "Asociacion Santacruzeña de Fitness y culturismo ",
+    president_name: "",
+    letters: "asfyc",
+    img_original: asfycJpg,
     iconBg: "#383E56",
-    date: "Buenos Aires",
+    date: "Santa Cruz",
     instagram: [
-      "https://www.instagram.com/afibaoficial/",
+      "https://www.instagram.com/asfyc_fitclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     ],
     web: [
       "",
@@ -243,14 +246,14 @@ const ASSOCIATIONS = [
     contact: "", // Nuevo campo de contact
   },
   {
-    title: "Asociacion Santacruzeña de Fitness y culturismo ",
+    title: "Asociacion de Fisicoculturismo de Chubut ",
     president_name: "",
-    icon: asfyc,
-    img_original: asfycJpg,
+    letters: "afc",
+    img_original: afcJpg,
     iconBg: "#383E56",
-    date: "Santa Cruz",
+    date: "Chubut",
     instagram: [
-      "https://www.instagram.com/asfyc_fitclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      "",
     ],
     web: [
       "",

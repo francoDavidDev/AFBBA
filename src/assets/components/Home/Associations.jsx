@@ -1,28 +1,47 @@
 import React, { useState } from "react";
-import { FaInstagram, FaGlobe, FaWhatsapp } from "react-icons/fa"; // Importa los íconos de react-icons
+import { FaInstagram, FaGlobe, FaWhatsapp } from "react-icons/fa";
 import "../../../styles/associationCards/index.css";
 import { ASSOCIATIONS } from "../../../constants";
+import { Link, useNavigate } from "react-router-dom";
+
+const ConditionalLink = ({ title, img_original }) => {
+  const navigate = useNavigate(); // Crea una instancia de navigate
+
+  const handleNavigation = () => {
+    if (title === "Asociacion Bonaerense de Fisicoculturismo") {
+      window.open("https://afibaoficial.com.ar", "_blank", "noopener,noreferrer");
+    } else {
+      navigate("/pageNoFound", { state: { title, image: img_original } }); // Usa navigate para enviar parámetros
+    }
+  };
+
+  return (
+    <button 
+      onClick={handleNavigation}
+      className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300"
+    >
+      {title === "Asociacion Bonaerense de Fisicoculturismo" ? "Ir a AFIBA" : "Web"}
+    </button>
+  );
+};
 
 const Associations = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProvince, setSelectedProvince] = useState("Todas las provincias");
   const [showAll, setShowAll] = useState(false);
 
-  // Crear un conjunto de provincias únicas, tomando el campo 'date' como la provincia.
   const provinces = ["Todas las provincias", ...new Set(ASSOCIATIONS.map((association) => association.date))];
 
-  // Filtrar asociaciones según el término de búsqueda y la provincia seleccionada
   const filteredAssociations = ASSOCIATIONS.filter((association) => {
     const matchesProvince = selectedProvince === "Todas las provincias" || association.date === selectedProvince;
     const matchesSearchTerm =
       association.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      association.icon.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      association.letters.toLowerCase().includes(searchTerm.toLowerCase()) ||
       association.date.toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesProvince && matchesSearchTerm;
   });
 
-  // Mostrar solo las primeras 4 asociaciones, o todas si showAll está habilitado
   const visibleAssociations = showAll ? filteredAssociations : filteredAssociations.slice(0, 4);
 
   return (
@@ -33,7 +52,6 @@ const Associations = () => {
         </h2>
 
         <div className="w-[80%] flex gap-10 flex-wrap justify-center items-center mb-8">
-          {/* Campo de búsqueda */}
           <div className="inputBox py-20 mx-auto">
             <input
               type="text"
@@ -45,7 +63,6 @@ const Associations = () => {
             />
           </div>
 
-          {/* Seleccionar provincia */}
           <select
             value={selectedProvince}
             onChange={(e) => setSelectedProvince(e.target.value)}
@@ -59,7 +76,6 @@ const Associations = () => {
           </select>
         </div>
 
-        {/* Mostrar asociaciones filtradas */}
         <div className="w-full flex gap-10 flex-wrap justify-center items-center">
           {visibleAssociations.length > 0 ? (
             visibleAssociations.map((association, index) => (
@@ -70,14 +86,12 @@ const Associations = () => {
                   <div className="overlay">
                     <h3>{association.title}</h3>
 
-                    {/* Nombre del presidente con el fondo de los botones */}
                     <div className="mt-4 bg-gray-700 text-white py-2 px-4 rounded text-center">
                       <p>Presidente: {association.president_name || "Información no disponible"}</p>
 
-                      {/* Botón de contacto con ícono de WhatsApp */}
                       <div className="flex justify-center py-2">
-                        {association.contact_info ? (
-                          <a href={`https://wa.me/543755688062`} target="_blank" rel="noopener noreferrer">
+                        {association.contact ? (
+                          <a href={`https://wa.me/${association.contact.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer">
                             <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
                               <FaWhatsapp /> Contacto
                             </button>
@@ -89,26 +103,17 @@ const Associations = () => {
                     </div>
 
                     <div className="flex justify-center gap-4 pt-2">
-                      <button
-                        onClick={() => {
-                          const isAfiba = association.title === "Asociacion Bonaerense de Fisicoculturismo";
-                          if (isAfiba) {
-                            window.open("https://afibaoficial.com.ar/", "_blank");
-                          } else if (association.web[0] === "https://afibaoficial.com.ar/") {
-                            window.open(association.web[0], "_blank");
-                          } else {
-                            window.location.href = "#/pageNoFound";
-                          }
-                        }}
-                        className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300"
-                      >
-                        <FaGlobe /> Web
-                      </button>
-                      <a href={association.instagram[0]} target="_blank" rel="noopener noreferrer">
-                        <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
-                          <FaInstagram /> Instagram
-                        </button>
-                      </a>
+                      <ConditionalLink title={association.title} img_original={association.img_original} />
+
+                      {association.instagram && association.instagram.length > 0 && association.instagram[0] !== "" ? (
+                        <a href={association.instagram[0]} target="_blank" rel="noopener noreferrer">
+                          <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">
+                            <FaInstagram /> Instagram
+                          </button>
+                        </a>
+                      ) : (
+                        <p className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex items-center gap-2 transition-all duration-300">No disponible</p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -119,7 +124,6 @@ const Associations = () => {
           )}
         </div>
 
-        {/* Botón para ver todas las asociaciones */}
         {filteredAssociations.length > 4 && (
           <button
             onClick={() => setShowAll(!showAll)}
