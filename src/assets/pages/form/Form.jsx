@@ -362,7 +362,7 @@ const Form = () => {
                 value={form.height}
                 onChange={(e) => handleChange(e, form, setForm)}
                 className="p-2 border border-gray-300 rounded"
-                placeholder="Ej: 175"
+                placeholder="Ej: 1.75"
               />
               {errors.height && (
                 <span className="text-red-500">{errors.height}</span>

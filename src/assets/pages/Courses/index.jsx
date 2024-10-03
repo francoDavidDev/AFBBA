@@ -19,7 +19,7 @@ const CourseCard = ({ course }) => {
       <div className="relative bg-white border mb-20 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform duration-300 group-hover:scale-105 h-[400px]">
         <Link to={`/courses/${course.id}`}>
           <img
-            src={course.imageMain}  
+            src={course.imageMain}
             alt={course.title}
             className="w-full h-[100%] object-cover"
           />
@@ -42,7 +42,10 @@ const Courses = () => {
   );
 
   // Obtener categorías únicas de los cursos
-  const categories = ["Todos", ...new Set(COURSES_DATA.map(course => course.category))];
+  const categories = [
+    "Todos",
+    ...new Set(COURSES_DATA.map((course) => course.category)),
+  ];
 
   return (
     <section className="w-full flex justify-center items-center flex-col gap-y-10 ">
@@ -65,14 +68,14 @@ const Courses = () => {
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
         >
-         <motion.h2
-  className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold tracking-widest"
-  whileInView={{ opacity: 1, scale: 1 }}
-  initial={{ opacity: 0, scale: 0.9 }}
-  transition={{ duration: 0.5 }}
->
-  CURSOS
-</motion.h2>
+          <motion.h2
+            className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold tracking-widest"
+            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5 }}
+          >
+            CURSOS
+          </motion.h2>
 
           <motion.p
             className="text-[30px] text-primary-400/80 mb-4"
@@ -101,7 +104,7 @@ const Courses = () => {
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="w-full sm:w-1/4 p-2 bg-[#1d2b3a] border border-gray-300 text-white rounded-lg outline-none transition duration-500 ease-in-out focus:border-[#00dfc4] hover:scale-[110%] mx-auto"
+          className="w-full sm:w-1/4 p-2 bg-[#1d2b3a] border border-gray-300 text-white rounded-lg outline-none transition duration-500 ease-in-out focus:border-[#00dfc4]  mx-auto"
           style={{
             padding: "10px",
             border: "1px solid rgba(255, 255, 255, 0.25)",
@@ -126,7 +129,6 @@ const Courses = () => {
           <CourseCard key={course.id} course={course} />
         ))}
       </div>
-     
     </section>
   );
 };
