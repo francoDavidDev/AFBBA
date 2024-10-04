@@ -85,6 +85,7 @@ const Form = () => {
             to_birthDate: formattedBirthDate,
             to_dni: form.dni,
             to_locality: form.locality,
+            to_country: form.country,
             to_modality: form.modality,
             to_category: form.category,
             to_competitionWeight: form.competitionWeight,
