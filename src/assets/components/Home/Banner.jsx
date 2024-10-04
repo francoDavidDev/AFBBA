@@ -18,9 +18,9 @@ const Banner = () => {
           <h6 className="h6 text-primary-400">
             SEPTIEMBRE 14, 2023 | ASUNCION, PARAGUAY
           </h6>
-          <h4 className="h4 text-primary-300">OSCAR VILLARREAL PRESIDENTE DE IFBB ARGENTINA</h4>
+          <h4 className="h4 text-primary-300">OSCAR VILLARREAL PRESIDENTE FAMF IFBB ARGENTINA</h4>
           <p className="h6 font-normal text-primary-200 mt-5">
-            Reconocimiento a Oscar Villarreal, presidente de IFBB Argentina, en la noche de campeones IFBB en Asunción, Paraguay.
+            Reconocimiento a Oscar Villarreal, en la noche de campeones IFBB en Asunción, Paraguay.
           </p>
         </div>
       </div>
