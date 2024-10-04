@@ -496,7 +496,7 @@ const Form = () => {
                 <div className="flex justify-center items-center flex-col">
               <p className="text-blue-500 hover:underline m-auto">
                 <a href="https://wa.me/541164235336" target="_blank">
-                  +54 11 6423-5336 .
+                  +54 11 6423-5336
                 </a>
              
               </p>
