@@ -34,7 +34,7 @@ const Form = () => {
     fullName: "",
     birthDate: "",
     dni: "",
-    country:"",
+    country: "",
     locality: "",
     modality: "",
     category: "",
@@ -253,27 +253,26 @@ const Form = () => {
               )}
             </div>
 
-           {/* Localidad / Ciudad */}
-<div className="flex flex-col w-full">
-  <label
-    htmlFor="locality"
-    className="text-sm font-medium text-gray-600"
-  >
-    Localidad / Ciudad
-  </label>
-  <input
-    type="text"
-    name="locality"
-    value={form.locality}
-    onChange={(e) => handleChange(e, form, setForm)}
-    className="p-2 border border-gray-300 rounded"
-    placeholder="Escriba su localidad o ciudad"
-  />
-  {errors.locality && (
-    <span className="text-red-500">{errors.locality}</span>
-  )}
-</div>
-
+            {/* Localidad / Ciudad */}
+            <div className="flex flex-col w-full">
+              <label
+                htmlFor="locality"
+                className="text-sm font-medium text-gray-600"
+              >
+                Localidad / Ciudad
+              </label>
+              <input
+                type="text"
+                name="locality"
+                value={form.locality}
+                onChange={(e) => handleChange(e, form, setForm)}
+                className="p-2 border border-gray-300 rounded"
+                placeholder="Escriba su localidad o ciudad"
+              />
+              {errors.locality && (
+                <span className="text-red-500">{errors.locality}</span>
+              )}
+            </div>
 
             {/* Modalidad */}
             <div className="flex flex-col w-full">
@@ -369,27 +368,26 @@ const Form = () => {
               )}
             </div>
 
-        {/* Número de Teléfono */}
-<div className="flex flex-col w-full">
-  <label
-    htmlFor="phone"
-    className="text-sm font-medium text-gray-600"
-  >
-    Número de Teléfono (incluya el código de área de su país)
-  </label>
-  <input
-    type="text"
-    name="phone"
-    value={form.phone}
-    onChange={(e) => handleChange(e, form, setForm)}
-    className="p-2 border border-gray-300 rounded"
-    placeholder="+54 1123456789"
-  />
-  {errors.phone && (
-    <span className="text-red-500">{errors.phone}</span>
-  )}
-</div>
-
+            {/* Número de Teléfono */}
+            <div className="flex flex-col w-full">
+              <label
+                htmlFor="phone"
+                className="text-sm font-medium text-gray-600"
+              >
+                Número de Teléfono (incluya el código de área de su país)
+              </label>
+              <input
+                type="text"
+                name="phone"
+                value={form.phone}
+                onChange={(e) => handleChange(e, form, setForm)}
+                className="p-2 border border-gray-300 rounded"
+                placeholder="+54 1123456789"
+              />
+              {errors.phone && (
+                <span className="text-red-500">{errors.phone}</span>
+              )}
+            </div>
 
             {/* Entrenador */}
             <div className="flex flex-col w-full">
@@ -418,7 +416,11 @@ const Form = () => {
                 htmlFor="photo"
                 className="text-sm font-medium text-gray-600"
               >
-                Foto 'estilo' Carnet <span className="text-red-500"> (solo se aceptan archivos jpg, jpeg y png)</span> 
+                Foto 'estilo' Carnet{" "}
+                <span className="text-red-500">
+                  {" "}
+                  (solo se aceptan archivos jpg, jpeg y png)
+                </span>
               </label>
 
               {/* imágenes de ejemplo */}
@@ -483,6 +485,21 @@ const Form = () => {
                 {loading ? "Enviando..." : "Enviar"}
               </motion.button>
             </div>
+            <div className="m-auto flex flex-col justify-center items-center">
+              {" "}
+              <p>
+                Si tenés algún problema o necesitás ayuda para completar el
+                formulario, comunicate a este número por WhatsApp: 
+              </p>
+              <div>
+              <p className="text-blue-500 hover:underline m-auto">
+                <a href="https://wa.me/541164235336" target="_blank">
+                  +54 11 6423-5336 .
+                </a>
+              </p>
+            </div>
+            </div>
+           
           </form>
 
           {/* Modal de confirmación */}

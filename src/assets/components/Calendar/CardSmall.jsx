@@ -45,7 +45,7 @@ const CardSmall = ({
 
   return (
     <div
-      className={`relative w-[90%] bg-cover bg-center bg-[#282728] p-5 rounded-lg text-primary-200 sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ${isPastEvent ? 'grayscale' : ''}`} // Aplicar clase grayscale si es evento pasado
+      className={`relative w-[90%] bg-cover bg-center cursor-pointer bg-[#282728] p-5 rounded-lg text-primary-200 sm:h-[120px] lg:h-[100px] flex flex-col sm:flex-row justify-between items-center hover:-translate-y-2 transition-all duration-300 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ${isPastEvent ? 'grayscale' : ''}`} // Aplicar clase grayscale si es evento pasado
       style={{ backgroundImage: `url(${flyer})` }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

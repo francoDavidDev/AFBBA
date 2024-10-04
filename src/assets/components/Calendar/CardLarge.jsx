@@ -60,7 +60,7 @@ const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flye
         </div>
       </div>
       <div
-        className={`relative h-full p-2 bg-cover bg-center rounded-r-lg md:w-[350px] w-[200px] flex flex-col justify-between ${isPastEvent ? 'grayscale' : ''}`} // Estilo condicional si es un evento pasado
+        className={`relative h-full cursor-pointer p-2 bg-cover bg-center rounded-r-lg md:w-[350px] w-[200px] flex flex-col justify-between ${isPastEvent ? 'grayscale' : ''}`} // Estilo condicional si es un evento pasado
         style={{ backgroundImage: `url(${flyer})` }}
         onClick={handleImageClick} // Agrega la lógica para redirigir al hacer clic
       >

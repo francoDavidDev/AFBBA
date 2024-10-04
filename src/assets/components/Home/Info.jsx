@@ -14,14 +14,18 @@ const Info = () => {
     <div className="h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
       {/* Title Section */}
       <div className="w-[90%] text-primary-400 flex flex-col items-center">
-        <span className="text-base md:text-lg uppercase">
-          Preinscripción Obligatoria
-        </span>
-        <h2 className="text-xl md:text-2xl uppercase text-center">
-          Noche de Campeones
-        </h2>
-        <span className="text-base md:text-lg uppercase">Amateur</span>
-      </div>
+  <span className="text-lg md:text-xl uppercase">
+    Preinscripción Obligatoria
+  </span>
+  <h2 className="text-2xl md:text-3xl uppercase text-center ">
+    Noche de Campeones
+  </h2>
+  <span className="text-lg md:text-xl uppercase ">Amateur</span>
+  <span className="italic text-base md:text-lg text-primary-200">
+    Hacer click en el flyer del torneo
+  </span>
+</div>
+
 
       <div className="w-[90%] h-[auto] flex flex-col lg:flex-row items-start justify-between gap-5">
         {/* Card BANER MAIN */}
