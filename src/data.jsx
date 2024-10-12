@@ -35,28 +35,32 @@ import campeotanoArgentino from "./assets/imgs/tournaments/nationals/flyers/ARGE
 import provinciasUnidas from "./assets/imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg";
 import logo from "./assets/imgs/logo.jpg";
 
+import superpatagonico_img from './assets/imgs/tournaments/nationals/flyers/PATAGONICO_TRELEW.jpg'
+
+
 export const PRESENT_HOME = [
   {
-    id: "2",
+    id: "3",
     title: "Resultados de la Copa Provincias Unidas",
     image: provinciasUnidas,
     path: "/results",
     description: "Haz click para poder ver todos los cursos diponibles",
   },
   {
-    id: "1",
+    id: "2",
     title: "Resultados del Campeonato Argentino",
     image: campeotanoArgentino,
     path: "/results",
     description: "Haz click para poder ver los resultados",
   },
 
+
   {
-    id: "3",
-    title: "Mira los cursos de FAMF",
-    image: logo,
-    path: "/courses",
-    description: "Haz click para poder ver todos los cursos diponibles",
+    id: "1",
+    title: "Resultados Campeonato Nacional Super Patagonico",
+    image: superpatagonico_img,
+    path: "/results",
+    description: "Haz click para poder ver los resultados",
   },
 ];
 
