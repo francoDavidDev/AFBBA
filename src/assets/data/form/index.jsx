@@ -66,6 +66,7 @@ export const LOCALITIES = [
   ]
 
 export const CATEGORIES = [
+  'OPEN',
     'JUNIOR',
     'SENIOR',
     'MÁSTER MAS DE 30 AÑOS (SOLO BIKINI)',
