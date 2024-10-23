@@ -54,7 +54,7 @@ const Info = () => {
               <IoMdFitness className="text-primary-400 text-3xl" />
               <Link to={"/nocheDeCampeonesInfo"}>
                 <p className="text-lg text-primary-400 font-bold hover:underline ">
-                  ¡NOCHE DE CAMPEONES, HAS CLIK E INSCRIBITE!
+                ¡NOCHE DE CAMPEONES, HAZ CLICK E INSCRIBITE!
                 </p>
               </Link>
             </div>
