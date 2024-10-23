@@ -51,7 +51,7 @@ const ASSOCIATIONS = [
   },
   {
     title: "Asociación Formoseña de Musculación y Fitness.",
-    president_name: "",
+    president_name: "Armando Bogado",
     letters: "aform",
     img_original: aformJpg,
     iconBg: "#383E56",
@@ -62,7 +62,7 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
-    contact: "", // Nuevo campo de contact
+    contact: "+5493718525546", // Nuevo campo de contact
   },
   {
     title: "Asociacion Civil, Musculacion y Fitness Santiago del Estero",
@@ -81,7 +81,7 @@ const ASSOCIATIONS = [
   },
   {
     title: "Asociacion de Musculación Chaqueña",
-    president_name: "",
+    president_name: "Matias Nievas",
     letters: "amuch",
     img_original: amuchJpg,
     iconBg: "#383E56",
@@ -92,7 +92,7 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
-    contact: "", // Nuevo campo de contact
+    contact: "+543624568947", // Nuevo campo de contact
   },
   {
     title: "Asociacion Correntina de Musculación y Fitness",
@@ -141,7 +141,7 @@ const ASSOCIATIONS = [
   },
   {
     title: "Asociacion De Fisicoculturismo Y Fitness De La Provincia De San Luis",
-    president_name: "",
+    president_name: "Bruno Vargas",
     letters: "affsl",
     img_original: affslJpg,
     iconBg: "#383E56",
@@ -152,7 +152,7 @@ const ASSOCIATIONS = [
     web: [
       "",
     ],
-    contact: "", // Nuevo campo de contact
+    contact: "+5492657584430", // Nuevo campo de contact
   },
   {
     title: "Asociación Santafesina de Fisicoculturismo y Fitness",

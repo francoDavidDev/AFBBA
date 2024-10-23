@@ -15,6 +15,9 @@ import mens_physique_fitness_reglamento_ifbb from "../../imgs/reglaments/mens_ph
 import muscular_mens_physique_reglamento_ifbb from "../../imgs/reglaments/muscular_mens_physique_reglamento_ifbb.jpg";
 import wellness_fitness_reglamento_ifbb from "../../imgs/reglaments/wellness-fitness-reglamento-ifbb.png";
 import womens_physique_reglamento_ifbb from "../../imgs/reglaments/womens-physique-reglamento-ifbb.jpg";
+import mens_wheelchair from "../../imgs/reglaments/mens_wheelchair.png";
+
+
 
 // PDF RULES
 import manual_de_BIKINI_FITNESS from "../../pdf/reglaments/1-Manual-de-BIKINI-FITNESS.pdf";
@@ -32,8 +35,10 @@ import manual_de_CLASSIC_PHYSIQUE from "../../pdf/reglaments/11-Manual-de-CLASSI
 import manual_de_FISICOCULTURISMO_PAREJAS_MIXED_PAIRS from "../../pdf/reglaments/12-Manual-de-FISICOCULTURISMO-PAREJAS-MIXED-PAIRS.pdf";
 import manual_de_FITNESS_COREOGRAFICO_FEMENINO_WOMENS_FITNESS from "../../pdf/reglaments/13-Manual-de-FITNESS-COREOGRAFICO-FEMENINO-WOMENS-FITNESS.pdf";
 import manual_de_FITNESS_COREOGRAFICO_MASCULINO_MENS_FITNESS from "../../pdf/reglaments/14-Manual-de-FITNESS-COREOGRAFICO-MASCULINO-MENS-FITNESS.pdf";
-import reglamento_fit_model_masculino_ifbb from "../../pdf/reglaments/reglamento-fit-model-masculino-ifbb.pdf";
-import REGLAMENTO_FIT_PAIRS_PAREJAS_FITNESS_CSFF from "../../pdf/reglaments/REGLAMENTO-FIT-PAIRS-PAREJAS-FITNESS-CSFF.pdf";
+import reglamento_fit_model_masculino_ifbb from "../../pdf/reglaments/16-Manual-de-FIT-PAIRS-PAREJAS-FITNESS.pdf";
+import REGLAMENTO_FIT_PAIRS_PAREJAS_FITNESS_CSFF from "../../pdf/reglaments/16-Manual-de-FIT-PAIRS-PAREJAS-FITNESS.pdf";
+import manual_MENS_WHEELCHAIR from "../../pdf/reglaments/17-Manual-de-MENS-WHEELCHAIR.pdf";
+
 
 export const REGLAMETS = {
   BikiniFitness: {
@@ -115,5 +120,10 @@ export const REGLAMETS = {
     title: "PAREJA FITNESS",
     image: fisico_culturismo_parejas_reglamento_ifbb,
     pdf: REGLAMENTO_FIT_PAIRS_PAREJAS_FITNESS_CSFF,
+  },
+  mens_wheelchair: {
+    title: "MEN’S WHEELCHAIR",
+    image: mens_wheelchair,
+    pdf: manual_MENS_WHEELCHAIR,
   },
 };
