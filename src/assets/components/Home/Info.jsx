@@ -18,11 +18,11 @@ const Info = () => {
     Preinscripción Obligatoria
   </span>
   <h2 className="text-2xl md:text-3xl uppercase text-center ">
-    Noche de Campeones
+    CAMPEONATO NACIONAL
   </h2>
-  <span className="text-lg md:text-xl uppercase ">Amateur</span>
+ 
   <span className="italic text-base md:text-lg text-primary-200">
-    Hacer click en el flyer del torneo
+    Hacer click en el flyer del campeonato
   </span>
 </div>
 
@@ -52,9 +52,9 @@ const Info = () => {
             <h4 className="h4 text-primary-200">{item.title}</h4>
             <div className="flex gap-3 items-center">
               <IoMdFitness className="text-primary-400 text-3xl" />
-              <Link to={"/nocheDeCampeonesInfo"}>
+              <Link to={"/campeonatoNacional"}>
                 <p className="text-lg text-primary-400 font-bold hover:underline ">
-                ¡NOCHE DE CAMPEONES, HAZ CLICK E INSCRIBITE!
+                ¡CAMPEONATO NACIONAL, HAZ CLICK E INSCRIBITE!
                 </p>
               </Link>
             </div>
