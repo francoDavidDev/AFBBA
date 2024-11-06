@@ -1,5 +1,6 @@
 import entrenadorTrue from '../../imgs/entrenador2.jpg'
 import gustavoAlegre from '../../imgs/trainers/gustavoAlegre.jpg'
+import marianoSmud from '../../imgs/entrenador3.jpg'
 
 
 export const TRAINERS = [
@@ -34,6 +35,22 @@ export const TRAINERS = [
       },
       province: "Chaco"
     },
+    {
+      id: 2,
+      name: "MARIANO SMUD",
+      profession: "Entrenador",
+      profileImage: marianoSmud,
+      socialLinks: {
+        linkedin: "https://www.linkedin.com/in/evalynadson",
+        tiktok: "https://www.tiktok.com/@evalynadson",
+        instagram: "https://www.instagram.com/ms_fittrainner?igsh=MTYzaGltbDNib3h6dQ==",
+        whatsapp: "https://wa.me/543415467816" // Agrega el enlace de WhatsApp aquí, el signo + no se usa en el enlace
+
+
+      },
+      province: "Santa Fe"
+    },
+ 
  
  
   ];

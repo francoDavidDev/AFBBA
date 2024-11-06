@@ -10,9 +10,17 @@ import pdf_provincias_unidas from "../../pdf/results/provincias_unidas_2024/resu
 //img
 import img_provincias_unidas from "../../imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg";
 
+
 //SUPERPATAGONICO
 import pdf_superpatagonico from "../../pdf/results/superpatagonico_2024/resultados_superparagonico.pdf";
 import superpatagonico_img from "../../imgs/tournaments/nationals/flyers/PATAGONICO_TRELEW.jpg";
+
+//NOCHE DE CAMPEONES
+import img_noche_de_campeones from "../../imgs/tournaments/internationals/flyers/nocheDeCampeones.jpg";
+// EXCEL
+import excel_noche_de_campeones from "../../pdf/results/noche_de_campeones_2024/resultados.xlsx";
+
+
 
 export const RESULTS = [
   {
@@ -36,12 +44,22 @@ export const RESULTS = [
   },
 
   {
-    title: "Campeonato Nacional Super Patagonico ",
+    title: "Campeonato Nacional Super Patagonico",
     year: 2024,
     pdf: pdf_superpatagonico,
     image: superpatagonico_img,
     path: "/campeonatoArgentinoResults",
     dia_1: pdf_superpatagonico,
+    dia_2: null,
+  },
+  {
+    title: "Noche de Campeones",
+    year: 2024,
+    pdf: excel_noche_de_campeones,
+    excel:excel_noche_de_campeones,
+    image: img_noche_de_campeones,
+    path: "/campeonatoArgentinoResults",
+    dia_1: excel_noche_de_campeones,
     dia_2: null,
   },
 ];
