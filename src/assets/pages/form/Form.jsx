@@ -138,7 +138,7 @@ const Form = () => {
       <div className="w-full h-auto max-w-5xl mx-auto flex flex-col justify-between items-start">
         <div className="w-full h-auto flex flex-col bg-white p-8 rounded-lg shadow-lg">
           <h3 className="h3 text-primary-100 text-2xl font-semibold mb-6 text-center">
-            PREINSCRIPCIÓN A LA NOCHE DE CAMPEONES
+            PREINSCRIPCIÓN PARA CAMPEONATO NACIONAL
           </h3>
           <form
             className="flex flex-col items-start space-y-6"

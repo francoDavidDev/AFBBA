@@ -1,41 +1,15 @@
-import informacion_pdf from '../pdf/noche_de_campeones/informacion_nochde_de_campeones.pdf'
-import image from '../imgs/internationals/flyers/image1.jpg'
-
-export const NOCHE_CAMPEONES_INFO =[
-    {
-        provincia: 'Cordoba',
-        localidad:'Carlos Paz',
-        fecha: '2 y 3 de Noviembre',
-        descripcion:'FISICOCULTURISMO Y FITNESS',
-        inscripcion:'Sabado de 12:30hs a 15:00hs',
-        inicio_evento: 'Domingo 10hs',
-        contacto:[
-            {organizador: 'Claudio Nieto (Organizador)', numero:'3515 10-4601'},
-            {secretaria:'Secretaria', numero:'+541121736846'}
-        ],
-        redes_sociales:'https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-        lugar_de_competencia:'HOTEL MONACO',
-        descripcion_lugar_competencia:'AV. SAN MARTIN 1887, VILLA CARLOS PAZ, CORDOBA, ARGENTINA',
-        hospedaje:[
-            {lugar:'HOTEL MONACO', telefono:'03541 42-1242', direccion:'AV. SAN MARTIN 1887'},
-            {lugar:'HOTEL COSTANERA', telefono:'431792 / 3541 671871', direccion:'AV. ILLIA 713'},
-            {lugar:'HOTEL EL FARO', telefono:'421426 / 3541610510', direccion:'BV. SARMIENTO 1110 '},
-            {lugar:'HOTEL RIVIERA', telefono:'432300 / 3541 645901', direccion:'AV. SAN MARTIN Y LINCOLN'},
-            {lugar:'HOTEL AMERIAN', telefono:'0810-810-2637', direccion:'ALVEAR 50'},
-            {lugar:'HOTEL LOS SAUCES', telefono:'421807 / 421887', direccion:'AV. SAN MARTIN 510'},
-            {lugar:'HOTEL ALTOS DEL VALLE', telefono:'486347 / 486410', direccion:'SARMIENTO Y HOLBEIN'},
-            {lugar:'HOTEL CATEDRAL', telefono:'425190 / 3541 396889', direccion:'FLORIDA 377'},
-
-        ],
-        inscripciones:[
-            {atleta:'NACIONAL',precio:'U$D 40',info:'Categoria extra: U$D 10 (EN PESOS ARG A VALOR DEL DOLAR BLUE)' },
-            {atleta:'INTERNACIONAL',precio:'U$D 50',info:'Categoria extra: U$D 10' },
+ inscripciones:[
+            {atleta:'INSCRIPCION',precio:'$40.000',info:'' },
+            {atleta:'CARNET AFILIACION FAMF',precio:'15.000',info:'' },
+            {atleta:'CATEGORIA ADICIONAL',precio:'15.000',info:'' },
             {informacion:[
+                {dato: 'Hospedaje Provincial s/cargo para atletas cupo 60 pax c/ reserva.'},
                 {dato: 'Para abrir categorías debe haber tres atletas.'},
-                {dato: 'Todos los atletas deben presentar DNI, Pasaporte o Documentación de su país.'},
+                {dato: 'Todos los atletas deben presentar DNI'},
                 {dato: 'Durante el pesaje, cada atleta debe presentar un USB que contenga la música de competencia en formato MP3, con el tiempo establecido en el reglamento. El uso de lenguaje profano, vulgar y ofensivo está estrictamente prohibido para la música de posar.'},
                 {dato: 'Todos los medios de comunicación deben tener acreditación de prensa para el mismo, otorgada por la comisión organizadora del torneo.'},
-                {dato: 'El acceso al área de calentamiento y vestidores estará controlado por pulseras/precintos.'}                
+                {dato: 'El atleta utiliza la pintura autorizada por IFBB. NO esta autorizadas las pinturas tipo crema ya queno se fijan en la piel y pueden manchar con facilidad.'},
+                {dato: 'El acceso al área de calentamiento y vestidores estará controlado por pulseras/precintos y a acargo de un oficial de IFBB.'}                
             ]}
         ],
         categorias_novatos:[
@@ -75,9 +49,3 @@ export const NOCHE_CAMPEONES_INFO =[
             'FISICOCULTURISMO SENIOR', 'FISICOCULTURISMO MASTER','CLASSIC PHYSIQUE', 'CULTURISMO CLASICO', 'MENS´S PHYSIQUE','BODY FITNESS SENIOR','BODY FITNESS MASTER','WELNESS','BIKINI SENIOR','BIKINI MASTER'
             
         ],
-        
-    image:image,
-    pdf:informacion_pdf
-    },
-
-]

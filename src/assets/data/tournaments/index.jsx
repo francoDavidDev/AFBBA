@@ -14,7 +14,7 @@ import PATAGONICO_FLYER from "../../imgs/tournaments/nationals/flyers/PATAGONICO
 
 import MERCOSUR_FLYER from "../../imgs/tournaments/internationals/flyers/mercosur.jpg";
 
-import CAMPEONATO_NACIONAL from "../../imgs/tournaments/nationals/flyers/CAMPEONATO_NACIONAL.jpg";
+import CAMPEONATO_NACIONAL from "../../imgs/tournaments/nationals/banners/CAMPEONATO_NACIONAL.jpg";
 
 import MISS_ARGENTINA from "../../imgs/tournaments/internationals/flyers/missArgentina.jpg";
 
@@ -167,19 +167,22 @@ export const TOURNAMENTS_DATA = [
     social_networks: null,
     preinscription: true
   },
+
   {
-    id: 6,
+    id: 8,
+    path: '/nocheDeCampeonesInfo',
     flyer: CAMPEONATO_NACIONAL,
-    banner: null,
+    banner: CAMPEONATO_NACIONAL,
     tag: "nacional",
     title: "CAMPEONATO NACIONAL",
-    address: "Predio ferial parque Independencia",
-    locality: "Pab. A-B ex Soc. Rual. Bv Oroño 2493Z",
+    address: "ROSARIO",
+    locality: "ROSARIO",
     date: "30/11/2024",
-    hour_inscription: "Sábado de 17:00 a 19:00",
-    start_competition: "Competencia domingo a las 10:00hs",
-    more_info: "+54 9 11 5806-1674",
-    social_networks: "Más información próximamente",
-    preinscription: false
-  }
+    hour_inscription: "Sábado 17:00 a 19:00 hs",
+    start_competition: "Domingo 18:00 hs",
+    more_info: "Mas informacion en este link",
+    social_networks: 'null',
+    preinscription: true
+  },
+
 ];

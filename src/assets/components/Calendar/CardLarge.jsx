@@ -26,8 +26,8 @@ const CardLarge = ({ title, subtitle, zone, hours, hour, file, date, image, flye
 
   // Función para manejar el clic en la imagen del torneo
   const handleImageClick = () => {
-    if (title === "NOCHE DE CAMPEONES") {
-      navigate('/nocheDeCampeonesInfo'); // Redirige a esta URL si es "Noche de Campeones"
+    if (title === "CAMPEONATO NACIONAL") {
+      navigate('/campeonatoNacional'); // Redirige a esta URL si es "Noche de Campeones"
     } else {
       navigate(`/tournament/${title}`); // Redirige a la URL estándar para otros torneos
     }

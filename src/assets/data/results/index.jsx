@@ -56,7 +56,7 @@ export const RESULTS = [
     title: "Noche de Campeones",
     year: 2024,
     pdf: excel_noche_de_campeones,
-    excel:excel_noche_de_campeones,
+
     image: img_noche_de_campeones,
     path: "/campeonatoArgentinoResults",
     dia_1: excel_noche_de_campeones,
