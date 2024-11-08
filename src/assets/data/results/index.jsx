@@ -18,7 +18,7 @@ import superpatagonico_img from "../../imgs/tournaments/nationals/flyers/PATAGON
 //NOCHE DE CAMPEONES
 import img_noche_de_campeones from "../../imgs/tournaments/internationals/flyers/nocheDeCampeones.jpg";
 // EXCEL
-import excel_noche_de_campeones from "../../pdf/results/noche_de_campeones_2024/resultados.xlsx";
+import excel_noche_de_campeones from "../../pdf/results/noche_de_campeones_2024/resultados.pdf";
 
 
 
