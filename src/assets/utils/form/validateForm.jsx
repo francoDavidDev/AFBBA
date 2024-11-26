@@ -32,6 +32,8 @@ export const validateForm = (form) => {
         tempErrors.dni = "DNI debe tener exactamente 9 dígitos";
     }
 
+    if (!form.country) tempErrors.country = "Pais es requerida";
+    if (!form.province) tempErrors.province = "Provincia es requerida";
     if (!form.locality) tempErrors.locality = "Localidad es requerida";
 
     if (!form.modality) tempErrors.modality = "Modalidad es requerida";

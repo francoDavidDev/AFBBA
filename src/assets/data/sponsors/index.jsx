@@ -26,6 +26,12 @@ export const SPONSORS = [
     link: "https://www.instagram.com/augefactoryfitness/",
     alt: "Sportcenter",
   },
+   
+  {
+    image: vees,
+    link: "https://www.veesfitness.net/en",
+    alt: "Vees Fitness",
+  }
   
 ];
 

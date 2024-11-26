@@ -8,7 +8,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import Calendar from "./assets/pages/Calendar";
 
 import EventsViews from "./assets/components/Views/home/EventsViews";
-import RegistrationForm from "./assets/pages/RegistrationForm";
+
 import Reglaments from "./assets/pages/Reglaments";
 
 import About from "./assets/pages/About";
@@ -125,19 +125,7 @@ const App = () => {
               }
             />
 
-            {/* REGISTRATION FORM */}
-            <Route
-              path="/EventViews/:id/RegistrationForm"
-              element={
-                <motion.div
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <RegistrationForm />
-                </motion.div>
-              }
-            />
+       
 
             <Route
               path="/courses/:courseId"

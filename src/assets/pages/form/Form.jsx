@@ -2,8 +2,12 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
+import { createInscription } from "../../../api/django.api.js";
+
+
 import {
   LOCALITIES,
+  PROVINCES,
   MODALITIES,
   CATEGORIES,
   SOUTH_AMERICAN_COUNTRIES,
@@ -35,6 +39,7 @@ const Form = () => {
     birthDate: "",
     dni: "",
     country: "",
+    province: "",
     locality: "",
     modality: "",
     category: "",
@@ -65,6 +70,7 @@ const Form = () => {
         if (form.photo) {
           const formattedBirthDate = formatDate(form.birthDate);
 
+
           // Subir la imagen a Cloudinary
           const formData = new FormData();
           formData.append("file", form.photo);
@@ -86,6 +92,7 @@ const Form = () => {
             to_dni: form.dni,
             to_locality: form.locality,
             to_country: form.country,
+            to_province: form.province,
             to_modality: form.modality,
             to_category: form.category,
             to_competitionWeight: form.competitionWeight,
@@ -96,6 +103,25 @@ const Form = () => {
             message: "Formulario de Inscripción",
           };
 
+
+          const apiData = {
+            email: form.email,
+            fullName: form.fullName,
+            birthDate: formattedBirthDate,
+            dni: form.dni,
+            locality: form.locality,
+            country: form.country,
+            province: form.province,
+            modality: form.modality,
+            category: form.category,
+            competitionWeight: form.competitionWeight,
+            height: form.height,
+            phone: form.phone,
+            trainer: form.trainer,
+            photoUrl: photoUrl, // Usa la URL de la foto devuelta por Cloudinary
+          };
+
+          await createInscription(apiData);
           // Enviar correo con emailJS
           emailjs
             .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
@@ -254,6 +280,31 @@ const Form = () => {
               )}
             </div>
 
+            {/* province - provincia */}
+            <div className="flex flex-col w-full">
+              <label
+                htmlFor="province"
+                className="text-sm font-medium text-gray-600"
+              >
+                Provincia
+              </label>
+              <select
+                name="province"
+                value={form.province}
+                onChange={(e) => handleChange(e, form, setForm)}
+                className="p-2 border border-gray-300 rounded"
+              >
+                <option value="">Seleccionar País</option>
+                {PROVINCES.map((province) => (
+                  <option key={province} value={province}>
+                    {province}
+                  </option>
+                ))}
+              </select>
+              {errors.province && (
+                <span className="text-red-500">{errors.province}</span>
+              )}
+            </div>
             {/* Localidad / Ciudad */}
             <div className="flex flex-col w-full">
               <label
@@ -490,21 +541,21 @@ const Form = () => {
               {" "}
               <p>
                 Si tenés algún problema o necesitás ayuda para completar el
-                formulario, comunicate a este número por WhatsApp: 
+                formulario, comunicate a este número por WhatsApp:
               </p>
               <div>
                 <div className="flex justify-center items-center flex-col">
-              <p className="text-blue-500 hover:underline m-auto">
-                <a href="https://wa.me/541164235336" target="_blank">
-                  +54 11 6423-5336
-                </a>
-             
-              </p>
-              <p className="italic text-gray-600 text-sm">Hacer click en el numero para abrir WhatsApp</p>
+                  <p className="text-blue-500 hover:underline m-auto">
+                    <a href="https://wa.me/541164235336" target="_blank">
+                      +54 11 6423-5336
+                    </a>
+
+                  </p>
+                  <p className="italic text-gray-600 text-sm">Hacer click en el numero para abrir WhatsApp</p>
+                </div>
               </div>
             </div>
-            </div>
-           
+
           </form>
 
           {/* Modal de confirmación */}

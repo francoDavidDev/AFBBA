@@ -99,4 +99,29 @@ export const SOUTH_AMERICAN_COUNTRIES = [
 ];
 
 
+export const PROVINCES = [
+  "BUENOS AIRES",
+  "CATAMARCA",
+  "CHACO",
+  "CHUBUT",
+  "CÓRDOBA",
+  "CORRIENTES",
+  "ENTRE RÍOS",
+  "FORMOSA",
+  "JUJUY",
+  "LA PAMPA",
+  "LA RIOJA",
+  "MENDOZA",
+  "MISIONES",
+  "NEUQUÉN",
+  "RÍO NEGRO",
+  "SALTA",
+  "SAN JUAN",
+  "SAN LUIS",
+  "SANTA CRUZ",
+  "SANTA FE",
+  "SANTIAGO DEL ESTERO",
+  "TIERRA DEL FUEGO",
+  "TUCUMÁN"
+];
   
