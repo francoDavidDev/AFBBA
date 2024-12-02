@@ -1,10 +1,3 @@
-import image1 from "../../imgs/courses/image1.jpg"; //main
-import image2 from "../../imgs/courses/image2.jpg";
-import image3 from "../../imgs/courses/image3.jpg";
-import image4 from "../../imgs/courses/image4.jpg"; // main 2
-import image5 from "../../imgs/courses/image5.jpg";
-import image6 from "../../imgs/courses/image6.jpg";
-import image7 from "../../imgs/courses/image7.jpg";
 
 
 //curso de musculacion
