@@ -130,16 +130,16 @@ const CourseDetails = () => {
                 <strong>Ubicación:</strong> {course.location}
               </motion.p>
             )}
-            {course.description && (
+         
               <motion.p
-                className="text-lg"
+                className="text-lg pt-20 text-primary-400 text-center "
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.5 }}
               >
-                <strong>Descripción:</strong> {course.description}
+              Para mas informacion  <strong className='underline'> mirar los flyers del curso</strong> 
               </motion.p>
-            )}
+    
           </motion.div>
         </motion.div>
 
@@ -173,7 +173,7 @@ const CourseDetails = () => {
           transition={{ duration: 0.5 }}
         >
           <a
-            href={`https://wa.me/541121736846?text=${encodeURIComponent(course.whatsappMessage)}`}
+            href={`https://wa.me/5493412791064?text=${encodeURIComponent(course.whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-300"
