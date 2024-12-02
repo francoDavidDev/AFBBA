@@ -67,7 +67,7 @@ const CourseDetails = () => {
           <motion.img
             src={course.imageMain}  // Usar la imagen principal del curso
             alt={course.title}
-            className="w-full lg:w-2/3 h-[500px] object-cover rounded-lg cursor-pointer"
+            className="w-full lg:w-2/3 h-[auto] object-cover rounded-lg cursor-pointer"
             whileInView={{ scale: 1 }}
             initial={{ scale: 0.95 }}
             transition={{ duration: 0.5 }}
@@ -137,7 +137,7 @@ const CourseDetails = () => {
                 initial={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.5 }}
               >
-              Para mas informacion  <strong className='underline'> mirar los flyers del curso</strong> 
+              Para mas informacion hacer  <strong className='underline'>  click </strong> los flyers del curso
               </motion.p>
     
           </motion.div>
@@ -156,7 +156,7 @@ const CourseDetails = () => {
                 key={index}
                 src={img.image}
                 alt={`${course.title} - imagen ${index + 1}`}
-                className="w-full h-[200px] object-cover rounded-lg cursor-pointer"
+                className="w-full h-auto object-cover rounded-lg cursor-pointer"
                 onClick={() => handleImageClick(img.image)}  // Abrir el modal al hacer clic
                 whileInView={{ scale: 1 }}
                 initial={{ scale: 0.95 }}

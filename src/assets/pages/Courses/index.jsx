@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { COURSES_DATA } from "../../data/courses/index";
-import CarrouselSponsors from "../../components/CarrouselSponsors";
-
+import flyer_1 from '../../imgs/courses/1.jpg'
+import flyer_2 from '../../imgs/courses/2.jpg'
 // Tarjeta de Curso con Popup
 const CourseCard = ({ course }) => {
+
   const [showPopup, setShowPopup] = useState(false);
 
   return (
@@ -16,7 +17,7 @@ const CourseCard = ({ course }) => {
       onMouseLeave={() => setShowPopup(false)}
     >
       {/* Tarjeta del Curso */}
-      <div className="relative bg-white border mb-20 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform duration-300 group-hover:scale-105 h-[400px]">
+      <div className="relative bg-white border mb-20 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform duration-300 group-hover:scale-105 h-auto">
         <Link to={`/courses/${course.id}`}>
           <img
             src={course.imageMain}
@@ -33,6 +34,13 @@ const CourseCard = ({ course }) => {
 const Courses = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("Todos");
+
+
+  
+  const flyers = [
+    { img: flyer_1 },
+    { img: flyer_2 },
+  ]
 
   // Filtrar cursos según la búsqueda y el filtro seleccionado
   const filteredCourses = COURSES_DATA.filter(
@@ -88,6 +96,17 @@ const Courses = () => {
         </motion.div>
       </motion.div>
 
+      <div className=" w-[90%] h-[auto] flex items-center justify-center gap-10 flex-wrap">
+      {flyers.map((item,i)=>{
+        return(
+          <img key={i} src={item.img} alt="" className="w-1/2 sm:w-1/4  lg:w-1/5 h-auto bg-red-400" />
+        )
+      
+      })}
+      </div>
+
+   
+
       {/* Filtro y Buscador */}
       <div className="w-[90%] flex flex-col sm:flex-row justify-center items-center gap-y-4 mb-8">
         <div className="inputBox py-20 mx-auto">
@@ -121,6 +140,10 @@ const Courses = () => {
             </option>
           ))}
         </select>
+      </div>
+
+      <div className="italic underline text-primary-400 text-center px-5">
+        toca en las imagenes para ingresar a la informacion del curso
       </div>
 
       {/* Sección de tarjetas de curso */}
