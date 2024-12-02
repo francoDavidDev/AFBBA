@@ -58,7 +58,7 @@ export const TRAINERS = [
       socialLinks: {
         linkedin: "",
         tiktok: "",
-        instagram: "https://www.instagram.com/affsl.2021/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
+        instagram: "https://www.instagram.com/bruno.vargas.568/profilecard/?igsh=c3F6bGRwYXpxZ3Y3",
         whatsapp: "https://wa.me/5492657582410" // Agrega el enlace de WhatsApp aquí, el signo + no se usa en el enlace
 
 

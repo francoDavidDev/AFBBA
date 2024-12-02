@@ -6,49 +6,58 @@ import image5 from "../../imgs/courses/image5.jpg";
 import image6 from "../../imgs/courses/image6.jpg";
 import image7 from "../../imgs/courses/image7.jpg";
 
+
+//curso de musculacion
+import musculacion_informacion from "../../imgs/courses/musculacion/INFORMACION.png";
+import musculacion_flyer from "../../imgs/courses/musculacion/MUSCULACION_2025.png";
+import musculacion_programa from "../../imgs/courses/musculacion/PROGRAMA.png";
+
+//curso de nutricion_deportiva
+import nutricion_deportiva_informacion from "../../imgs/courses/nutricion_deportiva/INFORMACION.png";
+import nutricion_deportiva_flyer from "../../imgs/courses/nutricion_deportiva/NUTRICION_DEPORTIVA .png";
+import nutricion_deportiva_programa from "../../imgs/courses/nutricion_deportiva/PROGRAMA.png";
+
+
 export const COURSES_DATA = [
   {
     id: 1,
-    title: "ENTRENADOR EN CROSS PRO FITNESS",
-    category: "Entrenamiento Funcional",  // Categoría añadida
+    title: "MUSCULACION 2025",
+    category: "Entrenamiento",  // Categoría añadida
     price: "Informacion en el Flyer",
-    duration: "10 Clases",
-    instructor: "Ana Romero",
+    duration: "12 Clases",
+    instructor: "Jorge Asp",
     schedule: "Lunes, Miercoles y Viernes",
-    imageMain: image1,
+    imageMain: musculacion_flyer,
     images: [
       {
-        image: image5,
+        image: musculacion_informacion,
       },
       {
-        image: image6,
+        image: musculacion_programa,
       },
     ],
     whatsappMessage:
-      "Hola, estoy interesado en el curso de Entrenador en CROSS PRO FITNESS. ¿Podrías darme más información?",
+      "Hola, estoy interesado en el curso de MUSCULACION 2025. ¿Podrías darme más información?",
   },
   {
     id: 2,
-    title: "OBESIDAD Y RECOMPOSICION CORPORAL",
+    title: "NUTRICIÓN DEPROTIVA",
     category: "Salud y Nutrición",  // Categoría añadida
     price: "Por Privado",
     duration: "4 clases",
     instructor: "María Sol Jaimes",
     schedule: "Miercoles y Viernes  a las 19:00hs",
-    imageMain: image4,
+    imageMain: nutricion_deportiva_flyer,
     images: [
       {
-        image: image2,
+        image: nutricion_deportiva_programa,
       },
       {
-        image: image3,
-      },
-      {
-        image: image2,
+        image: nutricion_deportiva_informacion,
       },
     ],
     whatsappMessage:
-      "Hola, estoy interesado en el curso de OBESIDAD Y RECOMPOSICION CORPORAL. ¿Podrías darme más información?",
+      "Hola, estoy interesado en el curso de NUTRICIÓN DEPROTIVA. ¿Podrías darme más información?",
   },
   {
     id: 3,
