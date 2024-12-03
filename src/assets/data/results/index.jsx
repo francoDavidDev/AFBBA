@@ -24,7 +24,7 @@ import excel_noche_de_campeones from "../../pdf/results/noche_de_campeones_2024/
 //CAMPEONATO NACIONAL 2024
 import img_campeonato_nacional_2024 from "../../imgs/tournaments/nationals/flyers/CAMPEONATO_NACIONAL.jpg";
 // EXCEL
-import pdf_campeonato_nacional_2024 from "../../pdf/results/campeonato_nacional_2024/resultados.pdf";
+import pdf_campeonato_nacional_2024 from "../../pdf/results/campeonato_nacional_2024/resultados.xlsx";
 
 
 
