@@ -21,35 +21,22 @@ import img_noche_de_campeones from "../../imgs/tournaments/internationals/flyers
 import excel_noche_de_campeones from "../../pdf/results/noche_de_campeones_2024/resultados.pdf";
 
 
+//CAMPEONATO NACIONAL 2024
+import img_campeonato_nacional_2024 from "../../imgs/tournaments/nationals/flyers/CAMPEONATO_NACIONAL.jpg";
+// EXCEL
+import pdf_campeonato_nacional_2024 from "../../pdf/results/campeonato_nacional_2024/resultados.pdf";
+
+
 
 export const RESULTS = [
   {
-    title: "Campeonato Argentino",
+    title: "Campeonato Nacional 2024",
     year: 2024,
-    pdf: "path/to/national_tournament_2024.pdf",
-    image: campeonato_argentino,
-    path: "/campeonatoArgentinoResults",
-    dia_1: pdf_sabado_campeonato_argentino,
-    dia_2: pdf_domingo_campeonato_argentino,
-  },
+    pdf: pdf_campeonato_nacional_2024,
 
-  {
-    title: "Copa Provincias Unidas",
-    year: 2024,
-    pdf: "path/to/national_tournament_2024.pdf",
-    image: img_provincias_unidas,
+    image: img_campeonato_nacional_2024,
     path: "/campeonatoArgentinoResults",
-    dia_1: pdf_provincias_unidas,
-    dia_2: null,
-  },
-
-  {
-    title: "Campeonato Nacional Super Patagonico",
-    year: 2024,
-    pdf: pdf_superpatagonico,
-    image: superpatagonico_img,
-    path: "/campeonatoArgentinoResults",
-    dia_1: pdf_superpatagonico,
+    dia_1: pdf_campeonato_nacional_2024,
     dia_2: null,
   },
   {
@@ -62,4 +49,39 @@ export const RESULTS = [
     dia_1: excel_noche_de_campeones,
     dia_2: null,
   },
+ 
+
+ 
+
+  {
+    title: "Campeonato Nacional Super Patagonico",
+    year: 2024,
+    pdf: pdf_superpatagonico,
+    image: superpatagonico_img,
+    path: "/campeonatoArgentinoResults",
+    dia_1: pdf_superpatagonico,
+    dia_2: null,
+  },
+
+  {
+    title: "Copa Provincias Unidas",
+    year: 2024,
+    pdf: "path/to/national_tournament_2024.pdf",
+    image: img_provincias_unidas,
+    path: "/campeonatoArgentinoResults",
+    dia_1: pdf_provincias_unidas,
+    dia_2: null,
+  },
+  {
+    title: "Campeonato Argentino",
+    year: 2024,
+    pdf: "path/to/national_tournament_2024.pdf",
+    image: campeonato_argentino,
+    path: "/campeonatoArgentinoResults",
+    dia_1: pdf_sabado_campeonato_argentino,
+    dia_2: pdf_domingo_campeonato_argentino,
+  },
+ 
+
+
 ];

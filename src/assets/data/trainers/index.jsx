@@ -1,7 +1,8 @@
 import entrenadorTrue from '../../imgs/entrenador2.jpg'
 import gustavoAlegre from '../../imgs/trainers/gustavoAlegre.jpg'
 import marianoSmud from '../../imgs/entrenador3.jpg'
-import brurnoVargas from '../../imgs/trainers/brunoVargas.png'
+import brunoVargas from '../../imgs/trainers/brunoVargas.png'
+import menendezDante from '../../imgs/trainers/menendezDante.png'
 
 export const TRAINERS = [
     {
@@ -54,7 +55,7 @@ export const TRAINERS = [
       id: 4,
       name: "BRUNO VARGAS",
       profession: "Entrenador",
-      profileImage: brurnoVargas,
+      profileImage: brunoVargas,
       socialLinks: {
         linkedin: "",
         tiktok: "",
@@ -64,6 +65,21 @@ export const TRAINERS = [
 
       },
       province: "San Luis"
+    },
+    {
+      id: 5,
+      name: "MENENDEZ DANTE",
+      profession: "Entrenador",
+      profileImage: menendezDante,
+      socialLinks: {
+        linkedin: "",
+        tiktok: "",
+        instagram: "https://www.instagram.com/menendez.dante?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+        whatsapp: "https://wa.me/543415983764" // Agrega el enlace de WhatsApp aquí, el signo + no se usa en el enlace
+
+
+      },
+      province: "Santa Fe"
     },
  
  
