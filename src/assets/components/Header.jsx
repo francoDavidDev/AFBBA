@@ -46,9 +46,9 @@ const Header = () => {
         className="md:hidden flex items-center justify-center p-2"
       >
         {navMobile ? (
-          <RiCloseFill className="text-neutral-900 text-3xl cursor-pointer" />
+          <RiCloseFill className="text-white text-3xl cursor-pointer" />
         ) : (
-          <RiMenu4Fill className="text-neutral-900 text-3xl cursor-pointer" />
+          <RiMenu4Fill className="text-white text-3xl cursor-pointer" />
         )}
       </div>
 

@@ -95,7 +95,7 @@ function Hero() {
               <img
                 src={img}
                 alt={`sponsor-${index}`}
-                className="w-20 h-20 sm:w-32px sm:h-32px rounded-lg shadow-lg transition-all duration-300 ease-in-out"
+                className="w-16 h-16 sm:w-32px sm:h-32px rounded-lg shadow-lg transition-all duration-300 ease-in-out"
               />
             </motion.a>
           ))}
