@@ -4,7 +4,7 @@ import { NAV } from "../../data";
 
 const Nav = ({ className }) => {
   return (
-    <nav className={`flex w-full justify-center ${className}`}>
+    <nav className={`flex w-full   justify-center ${className}`}>
       <ul className="flex flex-col md:flex-row text-primary-200 font-semibold gap-y-4 md:gap-x-6">
         {NAV.map((item, index) => (
           <li

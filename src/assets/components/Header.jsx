@@ -19,12 +19,13 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
   return (
     <header
       className={`${
-        isActive
+        navMobile
           ? "bg-primary-300/90 shadow-md py-4 backdrop-blur-[2px] fixed" // Fondo translúcido cuando está activo
-          : "bg-primary-300/40 py-1 backdrop-blur-[2px] " // Fondo translúcido más claro cuando está arriba
+          : "bg-primary-300/40 py-1 backdrop-blur-[2px]  static" // Fondo translúcido más claro cuando está arriba
       }  top-[-10px] w-full flex items-center justify-between transition-all duration-300 z-50`}
     >
       <Link to="/" className="flex items-center m-1">

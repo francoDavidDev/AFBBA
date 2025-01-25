@@ -34,11 +34,11 @@ function Hero() {
       }}
     >
       {/* Columnas con imágenes de sponsors */}
-      <div className="absolute inset-0 flex items-center justify-between">
+      <div className="absolute inset-0 flex items-center justify-between ">
         {/* Columna izquierda */}
         <div 
            className={`flex flex-col ${
-            isMobile ? "space-y-4 pl-4": "space-y-10 pl-4 z-10 "
+            isMobile ? "space-y-4 pl-4": "space-y-10 pl-4  "
           }`}
         
         >
@@ -49,7 +49,7 @@ function Hero() {
             <motion.a
               key={index}
               href={sponsor.link}
-              className="block cursor-pointer"
+              className="block cursor-pointer z-10"
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -68,7 +68,7 @@ function Hero() {
 
         {/* Columna derecha */}
         <div  className={`flex flex-col  ${
-            isMobile ? "space-y-4 pl-4": "space-y-10 pr-4"
+            isMobile ? "space-y-4 pr-4": "space-y-10 pr-4"
           }`}>
           {SPONSORS.slice(-2).map((sponsor, index) => (
             <motion.a
