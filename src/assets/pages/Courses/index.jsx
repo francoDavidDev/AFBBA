@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { COURSES_DATA } from "../../data/courses/index";
 import flyer_1 from '../../imgs/courses/1.jpg'
 import flyer_2 from '../../imgs/courses/2.jpg'
+import { SPONSORS } from "../../data/sponsors";
 // Tarjeta de Curso con Popup
 const CourseCard = ({ course }) => {
 
@@ -16,6 +17,7 @@ const CourseCard = ({ course }) => {
       onMouseEnter={() => setShowPopup(true)}
       onMouseLeave={() => setShowPopup(false)}
     >
+      
       {/* Tarjeta del Curso */}
       <div className="relative bg-white border mb-20 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform duration-300 group-hover:scale-105 h-auto">
         <Link to={`/courses/${course.id}`}>
@@ -63,6 +65,32 @@ const Courses = () => {
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
+         {/* Sponsors con animación */}
+                <motion.div
+                  className="flex flex-wrap justify-center items-center gap-8 my-10"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  {SPONSORS.map((sponsor, index) => (
+                    <motion.a
+                      key={index}
+                      href={sponsor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative w-40 h-auto"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <motion.img
+                        src={sponsor.image}
+                        alt={sponsor.alt}
+                        className="w-full h-auto object-contain"
+                        whileHover={{ filter: "brightness(1.5)" }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </motion.a>
+                  ))}
+                </motion.div>
         <motion.div
           className="h-[1px] bg-white flex justify-center"
           initial={{ width: 0, transformOrigin: "center" }}

@@ -4,6 +4,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import "../../../styles/trainersCards/index.css";
 import { TRAINERS } from "../../data/trainers";
 import CarrouselSponsors from "../../components/CarrouselSponsors";
+import { SPONSORS } from "../../data/sponsors";
 
 const Trainers = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,11 +28,37 @@ const Trainers = () => {
   return (
     <section className="w-full h-auto flex flex-col justify-center items-center my-20 gap-y-10">
       <motion.div
-        className="w-[90%] h-auto m-auto mt-[100px] gap-y-10"
+        className="w-[90%] h-auto m-auto  gap-y-10"
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
+         {/* Sponsors con animación */}
+                <motion.div
+                  className="flex flex-wrap justify-center items-center gap-8 my-10"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  {SPONSORS.map((sponsor, index) => (
+                    <motion.a
+                      key={index}
+                      href={sponsor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative w-40 h-auto"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <motion.img
+                        src={sponsor.image}
+                        alt={sponsor.alt}
+                        className="w-full h-auto object-contain"
+                        whileHover={{ filter: "brightness(1.5)" }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </motion.a>
+                  ))}
+                </motion.div>
         <motion.div
           className="h-[1px] bg-white flex justify-center mb-8"
           initial={{ width: 0, transformOrigin: "center" }}

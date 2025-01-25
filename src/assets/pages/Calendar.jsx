@@ -6,6 +6,7 @@ import { TOURNAMENTS_DATA } from "../data/tournaments";
 
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom"; // 1. Importa useNavigate
+import { SPONSORS } from "../data/sponsors";
 
 const ElitePro = () => {
   const [w, setW] = useState(window.innerWidth);
@@ -109,6 +110,32 @@ const ElitePro = () => {
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
+         {/* Sponsors con animación */}
+                <motion.div
+                  className="flex flex-wrap justify-center items-center gap-8 my-10"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  {SPONSORS.map((sponsor, index) => (
+                    <motion.a
+                      key={index}
+                      href={sponsor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative w-40 h-auto"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <motion.img
+                        src={sponsor.image}
+                        alt={sponsor.alt}
+                        className="w-full h-auto object-contain"
+                        whileHover={{ filter: "brightness(1.5)" }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </motion.a>
+                  ))}
+                </motion.div>
         <motion.div
           className="h-[1px] bg-white flex justify-center"
           initial={{ width: 0, transformOrigin: "center" }}

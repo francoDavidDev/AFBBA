@@ -22,21 +22,23 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-primary-300/90 py-[5px]" : "bg-primary-300 py-[0px] text-lg"
-      } flex items-center justify-between sticky top-0 w-full`}
+        isActive
+          ? "bg-primary-300/90 shadow-md py-4 backdrop-blur-[2px]" // Fondo translúcido cuando está activo
+          : "bg-primary-300/40 py-1 backdrop-blur-[2px]" // Fondo translúcido más claro cuando está arriba
+      } fixed top-[-10px] w-full flex items-center justify-between transition-all duration-300 z-50`}
     >
       <Link to="/" className="flex items-center m-1">
         <img
           src={image}
           alt="logo"
           className={`${
-            isActive ? "w-[50px]" : "w-[70px]"
+            isActive ? "w-[45px]" : "w-[65px]"
           } transition-all duration-300`}
         />
       </Link>
 
       {/* Nav for desktop */}
-      <Nav className="hidden md:flex" />
+      <Nav className="hidden md:flex" isActive={isActive} />
 
       {/* Toggle buttons for mobile */}
       <div
@@ -44,9 +46,9 @@ const Header = () => {
         className="md:hidden flex items-center justify-center p-2"
       >
         {navMobile ? (
-          <RiCloseFill className="text-neutral-100 text-3xl cursor-pointer" />
+          <RiCloseFill className="text-neutral-900 text-3xl cursor-pointer" />
         ) : (
-          <RiMenu4Fill className="text-neutral-100 text-3xl cursor-pointer" />
+          <RiMenu4Fill className="text-neutral-900 text-3xl cursor-pointer" />
         )}
       </div>
 

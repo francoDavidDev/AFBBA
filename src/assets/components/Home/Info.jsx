@@ -15,14 +15,14 @@ const Info = () => {
       {/* Title Section */}
       <div className="w-[90%] text-primary-400 flex flex-col items-center">
   <span className="text-lg md:text-xl uppercase">
-    Preinscripción Obligatoria
+    Preinscripción Obligatoria (muy pronto)
   </span>
   <h2 className="text-2xl md:text-3xl uppercase text-center ">
-    CAMPEONATO NACIONAL
+  OPEN INTERNACIONAL MUSUMECI IFBB
   </h2>
  
   <span className="italic text-base md:text-lg text-primary-200">
-    Hacer click en el flyer del campeonato
+    Hacer click en el flyer para mas informacion
   </span>
 </div>
 
@@ -54,7 +54,7 @@ const Info = () => {
               <IoMdFitness className="text-primary-400 text-3xl" />
               <Link to={"/campeonatoNacional"}>
                 <p className="text-lg text-primary-400 font-bold hover:underline ">
-                ¡CAMPEONATO NACIONAL, HAZ CLICK E INSCRIBITE!
+                MUY PRONTO PREINSCRIPCION PARA OPEN INTERNACIONAL MUSUMECI IFBB
                 </p>
               </Link>
             </div>

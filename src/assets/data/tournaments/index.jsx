@@ -18,10 +18,14 @@ import CAMPEONATO_NACIONAL from "../../imgs/tournaments/nationals/banners/CAMPEO
 
 import MISS_ARGENTINA from "../../imgs/tournaments/internationals/flyers/missArgentina.jpg";
 
+import FECHAS_PROXIMAMENTE from "../../imgs/tournaments/FECHAS_PROXIMAMENTE.svg";
+
+
+
 export const TOURNAMENTS_DATA = [
   {
     id: 5,
-    flyer: MERCOSUR_FLYER,
+    flyer: FECHAS_PROXIMAMENTE,
     banner: null,
     tag: "internacional",
     path: null,
@@ -46,8 +50,8 @@ export const TOURNAMENTS_DATA = [
   },
   {
     id: 1,
-    flyer: ARGENTINO_FLYER,
-    banner: ARGENTINO_BANNER,
+    flyer: FECHAS_PROXIMAMENTE,
+    banner: FECHAS_PROXIMAMENTE,
     tag: "nacional",
     title: "CAMPEONATO ARGENTINO",
     address: "TEATRO ENRIQUE SANTOS DICEPOLO",
@@ -71,7 +75,7 @@ export const TOURNAMENTS_DATA = [
   },
   {
     id: 7,
-    flyer: MISS_ARGENTINA,
+    flyer: FECHAS_PROXIMAMENTE,
     banner: null,
     path: null,
     tag: "internacional",
@@ -87,8 +91,8 @@ export const TOURNAMENTS_DATA = [
   },
   {
     id: 3,
-    flyer: PROV_UNIDAS_FLYER,
-    banner: PROV_UNIDAS_BANNER,
+    flyer: FECHAS_PROXIMAMENTE,
+    banner: FECHAS_PROXIMAMENTE,
     tag: "nacional",
     title: "COPA PROVINCIAS UNIDAS",
     address: "CINE TEATRO AMERICA 25 DE MAYO Y ESPAÑA",
@@ -118,8 +122,8 @@ export const TOURNAMENTS_DATA = [
   },
   {
     id: 4,
-    flyer: PATAGONICO_FLYER,
-    banner: PATAGONICO_BANNER,
+    flyer: FECHAS_PROXIMAMENTE,
+    banner: FECHAS_PROXIMAMENTE,
     tag: "nacional",
     title: "SUPER PATAGONICO FISICOCULTURISMO Y FITNESS",
     address: "Más información próximamente",
@@ -154,7 +158,7 @@ export const TOURNAMENTS_DATA = [
   {
     id: 2,
     path: '/nocheDeCampeonesInfo',
-    flyer: NOCHE_CAMPEONES_BANNER,
+    flyer: FECHAS_PROXIMAMENTE,
     banner: null,
     tag: "internacional",
     title: "NOCHE DE CAMPEONES",
@@ -171,8 +175,8 @@ export const TOURNAMENTS_DATA = [
   {
     id: 8,
     path: '/nocheDeCampeonesInfo',
-    flyer: CAMPEONATO_NACIONAL,
-    banner: CAMPEONATO_NACIONAL,
+    flyer: FECHAS_PROXIMAMENTE,
+    banner: FECHAS_PROXIMAMENTE,
     tag: "nacional",
     title: "CAMPEONATO NACIONAL",
     address: "ROSARIO",

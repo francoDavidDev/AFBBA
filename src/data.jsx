@@ -18,11 +18,11 @@ export const NAV = [
 //HOME DATA
 // aqui esta la informacion de banner main
 
-import bannerMain from "./assets/imgs/tournaments/nationals/flyers/CAMPEONATO_NACIONAL.jpg";
+import bannerMain from "./assets/imgs/home/famf-bg-video.svg";
 
 export const ACTUALIDAD = [
   {
-    title: "CAMPEONATO NACIONAL",
+    title: "ULTIMAS NOTICIAS FAMF",
     subtitle: "Haz click en la imagen para poder informarte e inscribirte al Torneo",
     image: bannerMain,
     path: "/campeonatoNacional",
@@ -32,7 +32,7 @@ export const ACTUALIDAD = [
 ];
 
 
-import campeotanoArgentino from "./assets/imgs/tournaments/nationals/flyers/ARGENTINO.jpg";
+import image_1 from "./assets/imgs/tournaments/nationals/flyers/CAMPEONATO_NACIONAL.jpg";
 import provinciasUnidas from "./assets/imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg";
 import logo from "./assets/imgs/logo.jpg";
 
@@ -45,23 +45,23 @@ import nocheDeCampeones from './assets/imgs/tournaments/internationals/flyers/no
 export const PRESENT_HOME = [
   {
     id: "1",
-    title: "Resultados de Noche de Campeones",
-    image: nocheDeCampeones,
+    title: "Resultados de CAMPEONATO NACIONAL",
+    image: image_1,
     path: "/results",
     description: "Haz click para poder ver los resultados",
   },
   {
     id: "2",
-    title: "Resultados Campeonato Nacional Super Patagonico",
-    image: superpatagonico_img,
+    title: "Resultados de Noche de Campeones",
+    image: nocheDeCampeones,
     path: "/results",
     description: "Haz click para poder ver los resultados",
   },
 
   {
     id: "3",
-    title: "Resultados del Campeonato Argentino",
-    image: campeotanoArgentino,
+    title: "Resultados Campeonato Nacional Super Patagonico",
+    image: superpatagonico_img,
     path: "/results",
     description: "Haz click para poder ver los resultados",
   },

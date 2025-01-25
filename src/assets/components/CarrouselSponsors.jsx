@@ -55,19 +55,19 @@ const CarrouselSponsors = () => {
   };
 
   return (
-    <div className="w-full my-10 ">
+    <div className="w-full my-20 py-10 ">
       <Slider {...settings} className="slick-slide_themes">
         {SPONSORS.map((item, i) => (
           <Link key={i} to={item.link || "#"} target="_blank" rel="noopener noreferrer">
             <div
-              className="rounded-xl m-1 overflow-hidden w-[70%] h-[150px] cursor-pointer bg-no-repeat bg-cover bg-center duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.0)]"
+              className="rounded-xl m-1 overflow-hidden w-[90%] h-[200px] cursor-pointer bg-no-repeat bg-cover bg-center duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.0)]"
               style={{ backgroundImage: `url('${item.image}')` }}
             ></div>
           </Link>
         ))}
       </Slider>
 
-      {/* Sección del banner con imagen aleatoria */}
+      {/* Sección del banner con imagen aleatoria 
       <div className="w-full mt-10 flex justify-center items-center">
         {randomBanner && (
           <div
@@ -75,7 +75,7 @@ const CarrouselSponsors = () => {
             style={{ backgroundImage: `url('${randomBanner}')` }}
           ></div>
         )}
-      </div>
+      </div>*/}
     </div>
   );
 };

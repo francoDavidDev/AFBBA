@@ -16,7 +16,9 @@ const NationalTournaments = () => {
   return (
     <section className='container__body flex justify-center flex-col items-center w-full h-auto py-10 mb-20'>
       {/* Campo de búsqueda */}
- 
+    <div className='flex justify-center items-center pt-20  '>
+       <h2 className='text-3xl font-bold mb-6 m-auto '>TORNEOS INTERNACIONALES</h2>
+       </div>
 
       <div className='container__acordeon m-auto'>
         {filteredTournaments.length > 0 ? (

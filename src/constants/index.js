@@ -1,21 +1,21 @@
 
 
-import acefisJpg from '../assets/imgs/associations/acefis.jpg';
-import acmufiseJpg from '../assets/imgs/associations/acmufise.jpg';
-import acomeiJpg from '../assets/imgs/associations/acomei.jpg';
-import acorffiJpg from '../assets/imgs/associations/acorffi.jpg';
-import acufimJpg from '../assets/imgs/associations/acufim.jpg';
-import affslJpg from '../assets/imgs/associations/affsl.jpg';
-import afibaJpg from '../assets/imgs/associations/afiba.jpg';
-import aficJpg from '../assets/imgs/associations/afic.jpg';
-import aformJpg from '../assets/imgs/associations/aform.jpg';
-import amfimJpg from '../assets/imgs/associations/amfim.jpg';
-import amuchJpg from '../assets/imgs/associations/amuch.jpg';
-import arffiJpg from '../assets/imgs/associations/arffi.jpg';
-import asffJpg from '../assets/imgs/associations/asff.jpg';
-import asfycJpg from '../assets/imgs/associations/asfyc.jpg';
-import asfflJpg from '../assets/imgs/associations/assfl.jpg';
-import afcJpg from '../assets/imgs/associations/afc.jpg';
+import acefisJpg from '../assets/imgs/associations/acefis.svg';
+import acmufiseJpg from '../assets/imgs/associations/acmufise.svg';
+import acomeiJpg from '../assets/imgs/associations/acomfi.svg';
+import acorffiJpg from '../assets/imgs/associations/acorffi.svg';
+import acufimJpg from '../assets/imgs/associations/acufim.svg';
+import affslJpg from '../assets/imgs/associations/affsl.svg';
+import afibaJpg from '../assets/imgs/associations/afiba.svg';
+import aficJpg from '../assets/imgs/associations/afic.svg';
+import aformJpg from '../assets/imgs/associations/aform.svg';
+import amfimJpg from '../assets/imgs/associations/amfim.svg';
+import amuchJpg from '../assets/imgs/associations/amuch.svg';
+import arffiJpg from '../assets/imgs/associations/ariffi.svg';
+import asffJpg from '../assets/imgs/associations/asff.svg';
+import asfycJpg from '../assets/imgs/associations/asfyc.svg';
+import asfflJpg from '../assets/imgs/associations/asfflpo.svg';
+import afcJpg from '../assets/imgs/associations/afc.svg';
 
 
 const ASSOCIATIONS = [

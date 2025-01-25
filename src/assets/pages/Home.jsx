@@ -10,6 +10,7 @@ import Associations from '../components/Home/Associations';
 import Internationals from '../components/Home/Internationals';
 import NationalTournaments from '../components/Home/NationalTournaments';
 
+
 const Home = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0 }} 
         initial={{ opacity: 0, y: 50 }} 
         transition={{ duration: 0.5 }}
+        
       >
         <Hero />
       </motion.div>
@@ -36,9 +38,7 @@ const Home = () => {
       >
         <Internationals />
       </motion.div>
-      <div className='flex justify-center items-center pt-20  '>
-      <h2 className='text-3xl font-bold mb-6 m-auto '>Torneos Internacionales</h2>
-      </div>
+   
   
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }} 
@@ -71,6 +71,8 @@ const Home = () => {
       >
         <Banner />
       </motion.div>
+
+    
       
       {/* Agrega más secciones de manera similar si es necesario */}
     </div>

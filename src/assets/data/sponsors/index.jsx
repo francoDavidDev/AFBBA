@@ -1,9 +1,9 @@
 import bsn from '../../imgs/sponsors/bsn.jpg';
-import sansongym from '../../imgs/sponsors/sansongym.jpg';
-import sportcenter from '../../imgs/sponsors/sportcenter.jpg';
+import sansongym from '../../imgs/sponsors/sansongym.svg';
+import sportcenter from '../../imgs/sponsors/sportcenter.svg';
 import vees from '../../imgs/sponsors/vees.jpg';
-import augeFitt from '../../imgs/sponsors/augeFitt.jpg';
-import panteraFitness from '../../imgs/sponsors/panteraFitness.jpeg';
+import augeFitt from '../../imgs/sponsors/augeFitt.svg';
+import panteraFitness from '../../imgs/sponsors/panteraFitness.svg';
 
 
 export const SPONSORS = [
