@@ -1,7 +1,7 @@
 import bsn from '../../imgs/sponsors/bsn.jpg';
 import sansongym from '../../imgs/sponsors/sansongym.svg';
 import sportcenter from '../../imgs/sponsors/sportcenter.svg';
-import vees from '../../imgs/sponsors/vees.jpg';
+import vees from '../../imgs/sponsors/vees.svg';
 import augeFitt from '../../imgs/sponsors/augeFitt.svg';
 import panteraFitness from '../../imgs/sponsors/panteraFitness.svg';
 

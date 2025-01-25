@@ -5,10 +5,7 @@ import { motion } from "framer-motion";
 import banner from "../../imgs/hero/bannerFAMF.png";
 
 // Sponsors
-import sportcenter from "../../imgs/sponsors/sportcenter.jpg";
-import bsn from "../../imgs/sponsors/bsn.jpg";
-import sansongym from "../../imgs/sponsors/sansongym.jpg";
-import vees from "../../imgs/sponsors/vees.jpg";
+import { SPONSORS } from "../../data/sponsors";
 
 function Hero() {
   const videoRef = useRef();
@@ -28,7 +25,7 @@ function Hero() {
 
   return (
     <div
-      className="relative text-white bg-cover bg-no-repeat bg-center -z-10 "
+      className="relative text-white bg-cover bg-no-repeat bg-center "
       style={{
         backgroundImage: `url('${banner}')`,
         backgroundSize: "cover",
@@ -37,25 +34,32 @@ function Hero() {
       }}
     >
       {/* Columnas con imágenes de sponsors */}
-       {/* Columnas con imágenes de sponsors */}
-       <div className="absolute inset-0 flex items-center justify-between ">
+      <div className="absolute inset-0 flex items-center justify-between">
         {/* Columna izquierda */}
-        <div className="flex flex-col space-y-3 pl-4">
-          {[sportcenter, bsn, sansongym].map((img, index) => (
+        <div 
+           className={`flex flex-col ${
+            isMobile ? "space-y-4 pl-4": "space-y-10 pl-4 z-10 "
+          }`}
+        
+        >
+
+
+
+          {SPONSORS.slice(0, 2).map((sponsor, index) => (
             <motion.a
               key={index}
-              href="#"
-              className="block"
+              href={sponsor.link}
+              className="block cursor-pointer"
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               whileHover={{ scale: 1.1, rotate: 2 }}
             >
               <img
-                src={img}
+                src={sponsor.image}
                 alt={`sponsor-${index}`}
                 className={`rounded-lg shadow-lg transition-all duration-300 ease-in-out ${
-                  isMobile ? "w-10 h-10" : "w-32 h-32"
+                  isMobile ? "w-20 h-12" : "w-30 h-32"
                 }`}
               />
             </motion.a>
@@ -63,22 +67,24 @@ function Hero() {
         </div>
 
         {/* Columna derecha */}
-        <div className="flex flex-col space-y-3 pr-4">
-          {[vees, sportcenter, sansongym].map((img, index) => (
+        <div  className={`flex flex-col  ${
+            isMobile ? "space-y-4 pl-4": "space-y-10 pr-4"
+          }`}>
+          {SPONSORS.slice(-2).map((sponsor, index) => (
             <motion.a
               key={index}
-              href="#"
-              className="block"
+              href={sponsor.link}
+              className="block cursor-pointer"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               whileHover={{ scale: 1.1, rotate: -2 }}
             >
               <img
-                src={img}
-                alt={`sponsor-${index + 3}`}
-                className={`rounded-lg shadow-lg transition-all duration-300 ease-in-out ${
-                  isMobile ? "w-10 h-10" : "w-32 h-32"
+                src={sponsor.image}
+                alt={`sponsor-${index + 2}`}
+                className={`rounded-lg shadow-lg transition-all  duration-300 ease-in-out ${
+                  isMobile ? "w-20 h-12" : "w-30 h-32"
                 }`}
               />
             </motion.a>
