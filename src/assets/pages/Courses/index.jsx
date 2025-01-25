@@ -78,7 +78,7 @@ const Courses = () => {
                       href={sponsor.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative w-40 h-auto"
+                      className="relative w-40 h-auto -z-10"
                       whileHover={{ scale: 1.1 }}
                     >
                       <motion.img

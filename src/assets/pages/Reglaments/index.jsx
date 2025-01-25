@@ -26,7 +26,7 @@ const Reglaments = () => {
       >
          {/* Sponsors con animación */}
                 <motion.div
-                  className="flex flex-wrap justify-center items-center gap-8 my-10"
+                  className="flex flex-wrap justify-center items-center gap-8 my-10  "
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1 }}
@@ -37,7 +37,7 @@ const Reglaments = () => {
                       href={sponsor.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative w-40 h-auto"
+                      className="relative w-40 h-auto -z-10"
                       whileHover={{ scale: 1.1 }}
                     >
                       <motion.img

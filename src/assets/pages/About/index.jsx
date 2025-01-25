@@ -10,11 +10,11 @@ import { SPONSORS } from "../../data/sponsors";
 
 const About = () => {
   return (
-    <section className="w-full h-auto flex flex-col justify-center items-center gap-y-10">
+    <section className="w-full h-auto flex flex-col justify-center items-center gap-y-10 ">
       <div className="w-[90%] min-h-screen m-auto mt-[100px] gap-y-10">
         {/* Sponsors con animación */}
         <motion.div
-          className="flex flex-wrap justify-center items-center gap-8 my-10"
+          className="flex flex-wrap justify-center items-center gap-8 my-10  "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -25,7 +25,7 @@ const About = () => {
               href={sponsor.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative w-40 h-auto"
+              className="relative w-40 h-auto -z-10 "
               whileHover={{ scale: 1.1 }}
             >
               <motion.img

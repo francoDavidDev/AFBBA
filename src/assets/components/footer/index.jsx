@@ -28,7 +28,7 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="relative pb-20"
+      className="relative pb-20 -z-10"
       variants={footerVariants}
       initial="hidden"
       animate="visible"
