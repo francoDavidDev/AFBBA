@@ -46,7 +46,7 @@ const Trainers = () => {
                       href={sponsor.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative w-40 h-auto -z-10"
+                      className="relative w-40 h-auto "
                       whileHover={{ scale: 1.1 }}
                     >
                       <motion.img
@@ -91,7 +91,7 @@ const Trainers = () => {
 
         <div className="w-[90%] flex flex-col sm:flex-row justify-center items-center gap-y-4 mb-8">
           {/* Buscador */}
-          <div className="inputBox py-20 mx-auto -z-10">
+          <div className="inputBox py-20 mx-auto ">
             <input
               type="text"
               value={searchTerm}

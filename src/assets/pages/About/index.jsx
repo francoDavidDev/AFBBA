@@ -25,7 +25,7 @@ const About = () => {
               href={sponsor.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative w-40 h-auto -z-10 "
+              className="relative w-40 h-auto  "
               whileHover={{ scale: 1.1 }}
             >
               <motion.img
