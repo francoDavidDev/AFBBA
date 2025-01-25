@@ -28,7 +28,7 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="relative pb-20 -z-10"
+      className="relative pb-20 z-10"
       variants={footerVariants}
       initial="hidden"
       animate="visible"
@@ -42,14 +42,14 @@ const Footer = () => {
       </div>
 
       {/* Sponsors */}
-      <div className="flex flex-col items-center mt-8 sm:flex-row sm:justify-between sm:px-4">
+      <div className="flex flex-col items-center mt-8 sm:flex-row sm:justify-between z-20 sm:px-4">
         {SPONSORS.map((sponsor, index) => (
           <motion.a
             key={index}
             href={sponsor.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 mx-2 my-2 hover:scale-110 transition-transform"
+            className="flex-shrink-0 mx-2 my-2 hover:scale-110 transition-transform cursor-pointer"
             custom={index}
             initial="hidden"
             animate="visible"
