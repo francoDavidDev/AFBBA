@@ -33,14 +33,14 @@ function Hero() {
         backgroundImage: `url('${banner}')`,
         backgroundSize: "cover",
         backgroundPosition: "top",
-        height: isMobile ? "30vh" : "100vh",
+        height: isMobile ? "20vh" : "100vh",
       }}
     >
       {/* Columnas con imágenes de sponsors */}
        {/* Columnas con imágenes de sponsors */}
        <div className="absolute inset-0 flex items-center justify-between ">
         {/* Columna izquierda */}
-        <div className="flex flex-col space-y-6 pl-10">
+        <div className="flex flex-col space-y-3 pl-4">
           {[sportcenter, bsn, sansongym].map((img, index) => (
             <motion.a
               key={index}
@@ -55,7 +55,7 @@ function Hero() {
                 src={img}
                 alt={`sponsor-${index}`}
                 className={`rounded-lg shadow-lg transition-all duration-300 ease-in-out ${
-                  isMobile ? "w-16 h-16" : "w-32 h-32"
+                  isMobile ? "w-10 h-10" : "w-32 h-32"
                 }`}
               />
             </motion.a>
@@ -63,7 +63,7 @@ function Hero() {
         </div>
 
         {/* Columna derecha */}
-        <div className="flex flex-col space-y-6 pr-10">
+        <div className="flex flex-col space-y-3 pr-4">
           {[vees, sportcenter, sansongym].map((img, index) => (
             <motion.a
               key={index}
@@ -78,7 +78,7 @@ function Hero() {
                 src={img}
                 alt={`sponsor-${index + 3}`}
                 className={`rounded-lg shadow-lg transition-all duration-300 ease-in-out ${
-                  isMobile ? "w-16 h-16" : "w-32 h-32"
+                  isMobile ? "w-10 h-10" : "w-32 h-32"
                 }`}
               />
             </motion.a>
