@@ -29,7 +29,7 @@ export const SPONSORS = [
    
   {
     image: vees,
-    link: "https://www.veesfitness.net/en",
+    link: "https://www.instagram.com/veesfitness.arg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     alt: "Vees Fitness",
   }
   
