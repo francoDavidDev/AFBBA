@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import video from '../../videos/oscar.mp4';
-import videoPoster from '../../imgs/associations/asfflpo.svg'; // Imagen de fondo cuando el video no está en play
+import videoPoster from '../../imgs/home/famf-bg-video-banner.svg'; // Imagen de fondo cuando el video no está en play
 
 const Banner = () => {
   const videoRef = useRef(null);
