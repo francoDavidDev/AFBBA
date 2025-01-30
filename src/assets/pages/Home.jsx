@@ -9,6 +9,7 @@ import CarrouselEvents from '../components/Home/CarrouselEvents';
 import Associations from '../components/Home/Associations';
 import Internationals from '../components/Home/Internationals';
 import NationalTournaments from '../components/Home/NationalTournaments';
+import Calendar from '../pages/Calendar.jsx';
 
 
 const Home = () => {
@@ -47,6 +48,13 @@ const Home = () => {
       >
         <NationalTournaments />
       </motion.div>*/}
+       <motion.div 
+        whileInView={{ opacity: 1, y: 0 }} 
+        initial={{ opacity: 0, y: 50 }} 
+        transition={{ duration: 0.5 }}
+      >
+        <Calendar />
+      </motion.div>
 
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }} 
