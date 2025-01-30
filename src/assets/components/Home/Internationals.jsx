@@ -94,7 +94,8 @@ const Internationals = () => {
                   className="w-full flex items-center justify-center h-auto"
                 >
                   <Link
-                    to={`/tournament/${item.title}`}
+                   to={`/#`}
+                    //to={`/tournament/${item.title}`}
                     className="flex justify-center items-center w-full"
                   >
                     <img
@@ -130,7 +131,8 @@ const Internationals = () => {
               {tournamentWithId6.title}
             </h2>
             <div className="w-full flex justify-center items-center">
-              <Link to={`/tournament/${tournamentWithId6.title}`}>
+                 <Link to={`/#`}>
+         {/*    </Link> <Link to={`/tournament/${tournamentWithId6.title}`}>*/}
                 <img
                   src={tournamentWithId6.banner || tournamentWithId6.flyer}
                   alt={`Torneo ${tournamentWithId6.title}`}

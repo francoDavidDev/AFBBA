@@ -52,7 +52,7 @@ const Info = () => {
             <h4 className="h4 text-primary-200">{item.title}</h4>
             <div className="flex gap-3 items-center">
               <IoMdFitness className="text-primary-400 text-3xl" />
-              <Link to={"/campeonatoNacional"}>
+              <Link to={"/#"}>
                 <p className="text-lg text-primary-400 font-bold hover:underline ">
                 MUY PRONTO PREINSCRIPCION PARA OPEN INTERNACIONAL MUSUMECI IFBB
                 </p>
