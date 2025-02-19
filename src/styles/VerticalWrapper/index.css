@@ -220,6 +220,18 @@
         transform: rotateY(calc((var(--position) - 1) * (720deg / var(--quantity)))) translateZ(150px);
     }
 }
+@media (max-width: 576px) {
+    .banner .slider {
+        width: 120px;
+        height: 150px;
+        top: 0;
+        left: calc(50% - 50px);
+    }
+
+    .banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (650deg / var(--quantity)))) translateZ(150px);
+    }
+}
 
 
 /* Estilos para dispositivos móviles */
@@ -231,7 +243,8 @@
   .banner .slider .item:nth-of-type(1),
   .banner .slider .item:nth-of-type(2),
   .banner .slider .item:nth-of-type(3),
-  .banner .slider .item:nth-of-type(4) {
+  .banner .slider .item:nth-of-type(4),
+  .banner .slider .item:nth-of-type(5) {
     display: block;
   }
 }

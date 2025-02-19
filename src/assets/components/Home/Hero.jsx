@@ -30,7 +30,7 @@ function Hero() {
         backgroundImage: `url('${banner}')`,
         backgroundSize: "cover",
         backgroundPosition: "top",
-        height: isMobile ? "20vh" : "100vh",
+        height: isMobile ? "25vh" : "100vh",
       }}
     >
       {/* Columnas con imágenes de sponsors */}
