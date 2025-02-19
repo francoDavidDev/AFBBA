@@ -41,7 +41,7 @@
     transform-style: preserve-3d;
     transform: perspective(1000px);
     animation: autoRun 20s linear infinite;
-    --quantity: 9; /* Define la cantidad aquí */
+    --quantity: 8; /* Define la cantidad aquí */
     z-index: 2;
 }
 
@@ -220,18 +220,6 @@
         transform: rotateY(calc((var(--position) - 1) * (720deg / var(--quantity)))) translateZ(150px);
     }
 }
-@media (max-width: 576px) {
-    .banner .slider {
-        width: 120px;
-        height: 150px;
-        top: 0;
-        left: calc(50% - 50px);
-    }
-
-    .banner .slider .item {
-        transform: rotateY(calc((var(--position) - 1) * (650deg / var(--quantity)))) translateZ(150px);
-    }
-}
 
 
 /* Estilos para dispositivos móviles */
@@ -243,8 +231,7 @@
   .banner .slider .item:nth-of-type(1),
   .banner .slider .item:nth-of-type(2),
   .banner .slider .item:nth-of-type(3),
-  .banner .slider .item:nth-of-type(4),
-  .banner .slider .item:nth-of-type(5) {
+  .banner .slider .item:nth-of-type(4) {
     display: block;
   }
 }

@@ -12,33 +12,11 @@ import mag from '../../imgs/sponsors/mag.svg';
 export const SPONSORS = [
 
 
-  {
-    image: sportcenter,
-    link: "https://www.instagram.com/fitness_sportcenter23?igsh=MTNqNm9meWJ1MTZveQ==",
-    alt: "Sportcenter",
-  },
-
-  {
-    image: panteraFitness,
-    link: "https://www.instagram.com/panterafitness.ok?igsh=NGx3OWtlZnN6ZG0z",
-    alt: "Sportcenter",
-  },
+ 
   {
     image: mag,
     link: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     alt: "Mag",
-  },
-
-  {
-    image: augeFitt,
-    link: "https://www.instagram.com/augefactoryfitness/",
-    alt: "Sportcenter",
-  },
-   
-  {
-    image: vees,
-    link: "https://www.instagram.com/veesfitness.arg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    alt: "Vees Fitness",
   },
   {
     image: mag,
@@ -66,3 +44,35 @@ export const SPONSORS = [
     link: "https://www.veesfitness.net/en",
     alt: "Vees Fitness",
   */}
+
+
+
+
+ {/*  {
+    image: sportcenter,
+    link: "https://www.instagram.com/fitness_sportcenter23?igsh=MTNqNm9meWJ1MTZveQ==",
+    alt: "Sportcenter",
+  },
+
+  {
+    image: panteraFitness,
+    link: "https://www.instagram.com/panterafitness.ok?igsh=NGx3OWtlZnN6ZG0z",
+    alt: "Sportcenter",
+  },
+  {
+    image: mag,
+    link: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "Mag",
+  },
+
+  {
+    image: augeFitt,
+    link: "https://www.instagram.com/augefactoryfitness/",
+    alt: "Sportcenter",
+  },
+   
+  {
+    image: vees,
+    link: "https://www.instagram.com/veesfitness.arg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "Vees Fitness",
+  },*/}
