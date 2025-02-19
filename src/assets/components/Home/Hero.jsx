@@ -45,7 +45,7 @@ function Hero() {
 
 
 
-          {SPONSORS.slice(0, 2).map((sponsor, index) => (
+          {SPONSORS.slice(0, 3).map((sponsor, index) => (
             <motion.a
               key={index}
               href={sponsor.link}
@@ -70,7 +70,7 @@ function Hero() {
         <div  className={`flex flex-col  ${
             isMobile ? "space-y-4 pr-4": "space-y-10 pr-4"
           }`}>
-          {SPONSORS.slice(-2).map((sponsor, index) => (
+          {SPONSORS.slice(-3).map((sponsor, index) => (
             <motion.a
               key={index}
               href={sponsor.link}

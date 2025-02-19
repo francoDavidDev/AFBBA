@@ -22,7 +22,7 @@ import mens_wheelchair from "../../imgs/reglaments/mens_wheelchair.png";
 // PDF RULES
 import manual_de_BIKINI_FITNESS from "../../pdf/reglaments/1-Manual-de-BIKINI-FITNESS.pdf";
 import manual_de_WELLNESS_FITNESS from "../../pdf/reglaments/2-Manual-de-WELLNESS-FITNESS.pdf";
-import manual_de_WOMENS_FIT_MODEL from "../../pdf/reglaments/3-Manual-de-WOMENS-FIT-MODEL.pdf";
+import manual_de_WOMENS_FIT_MODEL from "../../pdf/reglaments/3-Manual-de-WOMENS-FIT-MODEL_NUEVO_2025.pdf";
 import manual_de_BODY_FITNESS from "../../pdf/reglaments/4-Manual-de-BODY-FITNESS.pdf";
 import manual_de_WOMENS_PHYSIQUE from "../../pdf/reglaments/5-Manual-de-WOMENS-PHYSIQUE.pdf";
 import manual_de_MENS_PHYSIQUE from "../../pdf/reglaments/6-Manual-de-MENS-PHYSIQUE.pdf";

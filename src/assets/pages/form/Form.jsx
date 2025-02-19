@@ -102,7 +102,7 @@ const Form = () => {
             photo_url: photoUrl,
             message: "Formulario de Inscripción",
           };
-
+         
 
           const apiData = {
             email: form.email,

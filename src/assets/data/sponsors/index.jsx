@@ -4,6 +4,9 @@ import sportcenter from '../../imgs/sponsors/sportcenter.svg';
 import vees from '../../imgs/sponsors/vees.svg';
 import augeFitt from '../../imgs/sponsors/augeFitt.svg';
 import panteraFitness from '../../imgs/sponsors/panteraFitness.svg';
+import mag from '../../imgs/sponsors/mag.svg';
+
+
 
 
 export const SPONSORS = [
@@ -20,6 +23,11 @@ export const SPONSORS = [
     link: "https://www.instagram.com/panterafitness.ok?igsh=NGx3OWtlZnN6ZG0z",
     alt: "Sportcenter",
   },
+  {
+    image: mag,
+    link: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "Mag",
+  },
 
   {
     image: augeFitt,
@@ -31,8 +39,13 @@ export const SPONSORS = [
     image: vees,
     link: "https://www.instagram.com/veesfitness.arg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     alt: "Vees Fitness",
-  }
-  
+  },
+  {
+    image: mag,
+    link: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "Mag",
+  },
+
 ];
 
 
