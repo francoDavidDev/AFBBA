@@ -317,6 +317,14 @@ export const TOURNAMENTS_DATA = {
     },
     {
       date: '27 JULIO',
+      name: 'COPA CIUDAD RECONQUISTA',
+      location: 'RECONQUISTA',
+      organizer: 'ASFF - Ariel Caballero',
+      link:      "https://www.instagram.com/asff_2024/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#",
+
+    },
+    {
+      date: '27 JULIO',
       name: 'LA PAMPA CUP IFBB',
       location: 'LA PAMPA',
       organizer: 'ASFF - Pablo Roldan',
@@ -325,20 +333,14 @@ export const TOURNAMENTS_DATA = {
     },
   ],
   AGOSTO: [
+  
     {
-      date: '3 AGOSTO',
-      name: 'COPA TNT CORRIENTES 3RA EDICION',
-      location: 'CORRIENTES',
-      organizer: 'German Guirotane',
-      link:"https://www.instagram.com/acomfi.ifbb?igsh=aDRnYWs3anM0dzYz",
-
-    },
-    {
-      date: '3 AGOSTO',
-      name: 'COPA PROVINCIA',
-      location: 'San Andres de Giles',
-      organizer: 'Sebastian Barrientos',
-      link:"#"
+      date: "2 & 3 AGOSTO",
+      name: "OPEN INTERNACIONAL MUSUMECI IFBB",
+      location: "BUENOS AIRES",
+      organizer: "FAMF - Oscar Villareal",
+      date_2: "07/06/25  & 08/06/2025",
+      link:"https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
     },
     {
       date: '9 AGOSTO',
@@ -356,7 +358,14 @@ export const TOURNAMENTS_DATA = {
       organizer: 'OSCAR VILLAREAL - promotor',
       link:'https://www.instagram.com/rubenoscar.villarreal2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
     },
+    {
+      date: '10 AGOSTO',
+      name: 'COPA TNT CORRIENTES 3RA EDICION',
+      location: 'CORRIENTES',
+      organizer: 'German Guirotane',
+      link:"https://www.instagram.com/acomfi.ifbb?igsh=aDRnYWs3anM0dzYz",
 
+    },
     {
       date: '10 AGOSTO',
       name: 'COPA HERCULES',
@@ -365,6 +374,8 @@ export const TOURNAMENTS_DATA = {
       link:      "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
+
+
     {
       date: '10 AGOSTO',
       name: 'COPA DE LOS ANDES',
@@ -389,6 +400,7 @@ export const TOURNAMENTS_DATA = {
       link:      "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
 
     },
+  
   ],
   SEPTIEMPRE: [
     {
@@ -408,7 +420,7 @@ export const TOURNAMENTS_DATA = {
     },
    
     {
-      date: '11 AL 15 DE SEPTIEMBRE',
+      date: '18 AL 22 DE SEPTIEMBRE',
       name: 'CAMPEONATO SUDAMERICANO IFBB',
       location: 'ECUADOR',
       organizer: 'PROMOTOR CONFEDERACION SUDAMERICANA',
@@ -416,7 +428,7 @@ export const TOURNAMENTS_DATA = {
     },
 
     {
-      date: '20 SEPTIEMBRE',
+      date: '27 SEPTIEMBRE',
       name: 'COPA MISIONES IFBB',
       location: 'MISIONES',
       organizer: 'ACMUFIM - JORGE BOTHNER (promotor)',
@@ -555,6 +567,13 @@ export const TOURNAMENTS_DATA = {
       organizer: 'ASFFLYPO - OMAR BIGNON (promotor)',
       link:      "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
+    },
+    {
+      date: '16 NOVIEMBRE',
+      name: 'COPA PROVINCIA',
+      location: 'San Andres de Giles',
+      organizer: 'Sebastian Barrientos',
+      link:"#"
     },
     {
       date: '22 NOVIEMBRE',
