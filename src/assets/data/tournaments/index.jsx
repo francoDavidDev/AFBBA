@@ -278,14 +278,7 @@ export const TOURNAMENTS_DATA = {
     }
   ],
   JUNIO: [
-    {
-      date: "7 & 8 JUNIO",
-      name: "OPEN INTERNACIONAL MUSUMECI IFBB",
-      location: "BUENOS AIRES",
-      organizer: "FAMF - Oscar Villareal",
-      date_2: "07/06/25  & 08/06/2025",
-      link:"https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-    },
+
     {
       date: "15 JUNIO",
       name: "CLORINDA OPEN - 7MA EDICION",
