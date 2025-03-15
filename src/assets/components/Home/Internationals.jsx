@@ -104,16 +104,16 @@ const Internationals = () => {
             {/* Texto animado en el centro */}
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.span
-                className="text-yellow-400 bg-black p-3 text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase"
+                className="text-yellow-400 bg-black p-3 text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase"
                 animate={{
                   opacity: [0, 1, 0], // Fade in and out
-                  y: [20, 0, 20], // Move up and down
+                  scale: [0.9, 1, 0.9], // Sutil cambio de escala para dar un efecto de "respiración"
                 }}
                 transition={{
                   duration: 2,
                   ease: "easeInOut",
                   repeat: Infinity, // Repite la animación infinitamente
-                  repeatDelay: 0.5, // Tiempo de espera entre repeticiones
+                  repeatDelay: 0.5, // Pausa entre repeticiones
                 }}
               >
                 Información Próximamente
@@ -121,6 +121,7 @@ const Internationals = () => {
             </div>
           </Link>
         </div>
+        
               ))}
             </Slider>
           </div>
