@@ -18,7 +18,7 @@ const Info = () => {
     Preinscripción Obligatoria (muy pronto)
   </span>
   <h2 className="text-2xl md:text-3xl uppercase text-center ">
-  OPEN INTERNACIONAL MUSUMECI IFBB
+  CAMPEONATO ARGENTINO 2025
   </h2>
  
   <span className="italic text-base md:text-lg text-primary-200">
@@ -37,24 +37,33 @@ const Info = () => {
             transition={{ duration: 0.5 }}
             className="w-[100%] lg:w-[50%] flex flex-col gap-y-3 cursor-pointer"
           >
-            <Link to={item.path}>
-              <div
-                onMouseEnter={() => setDropdown(true)}
-                onMouseLeave={() => setDropdown(false)}
-                className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
-              >
-                <div
-                  className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"
-                  style={{ backgroundImage: `url('${item.image}')` }}
-                ></div>
-              </div>
-            </Link>
+          <Link to={item.path}>
+  <div
+    onMouseEnter={() => setDropdown(true)}
+    onMouseLeave={() => setDropdown(false)}
+    className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] relative"
+  >
+    {/* Imagen de fondo */}
+    <div
+      className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"
+      style={{ backgroundImage: `url('${item.image}')` }}
+    ></div>
+
+    {/* Overlay con el texto "PRÓXIMAMENTE NOTICIAS" */}
+    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <span className="text-white text-2xl md:text-4xl font-bold animate-pulse uppercase">
+        PRÓXIMAMENTE NOTICIAS
+      </span>
+    </div>
+  </div>
+</Link>
+
             <h4 className="h4 text-primary-200">{item.title}</h4>
             <div className="flex gap-3 items-center">
               <IoMdFitness className="text-primary-400 text-3xl" />
               <Link to={"/#"}>
                 <p className="text-lg text-primary-400 font-bold hover:underline ">
-                MUY PRONTO PREINSCRIPCION PARA OPEN INTERNACIONAL MUSUMECI IFBB
+                MUY PRONTO PREINSCRIPCION PARA CAMPEONATO ARGENTINO
                 </p>
               </Link>
             </div>

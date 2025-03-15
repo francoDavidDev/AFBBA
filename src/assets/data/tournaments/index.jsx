@@ -21,175 +21,81 @@ import MISS_ARGENTINA from "../../imgs/tournaments/internationals/flyers/missArg
 import FECHAS_PROXIMAMENTE from "../../imgs/tournaments/FECHAS_PROXIMAMENTE.svg";
 
 
+import CAMPEONATO_ARGENTINO_2025 from "../../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_ARGENTINO.jpg";
+import CAMPEONATO_NACIONAL_2025 from "../../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_NACIONAL.jpg";
+import SUPER_PATAGONICO_2025 from "../../imgs/tournaments/nationals/flyers/2025/SUPER_PATAGONICO.jpg";
 
-{/*export const TOURNAMENTS_DATA = [
+
+
+export const TOURNAMENTS_NATIONALS = [
   {
-    id: 5,
-    flyer: FECHAS_PROXIMAMENTE,
+    id: 1,
+    flyer: CAMPEONATO_ARGENTINO_2025,
     banner: null,
-    tag: "internacional",
+    tag: "nacional",
     path: null,
-    title: "COPA MERCOSUR 2024",
-    address: "MENDOZA",
+    title: "CAMPEONATO ARGENTINO 2025",
+    address: "CORDOBA",
     locality: "ARGENTINA",
-    date: "04/05/2024",
+    date: "23-24 AGOSTO",
     hour_inscription: "Más información próximamente",
     start_competition: "Más información próximamente",
     more_info: [
       {
-        name: "Dario Dominguez Promotor",
-        contact: "+54 9 261 515 6689"
+        name: "Claudio Nieto",
+        contact: "+54 9 3515104601"
       },
-      {
-        name: "Osvaldo Medina Secretario",
-        contact: "+54 9 379 407 6303"
-      }
+    
     ],
     social_networks: null,
     preinscription: false
   },
   {
-    id: 1,
-    flyer: FECHAS_PROXIMAMENTE,
-    banner: FECHAS_PROXIMAMENTE,
-    tag: "nacional",
-    title: "CAMPEONATO ARGENTINO",
-    address: "TEATRO ENRIQUE SANTOS DICEPOLO",
-    date: "24/08/2024",
-    locality: "Merlo",
-    hour_inscription: "Sábado 09:00 a 12:00 hs",
-    start_competition: "Sábado 15:00 hs - Domingo 10:00 hs",
-    social_networks: [
-      {
-        facebook: FaFacebook,
-        name: "Omar Esteban",
-        href: "https://www.facebook.com/share/k2z91GEYim3n6YRd/?mibextid=LQQJ4d"
-      },
-      {
-        instagram: FaInstagram,
-        name: "Omar Bignon",
-        href: "https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-      }
-    ],
-    preinscription: false
-  },
-  {
-    id: 7,
-    flyer: FECHAS_PROXIMAMENTE,
+    id:2,
+    flyer: SUPER_PATAGONICO_2025,
     banner: null,
     path: null,
-    tag: "internacional",
-    title: "MISS Y MISTER",
-    address: "CORDOBA",
+    tag: "nacional",
+    title: "SUPER PATAGONICO",
+    address: "CHUBUT",
     locality: "ARGENTINA",
-    date: "02/11/2024",
-    hour_inscription: "Más información próximamente",
-    start_competition: "Más información próximamente",
+    date: "25 DE OCTUBRE",
+    hour_inscription: "09:00HS  12:00hs",
+    start_competition: "Inicio a las 15:00hs",
     more_info: "Más información próximamente",
-    social_networks: null,
+    social_networks: [
+      {
+        name: "Adrian Ledesma",
+        contact: "+54 9 280 4415450"
+      },
+
+    ],
     preinscription: false
   },
   {
     id: 3,
-    flyer: FECHAS_PROXIMAMENTE,
-    banner: FECHAS_PROXIMAMENTE,
-    tag: "nacional",
-    title: "COPA PROVINCIAS UNIDAS",
-    address: "CINE TEATRO AMERICA 25 DE MAYO Y ESPAÑA",
-    locality: "SALTA CAPITAL",
-    date: "21/09/2024",
-    hour_inscription: "inscripción y pesaje de 9 a 11 hs",
-    start_competition: "inicio de competencia 13:00hs",
-    more_info: [
-      {
-        name: "Osvaldo Medina",
-        contact: "+54 9 3875 702885"
-      }
-    ],
-    social_networks: [
-      {
-        facebook: FaFacebook,
-        name: "Omar Esteban",
-        href: "https://www.facebook.com/share/QyZvRyyUd62dei5W/?mibextid=LQQJ4d"
-      },
-      {
-        instagram: FaInstagram,
-        name: "Omar Bignon",
-        href: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-      }
-    ],
-    preinscription: false
-  },
-  {
-    id: 4,
-    flyer: FECHAS_PROXIMAMENTE,
-    banner: FECHAS_PROXIMAMENTE,
-    tag: "nacional",
-    title: "SUPER PATAGONICO FISICOCULTURISMO Y FITNESS",
-    address: "Más información próximamente",
-    locality: "Más información próximamente",
-    date: "05/10/2024",
-    hour_inscription: "inscripción Sábado 10:00hs a 12:00hs",
-    start_competition: "inicio de competencia 15:00hs",
-    more_info: [
-      {
-        name: "Adrian Ledesma Presidente AF CHUBUT",
-        contact: "+54 9 280 4415450"
-      },
-      {
-        name: "Secretario FAMF",
-        contact: "+54 9 3794076303"
-      }
-    ],
-    social_networks: [
-      {
-        facebook: FaFacebook,
-        name: "Omar Esteban",
-        href: "https://www.facebook.com/share/QyZvRyyUd62dei5W/?mibextid=LQQJ4d"
-      },
-      {
-        instagram: FaInstagram,
-        name: "Omar Bignon",
-        href: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-      }
-    ],
-    preinscription: false
-  },
-  {
-    id: 2,
-    path: '/nocheDeCampeonesInfo',
-    flyer: FECHAS_PROXIMAMENTE,
+    flyer: CAMPEONATO_NACIONAL_2025,
     banner: null,
-    tag: "internacional",
-    title: "NOCHE DE CAMPEONES",
-    address: "CORDOBA",
-    locality: "CARLOS PAZ",
-    date: "02/11/2024",
-    hour_inscription: "Sábado 09:00 a 12:00 hs",
-    start_competition: "Sábado 15:00 hs - Domingo 10:00 hs",
-    more_info: "Más información próximamente",
-    social_networks: null,
-    preinscription: true
-  },
-
-  {
-    id: 8,
-    path: '/nocheDeCampeonesInfo',
-    flyer: FECHAS_PROXIMAMENTE,
-    banner: FECHAS_PROXIMAMENTE,
     tag: "nacional",
     title: "CAMPEONATO NACIONAL",
-    address: "ROSARIO",
-    locality: "ROSARIO",
-    date: "30/11/2024",
-    hour_inscription: "Sábado 17:00 a 19:00 hs",
-    start_competition: "Domingo 18:00 hs",
-    more_info: "Mas informacion en este link",
-    social_networks: 'null',
-    preinscription: true
-  },
+    address: "CHACO",
+    date: "6 Y 7 DE DICIEMBRE",
+    locality: "CHACO",
+    hour_inscription: "Informacion Proximamente",
+    start_competition: "Informacion Proximamente",
+    social_networks: [
+      {
+        name: "Matias Nievas",
+        contact: "362 4568947"
+      },
 
-];*/}
+    ],
+    preinscription: false
+  },
+ 
+
+
+];
 
 export const TOURNAMENTS_DATA = {
   FEBRERO: [

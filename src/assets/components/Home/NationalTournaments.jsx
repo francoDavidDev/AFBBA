@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import '../../../styles/nationalTournaments/index.css'; // Asegúrate de que los estilos estén configurados
-import { TOURNAMENTS_DATA } from '../../data/tournaments';
+import { TOURNAMENTS_NATIONALS } from '../../data/tournaments';
 import { Link } from 'react-router-dom'; // Importa Link de react-router-dom
 
 const NationalTournaments = () => {
   const [searchTerm, setSearchTerm] = useState(""); // Estado para el filtro
 
-  // Filtra los torneos internacionales y aplica el filtro por título
-  const filteredTournaments = TOURNAMENTS_DATA.filter(tournament =>
-    tournament.tag === 'internacional' &&
+  // Filtra los torneos nacionales y aplica el filtro por título
+  const filteredTournaments = TOURNAMENTS_NATIONALS.filter(tournament =>
+    tournament.tag === 'nacional' &&
     tournament.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -17,7 +17,7 @@ const NationalTournaments = () => {
     <section className='container__body flex justify-center flex-col items-center w-full h-auto py-10 mb-20'>
       {/* Campo de búsqueda */}
     <div className='flex justify-center items-center pt-20  '>
-       <h2 className='text-3xl font-bold mb-6 m-auto '>TORNEOS INTERNACIONALES</h2>
+       <h2 className='text-3xl font-bold mb-6 m-auto '>TORNEOS NACIONALES 2025</h2>
        </div>
 
       <div className='container__acordeon m-auto'>

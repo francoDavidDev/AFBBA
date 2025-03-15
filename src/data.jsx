@@ -18,13 +18,13 @@ export const NAV = [
 //HOME DATA
 // aqui esta la informacion de banner main
 
-import bannerMain from "./assets/imgs/home/famf-bg-video.svg";
+import CAMPEONATO_ARGENTINO_2025 from "../src/assets/imgs/tournaments/nationals/flyers/2025/CAMPEONATO_ARGENTINO.jpg";
 
 export const ACTUALIDAD = [
   {
     title: "MUY PRONTO NOTICIAS",
     subtitle: "Haz click en la imagen para poder informarte e inscribirte al Torneo",
-    image: bannerMain,
+    image: CAMPEONATO_ARGENTINO_2025,
     path: "/#",
     description:
       "El Campeonato Nacional de fisicoculturismo es el pináculo de excelencia en el ámbito deportivo, un evento que reúne a los mejores atletas de toda la nación en una exhibición de fuerza, estética y resistencia. En este torneo, cada competidor demuestra no solo su habilidad física, sino también su perseverancia y compromiso con este estilo de vida. Es una jornada donde el trabajo incansable y la disciplina se celebran, y donde cada pose y flexión reflejan años de esfuerzo y dedicación. El Campeonato Nacional es más que una competencia; es un homenaje a aquellos que viven y respiran el deporte, una plataforma donde los sueños de gloria se convierten en realidad, y el espíritu deportivo alcanza su máxima expresión.",

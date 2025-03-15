@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { TOURNAMENTS_DATA } from "../../data/tournaments";
+import { TOURNAMENTS_NATIONALS } from "../../data/tournaments";
 
 const Internationals = () => {
   const [searchTerm, setSearchTerm] = useState(""); // Estado para el filtro
@@ -32,14 +32,14 @@ const Internationals = () => {
   };
 
   // Obtener el torneo con id '6'
-  const tournamentWithId6 = TOURNAMENTS_DATA.find(
+  const tournamentWithId6 = TOURNAMENTS_NATIONALS.find(
     (tournament) => tournament.id === 6
   );
 
   // Filtrar los torneos, excluyendo el torneo con id '6'
-  const filteredTournaments = TOURNAMENTS_DATA.filter(
+  const filteredTournaments = TOURNAMENTS_NATIONALS.filter(
     (tournament) =>
-      tournament.tag === "nacional" &&
+      tournament.tag === "internacional" &&
       tournament.id !== 6 && // Excluir el torneo con id '6'
       tournament.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -67,7 +67,7 @@ const Internationals = () => {
       <div className="w-full h-auto">
         {/* Título y descripción */}
         <h1 className="text-center text-3xl text-primary-400 font-bold mt-5">
-          TORNEOS NACIONALES
+          TORNEOS INTERNACIONALES 2025
         </h1>
         <p className=" text-center text-lg text-primary-200/40 italic mb-8">
           Haz click en las imágenes para ver más información
