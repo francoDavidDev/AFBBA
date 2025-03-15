@@ -1,31 +1,14 @@
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-import ARGENTINO_BANNER from "../../imgs/tournaments/nationals/banners/ARGENTINO.jpg";
-import ARGENTINO_FLYER from "../../imgs/tournaments/nationals/flyers/ARGENTINO.jpg";
-
-import NOCHE_CAMPEONES_BANNER from "../../imgs/tournaments/internationals/flyers/nocheDeCampeones.jpg";
-
-import PROV_UNIDAS_BANNER from "../../imgs/tournaments/nationals/banners/PROV_UNIDAS.jpg";
-import PROV_UNIDAS_FLYER from "../../imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg";
-
-import PATAGONICO_BANNER from "../../imgs/tournaments/nationals/banners/PATAGONICO_TRELEW.jpg";
-import PATAGONICO_FLYER from "../../imgs/tournaments/nationals/flyers/PATAGONICO_TRELEW.jpg";
-
-import MERCOSUR_FLYER from "../../imgs/tournaments/internationals/flyers/mercosur.jpg";
-
-import CAMPEONATO_NACIONAL from "../../imgs/tournaments/nationals/banners/CAMPEONATO_NACIONAL.jpg";
-
-import MISS_ARGENTINA from "../../imgs/tournaments/internationals/flyers/missArgentina.jpg";
-
-import FECHAS_PROXIMAMENTE from "../../imgs/tournaments/FECHAS_PROXIMAMENTE.svg";
 
 
 import CAMPEONATO_ARGENTINO_2025 from "../../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_ARGENTINO.jpg";
 import CAMPEONATO_NACIONAL_2025 from "../../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_NACIONAL.jpg";
 import SUPER_PATAGONICO_2025 from "../../imgs/tournaments/nationals/flyers/2025/SUPER_PATAGONICO.jpg";
 
-
+import  MUSUMECI_2025 from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
+import NOCHE_CAMPEONES_2025 from "../../imgs/tournaments/nationals/flyers/2025/NOCHE_CAMPEONES.jpg";
 
 export const TOURNAMENTS_NATIONALS = [
   {
@@ -93,7 +76,41 @@ export const TOURNAMENTS_NATIONALS = [
     preinscription: false
   },
  
+  {
+    id: 4,
+    flyer: MUSUMECI_2025,
+    banner: null,
+    tag: "internacional",
+    title: "MUSUMECI CLASSIC INTERNACIONAL",
+    address: "BUENOS AIRES",
+    date: "2 & 3 DE AGOSTO",
+    locality: "BUENOS AIRES",
+    hour_inscription: "Informacion Proximamente",
+    start_competition: "Informacion Proximamente",
+    social_networks: null,
+    preinscription: false
+  },
+ 
+  {
+    id: 5,
+    flyer: NOCHE_CAMPEONES_2025,
+    banner: null,
+    tag: "internacional",
+    title: "NOCHE DE CAMPEONES",
+    address: "ROSARIO ARGENTINA",
+    date: "8 & 9 DE AGOSTO",
+    locality: "ROSARIO",
+    hour_inscription: "Informacion Proximamente",
+    start_competition: "Informacion Proximamente",
+    social_networks: [
+      {
+        name: "Miguel Luna",
+        contact: "-54 1158061674"
+      },
 
+    ],
+    preinscription: false
+  },
 
 ];
 

@@ -5,6 +5,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { TOURNAMENTS_NATIONALS } from "../../data/tournaments";
+import { motion } from 'framer-motion';
 
 const Internationals = () => {
   const [searchTerm, setSearchTerm] = useState(""); // Estado para el filtro
@@ -89,26 +90,37 @@ const Internationals = () => {
           <div className={`${isMobile ? "w-full" : "w-[80%]"} m-auto`}>
             <Slider ref={sliderRef} {...settings} className="slick-slide_themes">
               {filteredTournaments.map((item, i) => (
-                <div
-                  key={i}
-                  className="w-full flex items-center justify-center h-auto"
-                >
-                  <Link
-                   to={`/#`}
-                    //to={`/tournament/${item.title}`}
-                    className="flex justify-center items-center w-full"
-                  >
-                    <img
-                      src={item.banner || item.flyer} // Si no hay banner, se muestra el flyer
-                      alt={`Torneo ${item.title}`}
-                      className={`${
-                        item.banner
-                          ? "w-full h-auto object-cover"
-                          : "w-2/3 h-auto object-contain mx-auto"
-                      } cursor-pointer`}
-                    />
-                  </Link>
-                </div>
+          <div key={i} className="w-full flex items-center justify-center h-auto relative">
+          <Link to={`/#`} className="flex justify-center items-center w-full">
+            <img
+              src={item.banner || item.flyer} // Si no hay banner, se muestra el flyer
+              alt={`Torneo ${item.title}`}
+              className={`${
+                item.banner
+                  ? "w-full h-auto object-cover"
+                  : "w-2/3 h-auto object-contain mx-auto"
+              } cursor-pointer`}
+            />
+            {/* Texto animado en el centro */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <motion.span
+                className="text-yellow-400 bg-black p-3 text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase"
+                animate={{
+                  opacity: [0, 1, 0], // Fade in and out
+                  y: [20, 0, 20], // Move up and down
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity, // Repite la animación infinitamente
+                  repeatDelay: 0.5, // Tiempo de espera entre repeticiones
+                }}
+              >
+                Información Próximamente
+              </motion.span>
+            </div>
+          </Link>
+        </div>
               ))}
             </Slider>
           </div>
