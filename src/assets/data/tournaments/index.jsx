@@ -90,8 +90,22 @@ export const TOURNAMENTS_NATIONALS = [
     social_networks: null,
     preinscription: false
   },
- 
   {
+    id: 4,
+    flyer: MUSUMECI_2025,
+    banner: null,
+    tag: "internacional",
+    title: "MUSUMECI CLASSIC INTERNACIONAL",
+    address: "BUENOS AIRES",
+    date: "2 & 3 DE AGOSTO",
+    locality: "BUENOS AIRES",
+    hour_inscription: "Informacion Proximamente",
+    start_competition: "Informacion Proximamente",
+    social_networks: null,
+    preinscription: false
+  },
+ 
+{/*  {
     id: 5,
     flyer: NOCHE_CAMPEONES_2025,
     banner: null,
@@ -110,7 +124,7 @@ export const TOURNAMENTS_NATIONALS = [
 
     ],
     preinscription: false
-  },
+  },*/}
 
 ];
 
