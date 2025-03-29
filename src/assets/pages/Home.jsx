@@ -53,7 +53,7 @@ const Home = () => {
               alt="MUSUMECI 2025" 
               className="w-full h-auto object-cover rounded-lg" 
             />
-            <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-70">
+            <div className="absolute inset-0 flex justify-center items-center ">
               <motion.h2 
                 className="text-white text-xl font-bold"
                 initial={{ opacity: 0, scale: 0.8 }} // Empieza pequeño
