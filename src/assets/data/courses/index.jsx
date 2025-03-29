@@ -13,7 +13,7 @@ import nutricion_deportiva_programa from "../../imgs/courses/nutricion_deportiva
 
 //curso de nutricion_fit_lvl_1
 import nutricion_fit_lvl_1_informacion from "../../imgs/courses/nutricion_fit_lvl_1/INFORMACION.png";
-import nutricion_fit_lvl_1_flyer from "../../imgs/courses/nutricion_fit_lvl_1/NUTRICIÓN_FIT_LVL_1.png";
+import nutricion_fit_lvl_1_flyer from "../../imgs/courses/nutricion_fit_lvl_1/NUTRICION_FIT_LVL_1.png";
 import nutricion_fit_lvl_1_programa from "../../imgs/courses/nutricion_fit_lvl_1/PROGRAMA.png";
 
 
