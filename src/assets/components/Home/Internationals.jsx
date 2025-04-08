@@ -1,15 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { TOURNAMENTS_NATIONALS } from "../../data/tournaments";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+
+import informacion_musumecci from "../../pdf/informacion_musumecci.pdf";
 
 const Internationals = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // Estado para el filtro
-  const [isMobile, setIsMobile] = useState(false); // Estado para el tamaño de la ventana
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef(null);
 
   const next = () => {
@@ -32,32 +33,23 @@ const Internationals = () => {
     cssEase: "linear",
   };
 
-  // Obtener el torneo con id '6'
   const tournamentWithId6 = TOURNAMENTS_NATIONALS.find(
     (tournament) => tournament.id === 6
   );
 
-  // Filtrar los torneos, excluyendo el torneo con id '6'
   const filteredTournaments = TOURNAMENTS_NATIONALS.filter(
     (tournament) =>
       tournament.tag === "internacional" &&
-      tournament.id !== 6 && // Excluir el torneo con id '6'
+      tournament.id !== 6 &&
       tournament.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Efecto para ajustar el estado 'isMobile' según el tamaño de la ventana
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Consideramos móvil si la pantalla es menor a 768px
+      setIsMobile(window.innerWidth <= 768);
     };
-
-    // Escuchar cambios en el tamaño de la ventana
     window.addEventListener("resize", handleResize);
-
-    // Ajustar al montar el componente
     handleResize();
-
-    // Limpiar el listener al desmontar
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -66,17 +58,34 @@ const Internationals = () => {
   return (
     <section className="w-full h-auto">
       <div className="w-full h-auto">
-        {/* Título y descripción */}
+        {/* Título */}
         <h1 className="text-center text-3xl text-primary-400 font-bold mt-5">
           TORNEOS INTERNACIONALES 2025
         </h1>
-        <p className=" text-center text-lg text-primary-200/40 italic mb-8">
-          Haz click en las imágenes para ver más información
+
+        {/* Botón de descarga animado */}
+        <div className="text-center mt-3">
+          <motion.a
+            href={informacion_musumecci}
+            download="informacion_evento_musumecci.pdf"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block px-4 py-2 bg-primary-400 text-white font-semibold rounded-lg shadow-md hover:bg-primary-300 transition-colors duration-200"
+          >
+            Información del evento
+          </motion.a>
+        </div>
+
+        {/* Descripción */}
+        <p className="text-center text-lg text-primary-200/40 italic mb-8">
+          o puedes hacer click en el Flyer para descargar la información
         </p>
 
-        {/* Contenedor de Slider con las flechas de navegación */}
+        {/* Slider */}
         <div className="flex justify-center items-center gap-8">
-          {/* Botón de navegación "Previous" */}
           {!isMobile && (
             <button
               className="text-3xl ml-5 text-primary-400 hover:text-primary-200 transition-all duration-150"
@@ -86,34 +95,34 @@ const Internationals = () => {
             </button>
           )}
 
-          {/* Slider */}
           <div className={`${isMobile ? "w-full" : "w-[80%]"} m-auto`}>
             <Slider ref={sliderRef} {...settings} className="slick-slide_themes">
               {filteredTournaments.map((item, i) => (
-          <div key={i} className="w-full flex items-center justify-center h-auto relative">
-          <Link to={`/#`} className="flex justify-center items-center w-full">
-            <img
-              src={item.banner || item.flyer} // Si no hay banner, se muestra el flyer
-              alt={`Torneo ${item.title}`}
-              className={`${
-                item.banner
-                  ? "w-full h-auto object-cover"
-                  : "w-2/3 h-auto object-contain mx-auto"
-              } cursor-pointer`}
-            />
-            {/* Texto animado en el centro */}
-    
-          </Link>
-        </div>
-        
+                <div key={i} className="w-full flex items-center justify-center h-auto relative">
+                  {/* Imagen que descarga el PDF */}
+                  <a
+                    href={informacion_musumecci}
+                    download="informacion_evento_musumecci.pdf"
+                    className="flex justify-center items-center w-full"
+                  >
+                    <img
+                      src={item.banner || item.flyer}
+                      alt={`Torneo ${item.title}`}
+                      className={`${
+                        item.banner
+                          ? "w-full h-auto object-cover"
+                          : "w-2/3 h-auto object-contain mx-auto"
+                      } cursor-pointer`}
+                    />
+                  </a>
+                </div>
               ))}
             </Slider>
           </div>
 
-          {/* Botón de navegación "Next" */}
           {!isMobile && (
             <button
-              className="text-3xl  mr-5 text-primary-400 hover:text-primary-200 transition-all duration-150"
+              className="text-3xl mr-5 text-primary-400 hover:text-primary-200 transition-all duration-150"
               onClick={next}
             >
               <FaArrowRight />
@@ -121,21 +130,23 @@ const Internationals = () => {
           )}
         </div>
 
-        {/* Renderizar el torneo con id '6' abajo del slider */}
+        {/* Torneo con ID 6 */}
         {tournamentWithId6 && (
           <div className="w-full h-auto mt-10">
-            <h2 className="text-center  h2 text-primary-400 mb-5">
+            <h2 className="text-center h2 text-primary-400 mb-5">
               {tournamentWithId6.title}
             </h2>
             <div className="w-full flex justify-center items-center">
-                 <Link to={`/#`}>
-         {/*    </Link> <Link to={`/tournament/${tournamentWithId6.title}`}>*/}
+              <a
+                href={informacion_musumecci}
+                download="informacion_evento_musumecci.pdf"
+              >
                 <img
                   src={tournamentWithId6.banner || tournamentWithId6.flyer}
                   alt={`Torneo ${tournamentWithId6.title}`}
-                  className="w-1/2 h-auto object-contain mx-auto" // Cambié el tamaño a w-1/2
+                  className="w-1/2 h-auto object-contain mx-auto cursor-pointer"
                 />
-              </Link>
+              </a>
             </div>
           </div>
         )}

@@ -90,7 +90,6 @@ const Home = () => {
       >
         <Info />
       </motion.div>
-
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }} 
         initial={{ opacity: 0, y: 50 }} 
@@ -98,6 +97,7 @@ const Home = () => {
       >
         <Internationals />
       </motion.div>
+   
 
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }} 
@@ -106,7 +106,7 @@ const Home = () => {
       >
         <NationalTournaments />
       </motion.div>
-       
+    
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }} 
         initial={{ opacity: 0, y: 50 }} 
