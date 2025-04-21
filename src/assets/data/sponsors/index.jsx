@@ -5,6 +5,8 @@ import vees from '../../imgs/sponsors/vees.svg';
 import augeFitt from '../../imgs/sponsors/augeFitt.svg';
 import panteraFitness from '../../imgs/sponsors/panteraFitness.svg';
 import mag from '../../imgs/sponsors/mag.svg';
+import mega_mass from  '../../imgs/sponsors/mega_mass.jpg';
+import mega_mass_bikini from  '../../imgs/sponsors/mega_mass_bikini.png';
 
 
 
@@ -19,7 +21,12 @@ export const SPONSORS = [
     alt: "Mag",
   },
   {
-    image: mag,
+    image: mega_mass_bikini,
+    link: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "Mag",
+  },
+  {
+    image: mega_mass,
     link: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     alt: "Mag",
   },

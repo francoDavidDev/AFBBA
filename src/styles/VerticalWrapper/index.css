@@ -41,7 +41,7 @@
     transform-style: preserve-3d;
     transform: perspective(1000px);
     animation: autoRun 20s linear infinite;
-    --quantity: 8; /* Define la cantidad aquí */
+    --quantity: 9; /* Define la cantidad aquí */
     z-index: 2;
 }
 

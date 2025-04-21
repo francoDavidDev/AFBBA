@@ -1,130 +1,103 @@
-import React, { useState } from 'react';
-import { TOURNAMENTS_DATA } from '../data/tournaments';
-
-import bg_calendario from '../imgs/calendar/calendario.jpg';
-import goldTexture from '../imgs/calendar/textura_dorada.jpg';
-import goldTexture2 from '../imgs/calendar/textura_dorada_meses.jpg';
-
-const MONTHS_MAP = {
-  FEBRUARY: 'Febrero',
-  MARCH: 'Marzo',
-  APRIL: 'Abril',
-  MAY: 'Mayo',
-  JUNE: 'Junio',
-  JULY: 'Julio',
-  AUGUST: 'Agosto',
-  SEPTEMBER: 'Septiembre',
-  OCTOBER: 'Octubre',
-  NOVEMBER: 'Noviembre',
-  DECEMBER: 'Diciembre'
-};
+import React, { useState } from "react";
+import { TOURNAMENTS_DATA } from "../data/tournaments";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaInstagram } from "react-icons/fa";
 
 const TournamentCalendar = () => {
-  // Inicializar el mes como null
   const [selectedMonth, setSelectedMonth] = useState(null);
 
-  const months = Object.keys(TOURNAMENTS_DATA);
-
-  const handleMonthChange = (event) => {
-    setSelectedMonth(event.target.value);
+  const handleMonthClick = (month) => {
+    if (TOURNAMENTS_DATA[month] && TOURNAMENTS_DATA[month].length > 0) {
+      setSelectedMonth(selectedMonth === month ? null : month);
+    }
   };
 
+  const monthNames = [
+    "ENERO", "FEBRERO", "MARZO", "ABRIL",
+    "MAYO", "JUNIO", "JULIO", "AGOSTO",
+    "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"
+  ];
+
   return (
-    <div
-      className="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8 bg-cover mt-10 sm:mt-20 bg-center rounded-lg h-auto flex flex-col justify-between"
-      style={{ backgroundImage: `url(${bg_calendario})` }}
-    >
-      {/* Título agregado */}
-      <div className="text-center mb-6">
-        <h1
-          className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${goldTexture})`,
-            WebkitBackgroundClip: 'text',
-          }}
-        >
-          CALENDARIO FAMF 2025
-        </h1>
-      </div>
+    <section className="w-full max-w-7xl mx-auto py-12 px-4 bg-[#0f172a] text-white">
+      <h2 className="text-center text-4xl font-bold mb-10 text-yellow-400 tracking-wide">
+        🗓️ CALENDARIO FAMF 2025
+      </h2>
 
-      <div className="mb-4 sm:mb-6">
-        <label htmlFor="month-select" className="text-lg sm:text-2xl uppercase font-medium text-white-700">
-          Selecciona el mes:
-        </label>
-        <select
-          id="month-select"
-          value={selectedMonth || ''}
-          onChange={handleMonthChange}
-          className="mt-1 sm:mt-2 block w-full px-3 sm:px-4 py-2 sm:py-3 border text-primary-100 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-        >
-          <option value=""   disabled>SELECCIONA UN MES</option>
-          {months.map((month) => (
-            <option key={month} value={month}>
-              {MONTHS_MAP[month] || month}
-            </option>
-          ))}
-        </select>
-      </div>
+      {/* GRID DE MESES */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-12">
+        {monthNames.map((month) => {
+          const tournaments = TOURNAMENTS_DATA[month];
+          const tournamentCount = tournaments?.length || 0;
+          const hasTournaments = tournamentCount > 0;
 
-      {selectedMonth && (
-        <div className="space-y-4 sm:space-y-6">
-          <div className="flex justify-center text-primary-1">
-            <div
-              className="bg-cover bg-center p-2 sm:px-6 rounded-full"
-              style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(${goldTexture2})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                boxShadow: '0 0 25px rgba(255, 223, 0, 0.6)',
-                backdropFilter: 'blur(10px)',
-              }}
+          return (
+            <motion.div
+              key={month}
+              whileHover={hasTournaments ? { scale: 1.03 } : {}}
+              onClick={() => handleMonthClick(month)}
+              className={`cursor-pointer border-2 rounded-xl p-6 text-center shadow-md transition-all duration-300 ${
+                hasTournaments
+                  ? selectedMonth === month
+                    ? "bg-yellow-400 text-black border-yellow-500"
+                    : "bg-[#1f2937] border-yellow-300 hover:bg-yellow-300 hover:text-black"
+                  : "bg-[#2c2c2c] border-gray-700 text-gray-500 cursor-not-allowed"
+              }`}
             >
-              <h2 className="text-xl sm:text-3xl font-bold text-white">
-                {MONTHS_MAP[selectedMonth] || selectedMonth}
-              </h2>
-            </div>
-          </div>
+              <h3 className="text-xl font-bold">{month}</h3>
+              <p className="text-sm mt-2">
+                {hasTournaments ? `${tournamentCount} torneos` : "Sin torneos"}
+              </p>
+            </motion.div>
+          );
+        })}
+      </div>
 
-          {TOURNAMENTS_DATA[selectedMonth]?.length > 0 ? (
-            TOURNAMENTS_DATA[selectedMonth].map((tournament, index) => (
-              <div
-                key={index}
-                className="bg-primary-200 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col p-3 sm:p-5"
-              >
-                <div className="rounded-lg flex flex-col justify-between h-full">
-                  <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-3 sm:mb-4">
-                    <h3
-                      className="text-2xl sm:text-4xl font-semibold text-transparent bg-clip-text text-center sm:text-left"
-                      style={{
-                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${goldTexture})`,
-                        WebkitBackgroundClip: 'text',
-                      }}
+      {/* SECCIÓN TORNEOS DEL MES */}
+      <AnimatePresence>
+        {selectedMonth && TOURNAMENTS_DATA[selectedMonth]?.length > 0 && (
+          <motion.div
+            key={selectedMonth}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="bg-[#1f2937] rounded-lg p-6 border border-yellow-300 shadow-lg"
+          >
+            <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center">
+              {selectedMonth} — {TOURNAMENTS_DATA[selectedMonth].length} torneo(s)
+            </h3>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {TOURNAMENTS_DATA[selectedMonth].map((tournament, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-[#111827] border border-yellow-200 rounded-lg p-5 shadow-md flex flex-col justify-between"
+                >
+                  <h4 className="text-lg font-bold text-yellow-300 mb-2">{tournament.name}</h4>
+                  <p className="text-sm text-gray-300">📅 {tournament.date}</p>
+                  <p className="text-sm text-gray-300">📍 {tournament.location}</p>
+                  <p className="text-sm text-gray-400">🎤 {tournament.organizer}</p>
+
+                  {tournament.link && (
+                    <a
+                      href={tournament.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 text-sm inline-flex items-center gap-2 text-yellow-200 hover:text-yellow-400 transition-colors"
                     >
-                      {tournament.name}
-                    </h3>
-                    <div className="text-black text-sm sm:text-lg font-medium space-y-1 sm:text-right text-center sm:lex sm:flex-col sm:items-center">
-                      <p className="text-gray-800">{tournament.date}</p>
-                      <p className="text-gray-800">{tournament.location}</p>
-                      <p className="text-gray-900 font-semibold">
-                        <a
-                          target="_blank"
-                          href={tournament.link}
-                          className="text-blue-600 hover:text-blue-400 transition-colors duration-300 underline"
-                        >
-                          {tournament.organizer}
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p className="text-center text-gray-500 text-sm sm:text-base">No hay torneos para este mes.</p>
-          )}
-        </div>
-      )}
-    </div>
+                      <FaInstagram /> Ver en Instagram
+                    </a>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
   );
 };
 
