@@ -9,6 +9,8 @@ import SUPER_PATAGONICO_2025 from "../../imgs/tournaments/nationals/flyers/2025/
 
 import  MUSUMECI_2025 from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 import NOCHE_CAMPEONES_2025 from "../../imgs/tournaments/nationals/flyers/2025/NOCHE_CAMPEONES.jpg";
+import COPA_PROVINCIAS_UNIDAS from "../../imgs/tournaments/nationals/flyers/2025/COPA_PROVINCIAS_UNIDAS.jpg";
+
 
 export const TOURNAMENTS_NATIONALS = [
   {
@@ -35,6 +37,28 @@ export const TOURNAMENTS_NATIONALS = [
   },
   {
     id:2,
+    flyer: COPA_PROVINCIAS_UNIDAS,
+    banner: null,
+    path: null,
+    tag: "nacional",
+    title: "COPA PROVINCIAS UNIDAS",
+    address: "ROSARIO",
+    locality: "ARGENTINA",
+    date: "25 DE OCTUBRE",
+    hour_inscription: "",
+    start_competition: "",
+    more_info: "",
+    social_networks: [
+      {
+        name: "Adrian Ledesma",
+        contact: "+54 9 280 4415450"
+      },
+
+    ],
+    preinscription: false
+  },
+  {
+    id:3,
     flyer: SUPER_PATAGONICO_2025,
     banner: null,
     path: null,
@@ -56,7 +80,7 @@ export const TOURNAMENTS_NATIONALS = [
     preinscription: false
   },
   {
-    id: 3,
+    id: 4,
     flyer: CAMPEONATO_NACIONAL_2025,
     banner: null,
     tag: "nacional",
@@ -77,7 +101,7 @@ export const TOURNAMENTS_NATIONALS = [
   },
  
   {
-    id: 4,
+    id: 5,
     flyer: MUSUMECI_2025,
     banner: null,
     tag: "internacional",
@@ -91,7 +115,7 @@ export const TOURNAMENTS_NATIONALS = [
     preinscription: false
   },
   {
-    id: 4,
+    id: 5,
     flyer: MUSUMECI_2025,
     banner: null,
     tag: "internacional",
