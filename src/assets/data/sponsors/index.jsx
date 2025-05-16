@@ -22,12 +22,12 @@ export const SPONSORS = [
   },
   {
     image: mega_mass_bikini,
-    link: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    link: "https://www.instagram.com/neodsign.ar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     alt: "Mag",
   },
   {
     image: mega_mass,
-    link: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    link: "https://www.instagram.com/neodsign.ar/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#",
     alt: "Mag",
   },
 
