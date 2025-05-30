@@ -46,7 +46,7 @@ export const SPONSORS = [
 
     {
     image: americaForce2,
-    link: "https://www.instagram.com/equipamientosfox?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    link: "https://www.instagram.com/americanforceinternacional?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw===",
     alt: "equipamientos fox",
   },
 

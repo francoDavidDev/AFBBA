@@ -12,11 +12,11 @@ import americaForce2 from '../../imgs/sponsors/americanforce2.jpg';
 const SPONSORS = [
   { img: mag, alt: "Mag", url: "https://www.instagram.com/magsuplementos.oficial" },
   { img: mega_mass_bikini, alt: "Mega Mass Bikini", url: "https://www.instagram.com/neodsign.ar" },
-  { img: mega_mass, alt: "Mega Mass", url: "https://www.instagram.com/neodsign.ar" },
+ // { img: mega_mass, alt: "Mega Mass", url: "https://www.instagram.com/neodsign.ar" },
   { img: panteraFitness, alt: "Pantera Fitness", url: "https://www.instagram.com/panterafitness.ok" },
   { img: augeFitt, alt: "Auge Fitt", url: "https://www.instagram.com/augefactoryfitness" },
   { img: fox, alt: "Equipamientos Fox", url: "https://www.instagram.com/equipamientosfox" },
-  { img: americaForce2, alt: "Equipamientos Fox", url: "https://www.instagram.com/equipamientosfox" }
+  { img: americaForce2, alt: "Equipamientos Fox", url: "https://www.instagram.com/americanforceinternacional?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" }
 ];
 
 const fadeIn = {
