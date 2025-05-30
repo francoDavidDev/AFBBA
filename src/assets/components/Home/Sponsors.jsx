@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import mag from '../../imgs/sponsors/mag.svg';
 import mega_mass_bikini from '../../imgs/sponsors/mega_mass_bikini.png';
 import mega_mass from '../../imgs/sponsors/mega_mass.jpg';
@@ -8,103 +10,56 @@ import fox from '../../imgs/sponsors/fox.jpeg';
 import americaForce2 from '../../imgs/sponsors/americanforce2.jpg';
 
 const SPONSORS = [
-  {
-    img: mag,
-    alt: "Mag",
-    url: "https://www.instagram.com/magsuplementos.oficial"
-  },
-  {
-    img: mega_mass_bikini,
-    alt: "Mega Mass Bikini",
-    url: "https://www.instagram.com/neodsign.ar"
-  },
-  {
-    img: panteraFitness,
-    url: "https://www.instagram.com/panterafitness.ok",
-    alt: "Pantera Fitness"
-  },
-  {
-    img: augeFitt,
-    url: "https://www.instagram.com/augefactoryfitness",
-    alt: "Auge Fitt"
-  },
-  {
-    img: fox,
-    url: "https://www.instagram.com/equipamientosfox",
-    alt: "Equipamientos Fox"
-  },
-  {
-    img: americaForce2,
-    url: "https://www.instagram.com/equipamientosfox",
-    alt: "Equipamientos Fox"
-  }
+  { img: mag, alt: "Mag", url: "https://www.instagram.com/magsuplementos.oficial" },
+  { img: mega_mass_bikini, alt: "Mega Mass Bikini", url: "https://www.instagram.com/neodsign.ar" },
+  { img: mega_mass, alt: "Mega Mass", url: "https://www.instagram.com/neodsign.ar" },
+  { img: panteraFitness, alt: "Pantera Fitness", url: "https://www.instagram.com/panterafitness.ok" },
+  { img: augeFitt, alt: "Auge Fitt", url: "https://www.instagram.com/augefactoryfitness" },
+  { img: fox, alt: "Equipamientos Fox", url: "https://www.instagram.com/equipamientosfox" },
+  { img: americaForce2, alt: "Equipamientos Fox", url: "https://www.instagram.com/equipamientosfox" }
 ];
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  })
+};
 
 const Sponsors = () => {
   return (
-    <section
-      className="banner"
-      style={{
-        padding: '40px 20px',
-        textAlign: 'center',
-        backgroundColor: '#f8f9fa'
-      }}
-    >
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-          gap: '24px',
-          justifyItems: 'center'
-        }}
-      >
+    <section className="px-4 py-10">
+      <h2 className="text-3xl md:text-5xl font-extrabold text-center text-white uppercase mb-10">
+        Sponsors
+      </h2>
+
+      <div className="columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">
         {SPONSORS.map((sponsor, index) => (
-          <a
+          <motion.a
             key={index}
             href={sponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              width: '100%',
-              maxWidth: '200px',
-              height: '200px',
-              backgroundColor: '#fff',
-              borderRadius: '12px',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'transform 0.3s ease',
-              textDecoration: 'none'
-            }}
-            onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-            onMouseLeave={e => e.currentTarget.style.transform = 'scale(1.0)'}
+            className="block w-full break-inside-avoid overflow-hidden rounded-lg"
+            custom={index}
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+            whileHover={{ scale: 1.03 }}
           >
             <img
               src={sponsor.img}
               alt={sponsor.alt}
-              style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                objectFit: 'contain',
-                padding: '10px'
-              }}
+              className="w-full h-auto object-cover rounded-md"
             />
-          </a>
+          </motion.a>
         ))}
-      </div>
-      <div className="content" style={{ marginTop: '40px' }}>
-        <h1
-          data-content="SPONSORS"
-          style={{
-            fontFamily: 'sans-serif',
-            fontSize: '3em',
-            color: '#252838',
-            position: 'relative'
-          }}
-        >
-          SPONSORS
-        </h1>
       </div>
     </section>
   );
