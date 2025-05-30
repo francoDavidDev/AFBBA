@@ -3,6 +3,11 @@ import '../../../styles/VerticalWrapper/index.css';
 import mag from '../../imgs/sponsors/mag.svg';
 import mega_mass_bikini from '../../imgs/sponsors/mega_mass_bikini.png';
 import mega_mass from '../../imgs/sponsors/mega_mass.jpg';
+import panteraFitness from '../../imgs/sponsors/panteraFitness.svg';
+import augeFitt from '../../imgs/sponsors/augeFitt.svg';
+
+import fox from '../../imgs/sponsors/fox.jpeg'
+import americaForce2 from '../../imgs/sponsors/americanforce2.jpg'
 
 const SPONSORS = [
   {
@@ -10,16 +15,33 @@ const SPONSORS = [
     alt: "Mag",
     url: "https://www.instagram.com/magsuplementos.oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
   },
-  {
-    img: mega_mass,
-    alt: "Mega Mass",
-    url: "https://www.instagram.com/neodsign.ar"
-  },
+
   {
     img: mega_mass_bikini,
     alt: "Mega Mass Bikini",
     url: "https://www.instagram.com/neodsign.ar"
   }
+  ,
+  {
+    img: panteraFitness,
+    url: "https://www.instagram.com/panterafitness.ok?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "pantera fitness",
+  },
+  {
+    img: augeFitt,
+    url: "https://www.instagram.com/augefactoryfitness?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "Mag",
+  },
+  {
+    img: fox,
+    url: "https://www.instagram.com/equipamientosfox?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "equipamientos fox",
+  },
+  {
+    img: americaForce2,
+    url: "https://www.instagram.com/equipamientosfox?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    alt: "equipamientos fox",
+  },
 ];
 
 const Sponsors = () => {
