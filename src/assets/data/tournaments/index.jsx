@@ -363,7 +363,7 @@ export const TOURNAMENTS_DATA = {
     },
   
   ],
-  SEPTIEMPRE: [
+  SEPTIEMBRE: [
     {
       date: 'A CONFIRMAR',
       name: 'JUEGOS UFEDEM',
