@@ -1,4 +1,4 @@
-const validateForm = () => {
+export const validateForm = () => {
   let tempErrors = {};
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const dniPattern = /^[0-9]+$/;
