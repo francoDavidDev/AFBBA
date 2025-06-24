@@ -14,6 +14,7 @@ import Calendar from '../pages/Calendar.jsx';
 
 import MUSUMECI_2025 from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 import OscarInformation from '../components/Home/OscarInformation.jsx';
+import MusumeciInscripcion from '../components/musumeci/MusumeciInscripcion.jsx';
 
 const Home = () => {
   // Estado para manejar la visibilidad del modal
@@ -91,6 +92,13 @@ const Home = () => {
       >
         <OscarInformation />
       </motion.div>
+            <motion.div 
+        whileInView={{ opacity: 1, y: 0 }} 
+        initial={{ opacity: 0, y: 50 }} 
+        transition={{ duration: 0.5 }}
+      >
+        <MusumeciInscripcion />
+      </motion.div>
 
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }} 
@@ -100,6 +108,7 @@ const Home = () => {
         <Info />
       </motion.div>
       
+  
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }} 
         initial={{ opacity: 0, y: 50 }} 

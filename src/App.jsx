@@ -28,6 +28,9 @@ import CarrouselSponsors from "./assets/components/CarrouselSponsors";
 import Form from "./assets/pages/form/Form";
 import PageNoFound from "./assets/components/PageNoFound";
 import CampeonatoNacional from "./assets/components/Tournaments/CampeonatoNacional";
+import MusumeciInscripcion from "./assets/components/musumeci/MusumeciInscripcion";
+import MusumeciOpciones from "./assets/components/musumeci/MusumeciOpciones";
+import MusumeciInformacionEvento from "./assets/components/musumeci/MusumeciInformacionEvento";
 
 
 
@@ -130,7 +133,7 @@ const App = () => {
               }
             />
 
-       
+
 
             <Route
               path="/courses/:courseId"
@@ -196,7 +199,7 @@ const App = () => {
                 </motion.div>
               }
             />
-            
+
 
             <Route
               path="/formInscription"
@@ -211,18 +214,20 @@ const App = () => {
               }
             />
 
-<Route
-  path="/pageNoFound"
-  element={
-    <motion.div
-      whileInView={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0, y: 50 }}
-      transition={{ duration: 0.5 }}
-    >
-      <PageNoFound />
-    </motion.div>
-  }
-/>
+            <Route
+              path="/pageNoFound"
+              element={
+                <motion.div
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <PageNoFound />
+                </motion.div>
+              }
+            />
+            <Route path="/opciones-musumeci" element={<MusumeciOpciones />} />
+            <Route path="/evento-musumeci" element={<MusumeciInformacionEvento />} />
           </Routes>
           <CarrouselSponsors />
           <Footer />
