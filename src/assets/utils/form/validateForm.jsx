@@ -1,68 +1,55 @@
-// src/utils/formValidation.js
-export const validateForm = (form) => {
-    let tempErrors = {};
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const dniPattern = /^[0-9]+$/; // Acepta cualquier cantidad de números
-    const phonePattern = /^\+?[\d\s]+$/;
-    const weightPattern = /^[0-9]+\.[0-9]+$/; // Acepta solo números con punto (ej. 80.6)
-    const heightPattern = /^[0-9]+\.[0-9]+$/; // Acepta solo números con punto (ej. 1.80)
+const validateForm = () => {
+  let tempErrors = {};
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const dniPattern = /^[0-9]+$/;
+  const phonePattern = /^\+?[\d\s]+$/;
+  const weightPattern = /^[0-9]+\.[0-9]+$/;
+  const heightPattern = /^[0-9]+\.[0-9]+$/;
 
-    if (!form.email) {
-        tempErrors.email = "Correo Electrónico es requerido";
-    } else if (!emailPattern.test(form.email)) {
-        tempErrors.email = "Correo Electrónico no es válido";
-    }
+  if (!form.email) tempErrors.email = "Correo Electrónico es requerido";
+  else if (!emailPattern.test(form.email))
+    tempErrors.email = "Correo no válido";
 
-    if (!form.fullName) tempErrors.fullName = "Nombre y Apellido es requerido";
+  if (!form.fullName) tempErrors.fullName = "Nombre y Apellido es requerido";
 
-    if (!form.birthDate) {
-        tempErrors.birthDate = "Fecha de Nacimiento es requerida";
-    } else {
-        const birthDate = new Date(form.birthDate);
-        const today = new Date();
-        const age = today.getFullYear() - birthDate.getFullYear();
-        if (age < 0 || age > 100) {
-            tempErrors.birthDate = "Debes tener entre 18 y 100 años";
-        }
-    }
+  if (!form.birthDate) {
+    tempErrors.birthDate = "Fecha de nacimiento requerida";
+  } else {
+    const birthDate = new Date(form.birthDate);
+    const today = new Date();
+    const age = today.getFullYear() - birthDate.getFullYear();
+    if (age < 0 || age > 100)
+      tempErrors.birthDate = "Debes tener entre 18 y 100 años";
+  }
 
-    if (!form.dni) {
-        tempErrors.dni = "DNI es requerido";
-    } else if (!dniPattern.test(form.dni)) {
-        tempErrors.dni = "DNI debe tener exactamente 9 dígitos";
-    }
+  if (!form.dni) tempErrors.dni = "DNI es requerido";
+  else if (!dniPattern.test(form.dni))
+    tempErrors.dni = "DNI debe contener solo números";
 
-    if (!form.country) tempErrors.country = "Pais es requerida";
-    if (!form.province) tempErrors.province = "Provincia es requerida";
-    if (!form.locality) tempErrors.locality = "Localidad es requerida";
+  if (!form.locality) tempErrors.locality = "Localidad es requerida";
+  if (!form.country) tempErrors.country = "País es requerido";
+  if (!form.province) tempErrors.province = "Provincia es requerida";
+  if (!form.modality) tempErrors.modality = "Modalidad es requerida";
+  if (!form.category) tempErrors.category = "Categoría es requerida";
 
-    if (!form.modality) tempErrors.modality = "Modalidad es requerida";
+  if (!form.competitionWeight)
+    tempErrors.competitionWeight = "Peso es requerido";
+  else if (!weightPattern.test(form.competitionWeight))
+    tempErrors.competitionWeight = "Debe tener formato decimal (ej: 80.6)";
 
-    if (!form.category) tempErrors.category = "Categoría es requerida";
+  if (!form.height) tempErrors.height = "Altura es requerida";
+  else if (!heightPattern.test(form.height))
+    tempErrors.height = "Debe tener formato decimal (ej: 1.80)";
 
-    if (!form.competitionWeight) {
-        tempErrors.competitionWeight = "Peso de Competencia es requerido";
-    } else if (!weightPattern.test(form.competitionWeight)) {
-        tempErrors.competitionWeight = "Peso de Competencia debe ser un número con punto (por ejemplo, 80.6)";
-    }
+  if (!form.phone) tempErrors.phone = "Teléfono es requerido";
+  else if (!phonePattern.test(form.phone))
+    tempErrors.phone = "Teléfono no válido";
 
-    if (!form.height) {
-        tempErrors.height = "Altura es requerida";
-    } else if (!heightPattern.test(form.height)) {
-        tempErrors.height = "Altura debe ser un número con punto (por ejemplo, 1.80)";
-    }
+  if (!form.trainer) tempErrors.trainer = "Entrenador es requerido";
 
-    if (!form.phone) {
-        tempErrors.phone = "Teléfono es requerido";
-    } else if (!phonePattern.test(form.phone)) {
-        tempErrors.phone = "Teléfono no es válido";
-    }
+  if (!form.photo)
+    tempErrors.photo = "Foto carnet requerida (jpg, jpeg o png)";
 
-    if (!form.trainer) tempErrors.trainer = "Entrenador es requerido";
-
-    if (!form.photo) {
-        tempErrors.photo = "Foto carnet es requerida (solo formatos jpg, jpeg o png) ";
-    }
-
-    return tempErrors;
+  setErrors(tempErrors);
+  return Object.keys(tempErrors).length === 0;
 };

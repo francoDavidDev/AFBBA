@@ -24,140 +24,136 @@ import imgCarnet4 from "../../imgs/form/imgCarnet4.webp";
 import imgCarnet5 from "../../imgs/form/imgCarnet5.webp";
 
 const Form = () => {
-  // Credenciales emailJS
-  const TEMPLATE_ID = "template_2b1petm";
-  const SERVICE_ID = "service_zlwh8pp";
-  const PUBLIC_KEY = "i_NVru_5O1nhFJ0re";
+// Credenciales emailJS
+const TEMPLATE_ID = "template_2b1petm";
+const SERVICE_ID = "service_zlwh8pp";
+const PUBLIC_KEY = "i_NVru_5O1nhFJ0re";
 
-  // Credenciales Cloudinary
-  const CLOUD_NAME = "dvsyvhqym";
-  const UPLOAD_PRESET = "Presents_Foto_Carnet";
+// Credenciales Cloudinary
+const CLOUD_NAME = "dvsyvhqym";
+const UPLOAD_PRESET = "Presents_Foto_Carnet";
 
-  const [form, setForm] = useState({
-    email: "",
-    fullName: "",
-    birthDate: "",
-    dni: "",
-    country: "",
-    province: "",
-    locality: "",
-    modality: "",
-    category: "",
-    competitionWeight: "",
-    height: "",
-    phone: "",
-    trainer: "",
-    photo: "",
-  });
+const [form, setForm] = useState({
+  email: "",
+  fullName: "",
+  birthDate: "",
+  dni: "",
+  country: "",
+  province: "",
+  locality: "",
+  modality: "",
+  category: "",
+  competitionWeight: "",
+  height: "",
+  phone: "",
+  trainer: "",
+  photo: "",
+});
 
-  const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const fileInputRef = useRef();
-  const formRef = useRef();
+const [errors, setErrors] = useState({});
+const [loading, setLoading] = useState(false);
+const [modalOpen, setModalOpen] = useState(false);
+const fileInputRef = useRef();
+const formRef = useRef();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    // Validaciones
-    const tempErrors = validateForm(form);
-    setErrors(tempErrors);
+  // Validar el formulario
+  const tempErrors = validateForm(form);
+  setErrors(tempErrors);
 
-    // Si no hay errores, proceder con el envío del formulario
-    if (Object.keys(tempErrors).length === 0) {
-      try {
-        if (form.photo) {
-          const formattedBirthDate = formatDate(form.birthDate);
+  const isValid = Object.keys(tempErrors).length === 0;
 
+  if (isValid) {
+    try {
+      const formattedBirthDate = formatDate(form.birthDate);
+      let photoUrl = "";
 
-          // Subir la imagen a Cloudinary
-          const formData = new FormData();
-          formData.append("file", form.photo);
-          formData.append("upload_preset", `${UPLOAD_PRESET}`);
+      if (form.photo) {
+        const formData = new FormData();
+        formData.append("file", form.photo);
+        formData.append("upload_preset", UPLOAD_PRESET);
 
-          const response = await axios.post(
-            `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
-            formData
-          );
+        const cloudinaryResponse = await axios.post(
+          `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+          formData
+        );
 
-          const photoUrl = response.data.secure_url;
-
-          // Parámetros para emailJS
-          const templateParams = {
-            form_name: form.fullName,
-            to_name: form.fullName,
-            to_email: form.email,
-            to_birthDate: formattedBirthDate,
-            to_dni: form.dni,
-            to_locality: form.locality,
-            to_country: form.country,
-            to_province: form.province,
-            to_modality: form.modality,
-            to_category: form.category,
-            to_competitionWeight: form.competitionWeight,
-            to_height: form.height,
-            to_phone: form.phone,
-            to_trainer: form.trainer,
-            photo_url: photoUrl,
-            message: "Formulario de Inscripción",
-          };
-         
-
-          const apiData = {
-            email: form.email,
-            fullName: form.fullName,
-            birthDate: formattedBirthDate,
-            dni: form.dni,
-            locality: form.locality,
-            country: form.country,
-            province: form.province,
-            modality: form.modality,
-            category: form.category,
-            competitionWeight: form.competitionWeight,
-            height: form.height,
-            phone: form.phone,
-            trainer: form.trainer,
-            photoUrl: photoUrl, // Usa la URL de la foto devuelta por Cloudinary
-          };
-
-          await createInscription(apiData);
-          // Enviar correo con emailJS
-          emailjs
-            .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-            .then((response) => {
-              console.log("Correo enviado!", response.status, response.text);
-              setLoading(false);
-              setModalOpen(true);
-              // Resetear el formulario
-              setForm({
-                email: "",
-                fullName: "",
-                birthDate: "",
-                dni: "",
-                locality: "",
-                modality: "",
-                category: "",
-                competitionWeight: "",
-                height: "",
-                phone: "",
-                trainer: "",
-                photo: "",
-              });
-            })
-            .catch((err) => {
-              console.error("Error al enviar el correo:", err);
-              setLoading(false);
-            });
-        }
-      } catch (error) {
-        console.error("Error al subir la imagen:", error);
-        setLoading(false);
+        photoUrl = cloudinaryResponse.data.secure_url;
       }
-    } else {
+
+      const apiData = {
+        email: form.email,
+        fullName: form.fullName,
+        birthDate: formattedBirthDate,
+        dni: form.dni,
+        country: form.country,
+        province: form.province,
+        locality: form.locality,
+        modality: form.modality,
+        category: form.category,
+        competitionWeight: form.competitionWeight,
+        height: form.height,
+        phone: form.phone,
+        trainer: form.trainer,
+        photoUrl: photoUrl,
+      };
+
+      // Enviar datos a tu backend Django
+      await createInscription(apiData);
+
+      // Enviar correo con EmailJS
+      const templateParams = {
+        form_name: form.fullName,
+        to_name: form.fullName,
+        to_email: form.email,
+        to_birthDate: formattedBirthDate,
+        to_dni: form.dni,
+        to_country: form.country,
+        to_province: form.province,
+        to_locality: form.locality,
+        to_modality: form.modality,
+        to_category: form.category,
+        to_competitionWeight: form.competitionWeight,
+        to_height: form.height,
+        to_phone: form.phone,
+        to_trainer: form.trainer,
+        photo_url: photoUrl,
+        message: "Formulario de Inscripción",
+      };
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+      setModalOpen(true);
+      setForm({
+        email: "",
+        fullName: "",
+        birthDate: "",
+        dni: "",
+        country: "",
+        province: "",
+        locality: "",
+        modality: "",
+        category: "",
+        competitionWeight: "",
+        height: "",
+        phone: "",
+        trainer: "",
+        photo: "",
+      });
+    } catch (error) {
+      console.error("Error en el proceso de inscripción:", error);
+    } finally {
       setLoading(false);
     }
-  };
+  } else {
+    setLoading(false);
+  }
+};
+
+
 
   return (
     <section className="w-full h-auto flex flex-col items-center text-gray-800 py-12 bg-primary-300">
