@@ -5,6 +5,7 @@ import axios from "axios";
 import { createInscription } from "../../../api/django.api.js";
 
 
+
 import {
   LOCALITIES,
   PROVINCES,
@@ -22,12 +23,16 @@ import imgCarnet2 from "../../imgs/form/imgCarnet2.jpg";
 import imgCarnet3 from "../../imgs/form/imgCarnet3.jpg";
 import imgCarnet4 from "../../imgs/form/imgCarnet4.webp";
 import imgCarnet5 from "../../imgs/form/imgCarnet5.webp";
+import SubmitButton from "../../components/SubmitButton.jsx";
+import SuccessModal from "../../components/SuccessModal.jsx";
 
 const Form = () => {
   // Credenciales emailJS
   const TEMPLATE_ID = "template_2b1petm";
   const SERVICE_ID = "service_zlwh8pp";
   const PUBLIC_KEY = "i_NVru_5O1nhFJ0re";
+  const TEMPLATE_ID_CONFIRMATION = "template_vunrnaa"; // correo al organizador
+
 
   // Credenciales Cloudinary
   const CLOUD_NAME = "dvsyvhqym";
@@ -56,108 +61,111 @@ const Form = () => {
   const fileInputRef = useRef();
   const formRef = useRef();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    // Validaciones
-    const tempErrors = validateForm(form);
-    setErrors(tempErrors);
+  const tempErrors = validateForm(form);
+  setErrors(tempErrors);
 
-    // Si no hay errores, proceder con el envío del formulario
-    if (Object.keys(tempErrors).length === 0) {
-      try {
-        if (form.photo) {
-          const formattedBirthDate = formatDate(form.birthDate);
+  if (Object.keys(tempErrors).length === 0) {
+    try {
+      if (form.photo) {
+        const formattedBirthDate = formatDate(form.birthDate);
 
+        // Subir foto a Cloudinary
+        const formData = new FormData();
+        formData.append("file", form.photo);
+        formData.append("upload_preset", `${UPLOAD_PRESET}`);
 
-          // Subir la imagen a Cloudinary
-          const formData = new FormData();
-          formData.append("file", form.photo);
-          formData.append("upload_preset", `${UPLOAD_PRESET}`);
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+          formData
+        );
 
-          const response = await axios.post(
-            `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
-            formData
-          );
+        const photoUrl = response.data.secure_url;
 
-          const photoUrl = response.data.secure_url;
+        // Parámetros para emailJS
+        const templateParams = {
+          form_name: form.fullName,
+          to_name: form.fullName,
+          to_email: form.email,
+          to_birthDate: formattedBirthDate,
+          to_dni: form.dni,
+          to_locality: form.locality,
+          to_country: form.country,
+          to_province: form.province,
+          to_modality: form.modality,
+          to_category: form.category,
+          to_competitionWeight: form.competitionWeight,
+          to_height: form.height,
+          to_phone: form.phone,
+          to_trainer: form.trainer,
+          photo_url: photoUrl,
+          message: "Formulario de Inscripción",
+        };
 
-          // Parámetros para emailJS
-          const templateParams = {
-            form_name: form.fullName,
-            to_name: form.fullName,
-            to_email: form.email,
-            to_birthDate: formattedBirthDate,
-            to_dni: form.dni,
-            to_locality: form.locality,
-            to_country: form.country,
-            to_province: form.province,
-            to_modality: form.modality,
-            to_category: form.category,
-            to_competitionWeight: form.competitionWeight,
-            to_height: form.height,
-            to_phone: form.phone,
-            to_trainer: form.trainer,
-            photo_url: photoUrl,
-            message: "Formulario de Inscripción",
-          };
-         
+        const apiData = {
+          email: form.email,
+          fullName: form.fullName,
+          birthDate: formattedBirthDate,
+          dni: form.dni,
+          locality: form.locality,
+          country: form.country,
+          province: form.province,
+          modality: form.modality,
+          category: form.category,
+          competitionWeight: form.competitionWeight,
+          height: form.height,
+          phone: form.phone,
+          trainer: form.trainer,
+          photoUrl: photoUrl,
+        };
 
-          const apiData = {
-            email: form.email,
-            fullName: form.fullName,
-            birthDate: formattedBirthDate,
-            dni: form.dni,
-            locality: form.locality,
-            country: form.country,
-            province: form.province,
-            modality: form.modality,
-            category: form.category,
-            competitionWeight: form.competitionWeight,
-            height: form.height,
-            phone: form.phone,
-            trainer: form.trainer,
-            photoUrl: photoUrl, // Usa la URL de la foto devuelta por Cloudinary
-          };
+        // Guardar en tu backend
+        await createInscription(apiData);
 
-          await createInscription(apiData);
-          // Enviar correo con emailJS
-          emailjs
-            .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-            .then((response) => {
-              console.log("Correo enviado!", response.status, response.text);
-              setLoading(false);
-              setModalOpen(true);
-              // Resetear el formulario
-              setForm({
-                email: "",
-                fullName: "",
-                birthDate: "",
-                dni: "",
-                locality: "",
-                modality: "",
-                category: "",
-                competitionWeight: "",
-                height: "",
-                phone: "",
-                trainer: "",
-                photo: "",
-              });
-            })
-            .catch((err) => {
-              console.error("Error al enviar el correo:", err);
-              setLoading(false);
-            });
-        }
-      } catch (error) {
-        console.error("Error al subir la imagen:", error);
+        // Enviar correo al participante
+        await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+        // Enviar correo al organizador
+        await emailjs.send(
+          SERVICE_ID,
+          TEMPLATE_ID_CONFIRMATION, // template_vunrnaa
+          templateParams,
+          PUBLIC_KEY
+        );
+
         setLoading(false);
+        setModalOpen(true);
+
+        // Resetear el formulario
+        setForm({
+          email: "",
+          fullName: "",
+          birthDate: "",
+          dni: "",
+          country: "",
+          province: "",
+          locality: "",
+          modality: "",
+          category: "",
+          competitionWeight: "",
+          height: "",
+          phone: "",
+          trainer: "",
+          photo: "",
+        });
       }
-    } else {
+    } catch (error) {
+      console.error("Error en el proceso de inscripción:", error);
       setLoading(false);
     }
-  };
+  } else {
+    setLoading(false);
+  }
+};
+
 
   return (
     <section className="w-full h-auto flex flex-col items-center text-gray-800 py-12 bg-primary-300">
@@ -528,14 +536,8 @@ const Form = () => {
 
             {/* Botón de Enviar */}
             <div className="flex justify-center w-full">
-              <motion.button
-                type="submit"
-                className="bg-primary-100 text-white font-bold py-2 px-4 rounded hover:bg-primary-300"
-                disabled={loading}
-                whileHover={{ scale: 1.05 }}
-              >
-                {loading ? "Enviando..." : "Enviar"}
-              </motion.button>
+       <SubmitButton loading={loading} text="Enviar" />
+
             </div>
             <div className="m-auto flex flex-col justify-center items-center gap-y-5">
               {" "}
@@ -559,39 +561,8 @@ const Form = () => {
           </form>
 
           {/* Modal de confirmación */}
-          <AnimatePresence>
-            {modalOpen && (
-              <motion.div
-                className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <div className="bg-primary-300 text-primary-200 p-6 rounded-lg">
-                  <h2 className="text-xl text-primary-200 font-bold mb-4">
-                    ¡Formulario Enviado!
-                  </h2>
-                  <p>Se ha enviado correctamente tu preinscripción.</p>
-                  <div className="flex justify-center mt-4">
-                    <Link
-                      to="/"
-                      className="text-primary-400 hover:underline bg-primary-100  font-bold py-2 px-4 rounded "
-                    >
-                      Volver al inicio
-                    </Link>
-                  </div>
-                  <div className="flex justify-center mt-4">
-                    <motion.button
-                      className=" text-white font-bold py-2 px-4 rounded hover:bg-primary-200 hover:text-primary-300"
-                      onClick={() => setModalOpen(false)}
-                    >
-                      Cerrar
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+         <SuccessModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
         </div>
       </div>
     </section>

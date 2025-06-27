@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // <-- Importar navegación
 import Hero from '../components/Home/Hero';
 import Info from '../components/Home/Info';
 import Sponsors from '../components/Home/Sponsors';
@@ -11,26 +12,29 @@ import Internationals from '../components/Home/Internationals';
 import NationalTournaments from '../components/Home/NationalTournaments';
 import Calendar from '../pages/Calendar.jsx';
 
-
 import MUSUMECI_2025 from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 import OscarInformation from '../components/Home/OscarInformation.jsx';
 import MusumeciInscripcion from '../components/musumeci/MusumeciInscripcion.jsx';
 
 const Home = () => {
-  // Estado para manejar la visibilidad del modal
   const [showModal, setShowModal] = useState(true);
+  const navigate = useNavigate(); // <-- Hook para navegación
 
-  // Efecto para ocultar el modal después de un tiempo o al hacer clic en el modal
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowModal(false); // Cerrar modal después de 5 segundos
-    }, 5000); // 5000 ms = 5 segundos
+      setShowModal(false);
+    }, 5000);
 
-    return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+    return () => clearTimeout(timer);
   }, []);
 
   const closeModal = () => {
     setShowModal(false);
+  };
+
+  const handlePreinscripcion = () => {
+    setShowModal(false);
+    navigate('/formInscription'); // <-- Redirige al formulario
   };
 
   return (
@@ -38,123 +42,99 @@ const Home = () => {
       {/* Modal */}
       {showModal && (
         <motion.div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-          initial={{ opacity: 0, y: -100 }} // Inicia fuera de la vista
-          animate={{ opacity: 1, y: 0 }} // Entra desde arriba
-          exit={{ opacity: 0, y: 100 }} // Sale hacia abajo
+          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="w-3/4 max-w-lg relative"
+            className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] max-w-md relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
+            {/* Imagen superior */}
             <img 
               src={MUSUMECI_2025} 
               alt="MUSUMECI 2025" 
-              className="w-full h-auto object-cover rounded-lg" 
+              className="w-full h-48 object-cover"
             />
-            <div className="absolute inset-0 flex justify-center items-center ">
+
+            {/* Contenido del modal */}
+            <div className="p-6 text-center space-y-4">
               <motion.h2 
-                className="text-white text-xl font-bold"
-                initial={{ opacity: 0, scale: 0.8 }} // Empieza pequeño
-                animate={{ opacity: 1, scale: 1 }} // Escala a tamaño normal
-                exit={{ opacity: 0, scale: 0.8 }} // Desaparece
+                className="text-xl font-bold text-gray-900"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
               >
-                ¡PRÓXIMAMENTE INFORMACIÓN!
+                ¡YA ESTÁN ABIERTAS LAS PREINSCRIPCIONES!
               </motion.h2>
+
+              <motion.button
+                onClick={handlePreinscripcion}
+                className="bg-black text-white font-semibold px-6 py-2 rounded-full hover:bg-gray-800 transition"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                PREINSCRIBIRSE
+              </motion.button>
             </div>
+
+            {/* Botón de cierre */}
             <button 
               onClick={closeModal} 
-              className="absolute top-2 right-2 text-white bg-red-500 py-2 px-4 rounded-full hover:bg-red-600"
+              className="absolute top-2 right-2 text-white bg-red-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-600"
             >
-              X
+              ×
             </button>
           </motion.div>
         </motion.div>
       )}
 
-      {/* Resto del contenido de la página */}
-      <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+      {/* Resto del contenido */}
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Hero />
       </motion.div>
-         <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <OscarInformation />
       </motion.div>
-            <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
-        <MusumeciInscripcion />
+
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
+        <MusumeciInscripcion id="musumeci-inscripcion" />
       </motion.div>
 
-      <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Info />
       </motion.div>
-      
-  
-      <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Internationals />
       </motion.div>
-   
 
-      <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <NationalTournaments />
       </motion.div>
-    
-      <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Calendar />
       </motion.div>
 
-      <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Associations />
       </motion.div>
 
-      <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Sponsors />
       </motion.div>
 
-      <motion.div 
-        whileInView={{ opacity: 1, y: 0 }} 
-        initial={{ opacity: 0, y: 50 }} 
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Banner />
       </motion.div>
     </div>
