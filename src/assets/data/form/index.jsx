@@ -124,6 +124,7 @@ export const PROVINCES = [
   "SANTA FE",
   "SANTIAGO DEL ESTERO",
   "TIERRA DEL FUEGO",
-  "TUCUMÁN"
+  "TUCUMÁN",
+  "EXTRANJERO"
 ];
   

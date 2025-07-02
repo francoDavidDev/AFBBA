@@ -2,6 +2,9 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import Header from "./assets/components/Header";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Home from "./assets/pages/Home";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
@@ -231,6 +234,7 @@ const App = () => {
           </Routes>
           <CarrouselSponsors />
           <Footer />
+             <ToastContainer position="top-center" autoClose={3000} />
         </ScrollToTop>
       </HashRouter>
     </div>
