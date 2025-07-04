@@ -6,7 +6,7 @@ import { useInscriptionForm } from "../../../hooks/form/useInscriptionForm";
 
 import FormInput from "../../components/form/FormInput";
 import FormSelect from "../../components/form/FormSelect";
-import PhotoUpload from "../../components/form/PhotoUpload";
+//import PhotoUpload from "../../components/form/PhotoUpload";
 import HelpWhatsApp from "../../components/form/HelpWhatsApp";
 import SubmitButton from "../../components/SubmitButton";
 import SuccessModal from "../../components/SuccessModal";
@@ -25,7 +25,7 @@ const initialForm = {
   height: "",
   phone: "",
   trainer: "",
-  photo: "",
+  //photo: "",
   instagram: "",
 
 };
@@ -185,11 +185,11 @@ const FormPage = () => {
             />
 
 
-            <PhotoUpload
+         { /*  <PhotoUpload
               onChange={(e) => handleChange(e, form, setForm)}
               error={errors.photo}
               inputRef={fileInputRef}
-            />
+            />*/}
 
             <div className="flex justify-center w-full">
               <SubmitButton loading={loading} text="Enviar" />

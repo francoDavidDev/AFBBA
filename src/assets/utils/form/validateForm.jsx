@@ -41,15 +41,5 @@ export const validateForm = (form) => {
 
   // Entrenador opcional
 
-  // Foto carnet obligatoria y con validación de tipo
-  if (!form.photo) {
-    tempErrors.photo = "Foto carnet es requerida";
-  } else {
-    const validTypes = ["image/jpeg", "image/jpg", "image/png"];
-    if (!validTypes.includes(form.photo.type)) {
-      tempErrors.photo = "La foto debe ser JPG, JPEG o PNG";
-    }
-  }
-
   return tempErrors;
 };
