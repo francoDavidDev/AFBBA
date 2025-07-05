@@ -181,7 +181,7 @@ const FormPage = () => {
               value={form.instagram}
               onChange={(e) => handleChange(e, form, setForm)}
               error={errors.instagram}
-              placeholder="Tu nombre de usuario (ej: @miusuario)"
+              placeholder="Tu nombre de usuario (ej: miusuario)"
             />
 
 
