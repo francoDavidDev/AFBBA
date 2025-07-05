@@ -1,45 +1,51 @@
+// src/utils/formValidation.js
 export const validateForm = (form) => {
-  const tempErrors = {};
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const numberPattern = /^[0-9]+([.,][0-9]+)?$/;
-  const phonePattern = /^[0-9+\-()\s]+$/;
+    let tempErrors = {};
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const weightPattern = /^[0-9]*\.[0-9]+$/; // número decimal flexible
+    const heightPattern = /^[0-9]*\.[0-9]+$/; // número decimal flexible
 
-  if (!form.email) tempErrors.email = "Correo Electrónico es requerido";
-  else if (!emailPattern.test(form.email)) tempErrors.email = "Correo Electrónico no es válido";
+    if (!form.email) {
+        tempErrors.email = "Correo Electrónico es requerido";
+    } else if (!emailPattern.test(form.email)) {
+        tempErrors.email = "Correo Electrónico no es válido";
+    }
 
-  if (!form.fullName) tempErrors.fullName = "Nombre y Apellido es requerido";
+    if (!form.fullName) tempErrors.fullName = "Nombre y Apellido es requerido";
 
-  if (!form.birthDate) tempErrors.birthDate = "Fecha de Nacimiento es requerida";
+    if (!form.birthDate) {
+        tempErrors.birthDate = "Fecha de Nacimiento es requerida";
+    }
 
-  if (!form.dni) tempErrors.dni = "DNI / Pasaporte es requerido";
+    if (!form.dni) {
+        tempErrors.dni = "DNI es requerido";
+    }
 
-  if (!form.country) tempErrors.country = "País es requerido";
-  if (!form.province) tempErrors.province = "Provincia es requerida";
-  if (!form.locality) tempErrors.locality = "Localidad es requerida";
+    if (!form.locality) tempErrors.locality = "Localidad es requerida";
 
-  if (!form.modality) tempErrors.modality = "Modalidad es requerida";
-  if (!form.category) tempErrors.category = "Categoría es requerida";
+    if (!form.modality) tempErrors.modality = "Modalidad es requerida";
 
-  if (!form.competitionWeight) {
-    tempErrors.competitionWeight = "Peso de Competencia es requerido";
-  } else if (!numberPattern.test(form.competitionWeight)) {
-    tempErrors.competitionWeight = "Debe ser un número válido (ej. 80 o 80.5)";
-  }
+    if (!form.category) tempErrors.category = "Categoría es requerida";
 
-  if (!form.height) {
-    tempErrors.height = "Altura es requerida";
-  } else if (!numberPattern.test(form.height)) {
-    tempErrors.height = "Debe ser un número válido (ej. 175 o 1.75)";
-  }
+    if (!form.competitionWeight) {
+        tempErrors.competitionWeight = "Peso de Competencia es requerido";
+    } else if (!weightPattern.test(form.competitionWeight)) {
+        tempErrors.competitionWeight = "Debe ser un número decimal (por ejemplo, 80.6)";
+    }
 
-  // Teléfono opcional, pero con validación si se completa
-  if (form.phone && !phonePattern.test(form.phone)) {
-    tempErrors.phone = "Teléfono no es válido";
-  }
+    if (!form.height) {
+        tempErrors.height = "Altura es requerida";
+    } else if (!heightPattern.test(form.height)) {
+        tempErrors.height = "Debe ser un número decimal (por ejemplo, 1.80)";
+    }
 
-  // Instagram opcional, sin validar el @
+    if (!form.phone) {
+        tempErrors.phone = "Teléfono es requerido";
+    }
 
-  // Entrenador opcional
+    if (!form.trainer) tempErrors.trainer = "Entrenador es requerido";
 
-  return tempErrors;
+    // 🚫 Ya no validamos `photo`
+
+    return tempErrors;
 };
