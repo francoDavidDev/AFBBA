@@ -2,8 +2,6 @@
 export const validateForm = (form) => {
     let tempErrors = {};
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const weightPattern = /^[0-9]*\.[0-9]+$/; // número decimal flexible
-    const heightPattern = /^[0-9]*\.[0-9]+$/; // número decimal flexible
 
     if (!form.email) {
         tempErrors.email = "Correo Electrónico es requerido";
@@ -29,14 +27,10 @@ export const validateForm = (form) => {
 
     if (!form.competitionWeight) {
         tempErrors.competitionWeight = "Peso de Competencia es requerido";
-    } else if (!weightPattern.test(form.competitionWeight)) {
-        tempErrors.competitionWeight = "Debe ser un número decimal (por ejemplo, 80.6)";
     }
 
     if (!form.height) {
         tempErrors.height = "Altura es requerida";
-    } else if (!heightPattern.test(form.height)) {
-        tempErrors.height = "Debe ser un número decimal (por ejemplo, 1.80)";
     }
 
     if (!form.phone) {
