@@ -13,11 +13,8 @@ export const useInscriptionForm = (initialForm) => {
   const [loading, setLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
-  // const fileInputRef = useRef(); // Ya no se necesita
   const formRef = useRef();
 
-  // const CLOUD_NAME = "dvsyvhqym";
-  // const UPLOAD_PRESET = "Presents_Foto_Carnet";
   const SERVICE_ID = "service_soiecur";
   const TEMPLATE_ID = "template_2b1petm";
   const TEMPLATE_ID_CONFIRMATION = "template_vunrnaa";
@@ -45,20 +42,7 @@ export const useInscriptionForm = (initialForm) => {
     }
 
     try {
-      // Fecha formateada para mostrar al usuario (ej. en email)
       const formattedBirthDate = formatDate(form.birthDate);
-
-      // 🔻 Ya no se sube imagen
-      // const formData = new FormData();
-      // formData.append("file", form.photo);
-      // formData.append("upload_preset", UPLOAD_PRESET);
-
-      // const res = await axios.post(
-      //   `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
-      //   formData
-      // );
-
-      // const photoUrl = res.data.secure_url;
 
       const templateParams = {
         form_name: form.fullName,
@@ -75,15 +59,13 @@ export const useInscriptionForm = (initialForm) => {
         to_height: form.height,
         to_phone: form.phone,
         to_trainer: form.trainer,
-        // photo_url: photoUrl, // 🔻 se elimina del email
         to_instagram: form.instagram,
         message: "Formulario de Inscripción",
       };
 
       const apiData = {
         ...form,
-        birthDate: form.birthDate, // YYYY-MM-DD
-        // photoUrl, // 🔻 eliminado para backend
+        birthDate: form.birthDate?.toString().slice(0, 10), // ✅ asegura "YYYY-MM-DD"
       };
 
       await createInscription(apiData);
@@ -93,13 +75,15 @@ export const useInscriptionForm = (initialForm) => {
 
       setModalOpen(true);
       setForm(initialForm);
-      // fileInputRef.current.value = ""; // 🔻 ya no se usa
     } catch (error) {
       console.error("Error en el proceso de inscripción:", error);
       if (error.response) {
         console.error("Detalle del error:", error.response.data);
       }
-      toast.error("Hubo un error al procesar la inscripción.");
+      toast.error("Hubo un error al procesar la inscripción.", {
+        position: "top-center",
+        autoClose: 5000,
+      });
     }
 
     setLoading(false);
@@ -112,7 +96,6 @@ export const useInscriptionForm = (initialForm) => {
     loading,
     modalOpen,
     setModalOpen,
-    // fileInputRef, // 🔻 ya no se exporta
     formRef,
     handleSubmit,
   };
