@@ -65,7 +65,7 @@ export const useInscriptionForm = (initialForm) => {
 
       const apiData = {
         ...form,
-        birthDate: document.querySelector('[name="birthDate"]').value, // ✅ CORREGIDO
+        birthDate: form.birthDate, // ✅ se usa el string directo del input
       };
 
       await createInscription(apiData);
