@@ -65,7 +65,7 @@ export const useInscriptionForm = (initialForm) => {
 
       const apiData = {
         ...form,
-        birthDate: form.birthDate?.toString().slice(0, 10), // ✅ asegura "YYYY-MM-DD"
+        birthDate: document.querySelector('[name="birthDate"]').value, // ✅ CORREGIDO
       };
 
       await createInscription(apiData);
