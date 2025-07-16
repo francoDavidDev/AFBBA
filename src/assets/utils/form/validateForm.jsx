@@ -11,8 +11,8 @@ export const validateForm = (form) => {
 
     if (!form.fullName) tempErrors.fullName = "Nombre y Apellido es requerido";
 
-    if (!form.birthDate) {
-        tempErrors.birthDate = "Fecha de Nacimiento es requerida";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(form.birthDate)) {
+        tempErrors.birthDate = "Fecha inválida. Use el selector de fecha.";
     }
 
     if (!form.dni) {

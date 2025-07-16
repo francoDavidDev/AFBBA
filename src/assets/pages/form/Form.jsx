@@ -4,12 +4,14 @@ import { MODALITIES, CATEGORIES, PROVINCES, SOUTH_AMERICAN_COUNTRIES } from "../
 import { handleChange } from "../../utils/form/handleChange";
 import { useInscriptionForm } from "../../../hooks/form/useInscriptionForm";
 
+
 import FormInput from "../../components/form/FormInput";
 import FormSelect from "../../components/form/FormSelect";
 //import PhotoUpload from "../../components/form/PhotoUpload";
 import HelpWhatsApp from "../../components/form/HelpWhatsApp";
 import SubmitButton from "../../components/SubmitButton";
 import SuccessModal from "../../components/SuccessModal";
+import DateInput from "../../components/form/DateInput";
 
 const initialForm = {
   email: "",
@@ -75,15 +77,14 @@ const FormPage = () => {
               error={errors.fullName}
               placeholder="Juan Pérez"
             />
-
-            <FormInput
+            <DateInput
               label="Fecha de Nacimiento"
-              name="birthDate"
-              type="date"
-              value={form.birthDate}
-              onChange={(e) => handleChange(e, form, setForm)}
+              selectedDate={form.birthDate ? new Date(form.birthDate) : null}
+              onChange={(date) => setForm({ ...form, birthDate: date.toISOString().split('T')[0] })}
               error={errors.birthDate}
             />
+
+
 
             <FormInput
               label="DNI / Pasaporte"
@@ -185,7 +186,7 @@ const FormPage = () => {
             />
 
 
-         { /*  <PhotoUpload
+            { /*  <PhotoUpload
               onChange={(e) => handleChange(e, form, setForm)}
               error={errors.photo}
               inputRef={fileInputRef}
