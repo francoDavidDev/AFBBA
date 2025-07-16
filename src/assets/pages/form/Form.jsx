@@ -12,6 +12,7 @@ import HelpWhatsApp from "../../components/form/HelpWhatsApp";
 import SubmitButton from "../../components/SubmitButton";
 import SuccessModal from "../../components/SuccessModal";
 import DateInput from "../../components/form/DateInput";
+import ModalInstagramWarning from "../../components/ModalInstagramWarning";
 
 const initialForm = {
   email: "",
@@ -46,14 +47,20 @@ const FormPage = () => {
   } = useInscriptionForm(initialForm);
 
   // 🚨 Detectar si está abierto desde Instagram
+  const [showInstagramWarning, setShowInstagramWarning] = useState(false);
+
   useEffect(() => {
     if (navigator.userAgent.toLowerCase().includes("instagram")) {
-      alert("Para una mejor experiencia, abrí este enlace desde el navegador de tu dispositivo (Chrome o Safari).");
+      setShowInstagramWarning(true);
     }
   }, []);
 
   return (
     <section className="w-full h-auto flex flex-col items-center text-gray-800 py-12 bg-primary-300">
+         <ModalInstagramWarning
+        isOpen={showInstagramWarning}
+        onClose={() => setShowInstagramWarning(false)}
+      />
       <div className="w-full h-auto max-w-5xl mx-auto flex flex-col justify-between items-start">
         <div className="w-full h-auto flex flex-col bg-white p-8 rounded-lg shadow-lg">
           <h3 className="h3 text-primary-100 text-2xl font-semibold mb-6 text-center">
