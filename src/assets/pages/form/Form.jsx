@@ -1,5 +1,5 @@
 // pages/FormPage.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MODALITIES, CATEGORIES, PROVINCES, SOUTH_AMERICAN_COUNTRIES } from "../../data/form";
 import { handleChange } from "../../utils/form/handleChange";
 import { useInscriptionForm } from "../../../hooks/form/useInscriptionForm";
