@@ -45,6 +45,13 @@ const FormPage = () => {
     handleSubmit,
   } = useInscriptionForm(initialForm);
 
+  // 🚨 Detectar si está abierto desde Instagram
+  useEffect(() => {
+    if (navigator.userAgent.toLowerCase().includes("instagram")) {
+      alert("Para una mejor experiencia, abrí este enlace desde el navegador de tu dispositivo (Chrome o Safari).");
+    }
+  }, []);
+
   return (
     <section className="w-full h-auto flex flex-col items-center text-gray-800 py-12 bg-primary-300">
       <div className="w-full h-auto max-w-5xl mx-auto flex flex-col justify-between items-start">
