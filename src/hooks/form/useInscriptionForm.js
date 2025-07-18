@@ -60,12 +60,13 @@ export const useInscriptionForm = (initialForm) => {
         to_phone: form.phone,
         to_trainer: form.trainer,
         to_instagram: form.instagram,
+        to_event: form.event,
         message: "Formulario de Inscripción",
       };
 
       const apiData = {
         ...form,
-        birthDate: form.birthDate, // ✅ se usa el string directo del input
+        birthDate: form.birthDate,
       };
 
       await createInscription(apiData);

@@ -204,18 +204,19 @@ const App = () => {
             />
 
 
-            <Route
-              path="/formInscription"
-              element={
-                <motion.div
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Form />
-                </motion.div>
-              }
-            />
+       
+<Route
+  path="/inscripcion/:eventName"
+  element={
+    <motion.div
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Form />
+    </motion.div>
+  }
+/>
 
             <Route
               path="/pageNoFound"

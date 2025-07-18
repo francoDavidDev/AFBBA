@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom'; // <-- Importar navegación
+import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Home/Hero';
 import Info from '../components/Home/Info';
 import Sponsors from '../components/Home/Sponsors';
@@ -14,17 +14,16 @@ import Calendar from '../pages/Calendar.jsx';
 
 import MUSUMECI_2025 from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 import OscarInformation from '../components/Home/OscarInformation.jsx';
-import MusumeciInscripcion from '../components/musumeci/MusumeciInscripcion.jsx';
+import EventosInscripcion from '../components/EventosInscripcion.jsx';
 
 const Home = () => {
   const [showModal, setShowModal] = useState(true);
-  const navigate = useNavigate(); // <-- Hook para navegación
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(false);
     }, 5000);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -34,12 +33,11 @@ const Home = () => {
 
   const handlePreinscripcion = () => {
     setShowModal(false);
-    navigate('/formInscription'); // <-- Redirige al formulario
+    navigate('/formInscription');
   };
 
   return (
     <div>
-      {/* Modal */}
       {showModal && (
         <motion.div 
           className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
@@ -55,14 +53,11 @@ const Home = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Imagen superior */}
             <img 
               src={MUSUMECI_2025} 
               alt="MUSUMECI 2025" 
               className="w-full h-48 object-cover"
             />
-
-            {/* Contenido del modal */}
             <div className="p-6 text-center space-y-4">
               <motion.h2 
                 className="text-xl font-bold text-gray-900"
@@ -73,7 +68,6 @@ const Home = () => {
               >
                 ¡YA ESTÁN ABIERTAS LAS PREINSCRIPCIONES!
               </motion.h2>
-
               <motion.button
                 onClick={handlePreinscripcion}
                 className="bg-black text-white font-semibold px-6 py-2 rounded-full hover:bg-gray-800 transition"
@@ -85,8 +79,6 @@ const Home = () => {
                 PREINSCRIBIRSE
               </motion.button>
             </div>
-
-            {/* Botón de cierre */}
             <button 
               onClick={closeModal} 
               className="absolute top-2 right-2 text-white bg-red-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-600"
@@ -97,7 +89,6 @@ const Home = () => {
         </motion.div>
       )}
 
-      {/* Resto del contenido */}
       <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Hero />
       </motion.div>
@@ -107,7 +98,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
-        <MusumeciInscripcion id="musumeci-inscripcion" />
+        <EventosInscripcion />
       </motion.div>
 
       <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
