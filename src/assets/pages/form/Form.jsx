@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { MODALITIES, CATEGORIES, PROVINCES, SOUTH_AMERICAN_COUNTRIES } from "../../data/form";
+import { MODALITIES, CATEGORIES, SOUTH_AMERICAN_COUNTRIES } from "../../data/form";
 import { handleChange } from "../../utils/form/handleChange";
 import { useInscriptionForm } from "../../../hooks/form/useInscriptionForm";
 
@@ -30,7 +30,7 @@ const FormPage = () => {
     phone: "",
     trainer: "",
     instagram: "",
-    event: eventName || "",
+    event: eventName || "", // Acá se setea el evento al inicio
   };
 
   const {
@@ -40,7 +40,6 @@ const FormPage = () => {
     loading,
     modalOpen,
     setModalOpen,
-    fileInputRef,
     formRef,
     handleSubmit,
   } = useInscriptionForm(initialForm);

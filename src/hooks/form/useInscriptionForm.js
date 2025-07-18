@@ -1,7 +1,5 @@
-// hooks/useInscriptionForm.js
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import axios from "axios";
 import { toast } from "react-toastify";
 import { createInscription } from "../../api/django.api";
 import { formatDate } from "../../assets/utils/form/formatDate";
@@ -65,8 +63,21 @@ export const useInscriptionForm = (initialForm) => {
       };
 
       const apiData = {
-        ...form,
+        email: form.email,
+        fullName: form.fullName,
         birthDate: form.birthDate,
+        dni: form.dni,
+        country: form.country,
+        province: form.province,
+        locality: form.locality,
+        modality: form.modality,
+        category: form.category,
+        competitionWeight: form.competitionWeight,
+        height: form.height,
+        phone: form.phone,
+        trainer: form.trainer,
+        instagram: form.instagram,
+        event: form.event,
       };
 
       await createInscription(apiData);

@@ -4,8 +4,8 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 import FlyerMusumeci from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
-import FlyerCampeonato from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
-import FlyerCopaArgentina from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
+import FlyerArgentino from "../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_ARGENTINO.jpg";
+import FlyerTucuman from "../imgs/tournaments/nationals/flyers/2025/TUCUMAN.jpg";
 
 const events = [
   {
@@ -15,19 +15,18 @@ const events = [
     description: "Uno de los eventos más grandes del fisicoculturismo argentino. ¡Sumate a la experiencia que define una carrera!",
   },
   {
-    title: "Campeonato Nacional",
-    flyer: FlyerCampeonato,
-    link: "/inscripcion/campeonato-nacional",
+    title: "Campeonato Argentino",
+    flyer: FlyerArgentino,
+    link: "/inscripcion/campeonato-argentino",
     description: "El evento oficial a nivel nacional. ¡Mostrá tu mejor versión frente a los mejores del país!",
   },
   {
-    title: "Copa Argentina",
-    flyer: FlyerCopaArgentina,
-    link: "/inscripcion/copa-argentina",
-    description: "Competencia abierta para todos los niveles. ¡Viví la emoción de la Copa Argentina!",
+    title: "Tucumán IFBB Cup",
+    flyer: FlyerTucuman,
+    link: "/inscripcion/tucuman-ifbb-cup",
+    description: "Competencia oficial de la IFBB en Tucumán. ¡No te pierdas esta edición especial!",
   },
 ];
-
 const EventosInscripcion = () => {
   return (
     <section className="w-full min-h-screen bg-[#060b16] py-20 px-6 flex flex-col items-center justify-center gap-12">
