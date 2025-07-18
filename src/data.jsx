@@ -8,6 +8,7 @@ export const NAV = [
   { name: "CURSOS", href: "/courses" },
   { name: "CALENDARIO", href: "/calendar" },
   { name: "ENTRENADORES", href: "/trainers" },
+  { name: "ENTRADAS", href: "https://eventos-entradas-ten.vercel.app/" },
   {
     /*   { name: "Reglamentos", href: "contact" },
   { name: "Resultados", href: "contact" },
