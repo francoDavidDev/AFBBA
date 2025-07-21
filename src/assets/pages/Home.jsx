@@ -33,7 +33,7 @@ const Home = () => {
 
   const handlePreinscripcion = () => {
     setShowModal(false);
-    navigate('/formInscription');
+    navigate('/inscripcion/musumeci');
   };
 
   return (
