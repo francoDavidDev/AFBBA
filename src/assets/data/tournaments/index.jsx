@@ -7,7 +7,7 @@ import CAMPEONATO_ARGENTINO_2025 from "../../imgs/tournaments/nationals/flyers/2
 import CAMPEONATO_NACIONAL_2025 from "../../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_NACIONAL.jpg";
 import SUPER_PATAGONICO_2025 from "../../imgs/tournaments/nationals/flyers/2025/SUPER_PATAGONICO.jpg";
 
-import  MUSUMECI_2025 from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
+import MUSUMECI_2025 from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 import NOCHE_CAMPEONES_2025 from "../../imgs/tournaments/nationals/flyers/2025/NOCHE_CAMPEONES.jpg";
 import COPA_PROVINCIAS_UNIDAS from "../../imgs/tournaments/nationals/flyers/2025/COPA_PROVINCIAS_UNIDAS.jpg";
 
@@ -30,13 +30,13 @@ export const TOURNAMENTS_NATIONALS = [
         name: "Claudio Nieto",
         contact: "+54 9 3515104601"
       },
-    
+
     ],
     social_networks: null,
     preinscription: false
   },
   {
-    id:2,
+    id: 2,
     flyer: COPA_PROVINCIAS_UNIDAS,
     banner: null,
     path: null,
@@ -58,7 +58,7 @@ export const TOURNAMENTS_NATIONALS = [
     preinscription: false
   },
   {
-    id:3,
+    id: 3,
     flyer: SUPER_PATAGONICO_2025,
     banner: null,
     path: null,
@@ -99,7 +99,7 @@ export const TOURNAMENTS_NATIONALS = [
     ],
     preinscription: false
   },
- 
+
   {
     id: 5,
     flyer: MUSUMECI_2025,
@@ -128,8 +128,8 @@ export const TOURNAMENTS_NATIONALS = [
     social_networks: null,
     preinscription: false
   },
- 
-{/*  {
+
+  {/*  {
     id: 5,
     flyer: NOCHE_CAMPEONES_2025,
     banner: null,
@@ -160,7 +160,7 @@ export const TOURNAMENTS_DATA = {
       location: "Carlos Paz (Cordoba)",
       organizer: "ACORFFI - Claudio Nieto",
       date_2: "15/02/25",
-      link:  "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
+      link: "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
 
     },
     {
@@ -169,7 +169,7 @@ export const TOURNAMENTS_DATA = {
       location: "Salta (Capital)",
       organizer: "ASFFL - Omar Bignon",
       date_2: "15/02/25",
-      link:      "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -178,7 +178,7 @@ export const TOURNAMENTS_DATA = {
       location: "Rosario (Santa Fe)",
       organizer: "ASFF - ASFF",
       date_2: "22/02/25",
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     }
   ],
@@ -189,16 +189,17 @@ export const TOURNAMENTS_DATA = {
       location: "Mar Del Plata",
       organizer: "AFIBA - Jose Lombardo",
       date_2: "08/03/25",
-      link:"https://www.instagram.com/afibaoficial/"
+      link: "https://www.instagram.com/afibaoficial/"
     }
   ],
-  ABRIL: [   {
+  ABRIL: [
+    {
     date: "20 ABRIL",
     name: "COPA FENIX",
     location: "CABA",
     organizer: "AFIC - AFIC",
     date_2: "08/03/25",
-    link:      "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    link: "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
   }],
   MAYO: [
@@ -208,7 +209,7 @@ export const TOURNAMENTS_DATA = {
       location: "Mendoza",
       organizer: "AMFIM - AMFIM",
       date_2: "04/05/25",
-      link:      "https://www.instagram.com/amfimmendoza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/amfimmendoza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -217,7 +218,7 @@ export const TOURNAMENTS_DATA = {
       location: "Merlo",
       organizer: "AFIBA - Gabriel Casado",
       date_2: "11/05/25",
-            link:"https://www.instagram.com/afibaoficial/"
+      link: "https://www.instagram.com/afibaoficial/"
     },
     {
       date: "25 MAYO",
@@ -225,7 +226,7 @@ export const TOURNAMENTS_DATA = {
       location: "CABA",
       organizer: "AFIC - AFIC",
       date_2: "25/05/25",
-      link:      "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -234,7 +235,7 @@ export const TOURNAMENTS_DATA = {
       location: "Santa Fe",
       organizer: "ASFF - Delia Silvia",
       date_2: "31/05/25",
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     }
   ],
@@ -246,7 +247,7 @@ export const TOURNAMENTS_DATA = {
       location: "Formosa",
       organizer: "AFORMF - AFORMF",
       date_2: "15/06/25",
-     link: "https://www.instagram.com/formosa.ifbbarg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/formosa.ifbbarg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     }
   ],
@@ -256,8 +257,8 @@ export const TOURNAMENTS_DATA = {
       name: 'PERLA DEL OESTE - 1ERA EDICION',
       location: 'RAFAELA',
       organizer: 'ASFF - Marianela Astrada',
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+
 
     },
     {
@@ -265,7 +266,7 @@ export const TOURNAMENTS_DATA = {
       name: 'CAMPEONATO INDEPENDENCIA',
       location: 'MERLO',
       organizer: 'AFIBA - ALEJANDRO MAIDANA',
-      link:      "https://www.instagram.com/afibaoficial/",
+      link: "https://www.instagram.com/afibaoficial/",
 
     },
     {
@@ -273,7 +274,7 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA SUPLEMENTO NORDESTE',
       location: 'CHACO',
       organizer: 'AMUCH - Matias Nievas',
-      link:      "https://www.instagram.com/amuch_chaco?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/amuch_chaco?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -281,7 +282,7 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA CIUDAD RECONQUISTA',
       location: 'RECONQUISTA',
       organizer: 'ASFF - Ariel Caballero',
-      link:      "https://www.instagram.com/asff_2024/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#",
+      link: "https://www.instagram.com/asff_2024/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#",
 
     },
     {
@@ -289,42 +290,42 @@ export const TOURNAMENTS_DATA = {
       name: 'LA PAMPA CUP IFBB',
       location: 'LA PAMPA',
       organizer: 'ASFF - Pablo Roldan',
-      link:   "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/roldanpabloalejandro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
   ],
   AGOSTO: [
-  
+
     {
       date: "2 & 3 AGOSTO",
       name: "OPEN INTERNACIONAL MUSUMECI IFBB",
       location: "BUENOS AIRES",
       organizer: "FAMF - Oscar Villareal",
       date_2: "07/06/25  & 08/06/2025",
-      link:"https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+      link: "https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
     },
     {
       date: '9 AGOSTO',
       name: 'FIT CUP',
       location: 'LAGUNA LARGA (Cordoba)',
       organizer: 'CLAUDIO NIETO - promotor',
-      link:  "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
+      link: "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
 
-      
+
     },
     {
       date: '9 AGOSTO',
       name: 'TUCUMAN IFBB CUP',
       location: 'TUCUMAN',
       organizer: 'OSCAR VILLAREAL - promotor',
-      link:'https://www.instagram.com/rubenoscar.villarreal2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+      link: 'https://www.instagram.com/rubenoscar.villarreal2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
     },
     {
       date: '10 AGOSTO',
       name: 'COPA TNT CORRIENTES 3RA EDICION',
       location: 'CORRIENTES',
       organizer: 'German Guirotane',
-      link:"https://www.instagram.com/acomfi.ifbb?igsh=aDRnYWs3anM0dzYz",
+      link: "https://www.instagram.com/acomfi.ifbb?igsh=aDRnYWs3anM0dzYz",
 
     },
     {
@@ -332,7 +333,7 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA HERCULES',
       location: 'CABA',
       organizer: 'AFIC - AFIC (promotor)',
-      link:      "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
 
@@ -342,7 +343,7 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA DE LOS ANDES',
       location: 'MENDOZA',
       organizer: 'AMFIM - AMFIM (promotor)',
-      link:      "https://www.instagram.com/amfimmendoza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/amfimmendoza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -350,7 +351,7 @@ export const TOURNAMENTS_DATA = {
       name: 'MONUMENTO A LA BANDERA',
       location: 'ROSARIO',
       organizer: 'ASFF - ASFF (promotor)',
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -358,10 +359,10 @@ export const TOURNAMENTS_DATA = {
       name: 'CAMPEONATO ARGENTINO FAMF',
       location: 'CORDOBA',
       organizer: 'ACORFFI - CLAUDIO NIETO (promotor)',
-      link:      "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
+      link: "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
 
     },
-  
+
   ],
   SEPTIEMBRE: [
     {
@@ -369,7 +370,7 @@ export const TOURNAMENTS_DATA = {
       name: 'JUEGOS UFEDEM',
       location: 'CABA',
       organizer: 'AFIC - AFIC (promotor)',
-      link:      "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -377,15 +378,15 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA IFBB JUJUY',
       location: 'JUJUY',
       organizer: 'AJUFF - VICTOR ORTUNO (promotor)',
-      link:'#'
+      link: '#'
     },
-   
+
     {
       date: '18 AL 22 DE SEPTIEMBRE',
       name: 'CAMPEONATO SUDAMERICANO IFBB',
       location: 'ECUADOR',
       organizer: 'PROMOTOR CONFEDERACION SUDAMERICANA',
-      link:'https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+      link: 'https://www.instagram.com/famf_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
     },
 
     {
@@ -393,7 +394,7 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA MISIONES IFBB',
       location: 'MISIONES',
       organizer: 'ACMUFIM - JORGE BOTHNER (promotor)',
-      link:      "https://www.instagram.com/acufim_ifbb.misiones?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/acufim_ifbb.misiones?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -401,7 +402,7 @@ export const TOURNAMENTS_DATA = {
       name: 'CAMPEONATO SANTAFESINO',
       location: 'SANTA FE',
       organizer: 'ASFF - MAXI CANTERO (promotor)',
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -409,7 +410,7 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA CIUDAD DE SAN JUAN',
       location: 'SAN JUAN',
       organizer: 'ACEFIS - MARTIN PAREDES (promotor)',
-      link:      "https://www.instagram.com/acefissanjuan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/acefissanjuan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
   ],
@@ -419,7 +420,7 @@ export const TOURNAMENTS_DATA = {
       name: 'PROVINCIAS UNIDAS',
       location: 'A CONFIRMAR',
       organizer: 'ASFF - MIGUEL LUNA (promotor)',
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -427,31 +428,25 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA DOS CIUDADES - 7MA EDICION',
       location: 'VIEDMA',
       organizer: 'AR.DECF - JAVIER LINARES (promotor)',
-      link:'#'
+      link: '#'
     },
-   
+
     {
       date: '11 OCTUBRE',
       name: 'MS Y MR SALTA',
       location: 'SALTA',
       organizer: 'ASFFLYPO - OMAR BIGNON (promotor)',
-      link:      "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
 
-    {
-      date: '12 OCTUBRE',
-      name: 'VICTORY CLASSIC 2025',
-      location: 'ENTRE RIOS',
-      organizer: 'OSCAR VILLAREAL - promotor',
-      link:"https://www.instagram.com/rubenoscar.villarreal2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-    },
+
     {
       date: '18 OCTUBRE',
       name: 'COPA CIUDAD DE ROSARIO',
       location: 'ROSARIO',
       organizer: 'ASFF - LEONELL GABRIELLI (promotor)',
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -459,16 +454,16 @@ export const TOURNAMENTS_DATA = {
       name: 'SANTIAGO DEL ESTERO CLASSIC - 4TA EDICION',
       location: 'SANTIAGO DEL ESTERO',
       organizer: 'JUAN NUNO - promotor',
-      link:      "https://www.instagram.com/ifbb.santiagodelestero?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/ifbb.santiagodelestero?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
-    
+
     {
       date: '19 OCTUBRE',
       name: 'FORMOSA FITNESS CUP - 3ERA EDICION',
       location: 'FORMOSA',
       organizer: 'AFORMF -ARMANDO BOGADO (promotor)',
-      link:      "https://www.instagram.com/formosa.ifbbarg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/formosa.ifbbarg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -476,14 +471,14 @@ export const TOURNAMENTS_DATA = {
       name: 'SUPER PATAGONICO',
       location: 'CHUBUT',
       organizer: 'AFCHF - EMILIANO NOVOA (promotor)',
-      link:'#'
+      link: '#'
     },
     {
       date: '26 OCTUBRE',
       name: 'CAMPEONATO BONAERENSE',
       location: 'LA PLATA',
       organizer: 'AFIBA - PABLO ROLDAN (promotor)',
-      link:      "https://www.instagram.com/afibaoficial/",
+      link: "https://www.instagram.com/afibaoficial/",
 
     },
   ],
@@ -493,7 +488,7 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA MERCEDES - 3RA EDICION',
       location: 'VILLA MERCEDES (San Luis)',
       organizer: 'AFFSL - BRUNO VARGAS (promotor)',
-      link:      "https://www.instagram.com/affsl.2021?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/affsl.2021?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -501,16 +496,23 @@ export const TOURNAMENTS_DATA = {
       name: 'NEA OPEN CLASSIC',
       location: 'CORRIENTES',
       organizer: 'BOTHNER Y GUIROTANE - promotor',
-      link:      "https://www.instagram.com/acomfi.ifbb?igsh=aDRnYWs3anM0dzYz",
+      link: "https://www.instagram.com/acomfi.ifbb?igsh=aDRnYWs3anM0dzYz",
 
     },
-   
+        {
+      date: '2 NOVIEMBRE',
+      name: 'VICTORY CLASSIC 2025',
+      location: 'ENTRE RIOS',
+      organizer: 'OSCAR VILLAREAL - promotor',
+      link: "https://www.instagram.com/rubenoscar.villarreal2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    },
+
     {
       date: '8 Y 9 DE NOVIEMBRE',
       name: 'NOCHE DE CAMPEONES',
       location: 'ROSARIO',
       organizer: 'ASFF - MIGUEL LUNA - promotor',
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
 
@@ -519,14 +521,14 @@ export const TOURNAMENTS_DATA = {
       name: 'GIGANTES DEL VALLE',
       location: 'RIO NEGRO',
       organizer: 'A.N.FF - CLAUDIO BORGIA (promotor)',
-      link:"https://www.instagram.com/claudio.borgia75?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+      link: "https://www.instagram.com/claudio.borgia75?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
     },
     {
       date: '15 NOVIEMBRE',
       name: 'COPA CENTENARIO',
       location: 'TARTAGAL (Salta)',
       organizer: 'ASFFLYPO - OMAR BIGNON (promotor)',
-      link:      "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -534,39 +536,40 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA PROVINCIA',
       location: 'San Andres de Giles',
       organizer: 'Sebastian Barrientos',
-      link:"#"
+      link: "#"
     },
     {
       date: '22 NOVIEMBRE',
       name: 'CAMPEONATO CORDOBES',
       location: 'CORDOBA',
       organizer: 'ACORFFI - CLAUDIO NIETO (promotor)',
-      link:      "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
+      link: "https://www.instagram.com/acorffi_2021?igsh=Y21iNWJkN3VveHRp",
 
     },
     
+   {
+      date: '23 NOVIEMBRE',
+      name: 'CORDON INDUSTRIAL',
+      location: 'SAN LORENZO',
+      organizer: 'ASFF - WALTER CEBRERA (promotor)',
+      link: "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+
+    },
     {
       date: '29 NOVIEMBRE',
       name: 'CAMPEONATO RIOJANO',
       location: 'LA RIOJA',
       organizer: 'ARIFFI - ERNESTINA SEGOVIA (promotor)',
-      link:      "https://www.instagram.com/ariffi_larioja?igsh=bGFudncxcXNhZGF6",
+      link: "https://www.instagram.com/ariffi_larioja?igsh=bGFudncxcXNhZGF6",
 
     },
-    {
-      date: '29 NOVIEMBRE',
-      name: 'CORDON INDUSTRIAL',
-      location: 'SAN LORENZO',
-      organizer: 'ASFF - WALTER CEBRERA (promotor)',
-      link:      "https://www.instagram.com/asff_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-
-    },
+ 
     {
       date: '30 NOVIEMBRE',
       name: 'COPA ACONCAGUA',
       location: 'MENDOZA',
       organizer: 'AMFIM - AMFIM (promotor)',
-      link:      "https://www.instagram.com/amfimmendoza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/amfimmendoza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -574,7 +577,7 @@ export const TOURNAMENTS_DATA = {
       name: 'CAMEONATO METROPOLINATO',
       location: 'CABA',
       organizer: 'AFIC - AFIC (promotor)',
-      link:      "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/afic_argentina?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
   ],
@@ -584,7 +587,7 @@ export const TOURNAMENTS_DATA = {
       name: 'CAMPEONATO NACIONAL FAMF',
       location: 'CHACO',
       organizer: 'AMUCH - MATIAS NIEVAS (promotor)',
-      link:      "https://www.instagram.com/amuch_chaco?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/amuch_chaco?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
     {
@@ -592,16 +595,16 @@ export const TOURNAMENTS_DATA = {
       name: 'COPA IFBB SANTA CRUZ',
       location: 'SANTA CRUZ',
       organizer: 'ASFYC - JOSE LOMBARDO (promotor)',
-      link:      "https://www.instagram.com/asfyc_fitclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      link: "https://www.instagram.com/asfyc_fitclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
-   
+
     {
       date: '14 DICIEMBRE',
       name: 'CAMPEONATO CLAUSURA',
       location: 'A CONFIRMAR',
       organizer: 'AFIBA - MARIA MERNES - promotor',
-      link:      "https://www.instagram.com/afibaoficial/",
+      link: "https://www.instagram.com/afibaoficial/",
 
     },
   ]
