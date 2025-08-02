@@ -11,22 +11,27 @@ const events = [
   {
     title: "Musumeci Classic International",
     flyer: FlyerMusumeci,
-    link: "/inscripcion/musumeci",
-    description: "Uno de los eventos más grandes del fisicoculturismo argentino. ¡Sumate a la experiencia que define una carrera!",
+    link: null, // inscripción cerrada
+    description:
+      "",
+    closed: true,
   },
   {
     title: "Campeonato Argentino",
     flyer: FlyerArgentino,
     link: "/inscripcion/campeonato-argentino",
-    description: "El evento oficial a nivel nacional. ¡Mostrá tu mejor versión frente a los mejores del país!",
+    description:
+      "El evento oficial a nivel nacional. ¡Mostrá tu mejor versión frente a los mejores del país!",
   },
   {
     title: "Tucumán IFBB Cup",
     flyer: FlyerTucuman,
     link: "/inscripcion/tucuman-ifbb-cup",
-    description: "Competencia oficial de la IFBB en Tucumán. ¡No te pierdas esta edición especial!",
+    description:
+      "Competencia oficial de la IFBB en Tucumán. ¡No te pierdas esta edición especial!",
   },
 ];
+
 const EventosInscripcion = () => {
   return (
     <section className="w-full min-h-screen bg-[#060b16] py-20 px-6 flex flex-col items-center justify-center gap-12">
@@ -58,13 +63,19 @@ const EventosInscripcion = () => {
               </div>
               <h3 className="text-primary-300 text-2xl font-bold">{event.title}</h3>
               <p className="text-white/90 text-base">{event.description}</p>
-              <Link
-                to={event.link}
-                className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary-400 text-[#091225] text-lg font-semibold hover:shadow-[0_0_20px_#6ee7b7] transition-all duration-300"
-              >
-                Inscribirme
-                <HiArrowNarrowRight className="text-2xl" />
-              </Link>
+              {event.closed ? (
+                <span className="px-4 py-2 rounded-full bg-neutral-500 text-white/80 text-lg font-semibold cursor-not-allowed opacity-60">
+                  Inscripción cerrada
+                </span>
+              ) : (
+                <Link
+                  to={event.link}
+                  className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary-400 text-[#091225] text-lg font-semibold hover:shadow-[0_0_20px_#6ee7b7] transition-all duration-300"
+                >
+                  Inscribirme
+                  <HiArrowNarrowRight className="text-2xl" />
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>
