@@ -12,7 +12,8 @@ import Internationals from '../components/Home/Internationals';
 import NationalTournaments from '../components/Home/NationalTournaments';
 import Calendar from '../pages/Calendar.jsx';
 
-import MUSUMECI_2025 from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
+import MUSUMECI_2025 from "../imgs/tournaments/nationals/flyers/2025/ARGENTINO.jpg";
+
 import OscarInformation from '../components/Home/OscarInformation.jsx';
 import EventosInscripcion from '../components/EventosInscripcion.jsx';
 
@@ -33,7 +34,7 @@ const Home = () => {
 
   const handlePreinscripcion = () => {
     setShowModal(false);
-    navigate('/inscripcion/musumeci');
+    navigate('/inscripcion/campeonato-argentino');
   };
 
   return (
