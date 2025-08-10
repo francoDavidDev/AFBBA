@@ -14,18 +14,16 @@ const Info = () => {
     <div className="h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
       {/* Title Section */}
       <div className="w-[90%] text-primary-400 flex flex-col items-center">
-  <span className="text-lg md:text-xl uppercase">
-    Preinscripción Obligatoria (muy pronto)
-  </span>
-  <h2 className="text-2xl md:text-3xl uppercase text-center ">
-  CAMPEONATO ARGENTINO 2025
-  </h2>
- 
-  <span className="italic text-base md:text-lg text-primary-200">
-    Hacer click en el flyer para mas informacion
-  </span>
-</div>
-
+        <span className="text-lg md:text-xl uppercase">
+          Últimos resultados y clasificaciones
+        </span>
+        <h2 className="text-2xl md:text-3xl uppercase text-center ">
+          Resultados de Torneos
+        </h2>
+        <span className="italic text-base md:text-lg text-primary-200">
+          Haz clic en el flyer o tarjeta para ver el detalle completo
+        </span>
+      </div>
 
       <div className="w-[90%] h-[auto] flex flex-col lg:flex-row items-start justify-between gap-5">
         {/* Card BANER MAIN */}
@@ -37,40 +35,40 @@ const Info = () => {
             transition={{ duration: 0.5 }}
             className="w-[100%] lg:w-[50%] flex flex-col gap-y-3 cursor-pointer"
           >
-          <Link to={item.path}>
-  <div
-    onMouseEnter={() => setDropdown(true)}
-    onMouseLeave={() => setDropdown(false)}
-    className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] relative"
-  >
-    {/* Imagen de fondo */}
-    <div
-      className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"
-      style={{ backgroundImage: `url('${item.image}')` }}
-    ></div>
+            <Link to={item.path}>
+              <div
+                onMouseEnter={() => setDropdown(true)}
+                onMouseLeave={() => setDropdown(false)}
+                className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] relative"
+              >
+                {/* Imagen de fondo */}
+                <div
+                  className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"
+                  style={{ backgroundImage: `url('${item.image}')` }}
+                ></div>
 
-    {/* Overlay con el texto "PRÓXIMAMENTE NOTICIAS" */}
-    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <span className="text-white text-2xl md:text-4xl font-bold animate-pulse uppercase">
-        PRÓXIMAMENTE NOTICIAS
-      </span>
-    </div>
-  </div>
-</Link>
+                {/* Overlay con texto */}
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <span className="text-white text-2xl md:text-4xl font-bold animate-pulse uppercase">
+                    MUSUMECI
+                  </span>
+                </div>
+              </div>
+            </Link>
 
             <h4 className="h4 text-primary-200">{item.title}</h4>
             <div className="flex gap-3 items-center">
               <IoMdFitness className="text-primary-400 text-3xl" />
               <Link to={"/#"}>
                 <p className="text-lg text-primary-400 font-bold hover:underline ">
-                MUY PRONTO PREINSCRIPCION PARA CAMPEONATO ARGENTINO
+                  Ver detalle de clasificación y podios
                 </p>
               </Link>
             </div>
           </motion.div>
         ))}
 
-        {/* OTHERS OTRAS NOTICIAS */}
+        {/* OTRAS NOTICIAS / RESULTADOS */}
         <div className="w-full lg:w-[50%] my-10 md:my-0 flex gap-0 lg:gap-4 gap-y-4 justify-around lg:justify-center items-center flex-wrap">
           {PRESENT_HOME.map((item, index) => (
             <motion.div
@@ -97,7 +95,7 @@ const Info = () => {
                     <img
                       src={item.image}
                       alt="banner"
-                      className={`relative w-[40%] h-[100%] md:w-[50%] rounded-xl`}
+                      className="relative w-[40%] h-[100%] md:w-[50%] rounded-xl"
                     />
                   </div>
                 </div>

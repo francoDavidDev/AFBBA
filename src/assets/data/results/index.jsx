@@ -23,12 +23,26 @@ import excel_noche_de_campeones from "../../pdf/results/noche_de_campeones_2024/
 
 //CAMPEONATO NACIONAL 2024
 import img_campeonato_nacional_2024 from "../../imgs/tournaments/nationals/flyers/CAMPEONATO_NACIONAL.jpg";
+
 // EXCEL
 import pdf_campeonato_nacional_2024 from "../../pdf/results/campeonato_nacional_2024/resultados.xlsx";
+
+import MUSUMECI from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
+import MUSUMECI_PDF from "../../pdf/RESULTADOS_MUSUMECI_2025.pdf";
 
 
 
 export const RESULTS = [
+    {
+    title: "Musumeci 2025",
+    year: 2024,
+    pdf: pdf_campeonato_nacional_2024,
+
+    image: MUSUMECI,
+    path: "/campeonatoArgentinoResults",
+    dia_1: MUSUMECI_PDF,
+    dia_2: null,
+  },
   {
     title: "Campeonato Nacional 2024",
     year: 2024,

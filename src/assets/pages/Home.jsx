@@ -12,7 +12,7 @@ import Internationals from '../components/Home/Internationals';
 import NationalTournaments from '../components/Home/NationalTournaments';
 import Calendar from '../pages/Calendar.jsx';
 
-import MUSUMECI_2025 from "../imgs/tournaments/nationals/flyers/2025/ARGENTINO.jpg";
+import MUSUMECI_2025 from "../imgs/tournaments/nationals/flyers/ARGENTINO.jpg";
 
 import OscarInformation from '../components/Home/OscarInformation.jsx';
 import EventosInscripcion from '../components/EventosInscripcion.jsx';
@@ -54,11 +54,12 @@ const Home = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <img 
-              src={MUSUMECI_2025} 
-              alt="MUSUMECI 2025" 
-              className="w-full h-48 object-cover"
-            />
+           <img 
+  src={MUSUMECI_2025} 
+  alt="MUSUMECI 2025" 
+  className="w-full h-64 md:h-96 object-cover bg-bottom"
+/>
+
             <div className="p-6 text-center space-y-4">
               <motion.h2 
                 className="text-xl font-bold text-gray-900"
