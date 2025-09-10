@@ -50,7 +50,7 @@ const Info = () => {
                 {/* Overlay con texto */}
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                   <span className="text-white text-2xl md:text-4xl font-bold animate-pulse uppercase">
-                    MUSUMECI
+                    RESULTADOS DESTACADOS
                   </span>
                 </div>
               </div>

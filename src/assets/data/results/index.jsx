@@ -23,26 +23,45 @@ import excel_noche_de_campeones from "../../pdf/results/noche_de_campeones_2024/
 
 //CAMPEONATO NACIONAL 2024
 import img_campeonato_nacional_2024 from "../../imgs/tournaments/nationals/flyers/CAMPEONATO_NACIONAL.jpg";
-
 // EXCEL
 import pdf_campeonato_nacional_2024 from "../../pdf/results/campeonato_nacional_2024/resultados.xlsx";
 
-import MUSUMECI from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
-import MUSUMECI_PDF from "../../pdf/RESULTADOS_MUSUMECI_2025.pdf";
 
+//2025
 
+import MUSUMECI_2025 from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
+//pdf
+import MUSUMECI_2025_RESULTADOS from "../../pdf/results/RESULTADOS_MUSUMECI_2025.pdf";
+
+import ARGENTINO_CHALLENGE_2025_img from "../../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_ARGENTINO.jpg";
+
+import RESULTADO_ARGENTINO_2025 from '../../pdf/results/argentino_2025/CAMPEONATO_ARGENTINO_2025.pdf'
 
 export const RESULTS = [
-    {
-    title: "Musumeci 2025",
-    year: 2024,
-    pdf: pdf_campeonato_nacional_2024,
 
-    image: MUSUMECI,
+  
+      {
+    title: "CAMPEONATO ARGENTINO 2025",
+    year: 2025,
+    pdf: "path/to/national_tournament_2024.pdf",
+    image: ARGENTINO_CHALLENGE_2025_img,
     path: "/campeonatoArgentinoResults",
-    dia_1: MUSUMECI_PDF,
+    dia_1: RESULTADO_ARGENTINO_2025,
     dia_2: null,
   },
+
+  
+  
+    {
+    title: "Musumeci 2025",
+    year: 2025,
+    pdf: "path/to/national_tournament_2024.pdf",
+    image: MUSUMECI_2025,
+    path: "/campeonatoArgentinoResults",
+    dia_1: MUSUMECI_2025_RESULTADOS,
+    dia_2: null,
+  },
+
   {
     title: "Campeonato Nacional 2024",
     year: 2024,
@@ -97,5 +116,6 @@ export const RESULTS = [
   },
  
 
+  
 
 ];

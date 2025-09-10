@@ -19,11 +19,11 @@ export const NAV = [
 //HOME DATA
 // aqui esta la informacion de banner main
 
-import CAMPEONATO_ARGENTINO_2025 from "../src/assets/imgs/tournaments/nationals/flyers/2025/CAMPEONATO_ARGENTINO.jpg";
+import CAMPEONATO_ARGENTINO_2025 from "../src/assets/imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 
 export const ACTUALIDAD = [
   {
-    title: "MUSUMECI",
+    title: "MUY PRONTO NOTICIAS",
     subtitle: "Haz click en la imagen para poder informarte e inscribirte al Torneo",
     image: CAMPEONATO_ARGENTINO_2025,
     path: "/results",

@@ -5,23 +5,18 @@ import { Link } from "react-router-dom";
 
 import FlyerMusumeci from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 import FlyerArgentino from "../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_ARGENTINO.jpg";
+import FlyerCopaProvincias from "../imgs/tournaments/nationals/flyers/2025/COPA_PROVINCIAS_UNIDAS.jpg";
 import FlyerTucuman from "../imgs/tournaments/nationals/flyers/2025/TUCUMAN.jpg";
 
+// Activos primero: Copa Provincias Unidas y Tucumán
 const events = [
   {
-    title: "Musumeci Classic International",
-    flyer: FlyerMusumeci,
-    link: null, // inscripción cerrada
+    title: "Copa Provincias Unidas",
+    flyer: FlyerCopaProvincias,
+    link: "/inscripcion/copa-provincias-unidas-2025",
     description:
-      "",
-    closed: true,
-  },
-  {
-    title: "Campeonato Argentino",
-    flyer: FlyerArgentino,
-    link: "/inscripcion/campeonato-argentino",
-    description:
-      "El evento oficial a nivel nacional. ¡Mostrá tu mejor versión frente a los mejores del país!",
+      "Competencia nacional por provincias. ¡Representá a tu región y viví la experiencia!",
+    closed: false,
   },
   {
     title: "Tucumán IFBB Cup",
@@ -29,6 +24,22 @@ const events = [
     link: "/inscripcion/tucuman-ifbb-cup",
     description:
       "Competencia oficial de la IFBB en Tucumán. ¡No te pierdas esta edición especial!",
+    closed: false,
+  },
+  {
+    title: "Musumeci Classic International",
+    flyer: FlyerMusumeci,
+    link: null, // inscripción cerrada
+    description: "",
+    closed: true,
+  },
+  {
+    title: "Campeonato Argentino",
+    flyer: FlyerArgentino,
+    link: null, // inscripción cerrada
+    description:
+      "El evento oficial a nivel nacional. ¡Mostrá tu mejor versión frente a los mejores del país!",
+    closed: true,
   },
 ];
 

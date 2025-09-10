@@ -10,50 +10,50 @@ const Header = () => {
   const [navMobile, setNavMobile] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsActive(window.scrollY > 80);
-    };
-
+    const handleScroll = () => setIsActive(window.scrollY > 80);
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
 
   return (
     <header
       className={`${
         navMobile
-          ? "bg-primary-300/90 shadow-md py-4 backdrop-blur-[2px] fixed" // Fondo translúcido cuando está activo
-          : "bg-primary-300/40 py-1 backdrop-blur-[2px]  static" // Fondo translúcido más claro cuando está arriba
-      }  top-[-10px] w-full flex items-center justify-between transition-all duration-300 z-50`}
+          ? "bg-primary-300/90 shadow-md py-4 backdrop-blur-[2px] fixed"
+          : "bg-primary-300/40 py-1 backdrop-blur-[2px] static"
+      } top-[-10px] w-full transition-all duration-300 z-50`}
     >
-      <Link to="/" className="flex items-center m-1">
-        <img
-          src={image}
-          alt="logo"
-          className={`${
-            isActive ? "w-[45px]" : "w-[65px]"
-          } transition-all duration-300`}
-        />
-      </Link>
+      {/* Grid 3 columnas: [logo][CENTRO NAV][acciones] */}
+      <div className="mx-auto max-w-7xl grid grid-cols-[auto_1fr_auto] items-center px-4">
+        {/* IZQ: Logo */}
+        <Link to="/" className="flex items-center m-1">
+          <img
+            src={image}
+            alt="logo"
+            className={`${isActive ? "w-[45px]" : "w-[65px]"} transition-all duration-300`}
+          />
+        </Link>
 
-      {/* Nav for desktop */}
-      <Nav className="hidden md:flex" isActive={isActive} />
+        {/* CENTRO: Nav (solo desktop) SIEMPRE centrado geométricamente */}
+        <div className="hidden md:flex justify-self-center h-16 items-center">
+          <Nav className="h-full flex items-center" />
+        </div>
 
-      {/* Toggle buttons for mobile */}
-      <div
-        onClick={() => setNavMobile(!navMobile)}
-        className="md:hidden flex items-center justify-center p-2"
-      >
-        {navMobile ? (
-          <RiCloseFill className="text-white text-3xl cursor-pointer" />
-        ) : (
-          <RiMenu4Fill className="text-white text-3xl cursor-pointer" />
-        )}
+        {/* DER: Toggle móvil */}
+        <button
+          onClick={() => setNavMobile(!navMobile)}
+          className="md:hidden justify-self-end flex items-center justify-center p-2"
+          aria-label={navMobile ? "Cerrar menú" : "Abrir menú"}
+        >
+          {navMobile ? (
+            <RiCloseFill className="text-white text-3xl" />
+          ) : (
+            <RiMenu4Fill className="text-white text-3xl" />
+          )}
+        </button>
       </div>
 
-      {/* Mobile nav menu */}
+      {/* Menú móvil */}
       <NavMobile navMobile={navMobile} setNavMobile={setNavMobile} />
     </header>
   );

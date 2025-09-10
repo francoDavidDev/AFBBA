@@ -433,7 +433,7 @@ export const TOURNAMENTS_DATA = {
 
     {
       date: '11 OCTUBRE',
-      name: 'MS Y MR SALTA',
+      name: 'COPA FOX Show Muscular',
       location: 'SALTA',
       organizer: 'ASFFLYPO - OMAR BIGNON (promotor)',
       link: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
