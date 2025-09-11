@@ -2,13 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
-
-import FlyerMusumeci from "../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
-import FlyerArgentino from "../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_ARGENTINO.jpg";
 import FlyerCopaProvincias from "../imgs/tournaments/nationals/flyers/2025/COPA_PROVINCIAS_UNIDAS.jpg";
-import FlyerTucuman from "../imgs/tournaments/nationals/flyers/2025/TUCUMAN.jpg";
 
-// Activos primero: Copa Provincias Unidas y Tucumán
+// NUEVOS FLYERS
+import FlyerNocheDeCampeones from "../imgs/tournaments/nationals/flyers/2025/NOCHE_CAMPEONES.jpg";
+import FlyerCampeonatoNacional from "../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_NACIONAL.jpg";
+import FlyerSuperPatagonico from "../imgs/tournaments/nationals/flyers/2025/SUPER_PATAGONICO.jpg";
+
+// Agregar startDate (YYYY-MM-DD) para ordenar por fecha
 const events = [
   {
     title: "Copa Provincias Unidas",
@@ -17,33 +18,45 @@ const events = [
     description:
       "Competencia nacional por provincias. ¡Representá a tu región y viví la experiencia!",
     closed: false,
+    startDate: null, // ⚠️ fecha no confirmada: se mostrará al final
   },
   {
-    title: "Tucumán IFBB Cup",
-    flyer: FlyerTucuman,
-    link: "/inscripcion/tucuman-ifbb-cup",
+    title: "Súper Patagónico",
+    flyer: FlyerSuperPatagonico,
+    link: "/inscripcion/super-patagonico-2025",
     description:
-      "Competencia oficial de la IFBB en Tucumán. ¡No te pierdas esta edición especial!",
+      "Sábado 25 de octubre – Gimnasio Municipal N°1, Puerto Madryn (Chubut). Inscripción 9–12 hs; competencia 15 hs.",
     closed: false,
+    startDate: "2025-10-25",
   },
   {
-    title: "Musumeci Classic International",
-    flyer: FlyerMusumeci,
-    link: null, // inscripción cerrada
-    description: "",
-    closed: true,
-  },
-  {
-    title: "Campeonato Argentino",
-    flyer: FlyerArgentino,
-    link: null, // inscripción cerrada
+    title: "IFBB Noche de Campeones",
+    flyer: FlyerNocheDeCampeones,
+    link: "/inscripcion/noche-de-campeones-2025",
     description:
-      "El evento oficial a nivel nacional. ¡Mostrá tu mejor versión frente a los mejores del país!",
-    closed: true,
+      "Rosario – Hotel Ariston. Inscripción: sáb 8/11 15 hs. Competencia: dom 9/11 10 hs.",
+    closed: false,
+    startDate: "2025-11-08",
+  },
+  {
+    title: "Campeonato Nacional FAMF",
+    flyer: FlyerCampeonatoNacional,
+    link: "/inscripcion/campeonato-nacional-2025",
+    description:
+      "6 y 7 de diciembre – Domo del Centenario (Resistencia, Chaco). Copa Natural Shop.",
+    closed: false,
+    startDate: "2025-12-06",
   },
 ];
 
 const EventosInscripcion = () => {
+  // Ordena por fecha ascendente; los que no tienen fecha van al final
+  const sortedEvents = [...events].sort((a, b) => {
+    const aTime = a.startDate ? new Date(a.startDate).getTime() : Infinity;
+    const bTime = b.startDate ? new Date(b.startDate).getTime() : Infinity;
+    return aTime - bTime;
+  });
+
   return (
     <section className="w-full min-h-screen bg-[#060b16] py-20 px-6 flex flex-col items-center justify-center gap-12">
       <motion.div
@@ -56,7 +69,7 @@ const EventosInscripcion = () => {
           ¡Inscripciones Abiertas!
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {events.map((event, index) => (
+          {sortedEvents.map((event, index) => (
             <motion.div
               key={index}
               className="bg-[#0f172a] p-4 rounded-2xl shadow-2xl flex flex-col items-center text-center gap-4"
