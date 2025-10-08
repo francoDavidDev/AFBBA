@@ -30,6 +30,8 @@ import pdf_campeonato_nacional_2024 from "../../pdf/results/campeonato_nacional_
 //2025
 
 import MUSUMECI_2025 from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
+
+import PROVINCIAS_UNIDAS from "../../imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg";
 //pdf
 import MUSUMECI_2025_RESULTADOS from "../../pdf/results/RESULTADOS_MUSUMECI_2025.pdf";
 
@@ -37,9 +39,20 @@ import ARGENTINO_CHALLENGE_2025_img from "../../imgs/tournaments/nationals/flyer
 
 import RESULTADO_ARGENTINO_2025 from '../../pdf/results/argentino_2025/CAMPEONATO_ARGENTINO_2025.pdf'
 
+import PROVINCIAS_UNIDAS_2025 from '../../pdf/results/argentino_2025/PROVINCIAS_UNIDA_2025.pdf'
+
+
 export const RESULTS = [
 
-  
+    {
+    title: "PROVINCIAS UNIDAS 2025",
+    year: 2025,
+    pdf: "path/to/national_tournament_2024.pdf",
+    image: PROVINCIAS_UNIDAS,
+    path: "/campeonatoArgentinoResults",
+    dia_1: PROVINCIAS_UNIDAS_2025,
+    dia_2: null,
+  },
       {
     title: "CAMPEONATO ARGENTINO 2025",
     year: 2025,
