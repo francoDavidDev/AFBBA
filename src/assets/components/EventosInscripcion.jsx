@@ -97,7 +97,7 @@ const EventosInscripcion = () => {
                   className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary-400 text-[#091225] text-lg font-semibold hover:shadow-[0_0_20px_#6ee7b7] transition-all duration-300"
                 >
                   Inscribirme
-                  <HiArrowNarrowRight className="text-2xl" />
+                  <HiArrowNarrowRight className="text-2xl " />
                 </Link>
               )}
             </motion.div>
