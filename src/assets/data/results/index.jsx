@@ -31,7 +31,7 @@ import pdf_campeonato_nacional_2024 from "../../pdf/results/campeonato_nacional_
 
 import MUSUMECI_2025 from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 
-import PROVINCIAS_UNIDAS from "../../imgs/tournaments/nationals/flyers/PROV_UNIDAS.jpg";
+import PROVINCIAS_UNIDAS from "../../imgs/tournaments/nationals/flyers/2025/COPA_PROVINCIAS_UNIDAS.jpg";
 //pdf
 import MUSUMECI_2025_RESULTADOS from "../../pdf/results/RESULTADOS_MUSUMECI_2025.pdf";
 
