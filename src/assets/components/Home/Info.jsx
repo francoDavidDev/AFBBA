@@ -1,110 +1,71 @@
-import React, { useRef, useState } from "react";
-import { PRESENT_HOME } from "../../../data";
-import { ACTUALIDAD } from "../../../data";
-import { IoMdFitness } from "react-icons/io";
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { IoMdFitness } from "react-icons/io";
+import { PRESENT_HOME, ACTUALIDAD } from "../../../data";
+
+/**
+ * Detecta automáticamente la mejor ruta para "Resultados":
+ * 1) Busca en ACTUALIDAD / PRESENT_HOME un item cuyo path o título contenga "resultado" o "clasific".
+ * 2) Si no existe, cae en "/resultados".
+ */
+const getResultsPath = () => {
+  const pools = [...(ACTUALIDAD || []), ...(PRESENT_HOME || [])];
+  const byPath = pools.find(
+    (i) => typeof i?.path === "string" && /resultado|clasificaci/i.test(i.path)
+  );
+  if (byPath) return byPath.path;
+
+  const byTitle = pools.find(
+    (i) => typeof i?.title === "string" && /resultado|clasificaci/i.test(i.title)
+  );
+  if (byTitle?.path) return byTitle.path;
+
+  return "/resultados";
+};
+
+const RESULTS_PATH = getResultsPath();
 
 const Info = () => {
-  const [dropdown, setDropdown] = useState(false);
-  const [dropdown2, setDropdown2] = useState(false);
-  const videoRef = useRef();
-
   return (
-    <div className="h-[auto] w-full flex flex-col justify-start items-center py-10 xl:py-[150px] gap-y-10">
-      {/* Title Section */}
-      <div className="w-[90%] text-primary-400 flex flex-col items-center">
-        <span className="text-lg md:text-xl uppercase">
+    <section className="w-full bg-[#060b16] py-16 md:py-24 flex flex-col items-center">
+      {/* Encabezado */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="w-[90%] max-w-5xl text-center"
+      >
+        <p className="text-primary-400 text-sm md:text-base uppercase tracking-wider">
           Últimos resultados y clasificaciones
-        </span>
-        <h2 className="text-2xl md:text-3xl uppercase text-center ">
+        </p>
+        <h2 className="text-primary-200 text-2xl md:text-3xl font-semibold uppercase mt-2">
           Resultados de Torneos
         </h2>
-        <span className="italic text-base md:text-lg text-primary-200">
-          Haz clic en el flyer o tarjeta para ver el detalle completo
-        </span>
-      </div>
+        <p className="text-primary-300/80 italic mt-2">
+          Ingresá para ver clasificaciones, podios y detalles completos.
+        </p>
 
-      <div className="w-[90%] h-[auto] flex flex-col lg:flex-row items-start justify-between gap-5">
-        {/* Card BANER MAIN */}
-        {ACTUALIDAD.map((item, index) => (
-          <motion.div
-            key={index}
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="w-[100%] lg:w-[50%] flex flex-col gap-y-3 cursor-pointer"
+        {/* ÚNICO BOTÓN / LINK A RESULTADOS */}
+        <motion.div
+          className="mt-8"
+          initial={{ scale: 0.98, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+        >
+          <Link
+            to={RESULTS_PATH}
+            aria-label="Ir a la página de resultados"
+            className="inline-flex items-center gap-3 rounded-full bg-primary-400 text-[#091225] px-6 py-3 text-base md:text-lg font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(110,231,183,0.6)] focus:outline-none focus:ring-2 focus:ring-primary-400/70"
           >
-            <Link to={item.path}>
-              <div
-                onMouseEnter={() => setDropdown(true)}
-                onMouseLeave={() => setDropdown(false)}
-                className="w-full h-[650px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] relative"
-              >
-                {/* Imagen de fondo */}
-                <div
-                  className="h-full w-full flex bg-cover bg-top transition-all duration-200 hover:scale-110 justify-center items-center cursor-pointer"
-                  style={{ backgroundImage: `url('${item.image}')` }}
-                ></div>
+            <IoMdFitness className="text-xl" />
+            Ver resultados
+          </Link>
+        </motion.div>
 
-                {/* Overlay con texto */}
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                  <span className="text-white text-2xl md:text-4xl font-bold animate-pulse uppercase">
-                    RESULTADOS DESTACADOS
-                  </span>
-                </div>
-              </div>
-            </Link>
-
-            <h4 className="h4 text-primary-200">{item.title}</h4>
-            <div className="flex gap-3 items-center">
-              <IoMdFitness className="text-primary-400 text-3xl" />
-              <Link to={"/#"}>
-                <p className="text-lg text-primary-400 font-bold hover:underline ">
-                  Ver detalle de clasificación y podios
-                </p>
-              </Link>
-            </div>
-          </motion.div>
-        ))}
-
-        {/* OTRAS NOTICIAS / RESULTADOS */}
-        <div className="w-full lg:w-[50%] my-10 md:my-0 flex gap-0 lg:gap-4 gap-y-4 justify-around lg:justify-center items-center flex-wrap">
-          {PRESENT_HOME.map((item, index) => (
-            <motion.div
-              key={index}
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.5 }}
-              onMouseEnter={() => setDropdown2(true)}
-              onMouseLeave={() => setDropdown2(false)}
-              className="w-full md:w-[45%] lg:w-full h-[190px] overflow-hidden rounded-xl flex flex-col justify-center cursor-pointer hover:-translate-y-1 duration-200 hover:rounded-xl hover:shadow-primary-400 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
-            >
-              <Link
-                to={`${item.path}`}
-                className="h-full w-full flex bg-cover bg-top transition-all duration-200 justify-between items-center cursor-pointer"
-              >
-                <div className="h-full w-full">
-                  <div className="h-full w-full bg-gradient-to-r from-gray-900 to-gray-600 flex flex-row justify-center items-center text-center">
-                    <div className="h-full w-full">
-                      <h4 className="text-md sm:text-xl uppercase p-5 flex flex-col justify-center items-start md:items-center w-full h-full truncate whitespace-normal tracking-wider">
-                        {item.title}
-                      </h4>
-                    </div>
-
-                    <img
-                      src={item.image}
-                      alt="banner"
-                      className="relative w-[40%] h-[100%] md:w-[50%] rounded-xl"
-                    />
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </div>
+        {/* Nota: eliminamos tarjetas/listados. Sólo queda el CTA a resultados. */}
+      </motion.div>
+    </section>
   );
 };
 

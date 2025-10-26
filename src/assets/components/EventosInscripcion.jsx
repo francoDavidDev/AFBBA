@@ -7,7 +7,6 @@ import FlyerCopaProvincias from "../imgs/tournaments/nationals/flyers/2025/COPA_
 // NUEVOS FLYERS
 import FlyerNocheDeCampeones from "../imgs/tournaments/nationals/flyers/2025/NOCHE_CAMPEONES.jpg";
 import FlyerCampeonatoNacional from "../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_NACIONAL.jpg";
-import FlyerSuperPatagonico from "../imgs/tournaments/nationals/flyers/2025/SUPER_PATAGONICO.jpg";
 
 // Agregar startDate (YYYY-MM-DD) para ordenar por fecha
 const events = [
@@ -19,15 +18,6 @@ const events = [
       "Competencia nacional por provincias. ¡Representá a tu región y viví la experiencia!",
     closed: false,
     startDate: null, // ⚠️ fecha no confirmada: se mostrará al final
-  },
-  {
-    title: "Súper Patagónico",
-    flyer: FlyerSuperPatagonico,
-    link: "/inscripcion/super-patagonico-2025",
-    description:
-      "Sábado 25 de octubre – Gimnasio Municipal N°1, Puerto Madryn (Chubut). Inscripción 9–12 hs; competencia 15 hs.",
-    closed: false,
-    startDate: "2025-10-25",
   },
   {
     title: "IFBB Noche de Campeones",

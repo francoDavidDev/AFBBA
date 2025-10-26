@@ -523,14 +523,7 @@ export const TOURNAMENTS_DATA = {
       organizer: 'A.N.FF - CLAUDIO BORGIA (promotor)',
       link: "https://www.instagram.com/claudio.borgia75?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
     },
-    {
-      date: '15 NOVIEMBRE',
-      name: 'COPA CENTENARIO',
-      location: 'TARTAGAL (Salta)',
-      organizer: 'ASFFLYPO - OMAR BIGNON (promotor)',
-      link: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
-    },
     {
       date: '16 NOVIEMBRE',
       name: 'COPA PROVINCIA',
@@ -596,6 +589,14 @@ export const TOURNAMENTS_DATA = {
       location: 'SANTA CRUZ',
       organizer: 'ASFYC - JOSE LOMBARDO (promotor)',
       link: "https://www.instagram.com/asfyc_fitclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+
+    },
+        {
+      date: '13 DICIEMBRE',
+      name: 'COPA METAN',
+      location: 'A CONFIRMAR',
+      organizer: 'ASFFLYPO - TEL 3875603100',
+      link: "https://www.instagram.com/omar_bignon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
 
     },
 
