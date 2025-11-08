@@ -7,33 +7,15 @@ import Info from '../components/Home/Info';
 import Sponsors from '../components/Home/Sponsors';
 import Banner from '../components/Home/Banner';
 import Associations from '../components/Home/Associations';
-import Internationals from '../components/Home/Internationals';
-import NationalTournaments from '../components/Home/NationalTournaments';
-import Calendar from '../pages/Calendar.jsx';
 
 import OscarInformation from '../components/Home/OscarInformation.jsx';
-import EventosInscripcion from '../components/EventosInscripcion.jsx';
 
-/** Flyers (según tu estructura /src/assets/imgs/...) */
-import NOCHE_CAMPEONES_2025 from '../imgs/tournaments/nationals/flyers/2025/NOCHE_CAMPEONES.jpg';
-import SUPER_PATAGONICO_2025 from '../imgs/tournaments/nationals/flyers/2025/SUPER_PATAGONICO.jpg';
+/** Flyer único: Campeonato Nacional 2025 */
 import CAMPEONATO_NACIONAL_2025 from '../imgs/tournaments/nationals/flyers/2025/CAMPEONATO_NACIONAL.jpg';
 
 const Home = () => {
-  // Secuencia de 3 modales (sale uno y luego el otro)
+  // Único modal: Campeonato Nacional
   const MODALES = [
-    {
-      title: '¡Inscripción abierta – Noche de Campeones!',
-      slug: 'noche-de-campeones-2025',
-      img: NOCHE_CAMPEONES_2025,
-      cta: 'Preinscribirme ahora',
-    },
-    {
-      title: '¡Cupos limitados – Patagónico 2025!',
-      slug: 'patagonico-2025',
-      img: SUPER_PATAGONICO_2025,
-      cta: 'Reservar mi lugar',
-    },
     {
       title: '¡Nacional 2025 – Acreditaciones abiertas!',
       slug: 'nacional-2025',
@@ -45,7 +27,7 @@ const Home = () => {
   const [showModal, setShowModal] = useState(true);
   const [idx, setIdx] = useState(0);
 
-  // Cada modal se muestra 5s y pasa al siguiente automáticamente
+  // Auto-cierre del modal a los 5s
   useEffect(() => {
     if (!showModal) return;
     const timer = setTimeout(() => avanzar(), 5000);
@@ -60,7 +42,7 @@ const Home = () => {
     }
   };
 
-  // Cerrar = pasar al siguiente (si es el último, cierra todo)
+  // Cerrar = siguiente (con uno solo, cierra)
   const closeModal = () => avanzar();
 
   const actual = MODALES[idx];
@@ -98,7 +80,7 @@ const Home = () => {
                 {actual.title}
               </motion.h2>
 
-              {/* Indicadores 1/3, 2/3, 3/3 */}
+              {/* Indicador (1/1) */}
               <div className="flex items-center justify-center gap-2">
                 {MODALES.map((_, i) => (
                   <span
@@ -123,12 +105,12 @@ const Home = () => {
               </motion.div>
             </div>
 
-            {/* Botón cerrar = siguiente */}
+            {/* Botón cerrar */}
             <button
               onClick={closeModal}
-              aria-label="Siguiente"
+              aria-label="Cerrar"
               className="absolute top-2 right-2 text-white bg-red-500 w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full hover:bg-red-600"
-              title={idx < MODALES.length - 1 ? 'Siguiente' : 'Cerrar'}
+              title="Cerrar"
             >
               ×
             </button>
@@ -136,7 +118,7 @@ const Home = () => {
         </motion.div>
       )}
 
-      {/* CONTENIDO HOME */}
+      {/* CONTENIDO HOME (sin listados de otros eventos) */}
       <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Hero />
       </motion.div>
@@ -146,23 +128,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
-        <EventosInscripcion />
-      </motion.div>
-
-      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
         <Info />
-      </motion.div>
-
-      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
-        <Internationals />
-      </motion.div>
-
-      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
-        <NationalTournaments />
-      </motion.div>
-
-      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
-        <Calendar />
       </motion.div>
 
       <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.5 }}>
