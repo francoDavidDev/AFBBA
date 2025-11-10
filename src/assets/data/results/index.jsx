@@ -26,8 +26,12 @@ import SUPER_PATAGONICO_RESULTADOS from "../../pdf/results/2025/super_patagonico
 import MUSUMECI_2025_RESULTADOS from "../../pdf/results/RESULTADOS_MUSUMECI_2025.pdf";
 import RESULTADO_ARGENTINO_2025 from "../../pdf/results/argentino_2025/CAMPEONATO_ARGENTINO_2025.pdf";
 import PROVINCIAS_UNIDAS_2025 from "../../pdf/results/argentino_2025/PROVINCIAS_UNIDA_2025.pdf";
+import NOCHE_CAMPEONES_2025 from "../../pdf/results/2025/NOCHE_CAMPEONES_2025.pdf";
+
 
 // images
+import NOCHE_CAMPEONES from "../../imgs/tournaments/nationals/flyers/2025/NOCHE_CAMPEONES.jpg";
+
 import SUPER_PATAGONICO from "../../imgs/tournaments/nationals/flyers/2025/SUPER_PATAGONICO.jpg";
 import MUSUMECI_2025 from "../../imgs/tournaments/nationals/flyers/2025/MUSUMECI_2025.jpg";
 import PROVINCIAS_UNIDAS from "../../imgs/tournaments/nationals/flyers/2025/COPA_PROVINCIAS_UNIDAS.jpg";
@@ -39,6 +43,15 @@ import ARGENTINO_CHALLENGE_2025_img from "../../imgs/tournaments/nationals/flyer
  * El resto de 2025 quedan a continuación; 2024 al final.
  */
 export const RESULTS = [
+    {
+    title: "NOCHE DE CAMPEONES",
+    year: 2025,
+    pdf: NOCHE_CAMPEONES_2025,
+    image: NOCHE_CAMPEONES,
+    path: "/campeonatoArgentinoResults",
+    dia_1: NOCHE_CAMPEONES_2025,
+    dia_2: null,
+  },
   // === 2025 ===
   {
     title: "SUPER PATAGONICO 2025",
